@@ -4,7 +4,7 @@ Jazelle Diaz    diazjaze    1003469007    jazelle.diaz@mai
 Jayvin Chang    changj87    1005184783    jayvin.chang@mail.utoronto.ca      (Discord) roar32#9852<br>
 Komal Kaler     kalerko1    1005126962    komal.kaler@mail.utoronto.ca       (Discord) komal#3225<br>
 Sukhman Vig     vigsukhm    1005256599    sukhman.vig@mail.utoronto.ca       (Discord) sukh#2052<br>
-Arnaud Michel   michelar    1003505496    arnaud.michel@mail.utoronto.ca     (Discord) vmkpw#1971
-Hao Mack Yang   lihaoya2    1003514529    mulliganaceous.li@mail.utoronto.ca (Discord) !!MULLIGANACEOUS!!#5992
+Arnaud Michel   michelar    1003505496    arnaud.michel@mail.utoronto.ca     (Discord) vmkpw#1971<br>
+Hao Mack Yang   lihaoya2    1003514529    mulliganaceous.li@mail.utoronto.ca    (Discord) !!MULLIGANACEOUS!!#5992
 <br></br>
-Discord Invite: https://discord.gg/kTqfJKT2Ct
+Discord Invite: https://discord.gg/JYaSgDcP8T
