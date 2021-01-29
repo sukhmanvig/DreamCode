@@ -6,7 +6,6 @@
 Cos = "Criteria of Satisfaction"
 
 ====================================
-====================================
 
 ## **Epic Story Guiding the Vision of the App**
 
@@ -16,7 +15,6 @@ Cos = "Criteria of Satisfaction"
 * Priority: 5
 * Complexity: 8
 
-====================================
 ====================================
 
 # User Stories Covering Detailing the Learning Concepts
@@ -132,8 +130,6 @@ Cos = "Criteria of Satisfaction"
 * Priority: 4
 * Complexity: 4
 
-
-====================================
 ====================================
 
 # Account Functionality
@@ -180,7 +176,6 @@ Cos = "Criteria of Satisfaction"
 * Priority: 6
 * Complexity: 6
  
-====================================
 ====================================
  
 # Further user stories to improve learning features of the application
