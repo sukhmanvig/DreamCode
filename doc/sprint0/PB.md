@@ -5,8 +5,6 @@
 
 Cos = "Criteria of Satisfaction"
 
-====================================
-
 ## **Epic Story Guiding the Vision of the App**
 
 **As a learner, I want to be able to practice programming topics, so that I can build an understanding with the concepts until I am comfortable with them.**
@@ -14,8 +12,6 @@ Cos = "Criteria of Satisfaction"
 * Cos: The User is provided with exercises and problems that cover the learning topics of the application.
 * Priority: 5
 * Complexity: 8
-
-====================================
 
 # User Stories Covering Detailing the Learning Concepts
 
@@ -130,8 +126,6 @@ Cos = "Criteria of Satisfaction"
 * Priority: 4
 * Complexity: 4
 
-====================================
-
 # Account Functionality
 
 **As an unregistered user, I want to create an account that will save my progress between sessions.**
@@ -175,8 +169,6 @@ Cos = "Criteria of Satisfaction"
 * Criteria of satisfaction: The User can update their password in their account, subsequent login attempts will use the newly specified password.
 * Priority: 6
 * Complexity: 6
- 
-====================================
  
 # Further user stories to improve learning features of the application
 
