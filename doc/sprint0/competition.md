@@ -25,7 +25,7 @@ Quizzes assess the user’s understanding of a concept through
 multiple-choice questions.
 
 ![Graphical user interface Description automatically
-generated](competition_media/brilliant2.png)
+generated](competition_media/brilliant2.PNG)
 
 Slide 4 of the "Writing Programs" course on brilliant.org.
 Retrieved from
@@ -53,7 +53,7 @@ introduces programming concepts using interactive code snippets.
 
 ![Graphical user interface, text, application, chat or text message
 Description automatically
-generated](competition_media/sololearn1.png)
+generated](competition_media/sololearn1.PNG)
 
 A slide introducing basic arithmetic in Python. Retrieved from
 <https://www.sololearn.com/learning/1073/2271/4563/1>\[7\].
@@ -63,7 +63,7 @@ snippets, determining the output of a given piece of code, rearranging
 lines of code to achieve a result, and full-scale programming problems.
 
 ![Graphical user interface, text, application Description automatically
-generated](competition_media/sololearn2.png)
+generated](competition_media/sololearn2.PNG)
 
 A slide depicting the "re-arrange the code" activity. Retrieved
 from <https://www.sololearn.com/learning/1073/2494/5276/2>\[6\].
