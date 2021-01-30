@@ -9,9 +9,11 @@ The Key Personas:
 The Key Scenarios:
 Some scenarios that our product could shine in are:
 
-	Anjali’s parents want her to learn something outside of school and fuel her natural curiosity but can’t take her to extracurriculars because of their busy work life and she often loses interest so they sign her up for Codeland which gamifies the learning process and creates colourful and interactive lessons in easy-to-swallow chunks to ensure Anjali won’t lose interest.
-	Scott Miller(idk if this was on purpose) wants to learn how to code but is overwhelmed on where to start and gets discouraged to try. He feels wherever he starts, he finds something else that seems to be more important and flip flops between starting at certain languages, or data structures, or algorithms. Signing up to Codeland can give that sense of structure and progression in his learning that he needs to feel like he’s improving. 
-	Kyle Miller understands what he wants but struggles to find a way of learning that fits his visual learning style. Codeland provides plenty of visual depictions of many coding-related concepts such as data structures that can lead Kyle into the game developer future that he wishes to pursue.
+Anjali’s parents want her to learn something outside of school and fuel her natural curiosity but can’t take her to extracurriculars because of their busy work life and she often loses interest so they sign her up for Codeland which gamifies the learning process and creates colourful and interactive lessons in easy-to-swallow chunks to ensure Anjali won’t lose interest.
+
+Scott Miller(idk if this was on purpose) wants to learn how to code but is overwhelmed on where to start and gets discouraged to try. He feels wherever he starts, he finds something else that seems to be more important and flip flops between starting at certain languages, or data structures, or algorithms. Signing up to Codeland can give that sense of structure and progression in his learning that he needs to feel like he’s improving. 
+
+Kyle Miller understands what he wants but struggles to find a way of learning that fits his visual learning style. Codeland provides plenty of visual depictions of many coding-related concepts such as data structures that can lead Kyle into the game developer future that he wishes to pursue.
 
 Key Principles:
 	We want first and foremost to make sure levels provide a strong fundamental base and show what and where our users can learn more and the applicability of their new knowledge. We also want to make our users have an easy and intuitive experience navigating and using our site. This might reduce our system efficiency and is heavier in terms of server load but will be worth creating a more complete product that can help people even after completing our levels. 
