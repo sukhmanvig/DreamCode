@@ -1,0 +1,22 @@
+nav a {
+	float: right;
+	margin: 5px;
+}
+#content {
+	margin: 0px 50px 5px 50px;
+}	
+.logo {
+	float: left;
+}
+#content .dropdown {
+	float: right;
+}
+hr {
+	width: 100%;
+}
+header {
+	font: bold 25px sans-serif;
+}
+#profile {
+
+}
