@@ -13,11 +13,10 @@ nav a {
 }
 #content .dropdown {
 	float: right;
-	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	padding: 5px;
 	margin: 0px;
 	border: solid 1px rgba(0,0,0,0.2);
-	border-radius: 10px;
+	border-radius: 5px;
 
 }
 .logo {
@@ -87,7 +86,7 @@ h1 {
 	
 }
 .daily-challenge {
-	width: 40%;
+	width: 50%;
 	height: 100px;
 	clear: right;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
@@ -107,7 +106,6 @@ h1 {
 #leaderboard a {
 	text-align: left;
 }
-
 #content .dropdown-elements {
         overflow: hidden;
         display: none;
