@@ -1,12 +1,18 @@
+body {
+
+	background-image: linear-gradient(to right, #a1e6cf, rgb(248,248,255));
+}
+nav {
+	background-image: linear-gradient(to right, #a1e6cf, rgb(248, 248, 255));
+}
 nav a {
 	float: right;
-	margin: 0px 0px 10px 10px;
-	padding: 10px 0px 0px 0px;
+	padding: 10px 0px 0px 10px;
 	text-decoration: none;
 	color: black;
 }
 .dropdown a {
-	margin: 0px 0px 10px 60px;
+	margin: 0px 10px 10px 60px;
 }
 #content {
 	margin: 0px 60px 10px 60px;
@@ -14,7 +20,6 @@ nav a {
 #content .dropdown {
 	float: right;
 	padding: 5px;
-	margin: 0px;
 	border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 5px;
 
@@ -30,7 +35,7 @@ nav a {
 	display: none;
 	z-index: 1;
 	position: absolute;
-	right: 0%;
+	right: 1%;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	padding: 35px 0px 0px;
 	margin: 0px;
