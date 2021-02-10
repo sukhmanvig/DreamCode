@@ -124,14 +124,14 @@ h1 {
 	overflow: hidden;
 	opacity: 0;
 	max-height: 0;
-        z-index: 1;
+  z-index: 1;
 	padding: 5px 50px 5px 5px;
 	margin: 5px;
-        position: absolute;
+  position: absolute;
 	right: 3%;
 	transition: opacity 0.5s ease-out, max-height 0.3s ease;
-        box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-        border: solid 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+  border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
 #content .dropdown-elements a {
@@ -174,7 +174,6 @@ h1 {
 	margin: 10px 0px 0px 10px;
 	transform: rotate(-225deg);
 }
-
 #content #js-category-name {
 	display: inline-block;
 }
