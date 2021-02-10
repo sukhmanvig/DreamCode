@@ -124,14 +124,14 @@ h1 {
 	overflow: hidden;
 	opacity: 0;
 	max-height: 0;
-        z-index: 1;
+  z-index: 1;
 	padding: 5px 50px 5px 5px;
 	margin: 5px;
-        position: absolute;
-	right: 4%;
+  position: absolute;
+	right: 3%;
 	transition: opacity 0.5s ease-out, max-height 0.3s ease;
-        box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-        border: solid 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+  border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
 #content .dropdown-elements a {
@@ -148,9 +148,8 @@ h1 {
 	max-height: 100%;
 }
 #content .category {
-	position: absolute;
-	width: 91%;
-	height: 15%;
+	width: 100%;
+	height: 110px;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border: solid 1px rgba(0,0,0,0.2);
 	border-radius:25px;
@@ -158,8 +157,28 @@ h1 {
 	text-align: center;
 	font: 15px verdana;
 }
+#content .arrow {
+	display: inline-block;
+	border: solid black;
+	border-width: 0px 4px 4px 0px;
+	padding: 5px;
+	margin: 0px 0px -3px 0px;
+}
+#content .right {
+	float: right;
+	margin: 10px 10px 0px 0px;
+	transform: rotate(315deg);
+}
+#content .left {
+	float: left;
+	margin: 10px 0px 0px 10px;
+	transform: rotate(-225deg);
+}
+#content #js-category-name {
+	display: inline-block;
+}
 #content .game {
-	width: 10%;
+	width: auto;
 	float: left;
 	height: 75px;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
