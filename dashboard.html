@@ -4,6 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="animations.js"></script>
 		<title>Dashboard</title>
 	</head>
 	<body>
@@ -60,16 +61,19 @@
 	<form action="last-game.html" method="POST"><input type="submit" class="continue" value="CONTINUE PLAYING"></form>
 	</div>
 	<div class="category">
-	CATEGORY
-	<form action="game1.html"><input type="submit" class="game" value = "TITLE"></form>
+		<i class="arrow left" onclick="arrow(0)"> </i>
+		<div id="js-category-name">CATEGORY1</div>
+		<i class="arrow right" onclick="arrow(1)"> </i>
 
-	<form action="game2.html"><input type="submit" class="game" value = "TITLE"></form>
+		<form action="category1/game1.html"><input type="submit" class="game" value = "CATEGORY1 GAME1"></form>
 
-	<form action="game3.html"><input type="submit" class="game" value = "TITLE"></form>
+		<form action="category1/game2.html"><input type="submit" class="game" value = "CATEGORY1 GAME2"></form>
 
-	<form action="game4.html"><input type="submit" class="game" value = "TITLE"></form>
+		<form action="category1/game3.html"><input type="submit" class="game" value = "CATEGORY1 GAME3"></form>
 
-	<form action="game5.html"><input type="submit" class="game" value = "TITLE"></form>
+		<form action="category1/game4.html"><input type="submit" class="game" value = "CATEGORY1 GAME4"></form>
+
+		<form action="category1/game5.html"><input type="submit" class="game" value = "CATEGORY1 GAME5"></form>
 	</div>
 	</div>
 	</body>
