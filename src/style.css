@@ -1,6 +1,8 @@
+/*
 * {
     border: 1px solid black;
 }
+*/
 
 /*
 Header
@@ -29,6 +31,13 @@ header {
 /*
 About Section
 */
+#about-section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
 #about {
     display: flex;
     flex-direction: row;
@@ -46,4 +55,30 @@ About Section
 /*
 Carousel
 */
+.carousel-container {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-inner div {
+    width: 500px;
+    height: 500px;
+}
+
+.item {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-dev {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
 
