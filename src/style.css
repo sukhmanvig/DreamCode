@@ -1,0 +1,49 @@
+* {
+    border: 1px solid black;
+}
+
+/*
+Header
+*/
+header {
+    background: lightgreen;
+}
+
+.divhead {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.divhead a {
+    padding: 5px;
+    margin: 5px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#logo {
+    justify-self: flex-start;
+}
+
+/*
+About Section
+*/
+#about {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+}
+
+#img2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+/*
+Carousel
+*/
+
