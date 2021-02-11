@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="setting-styles.css">
+        <script src="setting-anim.js"></script>
+    </head>
+    <body>
+        <div class="container-1140">
+        <div class="tab">
+            <button class="tablinks" onclick="openLink(event, 'general')" id="defaultOpen">General Settings</button>
+            <button class="tablinks" onclick="openLink(event, 'notifs')">Notifications</button>
+            <button class="tablinks" onclick="openLink(event, 'privacy')">Privacy</button>
+        </div>
+        <h1 id="setting-title">Account Settings</h1>
+        <div class="acc-preview">
+            <p id="user">USERNAME</p>
+            <p> MEMBER SINCE MM/DD/YYYY</p>
+        </div>
+        <div id="general" class="tabcontent">
+            <div id="circle"></div>
+            <div class="col-md-6 half">
+                <ul class="setting-list">
+                    <li>USERNAME:</li><p>username</p><br>
+                    <li>NAME:</li><p>name</p><br>
+                    <li>EMAIL:</li><p>email</p><br>
+                    <li>BIRTHDAY:</li><p>birthday</p><br>
+                    <li>PASSWORD:</li><p>password</p>
+                </ul>
+            </div>
+            <div class="col-md-6 checkboxes">
+                <label class="container"> Recieve newsletters
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <br>
+                <label class="container"> Display name on profile
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+
+        <div id="notifs" class="tabcontent">
+            <div id="circle"></div>
+            <ul class="setting-list pl-0">
+                <li class="mr-5">EMAIL:</li><p>email</p>
+            </ul>
+            <div class="col-md-6 half">
+                <label class="container space"> Recieve newsletters
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <br>
+                <label class="container"> Display name on profile
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+
+        <div id="privacy" class="tabcontent">
+            <div id="circle"></div>
+            <ul class="setting-list pl-0">
+                <li class="mr-5">PASSWORD:</li><p>Reset Password</p><br>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html> 
