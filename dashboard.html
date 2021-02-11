@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+		<script src="animations.js"></script>
+		<title>Dashboard</title>
+	</head>
+	<body>
+	<nav>
+		<form action="index.html" method="POST"><input type="submit" class='logo' value= "LOGO"></form>
+		<div class="dropdown"><a>Username</a>
+			<div class="dropdown-elements">
+				<a href="profile.html">Profile</a>
+				<a href="account-settings.html">Account Settings</a>
+				<a href="feedback.html">Feedback</a>
+				<a href="logout.html">Logout</a>
+			</div>
+		</div>
+		<a href= 'contact.html'>Contact</a>
+		<a href= 'about.html'>About</a>
+		<a href= 'home.html'>Home</a>
+		<a href= 'dashboard.html'>Dashboard</a>
+	<hr>
+	</nav>
+	<br></br>
+
+	<div id="content">
+	<header> Dashboard </header>
+
+	<form action="profile.html" method="POST"><input type="submit" class='profile' value='PROFILE'></form>
+	<div id="leaderboard">
+		LEADERBOARD
+		<ol>
+			<a href="dashboard.html"><li>USERNAME</li></a>
+			<a href="dashboard.html"><li>USERNAME</li></a>
+			<a href="dashboard.html"><li>USERNAME</li></a>
+			<a href="dashboard.html"><li>USERNAME</li></a>
+			<a href="dashboard.html"><li>USERNAME</li></a>
+		</ol>
+	</div>
+	<form action="daily-challenge.html" method="POST"><input type="submit" class='daily-challenge' value='DAILY CHALLENGE'></form>
+	<br></br>
+	<h1>GAMES</h1>
+	<form action="dashboard.html" method="POST"> 
+		<input type="text" name="search-bar" class="search-bar" placeholder="Search Bar">
+		<input type="image" name="submit" src="media/magn-glass.jpg" class="search-button" alt="submit">
+	</form>
+	<div class="dropdown">SELECT OPTION
+		<div class="dropdown-elements">
+			<a href="option1.html">Option 1</a>
+			<a href="option2.html">Option 2</a>
+			<a href="option3.html">Option 3</a>
+		</div>
+	</div>
+	<h2>Sort by</h2><br></br>
+	<hr>
+	<div class="continue-game">
+	<form action="last-game.html" method="POST"><input type="submit" class="continue" value="CONTINUE PLAYING"></form>
+	</div>
+	<div class="category">
+		<i class="arrow left" onclick="arrow(0)"> </i>
+		<div id="js-category-name">CATEGORY1</div>
+		<i class="arrow right" onclick="arrow(1)"> </i>
+
+		<form action="category1/game1.html"><input type="submit" class="game" value = "CATEGORY1 GAME1"></form>
+
+		<form action="category1/game2.html"><input type="submit" class="game" value = "CATEGORY1 GAME2"></form>
+
+		<form action="category1/game3.html"><input type="submit" class="game" value = "CATEGORY1 GAME3"></form>
+
+		<form action="category1/game4.html"><input type="submit" class="game" value = "CATEGORY1 GAME4"></form>
+
+		<form action="category1/game5.html"><input type="submit" class="game" value = "CATEGORY1 GAME5"></form>
+	</div>
+	</div>
+	</body>
+</html>
