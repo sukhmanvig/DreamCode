@@ -2,13 +2,15 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
-
+        <link rel="stylesheet" href="aboutstyle.css">
+        <title>About</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <header>
+            <!--
             <div class="divhead">
                 <a href="#" id="logo">Logo</a>
                 <a href="#">Home</a>
@@ -16,21 +18,37 @@
                 <a href="#">Contact</a>
                 <a href="#">Sign-in</a>
             </div>
+            -->
+            <nav>
+                <form action="index.html" method="POST"><input type="submit" class='logo' value= "LOGO"></form>
+                <div class="dropdown"><a>Username</a>
+                    <div class="dropdown-elements">
+                        <a href="profile.html">Profile</a>
+                        <a href="account-settings.html">Account Settings</a>
+                        <a href="feedback.html">Feedback</a>
+                        <a href="logout.html">Logout</a>
+                    </div>
+                </div>
+                <a href= 'contact.html'>Contact</a>
+                <a href= 'about.html'>About</a>
+                <a href= 'home.html'>Home</a>
+                <a href= 'dashboard.html'>Dashboard</a>
+            <hr>
+            </nav>
         </header>
 
         
         <div id="about-section">
             <h2>About The Project</h2>
             <div id="about">
-                <p>Test Paragraph Test Paragraph Test Paragraph Test Paragraph Test Paragraph Test ParagraphTest Paragraph Test Paragraph Test ParagraphTest Paragraph Test Paragraph Test ParagraphTest Paragraph Test Paragraph Test ParagraphTest Paragraph Test Paragraph Test Paragraph About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site About the Site</p>
+                <p>This website is a software development projecct for school by us, a team of Computer Science students studying at the University of Toronto Mississauga. Our goal is to build an educational resource that would teach an understanding of various computer science topics. The objective of the project is making coding and coding practices easier to understand and more welcoming to everyone regardless of prior knowledge to encourage more people to learn to code irrespective of their age or their experience in the field. One of our primary focusses is to provide a learning resource that introduces complex topics to a beginner programmer through means of a graphical representation in games. Some of these topics can include data structures like arrays, stacks, and trees. As well as algorithms like sorting, maximum flow, shortest path or as simple as following syntax rules, variable declaration, if conditions, and looping.</p>
                 <img src="images/test.jpg" alt="test image" width="300" height="300">
             </div>
             <img id="img2" src="images/test.jpg" alt="test image 2">
         </div>
         
-        
+        <!-- carousel -->
         <div id="carousel-section">
-            <!-- carousel test -->
             <div class="carousel-container">
                 <h2>The Developers</h2>  
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -109,7 +127,7 @@
                   </a>
                 </div>
               </div>
-            <!-- end carousel test -->
+            <!-- end carousel section-->
         </div>
         
     </body>
