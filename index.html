@@ -5,9 +5,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Landing Page</title>
+        <link rel="stylesheet" type="text/css" href="nav.css">
+        <title>Dream Team</title>
     </head>
     <body>
+        <!-- This is the top nav bar code -->
         <nav class="topnav">
             <div class="topnav">
                 <div class="signin">
@@ -16,19 +18,23 @@
                 <a href= 'contact.html'>Contact</a>
                 <a href= 'about.html'>About</a>
                 <a href= 'home.html'>Home</a>
+                <a href= 'dashboard.html'>Dashboard</a>
                 <div class="logo">
                     <a href='index.html'>LOGO</a>
                 </div>
             </div>
         </nav>
+        <!--The top nav bar ends here -->
         <div class="logoimg"><h1>LOGO</h1></div>
+
+        <!--This button is the same as the sign in link above-->
         <div class="signinbox">
             <p>some random test for now, this is just a place holder for now</p>
             <button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Start Learning</button>
         </div>
         <div id="id01" class="modal">
-
-            <form class="modal-content animate" action="/action_page.php" method="post">
+            
+            <form class="modal-content animate" action="dashboard.html" method="post">
          
               <div class="container">
                 <label for="uname"><b>Username</b></label>
@@ -61,6 +67,7 @@
               }
           }
           </script>
+          <!--This is for th scroll-to-top button-->
           <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
           <script>
             //Get the button
@@ -79,10 +86,13 @@
             
             // When the user clicks on the button, scroll to the top of the document
             function topFunction() {
+              /*    smooth scroll to top instead of jump*/
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
             }
             </script>
+            <!--The scroll-to-top button ends here-->
+            <!--This is the footer navbar-->
             <nav class="bottomnav">
                 <div>
                     <a href= 'contact.html'>Contact</a>
@@ -90,5 +100,6 @@
                     <a href= 'home.html'>Home</a>
                 </div>
             </nav>
+            <!--This is the footer navbar ends here-->
     </body>
 </html>
