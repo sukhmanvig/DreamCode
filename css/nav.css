@@ -1,4 +1,6 @@
 /* Nav bar general layout */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 nav {
 	position: relative;
 	background-color: rgb(127,255,212);
@@ -72,15 +74,23 @@ html {
 	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 	color: black;
 }
-.logo a {
+
+.logo {
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	margin: 0 30px;
+	padding: 11px 0;
 	float: left;
-	padding: 5px 50px 5px 50px;
-	margin: 10px 5px 5px 5px;
-	background-color: #ffffff;
 }
+
+.logo a {
+	padding:0;
+	margin: 0;
+	color: #0d659d;
+}
+
 .logo a:hover {
-	border-radius: 0;
-	border: 1px solid #000000;
+	color: #000;
 }
 
 #myBtn {
