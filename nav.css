@@ -10,7 +10,7 @@ nav {
 /*Make the scrolling smooth*/
 html {
     scroll-behavior: smooth;
-  }
+}
 
 
 .topnav {
@@ -32,12 +32,16 @@ html {
 	border-radius: 10px;
 	color: #000000;
 	background-color: #7fffd4;
+	text-decoration: none;
 }
 
 .bottomnav {
 	border-top: 1px solid #c7d8e7;
 	background-image: linear-gradient(to left, rgb(127,255,212), #c7d8e7);
 	height: 50px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
 }
 .bottomnav a {
 	bottom: 0;
@@ -99,4 +103,35 @@ html {
 	padding: 5px 15px 20px 15px;
 	border-radius: 10px;
 	border: inset;
-  }
+}
+/*Username dropdown list css*/
+.topnav .navbar-dropdown a {
+	margin: 7px 25px 10px 75px;
+	padding: 7.5px 0px 7.5px 0px;
+}
+.topnav .navbar-dropdown-elements {
+	overflow: hidden;
+	max-height: 0;
+	position: absolute;
+	right: 1%;
+	transition: max-height 0.7s ease;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+	padding: 35px 0px 0px;
+	margin: 5px 0px 0px 0px;
+	border: solid 1px rgba(0,0,0,0.2);
+	border-radius: 10px;
+
+}
+.topnav .navbar-dropdown-elements a {
+	display: block;
+	float: none;
+	text-decoration: none;
+	color: black;
+	padding: 10px 5px 0px;
+	text-align: right;
+	margin: 5px;
+}
+
+.topnav .navbar-dropdown:hover .navbar-dropdown-elements {
+	max-height: 250px;
+}
