@@ -25,7 +25,7 @@
   }
 </style>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="helloworld.js"></script>
+<script src="js/helloworld.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
@@ -67,29 +67,33 @@ function handleComplete(evt,comp) {
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 }
+function evaluateDemoCode(code, elem) {
+	if (code == "print(\"Hello World\")")
+		return true;
+	return false;
+}
 </script>
 <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
-
 	<nav class="topnav">
-				<div class="topnav">
-					<div class="navbar-dropdown"><a>Username</a>
-						<div class="navbar-dropdown-elements">
-								<a href="profile.html">Profile</a>
-								<a href="account-settings.html">Account Settings</a>
-								<a href="feedback.html">Feedback</a>
-								<a href="logout.html">Logout</a>
-						</div>
-					</div>
-					<a href= 'contact.html'>Contact</a>
-					<a href= 'about.html'>About</a>
-					<a href= 'home.html'>Home</a>
-					<a href= 'dashboard.html'>Dashboard</a>
-					<div class="logo">
-						<a href='index.html'>LOGO</a>
-					</div>
-				 </div>
+		<div class="topnav">
+			<div class="navbar-dropdown"><a>Username</a>
+				<div class="navbar-dropdown-elements">
+						<a href="profile.html">Profile</a>
+						<a href="account-settings.html">Account Settings</a>
+						<a href="feedback.html">Feedback</a>
+						<a href="logout.html">Logout</a>
+				</div>
+			</div>
+			<a href= 'contact.html'>Contact</a>
+			<a href= 'about.html'>About</a>
+			<a href= 'home.html'>Home</a>
+			<a href= 'dashboard.html'>Dashboard</a>
+			<div class="logo">
+				<a href='index.html'>LOGO</a>
+			</div>
+		 </div>
 	</nav>
 	
 	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1280px; height:720px">
