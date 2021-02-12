@@ -962,7 +962,7 @@ if (reversed == null) { reversed = false; }
 		this.returnHomeBtn.addEventListener("click", fl_ClickToGoToWebPage);
 		
 		function fl_ClickToGoToWebPage() {
-			window.open("navbar-signed-in.html", "_blank");
+			window.open("dashboard.html", "_blank");
 		}
 	}
 
