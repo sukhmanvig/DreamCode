@@ -5,7 +5,8 @@ nav {
 	display: block;
 	width: 100%;
 	background-image: linear-gradient(to right, rgb(127,255,212), #c7d8e7);
-	
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;	
 }
 /*Make the scrolling smooth*/
 html {
