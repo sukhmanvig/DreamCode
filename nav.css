@@ -1,4 +1,4 @@
-/* Nav bar general layout */
+/* Nav bar general layout  */
 nav {
 	position: relative;
 	background-color: rgb(127,255,212);
@@ -11,13 +11,11 @@ html {
     scroll-behavior: smooth;
   }
 
-
 .topnav {
     top: 0;
     left: 0;
 	border-bottom: 1px solid #c7d8e7;
 	height: 50px;
-
 }
 
 .topnav a {
