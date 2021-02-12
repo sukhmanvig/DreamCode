@@ -1,26 +1,6 @@
 body {
 	margin: 0px;
-	font: 15px verdana;
 	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
-}
-nav {
-	background-image: linear-gradient(to right, #6bcae2, rgb(248, 248, 255));
-
-}
-nav a {
-	float: right;
-	padding: 11px 7.5px 11px 7.5px;
-	text-decoration: none;
-	transition: background-color 0.1s ease, color 0.1s ease;
-	color: black;
-}
-nav > a:hover {
-	background-color: #0d659d;
-	color: white;
-}
-.dropdown a {
-	margin: 0px 25px 10px 75px;
-	padding: 10px 0px 0px;
 }
 #content {
 	margin: 0px 60px 10px 65px;
@@ -31,38 +11,6 @@ nav > a:hover {
 	border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 5px;
 
-}
-.logo {
-	float: left;
-	width: 7.5%;
-	padding: 5px;
-	margin: 5px;
-}
-.dropdown-elements {
-	overflow: hidden;
-	max-height: 0;
-	position: absolute;
-	right: 1%;
-	transition: max-height 0.7s ease;
-	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-	padding: 35px 0px 0px;
-	margin: 0px;
-	border: solid 1px rgba(0,0,0,0.2);
-	border-radius: 10px;
-
-}
-.dropdown-elements a {
-	display: block;
-	float: none;
-	text-decoration: none;
-	color: black;
-	padding: 10px 5px 0px;
-	text-align: right;
-	margin: 5px;
-}
-
-.dropdown:hover .dropdown-elements {
-	max-height: 100%;
 }
 hr {
 	width: 100%;
@@ -124,14 +72,14 @@ h1 {
 	overflow: hidden;
 	opacity: 0;
 	max-height: 0;
-  z-index: 1;
+  	z-index: 1;
 	padding: 5px 50px 5px 5px;
 	margin: 5px;
-  position: absolute;
+  	position: absolute;
 	right: 3%;
 	transition: opacity 0.5s ease-out, max-height 0.3s ease;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-  border: solid 1px rgba(0,0,0,0.2);
+  	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+  	border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
 #content .dropdown-elements a {
