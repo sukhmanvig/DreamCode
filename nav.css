@@ -1,16 +1,26 @@
+<<<<<<< HEAD
 /* Nav bar general layout  */
+=======
+/* Nav bar general layout */
+>>>>>>> 4679e872361e16cdeee4a5edb7e4a610c9a41a11
 nav {
 	position: relative;
 	background-color: rgb(127,255,212);
 	display: block;
 	width: 100%;
 	background-image: linear-gradient(to right, rgb(127,255,212), #c7d8e7);
+<<<<<<< HEAD
+=======
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;	
+>>>>>>> 4679e872361e16cdeee4a5edb7e4a610c9a41a11
 }
 /*Make the scrolling smooth*/
 html {
     scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
 .topnav {
     top: 0;
     left: 0;
@@ -19,6 +29,17 @@ html {
 }
 
 .topnav a {
+=======
+
+.topnav {
+	border-bottom: 1px solid #c7d8e7;
+	height: 50px;
+
+}
+
+.topnav a {
+	top: 0;
+>>>>>>> 4679e872361e16cdeee4a5edb7e4a610c9a41a11
 	float: right;
 	padding: 5px 5px 5px 5px;
 	margin: 13px 5px 5px 5px;
@@ -34,9 +55,12 @@ html {
 }
 
 .bottomnav {
+<<<<<<< HEAD
     position: fixed;
     left: 0;
     bottom: 0;
+=======
+>>>>>>> 4679e872361e16cdeee4a5edb7e4a610c9a41a11
 	border-top: 1px solid #c7d8e7;
 	background-image: linear-gradient(to left, rgb(127,255,212), #c7d8e7);
 	height: 50px;
@@ -45,7 +69,11 @@ html {
 	bottom: 0;
 }
 .bottomnav a {
+<<<<<<< HEAD
 	
+=======
+	bottom: 0;
+>>>>>>> 4679e872361e16cdeee4a5edb7e4a610c9a41a11
 	float: left;
 	padding: 5px 5px 5px 5px;
 	margin: 13px 5px 5px 5px;
@@ -109,6 +137,10 @@ html {
 .topnav .navbar-dropdown a {
 	margin: 7px 25px 10px 75px;
 	padding: 7.5px 0px 7.5px 0px;
+<<<<<<< HEAD
+=======
+	background-color: transparent;
+>>>>>>> 4679e872361e16cdeee4a5edb7e4a610c9a41a11
 }
 .topnav .navbar-dropdown-elements {
 	overflow: hidden;
