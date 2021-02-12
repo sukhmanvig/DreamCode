@@ -42,7 +42,7 @@ body {
     z-index: 3;
     margin-right: 11%;
     margin-top: -15%;
-    background-image: url("Missing_avatar.svg"); 
+    background-image: url("../images/Missing_avatar.svg"); 
     background-size: contain;
   }
 
