@@ -51,7 +51,8 @@ function handleComplete(evt,comp) {
 		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 	}
 	exportRoot = new lib.helloworld();
-	stage = new lib.Stage(canvas);	
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
@@ -65,46 +66,8 @@ function handleComplete(evt,comp) {
 }
 </script>
 <!-- write your code here -->
-<style>
-
-	
-	.temp-nav {
-		width: 100%;
-		height: 50px;
-		background-image: linear-gradient(to bottom, grey, white)
-	}
-	
-	.temp-nav * {
-		font-family: "Arial";
-	}
-	
-	.temp-logo {
-		float: left;
-		margin: 16px 30px;
-	}
-	
-	.temp-ul {
-		float: right;
-		list-style-type: none;
-		padding: 0;
-		margin: 16px 30px;
-	}
-	
-	.temp-ul li {
-		display: inline;
-	}
-</style>
 </head>
 <body onload="init();" style="margin:0px;">
-	<nav class="temp-nav">
-		<div class="temp-logo">DreamTeam</div>
-		<ul class="temp-ul">
-			<a><li>Home</li></a>
-			<a><li>About</li></a>
-			<a><li>Contact</li></a>
-			<a><li>Sign In</li></a>
-		</ul>
-	</nav>
 	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1280px; height:720px">
 		<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">

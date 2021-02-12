@@ -3,8 +3,8 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"helloworld_atlas_1", frames: [[1702,0,257,102],[0,1492,813,145],[1702,104,257,102],[815,1492,807,139],[1702,208,239,94],[1270,398,755,135],[1270,752,239,94],[1270,535,749,129],[1270,666,629,84],[0,1092,1270,398],[1270,0,430,396],[0,0,1268,1090]]},
-		{name:"helloworld_atlas_2", frames: [[0,0,1268,1090]]}
+		{name:"helloworld_atlas_1", frames: [[0,0,1268,1090]]},
+		{name:"helloworld_atlas_2", frames: [[1702,0,257,102],[0,1492,813,145],[1702,104,257,102],[815,1492,807,139],[1702,208,239,94],[1270,398,755,135],[1270,752,239,94],[1270,535,749,129],[1270,666,629,84],[0,1092,1270,398],[1270,0,430,396],[0,0,1268,1090]]}
 ];
 
 
@@ -29,91 +29,91 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_9 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(0);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_90 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(1);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_7 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(2);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_89 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(3);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_22 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(4);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_84 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(5);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_11 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(6);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_83 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(7);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_76 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(8);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_63 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
-	this.gotoAndStop(9);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_62 = function() {
 	this.initialize(ss["helloworld_atlas_2"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_78 = function() {
+(lib.CachedBmp_90 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_7 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(2);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_89 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(3);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_22 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(4);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_84 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(5);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_11 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(6);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_83 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(7);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_76 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(8);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_63 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
+	this.gotoAndStop(9);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_62 = function() {
 	this.initialize(ss["helloworld_atlas_1"]);
+	this.gotoAndStop(0);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_93 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
 	this.gotoAndStop(10);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_77 = function() {
-	this.initialize(ss["helloworld_atlas_1"]);
+(lib.CachedBmp_92 = function() {
+	this.initialize(ss["helloworld_atlas_2"]);
 	this.gotoAndStop(11);
 }).prototype = p = new cjs.Sprite();
 
@@ -458,6 +458,41 @@ if (reversed == null) { reversed = false; }
 p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,26.9,26.9);
 
 
+(lib.continueBtn = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.text = new cjs.Text("continue", "16px 'Consolas'", "#FFFFFF");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 21;
+	this.text.lineWidth = 93;
+	this.text.parent = this;
+	this.text.setTransform(117.45,10.6);
+
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#FFFFFF").ss(3,1,1).p("A6FlbMA0LAAAQCQAABmBmQBmBmAACPIAAAAQAACQhmBmQhmBmiQAAMg0LAAAQiQAAhmhmQhmhmAAiQIAAAAQAAiPBmhmQBmhmCQAAg");
+	this.shape.setTransform(116.2603,20.0324,0.5761,0.5761);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.lf(["#7A4E9B","#7A4E9B","#7A4E9B","#7A4E9B","#2E2D6C"],[0,0,0,0,1],-201.7,0,201.8,0).s().p("A6FFcQiQAAhmhmQhmhmAAiQIAAAAQAAiPBmhmQBmhmCQAAMA0LAAAQCQAABmBmQBmBmAACPIAAAAQAACQhmBmQhmBmiQAAg");
+	this.shape_1.setTransform(116.2603,20.0324,0.5761,0.5761);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.text}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,235.5,43.1);
+
+
 (lib.confirmNameBtn = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -572,7 +607,7 @@ if (reversed == null) { reversed = false; }
 	this.machineBtn1.setTransform(338.6,74.15,1,1,0,0,0,12,12);
 	new cjs.ButtonHelper(this.machineBtn1, 0, 1, 1);
 
-	this.instance = new lib.CachedBmp_78();
+	this.instance = new lib.CachedBmp_93();
 	this.instance.setTransform(386.05,134.65,0.5,0.5);
 
 	this.machineLever = new lib.lever();
@@ -583,7 +618,7 @@ if (reversed == null) { reversed = false; }
 	this.machineScreen.name = "machineScreen";
 	this.machineScreen.setTransform(23.15,43.8,1,1.0037,0,4.9344,0);
 
-	this.instance_1 = new lib.CachedBmp_77();
+	this.instance_1 = new lib.CachedBmp_92();
 	this.instance_1.setTransform(-153.85,0,0.5,0.5);
 
 	this.instance_2 = new lib.CachedBmp_63();
@@ -637,8 +672,11 @@ if (reversed == null) { reversed = false; }
 		this.confirmNameBtn.visible = false;
 		
 		this.userInput.visible = false;
-		// store this info from user
 		
+		
+		this.continueBtn.visible = false;
+		
+		// store this info from user
 		var isFirstTime;
 		var playerName;
 		
@@ -659,8 +697,7 @@ if (reversed == null) { reversed = false; }
 		this.yesBtn.addEventListener("click", function() {isFirstTimeCoding("yes")});
 		this.noBtn.addEventListener("click", function() {isFirstTimeCoding("no")});
 		
-		
-		
+		// ======================= First Time Learning Python? =======================
 		
 		function isFirstTimeCoding(x) {
 			let ans = true
@@ -678,7 +715,7 @@ if (reversed == null) { reversed = false; }
 			askName()
 		}
 		
-		
+		// ======================= Ask Player Flow =======================
 		function askName() {
 			root.nameInput.visible = true	
 			root.promptName.visible = true;
@@ -710,24 +747,64 @@ if (reversed == null) { reversed = false; }
 		
 		function confirmName(){
 				
-			root.nameInput.visible = false
+			root.nameInput.visible = !root.nameInput.visible;
+			
 			root.promptName.visible = false
 			root.confirmNameBtn.visible = false
 			
 			root.screenText.text = "Ok!\n\n" + msglist[3]
+		
 			
-			playHelloWorld()
+			// remove from screen
+			let inp = document.getElementById("nameInput")
+			inp.style.display = "none";
+			
+			setTimeout(playHelloWorld, 3000);
 		}
 		
+		// ======================= Hello World Flow =======================
 		function playHelloWorld() {
-			root.screenText.text = msglist[4] + "\n\n" + msglist[5] +
-			"\n\n" + 'print("Hey '+ playerName + '!")'
+			root.screenText.text = msglist[4] + "\n\n" + msglist[5] + "\n\n" + 'print("Hey '+ playerName + '!")'
 			
-			setTimeout(function(){
-				this.userInput.visible = true;
-				}, 3000);
+			root.continueBtn.visible = true
+		}
+		
+		this.continueBtn.addEventListener("click", clickContinue.bind(this));
+		function clickContinue()
+		{
+			root.screenText.text = 'Your turn!\n\nMake\n"Hello World!"\nprint to the screen.'
+			root.userInput.visible = true
+			root.continueBtn.visible = false
+		}
+		
+		if(!this.userInput_change_cbk) {
+			function userInput_change(evt) {
+		
+				checkUserInput(evt.target.value)
+			}
+			$("#dom_overlay_container").on("change", "#userInput", userInput_change.bind(this));
+			this.userInput_change_cbk = true;
+		}
+		
+		function checkUserInput(inp){
+			
+			// remove input spaces, make all lowercase
+			var replaceInp = inp.replace(/\s/g, "")
+			replaceInp = replaceInp.toLowerCase()
+			
+			if (replaceInp == 'print("helloworld!")' || replaceInp == "print('helloworld!')") {
+				console.log("hello world passed")
+				root.screenText.text = "Hello World!"
 				
-			root.screenText.text = msglist[4]
+				let userInp = document.getElementById("userInput")
+				userInp.style.display = "none";
+				setTimeout(function() { root.screenText.text += "\n\nYou did it! Great job!"}, 3000);
+				
+			} else {
+				console.log("try again!")
+				root.screenFeedback.text = "Not quite! Try again!"
+				setTimeout(function() { root.screenFeedback.text = ""}, 3000);
+			}
 		}
 	}
 
@@ -735,12 +812,25 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// helloworld
+	this.screenFeedback = new cjs.Text("", "16px 'Consolas'", "#7A4E9B");
+	this.screenFeedback.name = "screenFeedback";
+	this.screenFeedback.textAlign = "center";
+	this.screenFeedback.lineHeight = 21;
+	this.screenFeedback.lineWidth = 377;
+	this.screenFeedback.parent = this;
+	this.screenFeedback.setTransform(330.05,373.65);
+
+	this.continueBtn = new lib.continueBtn();
+	this.continueBtn.name = "continueBtn";
+	this.continueBtn.setTransform(1150.95,690.05,1,1,0,0,0,116.2,20);
+	new cjs.ButtonHelper(this.continueBtn, 0, 1, 1);
+
 	this.userInput = new lib.an_TextInput({'id': 'userInput', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
 	this.userInput.name = "userInput";
 	this.userInput.setTransform(330.15,565.35,3.0396,3.0396,0,0,0,50.1,11.2);
 
-	this.timeline.addTween(cjs.Tween.get(this.userInput).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.userInput},{t:this.continueBtn},{t:this.screenFeedback}]}).wait(1));
 
 	// askforname
 	this.nameInput = new lib.an_TextInput({'id': 'nameInput', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
@@ -821,12 +911,12 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/CachedBmp_91.png?1613083921049", id:"CachedBmp_91"},
-		{src:"images/helloworld_atlas_1.png?1613083920981", id:"helloworld_atlas_1"},
-		{src:"images/helloworld_atlas_2.png?1613083920981", id:"helloworld_atlas_2"},
-		{src:"https://code.jquery.com/jquery-3.4.1.min.js?1613083921049", id:"lib/jquery-3.4.1.min.js"},
-		{src:"components/sdk/anwidget.js?1613083921049", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1613083921049", id:"an.TextInput"}
+		{src:"images/CachedBmp_91.png?1613091002022", id:"CachedBmp_91"},
+		{src:"images/helloworld_atlas_1.png?1613091001902", id:"helloworld_atlas_1"},
+		{src:"images/helloworld_atlas_2.png?1613091001902", id:"helloworld_atlas_2"},
+		{src:"https://code.jquery.com/jquery-3.4.1.min.js?1613091002022", id:"lib/jquery-3.4.1.min.js"},
+		{src:"components/sdk/anwidget.js?1613091002022", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1613091002022", id:"an.TextInput"}
 	],
 	preloads: []
 };
