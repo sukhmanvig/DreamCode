@@ -13,6 +13,8 @@
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <title>helloworld</title>
 <!-- write your code here -->
+
+<link rel="stylesheet" href="nav.css">
 <style>
   #animation_container {
 	position:absolute;
@@ -68,8 +70,29 @@ function handleComplete(evt,comp) {
 <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
+
+	<nav class="topnav">
+				<div class="topnav">
+					<div class="navbar-dropdown"><a>Username</a>
+						<div class="navbar-dropdown-elements">
+								<a href="profile.html">Profile</a>
+								<a href="account-settings.html">Account Settings</a>
+								<a href="feedback.html">Feedback</a>
+								<a href="logout.html">Logout</a>
+						</div>
+					</div>
+					<a href= 'contact.html'>Contact</a>
+					<a href= 'about.html'>About</a>
+					<a href= 'home.html'>Home</a>
+					<a href= 'dashboard.html'>Dashboard</a>
+					<div class="logo">
+						<a href='index.html'>LOGO</a>
+					</div>
+				 </div>
+	</nav>
+	
 	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1280px; height:720px">
-		<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<canvas id="canvas" width="1280" height="720" style="display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
 	</div>
