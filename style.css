@@ -1,27 +1,6 @@
 body {
 	margin: 0px;
-	font: 15px verdana;
 	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
-}
-nav {
-	background-image: linear-gradient(to right, #6bcae2, rgb(248, 248, 255));
-
-}
-nav a {
-	float: right;
-	padding: 16px 15px 16px 15px;
-	text-decoration: none;
-	transition: background-color 0.1s ease, color 0.1s ease;
-	color: black;
-}
-nav > a:hover {
-	background-color: #0d659d;
-	text-decoration: none;
-	color: white;
-}
-.navbar-dropdown a {
-	margin: 7px 25px 10px 75px;
-	padding: 7.5px 0px 7.5px 0px;
 }
 #content {
 	margin: 0px 60px 10px 65px;
@@ -32,38 +11,6 @@ nav > a:hover {
 	border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 5px;
 
-}
-.logo {
-	float: left;
-	width: 7.5%;
-	padding: 10px;
-	margin: 5px 5px 5px 5px;
-}
-.navbar-dropdown-elements {
-	overflow: hidden;
-	max-height: 0;
-	position: absolute;
-	right: 1%;
-	transition: max-height 0.7s ease;
-	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-	padding: 35px 0px 0px;
-	margin: 5px 0px 0px 0px;
-	border: solid 1px rgba(0,0,0,0.2);
-	border-radius: 10px;
-
-}
-.navbar-dropdown-elements a {
-	display: block;
-	float: none;
-	text-decoration: none;
-	color: black;
-	padding: 10px 5px 0px;
-	text-align: right;
-	margin: 5px;
-}
-
-.navbar-dropdown:hover .navbar-dropdown-elements {
-	max-height: 100%;
 }
 hr {
 	width: 100%;
