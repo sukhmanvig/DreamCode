@@ -2,10 +2,31 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="setting-styles.css">
-        <script src="setting-anim.js"></script>
+        <link rel="stylesheet" href="css/setting-styles.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <script src="js/setting-anim.js"></script>
     </head>
     <body>
+        <nav class="topnav">
+            <div class="topnav">
+            	<div class="navbar-dropdown"><a>Username</a>
+                	<div class="navbar-dropdown-elements">
+                    		<a href="profile.html">Profile</a>
+                    		<a href="account-settings.html">Account Settings</a>
+                    		<a href="feedback.html">Feedback</a>
+                    		<a href="logout.html">Logout</a>
+                	</div>
+            	</div>
+            	<a href= 'contact.html'>Contact</a>
+            	<a href= 'about.html'>About</a>
+            	<a href= 'home.html'>Home</a>
+            	<a href= 'dashboard.html'>Dashboard</a>
+            	<div class="logo">
+                    <a href='index.html'>LOGO</a>
+            	</div>
+    	     </div>
+        </nav>
+
         <div class="container-1140">
         <div class="tab">
             <button class="tablinks" onclick="openLink(event, 'general')" id="defaultOpen">General Settings</button>
@@ -18,7 +39,7 @@
             <p> MEMBER SINCE MM/DD/YYYY</p>
         </div>
         <div id="general" class="tabcontent">
-            <div id="circle"></div>
+            <div attribution= "Peter Southwood, CC0, via Wikimedia Commons" id="circle"></div>
             <div class="col-md-6 half">
                 <ul class="setting-list">
                     <li>USERNAME:</li><p>username</p><br>
