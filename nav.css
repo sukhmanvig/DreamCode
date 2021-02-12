@@ -108,6 +108,7 @@ html {
 .topnav .navbar-dropdown a {
 	margin: 7px 25px 10px 75px;
 	padding: 7.5px 0px 7.5px 0px;
+	background-color: transparent;
 }
 .topnav .navbar-dropdown-elements {
 	overflow: hidden;
