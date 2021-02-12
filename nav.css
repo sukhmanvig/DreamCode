@@ -5,6 +5,8 @@ nav {
 	display: block;
 	width: 100%;
 	background-image: linear-gradient(to right, rgb(127,255,212), #c7d8e7);
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
 }
 /*Make the scrolling smooth*/
 html {
@@ -12,13 +14,13 @@ html {
 }
 
 .topnav {
-    top: 0;
-    left: 0;
 	border-bottom: 1px solid #c7d8e7;
 	height: 50px;
+
 }
 
 .topnav a {
+	top: 0;
 	float: right;
 	padding: 5px 5px 5px 5px;
 	margin: 13px 5px 5px 5px;
@@ -34,9 +36,9 @@ html {
 }
 
 .bottomnav {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    	position: fixed;
+   	left: 0;
+   	bottom: 0;
 	border-top: 1px solid #c7d8e7;
 	background-image: linear-gradient(to left, rgb(127,255,212), #c7d8e7);
 	height: 50px;
@@ -45,7 +47,7 @@ html {
 	bottom: 0;
 }
 .bottomnav a {
-	
+	bottom: 0;
 	float: left;
 	padding: 5px 5px 5px 5px;
 	margin: 13px 5px 5px 5px;
@@ -109,6 +111,7 @@ html {
 .topnav .navbar-dropdown a {
 	margin: 7px 25px 10px 75px;
 	padding: 7.5px 0px 7.5px 0px;
+	background-color: transparent;
 }
 .topnav .navbar-dropdown-elements {
 	overflow: hidden;
