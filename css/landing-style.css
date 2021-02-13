@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
 	background-color: white;
@@ -10,13 +10,22 @@ body {
 
 
 .logoimg h1 {
-	text-align: center;
+	text-align: left;
 	position: relative;
-	width: 150px;
-  	height: 40px;
+	width: 300px;
 	left: 10%;
-	top: 200px;
-	border: 1px solid #000000;
+	top: 250px;
+	
+	
+	margin: 0;
+	background: linear-gradient(to bottom, #6bcae2, #0d659d);
+	font-family: 'Lobster', cursive;
+	font-size: 50px;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	
 }
 
 /* Full-width input fields */
