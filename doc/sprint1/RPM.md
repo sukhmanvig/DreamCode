@@ -15,7 +15,7 @@ The release plan for the application is to develop 1 or 2 major features per spr
 Our release plan incrementally develops the following epics:
 
 * Users can practice various computer science topics by playing games that represent the underlying data structures and algorithms.
-* Users can customize the appearance of their dashbaord page, see their gameplay statistics, and track their own and other's progress on leaderboard's by creating an account.
+* Users can customize the appearance of their dashboard page, see their gameplay statistics, and track their own and other's progress on leaderboard's by creating an account.
 
 ## Sprint Goals
 
@@ -24,7 +24,7 @@ An overview of possible sprint goals is outlined below.
 * Sprint 1 - Implement core website UI and introductory game.
 * Sprint 2 - Implement learning topic for stacks and queues data structure. Implement learning topic for arrays and dictionaries.
 * Sprint 3 - Implement learning topic for if-logic, add educational code snippets for all learning categories.
-* Sprint 4 - Implement account functions and supporting auxillary features.
+* Sprint 4 - Implement account functions and supporting auxilary features.
 
 ## Completion Date
 
