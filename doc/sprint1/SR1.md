@@ -23,7 +23,7 @@ Meeting Schedule for Feb 12th, 2021
 - To avoid merging conflicts we will try to do a mini release a few days before the due date, so integrating things will be easier.
 
 ----Best experience----
-Seeing all the cool stuff the team developed was exciting. Found Found it satisfying to see our website coming together
+Seeing all the cool stuff the team developed was exciting. Found it satisfying to see our website coming together.
 
 ----Worst experience----
 Time  wasted and spent on debugging.
