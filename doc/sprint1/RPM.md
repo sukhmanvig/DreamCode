@@ -15,7 +15,7 @@ The release plan for the application is to develop 1 or 2 major features per spr
 Our release plan incrementally develops the following epics:
 
 * Users can practice various computer science topics by playing games that represent the underlying data structures and algorithms.
-* Users can customize the appearance of their dashboard page, see their gameplay statistics, and track their own and other's progress on leaderboard's by creating an account.
+* Users can customize the appearance of their dashboard page, see their gameplay statistics, and track their own and other's progress on leaderboards by creating an account.
 
 ## Sprint Goals
 
