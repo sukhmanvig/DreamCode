@@ -8,10 +8,7 @@ nav {
 	width: 100%;
 	background-image: linear-gradient(to right, rgb(127,255,212), #c7d8e7);
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	
-	margin: 0;
-	padding: 0
+	font-size: 14px;	
 }
 /*Make the scrolling smooth*/
 html {
@@ -79,26 +76,22 @@ html {
 }
 
 .logo {
-	margin: 2px 30px;
 	font-family: 'Lobster', cursive;
-	float: left;
 	font-size: 20px;
-	padding: 0;
-}
-/*
-.logo a {
+	margin: 0 30px;
+	padding: 11px 0;
 	float: left;
-	padding: 5px 50px 5px 50px;
-	margin: 10px 5px 5px 5px;
-	background-color: #ffffff;
 }
-*/
-/*
+
+.logo a {
+	padding:0;
+	margin: 0;
+	color: #0d659d;
+}
+
 .logo a:hover {
-	border-radius: 0;
-	border: 1px solid #000000;
+	color: #000;
 }
-*/
 
 #myBtn {
 	/*    smooth scroll to top instead of jump*/
