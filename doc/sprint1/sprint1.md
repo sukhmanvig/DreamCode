@@ -25,6 +25,10 @@ Accomplishing this goal will give us a structured base for each of our game idea
 
 Our spike for this sprint is that the team’s members need some time to get familiar with javascript and Vue. So in addition to developing the basic website pages, the team will be exploring Javascript and Vue in Sprint 1 so we can begin full game development in Sprint 2. We have chosen this as a spike because the team has other workloads over the Sprint 1 time period, and we felt there is not enough capacity to accommodate our more complicated features.
 
+<hr>
+
+### Record of chat from discord, ideas were elaborated in voice chat:
+
 <pre>
 
 Akeem02/06/2021
