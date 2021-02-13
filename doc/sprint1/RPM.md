@@ -4,9 +4,9 @@
 
 ## Major Release Goal
 
-We aim to deliver a website that teaches computer science concepts. The main learning topics include stacks/queues, arrays/dictionaries, and if-logic. The end product will teach these concepts in visual ways using games to represent the underlying computer science ideas.
+We aim to deliver a website that teaches computer science concepts. The main learning topics include stacks/queues, arrays/dictionaries, and if-logic. The end product will teach these concepts in visual ways using games to represent the underlying computer science ideas based on the uase stories listed.
 
-In developing the project, we are prioritizing the features involving the games and providing learning topics.
+In developing the project, we are prioritizing the features involving the games and providing learning topics. We will also provide a convenient, customizable, an easy-to-understand user interface as noted on the user stories.
 
 ## Release Plan
 
