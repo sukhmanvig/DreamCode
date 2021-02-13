@@ -1,4 +1,6 @@
 /* Nav bar general layout */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 nav {
 	position: relative;
 	background-color: rgb(127,255,212);
@@ -6,18 +8,23 @@ nav {
 	width: 100%;
 	background-image: linear-gradient(to right, rgb(127,255,212), #c7d8e7);
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;	
+	font-size: 14px;
+	
+	margin: 0;
+	padding: 0
 }
 /*Make the scrolling smooth*/
 html {
     scroll-behavior: smooth;
 }
+
+
 .topnav {
-    	top: 0;
-    	left: 0;
 	border-bottom: 1px solid #c7d8e7;
 	height: 50px;
+
 }
+
 .topnav a {
 	top: 0;
 	float: right;
@@ -35,15 +42,12 @@ html {
 }
 
 .bottomnav {
+	border-top: 1px solid #c7d8e7;
+	background-image: linear-gradient(to left, rgb(127,255,212), #c7d8e7);
+	height: 50px;
 	position: fixed;
-    	left: 0;
-    	bottom: 0;
-    	border-top: 1px solid #c7d8e7;
-    	background-image: linear-gradient(to left, rgb(127,255,212), #c7d8e7);
-    	height: 50px;
-    	position: fixed;
-    	left: 0;
-    	bottom: 0;
+	left: 0;
+	bottom: 0;
 }
 .bottomnav a {
 	bottom: 0;
@@ -73,16 +77,28 @@ html {
 	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 	color: black;
 }
+
+.logo {
+	margin: 2px 30px;
+	font-family: 'Lobster', cursive;
+	float: left;
+	font-size: 20px;
+	padding: 0;
+}
+/*
 .logo a {
 	float: left;
 	padding: 5px 50px 5px 50px;
 	margin: 10px 5px 5px 5px;
 	background-color: #ffffff;
 }
+*/
+/*
 .logo a:hover {
 	border-radius: 0;
 	border: 1px solid #000000;
 }
+*/
 
 #myBtn {
 	/*    smooth scroll to top instead of jump*/
