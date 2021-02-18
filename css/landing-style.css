@@ -67,6 +67,12 @@ button:hover {
 	padding: 10px 10px ;
 	background-color: #f44336;
   }
+.signupbtn {
+	width: auto;
+	float: right;
+	padding: 10px 10px ;
+	background-color: green;
+}
 
 .container {
 	padding: 16px;
