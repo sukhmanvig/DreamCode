@@ -132,23 +132,40 @@ section {
 	background: #ffffff90;
 }
 
+
+.profile-div-left {
+	flex-basis: 25%;
+	display: flex;
+	margin-right: 25px;
+}
+.profile-div-right {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 25%;
+	margin-left: 10px;
+	width: 100%;
+}
+
+
+.pf-sec {
+	width: 100%;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0px 5px 5px var(--colscheme2);
+}
+.sec-friends {
+	
+	
+}
 .sec2 {
 	flex-basis: 30%;
 	
 }
-.div-badges {
-	flex-basis: 70%;
+.sec-badges {
 	display: flex;
 	flex-wrap: wrap;
-	
-	margin: 25px 0;
-	box-shadow: 0px 5px 5px var(--colscheme2);
-	border-radius: 20px;
-	
-
+	margin-bottom: 25px;
 	padding-bottom: 20px;
-	overflow: hidden;
-
 }
 
 .ubadge {
@@ -181,17 +198,9 @@ section {
 	transform: scale(1.1);
 }
 
-.most-played {
+.sec-most-played {
 	display: flex;
-
-	flex-basis: 70%;
 	flex-wrap: wrap;
-	margin: 25px 0;
-	padding-bottom: 30px;
-	
-	border-radius: 20px;
-	box-shadow: 0px 5px 5px var(--colscheme2);
-	overflow: hidden;
 }
 
 .game {
@@ -217,7 +226,37 @@ section {
 	box-shadow: 0px 5px 5px var(--colscheme3);	
 }
 
+.frn {
+	height: 70px;
+	background: #FFFFFF90;
+	padding: 0 10px;
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	transition: all 0.1s ease-out;
+	position: relative;
+}
 
+.frn:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	box-shadow: 0px 5px 5px var(--colscheme3);
+	
+}
+.frn:nth-child(even) {
+	background:#6DA7E550;
+}
+.frn-img {
+	background: #FFFFFF90;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin: auto 5px;
+}
+
+.frn h5 {
+	margin: auto;
+}
 h4 {
 	flex-basis: 100%;
 	padding: 20px;
