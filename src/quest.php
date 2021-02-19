@@ -10,7 +10,7 @@ class Quest {
     }
 	
 	public function gotoview($guess){
-		
+		// Add front end code here via view.
 	}
 }
 ?>
