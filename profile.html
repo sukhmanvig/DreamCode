@@ -32,22 +32,30 @@
 	
 		<div class="profile-content">
 			<section class="p-head">
-			<div id="user-pfp">
-				<img src="https://www.thispersondoesnotexist.com/image">
-			</div>
-			<div id="user-infosec">
-			<h1 id="name-title">Username</h1>
-			<p>LEADERBOARD RANKING</p>
-			<p>#000000000000000000</p>
-			<p>LEVEL 3</p>
-			
-			<p>XP</p>
-			</div>
-			<div id="circle-stats">
-				<div id="circle-level">
-					<h3>LEVEL #0</h3>
+				<div id="user-pfp">
+					<img src="https://www.thispersondoesnotexist.com/image">
 				</div>
-			</div>
+				<div id="user-infosec">
+					<h1 id="name-title">Username</h1>
+					<p>LEADERBOARD RANKING</p>
+					<p>#000000000000000000</p>
+					<p>LEVEL</p>
+
+					<p>XP</p>
+				</div>
+				
+				<div id="circle-stats" title="XP">					
+					<svg>
+						<circle class="circle-xp" cx="125" cy="125" r="100"></circle>
+					</svg>
+					
+					<div class="div-lvl">
+						<div>
+							<h3>Level 0</h3>
+						</div>	
+					</div>
+				</div>
+
 			</section>
 			
 			<div class="profile-div-left">
@@ -122,5 +130,8 @@
 	<footer>
 		<p>Footer is displayed in this section</p>
 	</footer>
+	
+	<script src="js/profile.js"></script>
 </body>
+	
 </html>
