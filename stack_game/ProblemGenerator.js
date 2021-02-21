@@ -18,15 +18,16 @@ export default class ProblemGenerator {
 
     generateGoal(problem) {
         // create a permutation of problem to act as the goal
-        var goal = [];
+        var goal = [...problem];
         var i = goal.length;
 
-        swapRandom = function(arr, i, j) {
-            temp = arr[i];
+        let swapRandom = function(arr, i, j) {
+            var temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
         }
-
+        
+        var r1, r2;
         while (i !== 0) {
             r1 = Math.floor(Math.random() * goal.length);
             r2 = Math.floor(Math.random() * goal.length);

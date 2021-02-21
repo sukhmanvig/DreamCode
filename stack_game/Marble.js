@@ -12,4 +12,8 @@ export default class Marble {
     getLetter() {
         return this.letter;
     }
+
+    equals(other) {
+        return (this.colour == other.colour) && (this.letter == other.letter);
+    }
 }
