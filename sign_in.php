@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <body>
-        yes
         <?php
-        
+            echo "checking"
         
             // define variables and set to empty values
             $name = $email = $gender = $comment = $website = "";
