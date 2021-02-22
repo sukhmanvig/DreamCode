@@ -31,7 +31,7 @@ for (i; i<marbs.length; i++) {
 
 
 let pg = new ProblemGenerator(marbs)
-let prob = pg.generateProblem(5);
+let prob = pg.generateProblem(3);
 
 console.log("Printing Problem:");
 console.log(prob);
@@ -57,10 +57,39 @@ console.log("-----------");
 console.log("Testing Model");
 
 let model = new Model(prob, goal, 2);
+console.log(JSON.stringify(model));
+
+console.log("test marble equality");
 console.log(x == xx);
 console.log(x === xx);
 console.log(x.equals(xx));
 console.log(x.equals(y));
+
+console.log("Test isWon");
+model.problem = [1,1,1];
+model.outputQueue = [x,y,z];
+model.gameGoal = [x,y,z];
+console.log(model.isWon()); // true
+
+model.outputQueue = [x,z,y];
+console.log(model.isWon()); // false
+
+console.log("test pushTo");
+//console.log(JSON.parse(JSON.stringify(model)));
+console.log(JSON.stringify(model));
+model.currentSelection = 111;
+console.log(JSON.stringify(model));
+model.pushTo(1);
+console.log(JSON.stringify(model));
+
+
+console.log("Model tests");
+let m2 = new Model(prob, goal, 2);
+m2.printModel();
+m2.popFromInput();
+m2.printModel();
+m2.pushTo(1);
+m2.printModel();
 
 // create model
 // create view
