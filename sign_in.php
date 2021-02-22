@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <body>
+        yes
         <?php
-         echo $_GET["uname"];
+        
         
             // define variables and set to empty values
             $name = $email = $gender = $comment = $website = "";
