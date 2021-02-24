@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--colscheme1: #050b1f;
+	--colscheme2: #6bcae2;
+	--colscheme3: #0d659d;
+	--colscheme4: #c7d8e7;
+	--colscheme5: #11F7FF;
+}
+
+body {
+	
+}
+
+footer {
+	background: #E8E8E8;
+	height: 250px;
+	display: flex;
+	color: black;
+}
+footer p {
+	margin: auto;
+	font-style: italic;
+}
+#ft-note {
+	margin: auto;
+}
+
+.header-bg {
+	position: absolute;
+	width: 100%;
+	height: 400px;
+	background: var(--colscheme4);
+}
+
+#main-contact {
+	width: 80%;
+	margin: auto;
+	
+	height: 100vh;
+	position: relative;
+	padding: 50px;
+	font-family: "calibri light", sans-serif;
+}
+
+.pg-title {
+	font-family: Lato, sans-serif;
+	font-size: 50px;
+	margin: auto;
+	padding: 50px 0;
+	text-align: center;
+	
+}
+
+#contact-form {
+	background: #fff;
+	font-family: "calibri light", sans-serif;
+	padding: 50px;
+	width: 60%;
+
+	position: absolute;
+	left: 35%;
+	z-index: 3;
+	box-shadow: 5px 5px 7px #787878;
+}
+
+#contact-form h2 {
+	margin-bottom: 40px;
+}
+#contact-form input {
+	
+	display: block;
+	padding: 10px;
+	width: 70%;
+	margin: 10px 0;
+	color: #000000;
+	border: 1px solid var(--colscheme4);
+	border-bottom: 3px solid var(--colscheme4);
+}
+#contact-form input:focus, #contact-form textarea:focus {
+	background: #F0F6FC;
+}
+#contact-form textarea {
+	display: block;
+	padding: 10px;
+	resize: none;
+	width: 100%;
+	height: 200px;
+	font-family: "calibri light", sans-serif;
+	font-size: 16px;
+	margin: 10px 0;
+	border: 1px solid var(--colscheme4);
+}
+
+#contact-form label {
+	font-size: 20px;
+
+}
+
+#contact-form #btn-submit {
+	background: var(--colscheme3);
+	padding: 10px;
+	border-radius: 20px;
+	width: 200px;
+	color: white;
+	margin: 30px 0 0 auto;
+
+	transition: background 0.1s linear;
+}
+
+#contact-form #btn-submit:hover {
+	background: var(--colscheme2);
+	color: #000;
+}
+#contact-info {
+	width: 35%;
+	background:  var(--colscheme3);
+	padding: 50px;
+	height: 550px;
+	position: absolute;
+	top: 250px;
+	box-shadow: 3px 3px 5px #787878;
+	color: white;
+}
+
+#contact-info h2 {
+	margin-bottom: 30px;
+}
+#contact-info h3 {
+	margin: 30px 0;
+}
+#contact-info a {
+	color: white;
+}
