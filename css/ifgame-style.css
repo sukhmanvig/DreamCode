@@ -1,0 +1,38 @@
+body {
+	margin: 0px;
+	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
+}
+#content {
+	margin: 0px 60px 10px 65px;
+}
+
+#game-window {
+	position: relative;
+	display: grid;
+	grid-template-columns: 25% 50% auto;
+	grid-template-rows: 575px;
+}
+
+#game-grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+.square, .robot {
+	height: auto;
+	width: auto;
+	border: 1px solid gray;
+}
+
+.square {
+	background-color: #555;
+}
+.robot {
+	background-color: #000;
+}
+
+#code {
+	text-align: center;
+	border: 1px solid gray;
+}
+
+

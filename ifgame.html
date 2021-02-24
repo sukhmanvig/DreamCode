@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang=en>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="css/ifgame-style.css">
+		<link rel="stylesheet" type="text/css" href="css/nav.css">
+		<title>Learn If Statements</title>
+	</head>
+	<body>
+		<nav class="topnav">
+            		<div class="topnav">
+            		<div class="navbar-dropdown"><a>Username</a>
+                		<div class="navbar-dropdown-elements">
+                    			<a href="profile.html">Profile</a>
+                    			<a href="account-settings.html">Account Settings</a>
+                    			<a href="feedback.html">Feedback</a>
+                    			<a href="logout.html">Logout</a>
+                		</div>
+            		</div>
+            		<a href= 'contact.html'>Contact</a>
+            		<a href= 'about.html'>About</a>
+            		<a href= 'home.html'>Home</a>
+            		<a href= 'dashboard.html'>Dashboard</a>
+            		<div class="logo">
+                    		<a href='index.html'>DreamCode</a>
+            		</div>	
+		</nav>
+		<div id="content">
+			<h1> Learn If Statements </h1>
+			<div id="game-window">
+				<div id="option-select">
+					<h2>Robot Actions</h2>
+					<p>By default the robot will move to the right</p>
+					<div class="option">
+						<label for = "on-front-wall">If there is a wall in front, go</label>
+						<select id = "on-front-wall">
+							<option>Right</option>
+							<option>Down</option>
+							<option>Up</option>
+						</select>
+					</div>
+					<div class="option">
+						<label for = "on-bottom-wall">If there is a wall below, go</label>
+						<select id = "on-bottom-wall">
+							<option>Left</option>
+							<option>Right</option>
+							<option>Down</option>
+						</select>
+					</div>
+					<button>Go</button>
+				</div>
+				<div id="game-grid">
+					<div class="robot"></div>
+					<div class="square"></div> 
+					<div class="square"></div> 
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div> 
+				</div>
+				<div id="code">
+					<h2>Code For Actions</h2>
+					<div id="code-output"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
