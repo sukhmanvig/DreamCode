@@ -47,6 +47,7 @@ body{
   margin: 0 10px 0 0;
   width: 30px;
   height: 30px;
+  background: url(images/plus-sign.png) no-repeat 8px 7px #0D659D;
   border-radius: 50%;
   float: left;
   transition: all .5s ease-in;

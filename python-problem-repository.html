@@ -68,7 +68,7 @@
         <h5>Ask the user for a string and print out whether this string is a palindrome or not. (A palindrome is a string that reads the same forwards and backwards.)</h5>
       </div>
       <div class="panel">
-        <p>
+        <pre>
           def reverse(word):
 	           x = ''
 	           for i in range(len(word)):
@@ -81,7 +81,7 @@
 	           print('This is a Palindrome')
           else:
 	           print('This is NOT a Palindrome')
-        </p>
+        </pre>
       </div>
 
 
@@ -91,10 +91,10 @@
         <h5>Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25]) and makes a new list of only the first and last elements of the given list. For practice, write this code inside a function.</h5>
       </div>
       <div class="panel">
-        <p>
+        <pre>
           def list_ends(a_list):
               return [a_list[0], a_list[len(a_list)-1]]
-        </p>
+        </pre>
       </div>
 
       <!-- Question #4 -->
@@ -103,7 +103,7 @@
         <h5>Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)</h5>
       </div>
       <div class="panel">
-        <p>
+        <pre>
           import sys
 
           user1 = input("What's your name?")
@@ -134,7 +134,7 @@
                   sys.exit()
 
           print(compare(user1_answer, user2_answer))
-        </p>
+        </pre>
       </div>
 
       <!-- Question #5 -->
@@ -143,7 +143,7 @@
         <h5>Write a program that takes a list and returns a new list that contains all the elements of the first list minus all the duplicates.</h5>
       </div>
       <div class="panel">
-        <p>
+        <pre>
           #Using for loop
           def dedupe_v1(x):
             y = []
@@ -160,7 +160,7 @@
           print a
           print dedupe_v1(a)
           print dedupe_v2(a)
-        </p>
+        </pre>
       </div>
 
       <script src="js/python-problem-repository-js.js"></script>
