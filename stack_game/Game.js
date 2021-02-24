@@ -31,7 +31,7 @@ for (i; i<marbs.length; i++) {
 
 
 let pg = new ProblemGenerator(marbs)
-let prob = pg.generateProblem(3);
+let prob = pg.generateProblem(4);
 
 console.log("Printing Problem:");
 console.log(prob);
@@ -90,6 +90,12 @@ m2.popFromInput();
 m2.printModel();
 m2.pushTo(1);
 m2.printModel();
+
+m2 = new Model(prob, goal, 3);
+m2.outputQueue = goal;
+m2.stacks[0] = goal;
+console.log(m2.printModel());
+m2.drawOnCanvase(ctx, 800, 600);
 
 // create model
 // create view

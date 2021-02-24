@@ -61,4 +61,111 @@ export default class Model {
         console.log("goal:       " + JSON.stringify(this.gameGoal));
         console.log("selection:  " + JSON.stringify(this.currentSelection));
     }
+
+    drawOnCanvase(ctx, ctxWidth, ctxHeight) {
+        let marbleRadius = 20;
+        let stackWidth = 22;
+        let i;
+
+        ctx.clearRect(0,0,ctxWidth,ctxHeight);
+
+        // text
+        ctx.font = "25px Arial";
+        ctx.fillText("Inputs:", 10, 25, 150);
+        ctx.fillText("Output:", ctxWidth-100, 25, 150);
+
+        ctx.font = "20px Arial";
+        ctx.fillText("Current Item:", ctxWidth/2-150, ctxHeight*0.25)
+
+        this.drawInputMarbles(ctx, 30, 50, marbleRadius);
+        this.drawOutputMarbles(ctx, ctxWidth-2*marbleRadius*this.outputQueue.length, 50, marbleRadius)
+
+        /*
+        this.drawStack(ctx, 0, 125, 250, marbleRadius);
+        this.drawStack(ctx, 1, 200, 250, marbleRadius);
+        */
+       
+        this.drawStacks(ctx, ctxWidth, ctxHeight, marbleRadius);
+
+
+    }
+
+    drawMarble(ctx, x, y, rad, colour) {
+        ctx.beginPath();
+        ctx.arc(x, y, rad, 0, Math.PI*2);
+        ctx.fillStyle = colour;
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    drawStack(ctx, stackNum, marbX, marbY, marbleRadius) {
+        let stack = this.stacks[stackNum];
+        if (stack.length == 0) {
+            ctx.fillStyle = "black";
+            ctx.strokeRect(marbX-marbleRadius, marbY-marbleRadius, marbleRadius*2, marbleRadius*2);
+            ctx.fillStyle = "white";
+            ctx.fillRect(marbX-marbleRadius,marbY-marbleRadius-1,marbleRadius*2,3)
+            return;
+        }
+
+        let i;
+        for (i=0; i<stack.length; i++) {
+            this.drawMarble(ctx, marbX, marbY-i*2*marbleRadius, marbleRadius, stack[i].colour);
+        }
+        ctx.fillStyle = "black";
+        let x = marbX-marbleRadius;
+        let y = marbY-i*marbleRadius*2+marbleRadius;
+        let width = marbleRadius*2;
+        let height = marbleRadius*2*i;
+        ctx.strokeRect(x, y, width, height);
+
+        ctx.fillStyle = "white";
+        ctx.fillRect(x,y-1,marbleRadius*2,3)
+    }
+
+    drawStacks(ctx, ctxWidth, ctxHeight, marbleRadius) {
+        let totalStacks = this.stacks.length;
+        let spacing = ctxWidth/(totalStacks+1);
+        let i;
+        for (i=0; i<totalStacks; i++) {
+            console.log(i);
+            this.drawStack(ctx, i, spacing*(i+1), ctxHeight-50, marbleRadius);
+        }
+    }
+
+    drawInputMarbles(ctx, xStart, yStart, marbleRadius) {
+        let x = xStart;
+        let y = yStart;
+        let i;
+        for (i = 0; i<this.inputQueue.length; i++) {
+            this.drawMarble(ctx, x+i*2*marbleRadius, y, marbleRadius, this.inputQueue[i].colour);
+        }
+        ctx.fillStyle = "black";
+        x = x-marbleRadius;
+        y = y-marbleRadius;
+        let inputWidth = marbleRadius*2*i;
+        let inputHeight = 2*marbleRadius;
+        ctx.strokeRect(x, y, inputWidth, inputHeight);
+
+        ctx.fillStyle = "white";
+        ctx.fillRect(x+inputWidth-1, y+1, 3, inputHeight-1);
+    }
+
+    drawOutputMarbles(ctx, xStart, yStart, marbleRadius) {
+        let x = xStart;
+        let y = yStart;
+        let i;
+        for (i = 0; i<this.outputQueue.length; i++) {
+            this.drawMarble(ctx, x+i*2*marbleRadius, y, marbleRadius, this.outputQueue[i].colour);
+        }
+        ctx.fillStyle = "black";
+        x = x-marbleRadius;
+        y = y-marbleRadius;
+        let inputWidth = marbleRadius*2*i;
+        let inputHeight = 2*marbleRadius;
+        ctx.strokeRect(x, y, inputWidth, inputHeight);
+
+        ctx.fillStyle = "white";
+        ctx.fillRect(x-1, y+1, 3, inputHeight-1);
+    }
 }

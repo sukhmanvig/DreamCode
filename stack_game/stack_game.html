@@ -14,10 +14,26 @@
                 Explanation about stacks Explanation about stacks Explanation about stacks Explanation about stacks
             </p>
         </div>
-        <div id="gameDiv">
-            <canvas id="stackCanvas"></canvas>
+
+        <!-- init game -->
+        <script src="Game.js" type="module"></script>
+
+        <div id="game_container">
+
+            <div id="gameDiv">
+                <canvas id="stackCanvas"></canvas>
+            </div>
+            <div id="game_buttons">
+
+            </div>
+
         </div>
 
-        <script src="Game.js" type="module"></script>
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <!-- Custom Component: init UI elements -->
+        <script src="View.js"></script>
+        
     </body>
 </html>
