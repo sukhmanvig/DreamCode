@@ -102,3 +102,11 @@
             <!--the footer navbar ends here-->
     </body>
 </html>
+
+<!--
+  		$loginattempt = "SELECT * FROM appuser WHERE userid=$1 AND password=$2";
+			$result = pg_prepare($dbconn, "check_availability", $loginattempt);
+			$result = pg_execute($dbconn, "check_availability", array($_REQUEST['user'], hash("md5", $_REQUEST['password'])));
+
+      $_SESSION['logged'];
+-->
