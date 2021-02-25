@@ -60,9 +60,31 @@ h1, h2 {
 	display: block;
 }
 
+
+/*Code output section*/
 #code {
+	visibility: hidden;
 	text-align: center;
 	border: 1px solid gray;
 }
 
+#code > #code-output {
+	text-align: left;
+}
 
+#code-elements {
+	visibility: hidden;
+	position: absolute;
+	bottom: 10%;
+}
+
+#code-elements > div {
+	margin-top: 20px;
+	margin-left: 10px;
+	text-align: left;
+}
+
+.highlighted {
+	display: inline;
+	color: #0d659d;
+}

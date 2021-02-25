@@ -1,11 +1,21 @@
 
 //These will become PHP session variables 
 var MAX_MOVES = 20;
-var BLOCK_SIZE = 40; //size of one block on the screen
 var id = null;
 var level = 0;
 var level_start_positions = [0];
 var level_goal_positions = [8];
+
+//show/hide the code section
+function changeCodeVisibility() {
+	var code = document.querySelector("#code");
+	if (getComputedStyle(code).visibility == "hidden") {
+		code.style.visibility = "visible";
+	}
+	else {
+		code.style.visibility = "hidden";
+	}
+}
 
 //Send the robot back it's starting position in the array
 function robotRestart() {
@@ -22,13 +32,69 @@ function robotRestart() {
 	position_array[goal_pos*2+1].innerHTML = "<div id='goal'></div>";
 	position_array[robot_start_pos*2+1].innerHTML = "<div id='robot'></div>";
 
-	//hide the play again button and enable the go button
+	//clear game status message 
 	document.querySelector("#game-status").innerHTML = '';
+
+	//hide the play again button and enable the go button
 	document.querySelector("#robot-try-again").style.visibility = "hidden";
 	document.querySelector("#robot-submit").disabled = false;
 }
 	
+//Parse the user's action print out the corresponding code snippets
+function printCode(on_front_wall, on_bottom_wall, robot_default) {
+	var front_wall_code = ''; //action to perform on front wall
+	var bottom_wall_code = ''; //action to perform on bottom wall
+	var default_code = ''; //default action to perform
 
+	var code_output = document.querySelector("#code-output");
+	var code_elements = document.querySelector("#code-elements");
+	var code = ''; //the user's actions translated to python code
+
+	switch (on_front_wall) {
+		case "Down":
+			front_wall_code = "vpos = vpos - 1"; //move downwards
+			break;
+		case "Up":
+			front_wall_code = "vpos = vpos + 1"; //move upwards
+			break;
+		default:
+	}
+
+	switch (on_bottom_wall) {
+		case "Left":
+			bottom_wall_code = "hpos = hpos - 1"; //move left
+			break;
+		case "Right":
+			bottom_wall_code = "hpos = hpos + 1";
+			break;
+		default:
+	}
+
+	switch (robot_default) {
+		case "Right":
+			default_code = "hpos = hpos + 1"; //move right
+			break;
+		case "Down":
+			default_code = "vpos = vpos - 1"; //move down
+			break;
+		default:
+	}
+	
+	code = 
+`<pre><code> 
+	    if is_front_wall == True:
+		  ${front_wall_code}
+	    elif is_bottom_wall == True:
+		  ${bottom_wall_code}
+	    else: 
+		  ${default_code}
+</code></pre>`;
+	code_output.innerHTML = code;
+	code_elements.style.visibility = "inherit";
+
+}
+
+//Move the robot according the actions specified by the user
 function robotGo() {
 	var on_front_wall = document.querySelector("#on-front-wall").value;
 	var on_bottom_wall = document.querySelector("#on-bottom-wall").value;
@@ -38,7 +104,9 @@ function robotGo() {
 	var game_status = document.querySelector("#game-status");
 	var go_button = document.querySelector("#robot-submit");
 
+	//disable the go button and generate code output
 	go_button.disabled = true;
+	printCode(on_front_wall, on_bottom_wall, robot_default);
 
 	game_status.innerHTML = ''; //clear any error messages	
 

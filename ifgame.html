@@ -34,13 +34,6 @@
 					<p>Rob the Robot has been tasked with retrieving the treasure on the board.</p>
 					<p>Help Rob reach the treasure by telling him what to do when he encounters an obstacle.</p>
 					<div class="option">
-						<label for ="default"> By default, Rob will move</label>
-						<select id = "default">
-							<option>Down</option>
-							<option>Right</option>
-						</select>
-					</div>
-					<div class="option">
 						<label for = "on-front-wall">If there is a wall in front, go</label>
 						<select id = "on-front-wall">
 							<option>Up</option>
@@ -54,8 +47,17 @@
 							<option>Right</option>
 						</select>
 					</div>
+					<div class="option">
+						<label for ="default"> If neither are true, Rob will move</label>
+						<select id = "default">
+							<option>Down</option>
+							<option>Right</option>
+						</select>
+					</div>
+
 					<button id="robot-submit" onclick="robotGo()">Go</button>
 					<button id="robot-try-again" onclick="robotRestart()">Play again</button>
+					<button id="show/hide code" onclick="changeCodeVisibility()">Show/Hide code</button>
 					<button id="next-level">Next level</button>
 					<div id="game-status"></div>
 				</div>
@@ -73,6 +75,13 @@
 				<div id="code">
 					<h2>Code For Actions</h2>
 					<div id="code-output"></div>
+
+					<div id="code-elements">
+						<div>The variable <p class="highlighted">is_front_wall</p> is a <p class="highlighted">boolean</p> that is <p class="highlighted">TRUE</p> if there is a wall in front of Rob and <p class="highlighted">FALSE</p> otherwise.</div>
+						<div>The variable <p class="highlighted">is_bottom_wall</p> is a <p class="highlighted">boolean</p> that is <p class="highlighted">TRUE</p> if there is a wall below Rob and <p class="highlighted">FALSE</p> otherwise.</div>
+						<div>The variable <p class="highlighted">hpos</p> is an <p class="highlighted">integer</p> representing Rob's horizontal position on the board.</div>
+						<div>The variable <p class="highlighted">vpos</p> is an <p class="highlighted">integer</p> representing Rob's vertical position on the board.</div> 
+					</div>
 				</div>
 			</div>
 		</div>
