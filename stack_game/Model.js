@@ -78,6 +78,8 @@ export default class Model {
         let i;
 
         ctx.clearRect(0,0,ctxWidth,ctxHeight);
+        ctx.fillStyle = "white";
+        ctx.fillRect(0,0, ctxWidth, ctxHeight);
 
         // text
         ctx.fillStyle = "black";
