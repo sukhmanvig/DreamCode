@@ -96,7 +96,12 @@ m2.outputQueue = goal;
 m2.stacks[0] = goal;
 console.log(m2.printModel());
 m2.drawOnCanvase(ctx, 800, 600);
-
+/*
+m2 = new Model(prob, goal, 4);
+m2.inputQueue = [];
+m2.outputQueue = [];
+m2.drawOnCanvase(ctx, 800, 600);
+*/
 // create model
 // create view
 // connect controller?

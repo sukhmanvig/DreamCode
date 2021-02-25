@@ -84,7 +84,7 @@ export default class Model {
         this.drawStack(ctx, 0, 125, 250, marbleRadius);
         this.drawStack(ctx, 1, 200, 250, marbleRadius);
         */
-       
+
         this.drawStacks(ctx, ctxWidth, ctxHeight, marbleRadius);
 
 
@@ -134,6 +134,14 @@ export default class Model {
     }
 
     drawInputMarbles(ctx, xStart, yStart, marbleRadius) {
+        if (this.inputQueue.length == 0) {
+            ctx.fillStyle = "black";
+            ctx.strokeRect(xStart-marbleRadius, yStart-marbleRadius, marbleRadius*2, marbleRadius*2);
+            ctx.fillStyle = "white";
+            ctx.fillRect(xStart+marbleRadius-1,yStart-marbleRadius,3,2*marbleRadius-1)
+            return;
+        }
+
         let x = xStart;
         let y = yStart;
         let i;
@@ -152,6 +160,15 @@ export default class Model {
     }
 
     drawOutputMarbles(ctx, xStart, yStart, marbleRadius) {
+        if (this.outputQueue.length == 0) {
+            ctx.fillStyle = "black";
+            let x2 = xStart-2*marbleRadius-5;
+            ctx.strokeRect(x2, yStart-marbleRadius, marbleRadius*2, marbleRadius*2);
+            ctx.fillStyle = "white";
+            ctx.fillRect(x2-1,yStart-marbleRadius,3,2*marbleRadius)
+            return;
+        }
+
         let x = xStart;
         let y = yStart;
         let i;
