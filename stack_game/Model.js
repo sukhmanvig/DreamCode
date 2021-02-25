@@ -18,8 +18,12 @@ export default class Model {
 
     isWon() {
         var i;
-        for (i = 0; i<this.problem.length; i++) {
-            if (! this.gameGoal[i].equals(this.outputQueue[i]))
+        for (i = 0; i<this.gameGoal.length; i++) {
+            let g = this.gameGoal[i];
+            let o = this.outputQueue[i];
+            if (o == undefined) 
+                return false;
+            if (! (g.colour == o.colour && g.letter == o.letter)) 
                 return false;
         }
         return true;
@@ -42,7 +46,7 @@ export default class Model {
     pushToOutput() {
         if (!this.currentSelection == undefined) {
             this.outputQueue.unshift(this.currentSelection);
-            this.currentSelection = undefined
+            this.currentSelection = undefined;
         }
     }
 
@@ -62,7 +66,7 @@ export default class Model {
         console.log("selection:  " + JSON.stringify(this.currentSelection));
     }
 
-    drawOnCanvase(ctx, ctxWidth, ctxHeight) {
+    drawOnCanvas(ctx, ctxWidth, ctxHeight) {
         let marbleRadius = 20;
         let stackWidth = 22;
         let i;
@@ -70,22 +74,30 @@ export default class Model {
         ctx.clearRect(0,0,ctxWidth,ctxHeight);
 
         // text
+        ctx.fillStyle = "black";
         ctx.font = "25px Arial";
         ctx.fillText("Inputs:", 10, 25, 150);
         ctx.fillText("Output:", ctxWidth-100, 25, 150);
+        ctx.font = "15px Arial";
+        ctx.fillText("Goal:", ctxWidth-100, 150, 150);
 
         ctx.font = "20px Arial";
-        ctx.fillText("Current Item:", ctxWidth/2-150, ctxHeight*0.25)
+        ctx.fillText("Current Item:", ctxWidth/2-150, ctxHeight*0.25);
 
+        // draw game elements
         this.drawInputMarbles(ctx, 30, 50, marbleRadius);
-        this.drawOutputMarbles(ctx, ctxWidth-2*marbleRadius*this.outputQueue.length, 50, marbleRadius)
-
-        /*
-        this.drawStack(ctx, 0, 125, 250, marbleRadius);
-        this.drawStack(ctx, 1, 200, 250, marbleRadius);
-        */
+        this.drawOutputMarbles(ctx, ctxWidth-2*marbleRadius*this.outputQueue.length, 50, marbleRadius);
+        this.drawGoalMarbles(ctx, ctxWidth-marbleRadius*this.gameGoal.length, 175, marbleRadius/2);
+        this.drawCurrentSelection(ctx, ctxWidth/2, ctxHeight*0.25, marbleRadius);
 
         this.drawStacks(ctx, ctxWidth, ctxHeight, marbleRadius);
+
+        if (this.isWon()) {
+            console.log("isWon TRUE");
+            ctx.font = "35px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("You've reached the goal state", ctxWidth*0.2, ctxHeight*0.60);
+        }
 
 
     }
@@ -96,6 +108,14 @@ export default class Model {
         ctx.fillStyle = colour;
         ctx.fill();
         ctx.closePath();
+    }
+
+    drawCurrentSelection(ctx, x, y, marbleRadius) {
+        if (this.currentSelection == undefined) {
+            return;
+        }
+        let colour = this.currentSelection.colour;
+        this.drawMarble(ctx, x, y, marbleRadius, colour);
     }
 
     drawStack(ctx, stackNum, marbX, marbY, marbleRadius) {
@@ -174,6 +194,33 @@ export default class Model {
         let i;
         for (i = 0; i<this.outputQueue.length; i++) {
             this.drawMarble(ctx, x+i*2*marbleRadius, y, marbleRadius, this.outputQueue[i].colour);
+        }
+        ctx.fillStyle = "black";
+        x = x-marbleRadius;
+        y = y-marbleRadius;
+        let inputWidth = marbleRadius*2*i;
+        let inputHeight = 2*marbleRadius;
+        ctx.strokeRect(x, y, inputWidth, inputHeight);
+
+        ctx.fillStyle = "white";
+        ctx.fillRect(x-1, y+1, 3, inputHeight-1);
+    }
+
+    drawGoalMarbles(ctx, xStart, yStart, marbleRadius) {
+        if (this.gameGoal.length == 0) {
+            ctx.fillStyle = "black";
+            let x2 = xStart-2*marbleRadius-5;
+            ctx.strokeRect(x2, yStart-marbleRadius, marbleRadius*2, marbleRadius*2);
+            ctx.fillStyle = "white";
+            ctx.fillRect(x2-1,yStart-marbleRadius,3,2*marbleRadius)
+            return;
+        }
+
+        let x = xStart;
+        let y = yStart;
+        let i;
+        for (i = 0; i<this.gameGoal.length; i++) {
+            this.drawMarble(ctx, x+i*2*marbleRadius, y, marbleRadius, this.gameGoal[i].colour);
         }
         ctx.fillStyle = "black";
         x = x-marbleRadius;

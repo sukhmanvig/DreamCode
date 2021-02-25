@@ -95,13 +95,22 @@ m2 = new Model(prob, goal, 3);
 m2.outputQueue = goal;
 m2.stacks[0] = goal;
 console.log(m2.printModel());
-m2.drawOnCanvase(ctx, 800, 600);
-/*
-m2 = new Model(prob, goal, 4);
-m2.inputQueue = [];
-m2.outputQueue = [];
-m2.drawOnCanvase(ctx, 800, 600);
-*/
+m2.drawOnCanvas(ctx, 800, 600);
+
+let m3 = new Model(prob, goal, 4);
+m3.popFromInput();
+//m3.inputQueue = [];
+//m3.outputQueue = [];
+m3.printModel();
+m3.outputQueue = JSON.parse(JSON.stringify(m3.gameGoal));
+m3.drawOnCanvas(ctx, 800, 600);
+
+
+
+
+
+
+
 // create model
 // create view
 // connect controller?
