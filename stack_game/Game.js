@@ -150,6 +150,14 @@ popFromOutputButton.onclick = function() {
 };
 buttonContainer.appendChild(popFromOutputButton);
 
+let newGameButton = document.createElement("button");
+newGameButton.innerHTML = "New Game";
+newGameButton.onclick = function() { 
+    newGame();
+    gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+};
+buttonContainer.appendChild(newGameButton);
+
 buttonContainer = document.getElementById("push_buttons");
 gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight );
 for (i = 0; i<gameModel.numStacks; i++) {
@@ -175,3 +183,9 @@ for (i = 0; i<gameModel.numStacks; i++) {
     buttonContainer.appendChild(b);
 }
 
+function newGame() {
+    gameProb = pg.generateProblem(5);
+    gameGoal = pg.generateGoal(gameProb);
+    gameModel = new Model(gameProb, gameGoal, 3);
+    gameModel.drawOnCanvas(canvasContext, 800, 600);
+}
