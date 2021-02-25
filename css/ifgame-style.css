@@ -1,9 +1,22 @@
 body {
 	margin: 0px;
+	font-family: sans-serif;
 	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
+}
+
+h1, h2 {
+	font-family: verdana;
 }
 #content {
 	margin: 0px 60px 10px 65px;
+}
+
+#option-select {
+	margin-right: 20px;
+}
+
+.option {
+	margin-bottom: 20px;
 }
 
 #game-window {
@@ -17,17 +30,34 @@ body {
 	display: grid;
 	grid-template-columns: auto auto auto;
 }
-.square, .robot {
+
+.grid-position {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: auto;
 	width: auto;
 	border: 1px solid gray;
-}
-
-.square {
+	text-align: center;
 	background-color: #555;
 }
-.robot {
+
+#robot {
 	background-color: #000;
+	height: 50%;
+	width: 50%;
+}
+
+#goal {
+	background-color: #c7d8e7;	
+	height: 35%;
+	width: 30%;
+	border-radius: 50%;
+}
+
+#robot-try-again, #next-level {
+	visibility: hidden;
+	display: block;
 }
 
 #code {
