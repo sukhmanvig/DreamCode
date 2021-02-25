@@ -44,9 +44,15 @@ export default class Model {
     }
 
     pushToOutput() {
-        if (!this.currentSelection == undefined) {
+        if (!(this.currentSelection == undefined)) {
             this.outputQueue.unshift(this.currentSelection);
             this.currentSelection = undefined;
+        }
+    }
+
+    popFromOutput() {
+        if (this.currentSelection == undefined) {
+            this.currentSelection = this.outputQueue.shift();
         }
     }
 
@@ -93,7 +99,6 @@ export default class Model {
         this.drawStacks(ctx, ctxWidth, ctxHeight, marbleRadius);
 
         if (this.isWon()) {
-            console.log("isWon TRUE");
             ctx.font = "35px Arial";
             ctx.fillStyle = "black";
             ctx.fillText("You've reached the goal state", ctxWidth*0.2, ctxHeight*0.60);
@@ -130,7 +135,7 @@ export default class Model {
 
         let i;
         for (i=0; i<stack.length; i++) {
-            this.drawMarble(ctx, marbX, marbY-i*2*marbleRadius, marbleRadius, stack[i].colour);
+            this.drawMarble(ctx, marbX, marbY-i*2*marbleRadius, marbleRadius, stack.items[i].colour);
         }
         ctx.fillStyle = "black";
         let x = marbX-marbleRadius;
@@ -148,7 +153,6 @@ export default class Model {
         let spacing = ctxWidth/(totalStacks+1);
         let i;
         for (i=0; i<totalStacks; i++) {
-            console.log(i);
             this.drawStack(ctx, i, spacing*(i+1), ctxHeight-50, marbleRadius);
         }
     }
@@ -185,7 +189,7 @@ export default class Model {
             let x2 = xStart-2*marbleRadius-5;
             ctx.strokeRect(x2, yStart-marbleRadius, marbleRadius*2, marbleRadius*2);
             ctx.fillStyle = "white";
-            ctx.fillRect(x2-1,yStart-marbleRadius,3,2*marbleRadius)
+            ctx.fillRect(x2-1, yStart-marbleRadius, 3, 2*marbleRadius);
             return;
         }
 

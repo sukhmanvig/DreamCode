@@ -23,12 +23,12 @@ class GameButton extends React.Component {
     );
   }
 }
-
+/*
 const domContainer = document.querySelector('#game_buttons');
 ReactDOM.render(e(GameButton), domContainer);
 ReactDOM.render(e(GameButton), domContainer);
 ReactDOM.render(e(GameButton), domContainer);
-
+*/
 /*
 export default class View {
     
