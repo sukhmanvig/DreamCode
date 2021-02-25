@@ -284,9 +284,7 @@ h4 {
 }
 
 @media (max-width: 1340px) {
-	#circle-stats {
-		display: none;
-	}
+
 	#user-pfp {
 		width: 200px;
 		height: 200px;
@@ -297,7 +295,9 @@ h4 {
 }
 
 @media (max-width: 1200px) {
-
+	#circle-stats {
+		display: none;
+	}
 	.profile-div-left {
 		flex-basis: 100%;
 		margin: 0;
@@ -330,7 +330,7 @@ h4 {
 	}
 	#user-infosec {
 		margin: auto;
-		padding: 20px;
+		padding: 20px 50px;
 	}
 }
 @media (max-width:650px) {
@@ -342,3 +342,4 @@ h4 {
 		margin: 10px;
 	}
 }
+
