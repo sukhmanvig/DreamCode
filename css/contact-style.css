@@ -37,6 +37,9 @@ footer p {
 	background: var(--colscheme4);
 }
 
+#main {
+	position: relative;
+}
 #main-contact {
 	width: 80%;
 	margin: auto;
