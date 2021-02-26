@@ -12,6 +12,9 @@
 	--colscheme5: #11F7FF;
 }
 
+.topnav {
+	z-index: 5;
+}
 footer {
 	background: #E8E8E8;
 	height: 250px;
