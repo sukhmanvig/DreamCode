@@ -11,28 +11,26 @@
     <link rel="stylesheet" type="text/css" href="css/landing-style.css">
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/python-problem-repository-styles.css">
-    <link rel="stylesheet" href="js/codemirror-5.59.2/lib/codemirror.css">
-    <link rel="stylesheet" href="js/codemirror-5.59.2/theme/cobalt.css">
     <title>Python Problem Repository</title>
   </head>
   <body>
-    
-      <nav class="topnav">
+
+      <nav class="topnav"> 
     		<div class="topnav">
     			<div class="navbar-dropdown"><a>Username</a>
     				<div class="navbar-dropdown-elements">
     						<a href="profile.html">Profile</a>
     						<a href="account-settings.html">Account Settings</a>
-    						<a href="index.html">Logout</a>
+    						<a href="feedback.html">Feedback</a>
+    						<a href="logout.html">Logout</a>
     				</div>
     			</div>
     			<a href= 'contact.html'>Contact</a>
     			<a href= 'about.html'>About</a>
-    			<a href= 'index.html'>Home</a>
+    			<a href= 'home.html'>Home</a>
     			<a href= 'dashboard.html'>Dashboard</a>
-          <a href= 'shell.html'>Python Shell</a>
     			<div class="logo">
-    				<a href='index.html'>DreamCode</a>
+    				<a href='index.html'>LOGO</a>
     			</div>
     		 </div>
     	</nav>
@@ -40,6 +38,7 @@
     <div class="container-fluid">
       <h1 id="center-page">Python Problem Repository</h1>
       <h2>Practice python problems and improve your python skills!</h2>
+      <p id="italize">First attempt the problem on your own, then click on the problem to see a sample solution!</p>
 
       <!-- Question #1 -->
       <div class="icon_accordion">
@@ -106,8 +105,10 @@
 
           user1 = input("What's your name?")
           user2 = input("And your name?")
-          user1_answer = input("%s, do yo want to choose rock, paper or scissors?" % user1)
-          user2_answer = input("%s, do you want to choose rock, paper or scissors?" % user2)
+          user1_answer = input("%s, do yo want to choose rock,
+                         paper or scissors?" % user1)
+          user2_answer = input("%s, do you want to choose rock,
+                         paper or scissors?" % user2)
 
           def compare(u1, u2):
               if u1 == u2:
@@ -128,7 +129,8 @@
                   else:
                       return("Scissors win!")
               else:
-                  return("Invalid input! You have not entered rock, paper or scissors, try again.")
+                  return("Invalid input! You have not entered rock, paper or
+                  scissors, try again.")
                   sys.exit()
 
           print(compare(user1_answer, user2_answer))
@@ -138,7 +140,8 @@
       <!-- Question #5 -->
       <div class="icon_accordion">
         <div class="icon"></div>
-        <h5>Write a program that takes a list and returns a new list that contains all the elements of the first list minus all the duplicates.</h5>
+        <h5>Write a program that takes a list and returns a new list that contains all the elements
+          of the first list minus all the duplicates.</h5>
       </div>
       <div class="panel">
         <pre>
@@ -172,10 +175,7 @@
             indentWithTabs: true,
             smartIndent: true,
             lineNumbers: true});
-        </script>
-
-        <script src="js/codemirror-5.59.2/lib/codemirror.js"></script>
-        <script src="js/codemirror-5.59.2/mode/javascript/javascript.js"></script>
+      </script>
 
     </div>
   </body>
