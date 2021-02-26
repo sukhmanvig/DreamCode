@@ -3,9 +3,18 @@
 
 body{
   font-family: 'Baloo Bhaina 2', cursive;
-  background-color: #c7d8e7;
+  background-color: white;
 }
 
+pre{
+  color: white;
+  background-color: #050b1f; 
+}
+
+#italize{
+  font-style: italic;
+  font-size: 15px;
+}
 .container-fluid{
   width: 60%;
   margin: 0 auto;
@@ -23,7 +32,6 @@ body{
 }
 
 .container-fluid h1 :: after{
-  content: "";
   position: absolute;
   bottom: 0;
   right: 12px;
@@ -47,7 +55,7 @@ body{
   margin: 0 10px 0 0;
   width: 30px;
   height: 30px;
-  background: url(images/plus-sign.png) no-repeat 8px 7px #0D659D;
+  background: #0D659D;
   border-radius: 50%;
   float: left;
   transition: all .5s ease-in;
@@ -63,7 +71,7 @@ body{
 }
 
 .active .icon{
-  background: url("../images/plus-sign.png") no-repeat 8px -25px #fff;
+  background: #fff;
   z-index: 1;
 }
 
