@@ -46,7 +46,7 @@ form:after {
     bottom: -5px;
     right: -5px;
     z-index: 1;
-    background-image: linear-gradient(to bottom right, #ffce00, #fe4880);
+    background-image: linear-gradient(to bottom right, #6bcae2, #0d659d);
 }
 
 form .form-inner, .register {
@@ -79,7 +79,7 @@ form .form-inner .form-group {
 }
 
 .form-inner .form-group:focus-within label {
-    color: #fe4880;
+    color: #0d659d;
 }
 
 form .form-inner .form-group input, .register  {
@@ -100,7 +100,7 @@ form .form-inner input[type="submit"],
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #ffce00 50%, #ffce00 50%, #fe4880);
+    background-image: linear-gradient(to right, #6bcae2 50%, #6bcae2 50%, #0d659d);
     background-size: 200%;
     background-position: 0%;
     transition: 0.4s;
@@ -135,7 +135,7 @@ form .form-inner input[type="submit"]:hover,
 }
 
 .welcome h2 span {
-    color: #fe4880;
+    color: #0d659d;
     font-weight: 700;
 }
 
@@ -143,5 +143,5 @@ form .form-inner input[type="submit"]:hover,
     position: relative;
     width: 100px;
     margin-left: 130px;
-    background-image: linear-gradient(to right, #fe4880 50%, #fe4880 50%,#ffce00);
+    background-image: linear-gradient(to right, #0d659d 50%, #0d659d 50%,#6bcae2);
 }
