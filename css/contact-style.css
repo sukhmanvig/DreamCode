@@ -62,7 +62,7 @@ footer p {
 	width: 60%;
 
 	position: relative;
-	left: 35%;
+	left: 40%;
 	z-index: 3;
 	box-shadow: 5px 5px 7px #787878;
 }
@@ -74,7 +74,7 @@ footer p {
 	
 	display: block;
 	padding: 10px;
-	width: 70%;
+	width: 100%;
 	margin: 10px 0;
 	color: #000000;
 	border: 1px solid var(--colscheme4);
@@ -116,7 +116,7 @@ footer p {
 	color: #000;
 }
 #contact-info {
-	width: 35%;
+	width: 40%;
 	background:  var(--colscheme3);
 	padding: 50px;
 	height: 550px;
@@ -136,10 +136,26 @@ footer p {
 	color: white;
 }
 
+#contact-info img {
+	position: absolute;
+	
+}
+@media (max-width:1500px) {
+	#main-contact {
+		width: 95%;
+	}
+	#contact-form {
+		left:40%;
+	}
+	#contact-info {
+		width: 50%;
+	}
+} 
 @media (max-width:1300px) {
 	#main-contact {
-		width: 90%;
+		width: 95%;
 	}
+
 }
 
 @media (max-width: 1080px) {
@@ -157,9 +173,35 @@ footer p {
 		height: auto;
 		margin-bottom: 50px;
 	}
+
+	#contact-info img {
+		position: absolute;
+		right:0px;
+		top:0px;
+		left: auto;
+
+		padding: 20px;
+		
+	}
+}
+
+@media (max-width: 900px) {
+	#contact-info {
+		overflow: hidden;
+	}
+
 }
 
 @media (max-width: 800px) {
+	
+	#contact-info img {
+		opacity: 30%;
+		z-index: 0;
+	}
+	#contact-info p {
+		z-index: 100;
+
+	}
 	#contact-form input {
 		width: 100%;
 	}
@@ -167,4 +209,19 @@ footer p {
 	#contact-form #btn-submit {
 		margin: 30px auto;
 	}
+}
+
+@media (max-width: 600px) {
+	#contact-info img {
+		position: absolute;
+		bottom:0;
+		left: 0;
+		right: auto;
+		padding: 20px;
+	}
+	#main-contact {
+		width: 100%;
+		padding: 0;
+	}
+	
 }
