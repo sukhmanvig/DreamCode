@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang=en>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="css/ifgame-style.css">
+		<link rel="stylesheet" type="text/css" href="css/nav.css">
+		<script src="js/ifgame.js" type="text/javascript"></script>
+		<title>Learn If Statements</title>
+	</head>
+	<body>
+		<nav class="topnav">
+            		<div class="topnav">
+            		<div class="navbar-dropdown"><a>Username</a>
+                		<div class="navbar-dropdown-elements">
+                    			<a href="profile.html">Profile</a>
+                    			<a href="account-settings.html">Account Settings</a>
+                    			<a href="index.html">Logout</a>
+                		</div>
+            		</div>
+            		<a href= 'contact.html'>Contact</a>
+            		<a href= 'about.html'>About</a>
+            		<a href= 'index.html'>Home</a>
+            		<a href= 'dashboard.html'>Dashboard</a>
+			<a href= 'shell.html'>Python Shell</a>
+            		<div class="logo">
+                    		<a href='index.html'>DreamCode</a>
+            		</div>	
+		</nav>
+		<div id="content">
+			<h1> Learn If Statements </h1>
+			<div id="game-window">
+				<div id="option-select">
+					<h2>Level 1</h2>
+					<p>Rob the Robot has been tasked with retrieving the treasure on the board.</p>
+					<p>Help Rob reach the treasure by telling him what to do when he encounters an obstacle.</p>
+					<div class="option">
+						<label for = "on-front-wall">If there is a wall in front, go</label>
+						<select id = "on-front-wall">
+							<option>Up</option>
+							<option>Down</option>
+						</select>
+					</div>
+					<div class="option">
+						<label for = "on-bottom-wall">If there is a wall below, go</label>
+						<select id = "on-bottom-wall">
+							<option>Left</option>
+							<option>Right</option>
+						</select>
+					</div>
+					<div class="option">
+						<label for ="default"> Otherwise, go</label>
+						<select id = "default">
+							<option>Down</option>
+							<option>Right</option>
+						</select>
+					</div>
+					<div id="game-status"></div>
+					
+					<button id="robot-submit" onclick="robotGo()">Go</button>
+					<button id="robot-try-again" onclick="robotRestart()">Play Again</button>
+					<button id="show/hide code" onclick="changeCodeVisibility()">Show/Hide Code</button>
+					<button id="next-level">Next Level</button>
+				</div>
+				<div id="game-grid">
+					<div class="grid-position"><img id="robot" src="images/robot.png" /></div>
+					<div class="grid-position"></div>
+					<div class="grid-position"></div> 
+					<div class="grid-position"></div>
+					<div class="grid-position"></div>
+					<div class="grid-position"></div>
+					<div class="grid-position"></div>
+					<div class="grid-position"></div>
+					<div class="grid-position"><img id="goal" src="images/treasure.png" /></div> 
+				</div>
+				<div id="code">
+					<h2>Code For Actions</h2>
+					<div id="code-output"></div>
+
+					<div id="code-elements">
+						<div>The variable <p class="highlighted">is_front_wall</p> is a <p class="highlighted">boolean</p> that is <p class="highlighted">TRUE</p> if there is a wall in front of Rob and <p class="highlighted">FALSE</p> otherwise.</div>
+						<div>The variable <p class="highlighted">is_bottom_wall</p> is a <p class="highlighted">boolean</p> that is <p class="highlighted">TRUE</p> if there is a wall below Rob and <p class="highlighted">FALSE</p> otherwise.</div>
+						<div>The variable <p class="highlighted">hpos</p> is an <p class="highlighted">integer</p> representing Rob's horizontal position on the board.</div>
+						<div>The variable <p class="highlighted">vpos</p> is an <p class="highlighted">integer</p> representing Rob's vertical position on the board.</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

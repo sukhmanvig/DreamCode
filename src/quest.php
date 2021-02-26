@@ -8,9 +8,5 @@ class Quest {
 	public function __construct($view) {
         $this->$view = view;
     }
-	
-	public function gotoview($guess){
-		// Add front end code here via view.
-	}
 }
 ?>

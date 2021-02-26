@@ -18,7 +18,7 @@
                 </div>
                 <a href= 'contact.html'>Contact</a>
                 <a href= 'about.html'>About</a>
-                <a href= 'home.html'>Home</a>
+                <a href= 'index.html'>Home</a>
                 <div class="logo">
                     <a href='index.html'>DreamCode</a>
                 </div>
@@ -33,9 +33,7 @@
             <button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Start Learning</button>
         </div>
         <div id="id01" class="modal">
-
             <form class="modal-content animate" action="dashboard.html">
-
               <div class="container">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
@@ -134,3 +132,11 @@
             <!--the footer navbar ends here-->
     </body>
 </html>
+
+<!--
+  		$loginattempt = "SELECT * FROM appuser WHERE userid=$1 AND password=$2";
+			$result = pg_prepare($dbconn, "check_availability", $loginattempt);
+			$result = pg_execute($dbconn, "check_availability", array($_REQUEST['user'], hash("md5", $_REQUEST['password'])));
+
+      $_SESSION['logged'];
+-->
