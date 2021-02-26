@@ -29,8 +29,8 @@ function robotRestart() {
 	var position_array = game_grid.childNodes;
 	var robot_start_pos = level_start_positions[level];
 	var goal_pos = level_goal_positions[level];
-	position_array[goal_pos*2+1].innerHTML = "<div id='goal'></div>";
-	position_array[robot_start_pos*2+1].innerHTML = "<div id='robot'></div>";
+	position_array[goal_pos*2+1].innerHTML = "<img id='goal' src='images/treasure.png' />";
+	position_array[robot_start_pos*2+1].innerHTML = "<img id='robot' src='images/robot.png'i />";
 
 	//clear game status message 
 	document.querySelector("#game-status").innerHTML = '';
@@ -134,7 +134,7 @@ function robotGo() {
 		if (moves >= MAX_MOVES) { //ran out of moves
 			status.innerHTML("The robot took too many moves and ran out of steam. Try again.");
 			position_array[robot_array_pos].innerHTML = '';
-			position_array[robot_start_pos].innerHTML = "<div id='robot'></div>";
+			position_array[robot_start_pos].innerHTML = "<img id='robot' src='images/robot.png'>";
 			clearInterval(id);
 			return;
 		}
@@ -193,14 +193,14 @@ function robotGo() {
 		    if (error) {
 			    game_status.innerHTML = "Oops that path wasn't quite right. Try again.";
 			    position_array[robot_array_pos].innerHTML = '';
-			    position_array[robot_start_pos].innerHTML = "<div id='robot'></div>";
+			    position_array[robot_start_pos].innerHTML = "<img id='robot' src='images/robot.png' />";
 			    go_button.disabled = false;
 			    clearInterval(id);
 			    return;
 		    }
 		    position_array[robot_array_pos].innerHTML = '';
 		    robot_array_pos = (vpos * num_rows + hpos) * 2 + 1;
-		    position_array[robot_array_pos].innerHTML = "<div id='robot'></div>";
+		    position_array[robot_array_pos].innerHTML = "<img id='robot' src='images/robot.png' />";
 
 		    if ((hpos*num_columns + vpos) == goal_pos) {
 			clearInterval(id); //stop animation
