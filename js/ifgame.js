@@ -82,12 +82,12 @@ function printCode(on_front_wall, on_bottom_wall, robot_default) {
 	
 	code = 
 `<pre><code> 
-	    if is_front_wall == True:
-		  ${front_wall_code}
-	    elif is_bottom_wall == True:
-		  ${bottom_wall_code}
-	    else: 
-		  ${default_code}
+      if is_front_wall == True:
+	  ${front_wall_code}
+      elif is_bottom_wall == True:
+	  ${bottom_wall_code}    
+      else: 
+	  ${default_code}
 </code></pre>`;
 	code_output.innerHTML = code;
 	code_elements.style.visibility = "inherit";
