@@ -77,16 +77,13 @@ button {
 }
 
 #robot {
-	background-color: #000;
-	height: 50%;
-	width: 50%;
+	position: absolute;
+	width: 8%;
 }
 
 #goal {
-	background-color: #c7d8e7;	
-	height: 35%;
-	width: 30%;
-	border-radius: 50%;
+	position: absolute;
+	width: 10%;
 }
 
 #robot-try-again, #next-level {
