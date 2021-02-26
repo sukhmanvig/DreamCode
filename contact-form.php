@@ -9,11 +9,8 @@
 		$subject = $_POST["subject"];
 		$message = $_POST["message"];
 
-		if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-		  $nameErr = "Only letters and white space allowed";
-		}
 		if (!filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
-		  $emailErr = "Invalid email format";
+		  exit("Invalid email format");
 		}
 		
 		// DreamTeam email
