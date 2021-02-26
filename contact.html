@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Contact</title>
+		<link href="css/nav.css" rel="stylesheet" type="text/css">
+		<link href="css/contact-style.css" rel="stylesheet" type="text/css">
+		
+<!--		React-->
+		<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+		
+		
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	</head>
+
+	<body>
+		<nav class="topnav">
+			<div class="topnav">
+				<div class="navbar-dropdown"><a>Username</a>
+				<div class="navbar-dropdown-elements">
+						<a href="profile.html">Profile</a>
+						<a href="account-settings.html">Account Settings</a>
+						<a href="index.html">Logout</a>
+				</div>
+			</div>
+				<a href= "contact.html">Contact</a>
+				<a href= "about.html">About</a>
+				<a href= "index.html">Home</a>
+				<a href= "dashboard.html">Dashboard</a>
+				<a href= "shell.html">Python Shell</a>
+				<div class="logo">
+					<a href="index.html">DreamCode</a>
+				</div>
+			</div>
+		</nav>		
+		
+		<main>
+			<div class="header-bg"></div>
+
+			<div id="main-contact">
+
+				<h1 class="pg-title">Contact</h1>
+				
+				<div id="contact-info">
+					<h2>Contact Information</h2>
+					<p>
+					Phone: 
+					<a href="tel:555-555-5555">555-555-5555</a>
+					</p>
+					<p>
+					Email: 
+					<a href= "mailto:abc@example.com">dreamteam@outlook.com</a>
+					</p>
+					<div><h3>Social Media</h3>
+						<p>Instagram: <a href="https://www.instagram.com/">DreamTeam</a></p>
+						<p>Twitter: <a href="https://twitter.com/">DreamTeam</a></p>
+						<p>Facebook: <a href="https://www.facebook.com/">DreamTeam</a></p>
+						
+							<img src="https://cdn.discordapp.com/attachments/261348830216192004/814739762182619146/unknown.png" alt="Girl using laptop">
+						
+					</div>
+				</div>
+				
+				<div id="contact-form">
+					<h2>Send us a message</h2>
+					<form action="contact-form.php" method="post">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="John Doe" required>
+						
+						
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" placeholder="johndoe@gmail.com" required>
+
+						<label for="subject" name="subject">Subject</label>
+						<input type="text" id="subject" name="subject" required>
+						<label for="message" name="message">Message</label>
+						<textarea id="message" name="message" required></textarea>
+						
+						<input id="btn-submit" type="submit" value="Submit">
+						
+					</form>
+				</div>
+
+			</div>
+		</main>
+		
+		<footer>
+			<p>Footer is displayed in this section</p>
+		</footer>
+		
+
+	</body>
+</html>
