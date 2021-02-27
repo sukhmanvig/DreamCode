@@ -27,7 +27,6 @@ function App() {
       email: details.email,
       password: details.password,
     }).then((response) => {
-      console.log(response.data);
       if (response.data.message) {
         //setLoginStatus(response.data.message);
         setError(response.data.message);
@@ -49,7 +48,6 @@ function App() {
       email: details.email,
       password: details.password,
     }).then((response) => {
-      console.log(response.data);
       if (response.data.message) {
         //setLoginStatus(response.data.message);
         setError(response.data.message);
@@ -61,7 +59,6 @@ function App() {
   };
 
   const Logout = (details) => {
-    console.log("Logout");
     setLoser({ name: "", email: "" });
     setError("");
     setLoginStatus("");
