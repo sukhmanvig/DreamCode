@@ -1,4 +1,4 @@
-# Sprint 1 Planning
+# Sprint 2 Planning
 
 **Meeting Documented:** Yes, 7/7 members of the Dream Team attended and contributed to the meeting on our discord server.
 
@@ -30,71 +30,3 @@ Accomplishing this goal will further develop the features of our website and mor
 Our spike for this sprint is to learn how to integrate the account management features with a back-end database. We are deploying on the Heroku web platform so part of this sprint is to get our website properly communicating with the database Heroku hosts. Additionally we will be administering the tables and configuration of the database.
 
 <hr>
-
-### Record of chat from discord, ideas were elaborated in voice chat:
-
-<pre>
-Arnaud02/13/2021
-Here
-Akeem02/13/2021
-Here
-komal02/13/2021
-here
-Jæzie | Jazelle02/13/2021
-hey
-Jayvin02/13/2021
-Here
-Arnaud02/13/2021
-Ideas sprint goals:
-A game.
-Account Login features.
-Akeem02/13/2021
-Ill be doing the DREAM-14 (Add Account Creation functionality and save user progress) user story fro sprint 2
-Sukhman02/13/2021
-Here
-Sukhman02/13/2021
-I'm doing DREAM-16 - Add Ability for User to Reset Password
-! Mack Mulligan !02/13/2021
-I'll be doing the game templates to implement the individual game user stories
-komal02/13/2021
-im doing dream-3 Add Ability to Run Python Code
-Jæzie | Jazelle02/13/2021
-https://www.createjs.com/
-CreateJS | A suite of JavaScript libraries and tools designed for w...
-A suite of modular libraries and tools which work together or independently to enable rich interactive content on open web technologies via HTML5.
-
-Jayvin02/13/2021
-I'll be doing:
-
-DREAM-65: Create visual game for if, else if, and else statements [7P]
-       - Create Game Logic [PHP]
-       - Create game assets
-       - Create HTML, CSS, and JavaScript (to animate assets)
-
-DREAM-33: Add if statements explanation [1P]
-Arnaud02/13/2021
-I will do DREAM-34 DREAM-22, stack game
-Jayvin02/13/2021
-Should we start the sprint once we're done assigning user stories
-or should we wait until all user stories are broken down into tasks
-maybe during the next meeting?
-We should break down the user stories next meeting actually before starting the sprint
-Jayvin02/13/2021
-I think both are good sprint goals
-Additional goals would be
-a contact page
-user profile page
-a game template
-Create all HTML pages of the website
-Jæzie | Jazelle02/13/2021
-My user stories for sprint2:
-DREAM-64 - User Profile Page
-DREAM-69 - Contact Page
-reminder we've removed feedback page, feedback capability will be in contact instead
-Akeem02/14/2021
-@Jayvin  and @! Mack Mulligan ! are you good with your US ? if yes can one of you start the sprint2 on jira please
-Jayvin02/14/2021
-l'm good
-! Mack Mulligan !02/14/2021
-Ype
-</pre>
