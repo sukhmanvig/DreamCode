@@ -30,3 +30,4 @@ Accomplishing this goal will further develop the features of our website and mor
 Our spike for this sprint is to learn how to integrate the account management features with a back-end database. We are deploying on the Heroku web platform so part of this sprint is to get our website properly communicating with the database Heroku hosts. Additionally we will be administering the tables and configuration of the database.
 
 <hr>
+
