@@ -8,6 +8,7 @@
 
 Tasks from sprint 2 that need to be completed in sprint 3:
 
+- The DREAM-63 (Quest Template) needs to be updated in future sprints and needs to be made functional once the account functionality has been implemented.
 - The DREAM-83 (Save progress) task was not completed in this sprint which is a part of the DREAM-14 (Add Account Creation functionality and save user progress) user story.
 - We were not able to complete the task of DREAM-86 (Change the password on the backend) for the DREAM-16 (Add Ability for User to Reset Password) user story. We were not able to complete this because the account creation task was not completed which is DREAM-14
 
