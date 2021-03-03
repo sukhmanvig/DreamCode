@@ -76,10 +76,10 @@ function App() {
       ) : status === "" ? (
         <LoginForm Login={Login} error={error} loginCode={loginCode} />
       ) : (
-        <RegisterForm register={register} error={error} loginCode={loginCode} />
+        <RegisterForm register={register} error={error} loginCode={setStatus} />
       )}
     </div>
   );
 }
 
-export default App;
+export default App; 
