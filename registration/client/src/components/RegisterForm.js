@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
-function RegisterForm({ register, error, loginCode }) {
+function RegisterForm({ register, error, setPageStatus }) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
 
   const submitHandler = (e) => {
     e.preventDefault();
     register(details);
-    loginCode("");
+  };
+  const cancelHandler = (e) => {
+    e.preventDefault();
+    setPageStatus("");
   };
 
   return (
@@ -17,6 +20,7 @@ function RegisterForm({ register, error, loginCode }) {
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
+            placeholder="Enter Name"
             type="text"
             name="name"
             id="name"
@@ -28,6 +32,7 @@ function RegisterForm({ register, error, loginCode }) {
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
+            placeholder="Enter Email"
             type="email"
             name="email"
             id="email"
@@ -39,6 +44,7 @@ function RegisterForm({ register, error, loginCode }) {
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
+            placeholder="Enter Password"
             type="password"
             name="password"
             id="password"
@@ -50,6 +56,9 @@ function RegisterForm({ register, error, loginCode }) {
           />
         </div>
         <input type="submit" value="REGISTER" />
+        <button className="register" onClick={cancelHandler}>
+          Cancel
+        </button>
       </div>
     </form>
   );

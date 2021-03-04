@@ -46,7 +46,7 @@ form:after {
     bottom: -5px;
     right: -5px;
     z-index: 1;
-    background-image: linear-gradient(to bottom right, #6bcae2, #0d659d);
+    background-image: linear-gradient(to bottom right,#c7d8e7, rgb(127,255,212));
 }
 
 form .form-inner, .register {
@@ -145,3 +145,4 @@ form .form-inner input[type="submit"]:hover,
     margin-left: 130px;
     background-image: linear-gradient(to right, #0d659d 50%, #0d659d 50%,#6bcae2);
 }
+ 

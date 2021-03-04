@@ -4,13 +4,14 @@ import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import "./css/nav.css";
 
+
 function App() {
   const [status, setStatus] = useState("");
 
+  const [pageStatus, setPageStatus] = useState("");
+
   const [error, setError] = useState("");
   const [loser, setLoser] = useState({ name: "", email: "" });
-
-  const [loginStatus, setLoginStatus] = useState("");
 
   const loginCode = (code) => {
     setStatus(code);
@@ -32,7 +33,7 @@ function App() {
         setError(response.data.message);
       } else {
         setError("");
-        setLoginStatus(response.data[0]);
+        setPageStatus("welcome");
       }
     });
   };
@@ -53,7 +54,7 @@ function App() {
         setError(response.data.message);
       } else {
         setError("");
-        setLoginStatus(response.data[0].username);
+        setPageStatus("welcome");
       }
     });
   };
@@ -61,25 +62,62 @@ function App() {
   const Logout = (details) => {
     setLoser({ name: "", email: "" });
     setError("");
-    setLoginStatus("");
+    setPageStatus("");
   };
 
   return (
-    <div className="App">
-      {loginStatus !== "" ? (
-        <div className="welcome">
-          <h2>
-            Welcome, <span> {loser.name} </span>
-          </h2>
-          <button onClick={Logout}> Logout </button>
+    <>
+      <nav className="topnav">
+        <div className="topnav">
+          <div className="signin">
+            <a onClick={() => setPageStatus("create")}>Create Account</a>
+            <a onClick={() => setPageStatus("signin")}>Sign In</a>
+          </div>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Home</a>
+          <div className="logo">
+            <a href="index.html">DreamCode</a>
+          </div>
         </div>
-      ) : status === "" ? (
-        <LoginForm Login={Login} error={error} loginCode={loginCode} />
-      ) : (
-        <RegisterForm register={register} error={error} loginCode={setStatus} />
-      )}
-    </div>
+      </nav>
+      <div>
+        {pageStatus === "welcome" ? (
+          <div className="welcome App">
+            <h2>
+              Welcome, <span> {loser.name} </span>
+              <button onClick={Logout}> Logout </button>
+            </h2>
+          </div>
+        ) : pageStatus === "signin" ? (
+          <div className="App">
+            <LoginForm
+              Login={Login}
+              error={error}
+              setPageStatus={setPageStatus}
+            />
+          </div>
+        ) : pageStatus === "create" ? (
+          <div className="App">
+            <RegisterForm
+              register={register}
+              error={error}
+              setPageStatus={setPageStatus}
+            />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <nav className="bottomnav">
+        <div>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="home.html">Home</a>
+        </div>
+      </nav>
+    </>
   );
 }
 
-export default App; 
+export default App;

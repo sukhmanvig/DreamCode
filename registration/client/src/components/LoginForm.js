@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
-function LoginForm({ Login, error, loginCode }) {
+function LoginForm({ Login, error, setPageStatus }) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
-  const [code, setCode] = useState("");
 
-  const registerHandler = (e) => {
+  const createHandler = (e) => {
     e.preventDefault();
-    setCode("create");
-    loginCode(code);
+    setPageStatus("create");
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
     Login(details);
+  };
+  const cancelHandler = (e) => {
+    e.preventDefault();
+    setPageStatus("");
   };
 
   return (
@@ -56,10 +58,14 @@ function LoginForm({ Login, error, loginCode }) {
           />
         </div>
         <input type="submit" value="LOGIN" />
-        <button className="register" onClick={registerHandler}>
-          Create Account
+        <button className="register" onClick={createHandler}>
+          SIGN UP
         </button>
+        {/*<button className="register" onClick={cancelHandler}>
+          Cancel
+        </button>*/}
       </div>
+      
     </form>
   );
 }

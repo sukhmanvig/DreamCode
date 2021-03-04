@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 nav {
-	position: relative;
+	position: fixed;
 	background-color: rgb(127,255,212);
 	display: block;
 	width: 100%;
