@@ -1,0 +1,18 @@
+Marking Rubric for the Sprint 1 class demo
+==========================================
+Team name: Dream Team
+
+Attendance: 2 marks full team is attending, 1 mark if at least one member not present, 0 marks the whole team not present
+Your mark:_2_
+
+Working software: 8 marks if at least 4 features work flawlessly, take away 1 mark for each error or missing records on Jira.
+Your mark: ___
+1 features Dream-22 and Dream-34 (2) 
+2 feature Dream-65 Dream-66 Dream-68 (2)
+3 feature Dream-64 (2)
+4 feature Dream-14 --> 
+5 Dream 16 & Dream 2 - (2) 
+6 Dream 3 (3) --> (2) 
+
+Total demo mark: _10_/10
+
