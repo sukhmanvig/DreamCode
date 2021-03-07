@@ -56,6 +56,7 @@ function LoginForm({ Login, error, setPageStatus }) {
             value={details.password}
             required
           />
+          <span className="psw">Forgot <a href="forgotPassword.html">password?</a></span>
         </div>
         <input type="submit" value="LOGIN" />
         <button className="register" onClick={createHandler}>

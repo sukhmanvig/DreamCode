@@ -4,15 +4,11 @@ import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import "./css/nav.css";
 
-
 function App() {
-
   const [pageStatus, setPageStatus] = useState("");
 
   const [error, setError] = useState("");
   const [loser, setLoser] = useState({ name: "", email: "" });
-
-
 
   const register = (details) => {
     setLoser({
@@ -20,7 +16,7 @@ function App() {
       email: details.email,
     });
 
-    Axios.post('/users', {
+    Axios.post("/users", {
       username: details.name,
       email: details.email,
       password: details.password,
@@ -41,7 +37,7 @@ function App() {
       email: details.email,
     });
 
-    Axios.post('/login', {
+    Axios.post("/login", {
       username: details.name,
       email: details.email,
       password: details.password,
@@ -67,24 +63,24 @@ function App() {
       <nav className="topnav">
         <div className="topnav">
           <div className="signin">
-            <a onClick={() => setPageStatus("create")}>Create Account</a>
-            <a onClick={() => setPageStatus("signin")}>Sign In</a>
-          </div>
-          <a href="contact.html">Contact</a>
-          <a href="about.html">About</a>
-          <a href="index.html">Home</a>
+            <a onClick={() => setPageStatus("create")}> Create Account </a>{" "}
+            <a onClick={() => setPageStatus("signin")}> Sign In </a>{" "}
+          </div>{" "}
+          <a href="contact.html"> Contact </a> <a href="about.html"> About </a>{" "}
+          <a href="index.html"> Home </a>{" "}
           <div className="logo">
-            <a href="index.html">DreamCode</a>
-          </div>
-        </div>
-      </nav>
+            <a href="index.html"> DreamCode </a>{" "}
+          </div>{" "}
+        </div>{" "}
+      </nav>{" "}
       <div>
+        {" "}
         {pageStatus === "welcome" ? (
           <div className="welcome App">
             <h2>
-              Welcome, <span> {loser.name} </span>
-              <button onClick={Logout}> Logout </button>
-            </h2>
+              Welcome, <span> {loser.name} </span>{" "}
+              <button onClick={Logout}> Logout </button>{" "}
+            </h2>{" "}
           </div>
         ) : pageStatus === "signin" ? (
           <div className="App">
@@ -92,7 +88,7 @@ function App() {
               Login={Login}
               error={error}
               setPageStatus={setPageStatus}
-            />
+            />{" "}
           </div>
         ) : pageStatus === "create" ? (
           <div className="App">
@@ -100,19 +96,18 @@ function App() {
               register={register}
               error={error}
               setPageStatus={setPageStatus}
-            />
+            />{" "}
           </div>
         ) : (
           ""
-        )}
-      </div>
+        )}{" "}
+      </div>{" "}
       <nav className="bottomnav">
         <div>
-          <a href="contact.html">Contact</a>
-          <a href="about.html">About</a>
-          <a href="home.html">Home</a>
-        </div>
-      </nav>
+          <a href="contact.html"> Contact </a> <a href="about.html"> About </a>{" "}
+          <a href="home.html"> Home </a>{" "}
+        </div>{" "}
+      </nav>{" "}
     </>
   );
 }
