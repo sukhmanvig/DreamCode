@@ -4,22 +4,22 @@ const cors = require("cors");
 const pool = require("./db");
 const port = process.env.PORT || 3001;
 const path = require("path");
+const bcrypt = require("bcrypt");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json()); //req.body
-app.use(express.static(path.join(__dirname , "build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 //ROUTES//
 
 //Create a User
-
 app.post("/users", async (req, res) => {
   try {
-    const { username } = req.body;
-    const { email } = req.body;
-    const { password } = req.body;
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = await bcrypt.hash(req.body.password, 10);
 
     const newUser = await pool.query(
       "INSERT INTO users (username, email, password) VALUES($1, $2, $3)",
@@ -28,36 +28,46 @@ app.post("/users", async (req, res) => {
 
     res.json(newUser);
   } catch (err) {
-    res.json({ message: "Username/email already exists" }); 
+    res.json({ message: "Username/email already exists" });
     console.error(err.message);
   }
 });
 
+//get all users
+{
+  /*app.get("/user", async (req, res) => {
+  const getUser = await pool.query("SELECT * FROM users");
+  res.json(getUser.rows);
+});*/
+}
+
 //login user
 app.post("/login", async (req, res) => {
   try {
-    const { username } = req.body;
-    const { email } = req.body;
-    const { password } = req.body;
+    const username = req.body.username;
+    const email = req.body.email;
 
     const loginUser = await pool.query(
-      "SELECT * FROM users WHERE username = $1 AND email = $2 AND password = $3",
-      [username, email, password]
+      "SELECT * FROM users WHERE username = $1 AND email = $2",
+      [username, email]
     );
     if (loginUser.rowCount > 0) {
-      res.json(loginUser.rows);
+      if (await bcrypt.compare(req.body.password, loginUser.rows[0].password)) {
+        res.json(loginUser.rows);
+      } else {
+        res.json({ message: "Password Incorrect!" });
+      }
     } else {
-      res.json({ message: "Wrong username/password" });
+      res.json({ message: "Wrong username/email" });
     }
   } catch (err) {
     console.error(err.message);
   }
 });
 
-
 //wildcard
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(port, () => {

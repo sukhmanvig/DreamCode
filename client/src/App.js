@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
+import Navbar from "./components/Navbar";
+import NavbarBottom from "./components/NavbarBottom";
 import "./css/nav.css";
 
 function App() {
   const [pageStatus, setPageStatus] = useState("");
 
   const [error, setError] = useState("");
-  const [loser, setLoser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ name: "", email: "" });
 
   const register = (details) => {
-    setLoser({
+    setUser({
       name: details.name,
       email: details.email,
     });
@@ -26,13 +29,13 @@ function App() {
         setError(response.data.message);
       } else {
         setError("");
-        setPageStatus("welcome");
+        setPageStatus("Logged_in");
       }
     });
   };
 
   const Login = (details) => {
-    setLoser({
+    setUser({
       name: details.name,
       email: details.email,
     });
@@ -47,68 +50,52 @@ function App() {
         setError(response.data.message);
       } else {
         setError("");
-        setPageStatus("welcome");
+        setPageStatus("Logged_in");
       }
     });
   };
 
   const Logout = (details) => {
-    setLoser({ name: "", email: "" });
+    setUser({ name: "", email: "" });
     setError("");
     setPageStatus("");
   };
 
   return (
-    <>
-      <nav className="topnav">
-        <div className="topnav">
-          <div className="signin">
-            <a onClick={() => setPageStatus("create")}> Create Account </a>{" "}
-            <a onClick={() => setPageStatus("signin")}> Sign In </a>{" "}
-          </div>{" "}
-          <a href="contact.html"> Contact </a> <a href="about.html"> About </a>{" "}
-          <a href="index.html"> Home </a>{" "}
-          <div className="logo">
-            <a href="index.html"> DreamCode </a>{" "}
-          </div>{" "}
-        </div>{" "}
-      </nav>{" "}
+    <Router>
+      <Navbar setPageStatus={setPageStatus} pageStatus={pageStatus} />
       <div>
-        {" "}
-        {pageStatus === "welcome" ? (
+        {pageStatus === "Logged_in" ? (
           <div className="welcome App">
             <h2>
-              Welcome, <span> {loser.name} </span>{" "}
-              <button onClick={Logout}> Logout </button>{" "}
-            </h2>{" "}
+              Welcome, <span> {user.name} </span>
+              <button onClick={Logout}> Logout </button>
+            </h2>
           </div>
         ) : pageStatus === "signin" ? (
           <div className="App">
+            <Route path="/login" />
             <LoginForm
               Login={Login}
               error={error}
               setPageStatus={setPageStatus}
-            />{" "}
+            />
           </div>
         ) : pageStatus === "create" ? (
           <div className="App">
+            <Route path="/users" />
             <RegisterForm
               register={register}
               error={error}
               setPageStatus={setPageStatus}
-            />{" "}
+            />
           </div>
         ) : (
           ""
-        )}{" "}
-      </div>{" "}
-      <nav className="bottomnav">
-        <div>
-          <a href="contact.html"> Contact </a> <a href="about.html"> About </a>{" "}
-          <a href="home.html"> Home </a>{" "}
-        </div>{" "}
-      </nav>{" "}
-    </>
+        )}
+      </div>
+      <NavbarBottom />
+    </Router>
   );
 }
 
