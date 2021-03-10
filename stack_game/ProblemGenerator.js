@@ -40,6 +40,6 @@ export default class ProblemGenerator {
     }
 
     generateSolution(inputProblem, goal) {
-        // todo
+        // TODO
     }
 }

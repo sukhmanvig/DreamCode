@@ -14,6 +14,7 @@ export default class Model {
         this.problem = JSON.parse(JSON.stringify(problem));
         this.gameGoal = JSON.parse(JSON.stringify(gameGoal));
         this.currentSelection = undefined;
+        this.moves = 0;
     }
 
     isWon() {
@@ -30,8 +31,10 @@ export default class Model {
     }
 
     popFrom(stackNum) {
-        if (this.currentSelection == undefined)
+        if (this.currentSelection == undefined) {
             this.currentSelection = this.stacks[stackNum].pop();
+            this.moves++;
+        }
     }
 
     pushTo(stackNum) {
@@ -40,6 +43,7 @@ export default class Model {
             let item = this.currentSelection;
             stack.push(item);
             this.currentSelection = undefined;
+            this.moves++;
         }
     }
 
@@ -47,18 +51,21 @@ export default class Model {
         if (!(this.currentSelection == undefined)) {
             this.outputQueue.unshift(this.currentSelection);
             this.currentSelection = undefined;
+            this.moves++;
         }
     }
 
     popFromOutput() {
         if (this.currentSelection == undefined) {
             this.currentSelection = this.outputQueue.shift();
+            this.moves++;
         }
     }
 
     popFromInput() {
         if (this.currentSelection == undefined)
             this.currentSelection = this.inputQueue.pop();
+            this.moves++;
     }
 
     printModel() {

@@ -5,6 +5,7 @@ var id = null;
 var level = 0;
 var level_start_positions = [0];
 var level_goal_positions = [8];
+var attempts = 0;
 
 //show/hide the code section
 function changeCodeVisibility() {
@@ -190,6 +191,7 @@ function robotGo() {
 					   error = true;
 			  }
 	            }
+			moves++;
 		    if (error) {
 			    game_status.innerHTML = "Oops that path wasn't quite right. Try again.";
 			    position_array[robot_array_pos].innerHTML = '';

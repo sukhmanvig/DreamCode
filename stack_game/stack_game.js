@@ -3,6 +3,8 @@ import Marble from "./Marble.js";
 import ProblemGenerator from "./ProblemGenerator.js";
 import Model from "./Model.js";
 
+// Currently, this game generation is fixed
+
 let x = new Marble("red", "A");
 let xx = new Marble("red", "A");
 let y = new Marble("green", "B");
@@ -37,6 +39,7 @@ console.log(gameGoal);
 let gameModel = new Model(gameProb, gameGoal, 3);
 gameModel.printModel();
 
+// Create control buttons
 let buttonContainer = document.getElementById("input_output_buttons");
 let canvasContext = ctx;
 
@@ -45,6 +48,7 @@ popInputButton.innerHTML = "Pop From Input";
 popInputButton.onclick = function() { 
     gameModel.popFromInput();
     gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+    update();
 };
 buttonContainer.appendChild(popInputButton);
 
@@ -53,6 +57,7 @@ pushOutputButton.innerHTML = "Push to Output";
 pushOutputButton.onclick = function() { 
     gameModel.pushToOutput();
     gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+    update();
 };
 buttonContainer.appendChild(pushOutputButton);
 
@@ -61,6 +66,7 @@ popFromOutputButton.innerHTML = "Pop from Output";
 popFromOutputButton.onclick = function() { 
     gameModel.popFromOutput();
     gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+    update();
 };
 buttonContainer.appendChild(popFromOutputButton);
 
@@ -102,4 +108,12 @@ function newGame() {
     gameGoal = pg.generateGoal(gameProb);
     gameModel = new Model(gameProb, gameGoal, 3);
     gameModel.drawOnCanvas(canvasContext, 800, 600);
+}
+
+/**Send the results to the back end once the game is finished
+ */
+update = function() {
+    if (gameModel.isWon()) {
+        let score = gameModel.moves;
+    }
 }
