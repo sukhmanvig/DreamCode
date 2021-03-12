@@ -4,7 +4,7 @@
 
 ## Goal
 
-The goal for sprint 3 is to implement features so the user can create an account, view their account information, and change their account password. Additionally, we will implement at 1 new game for the website.
+The goal for sprint 3 is to implement features so the user can create an account, view their account information, and change their account password. Additionally, we will implement 1 new game for the website.
 
 Sprint 3 will implement the following:
 
