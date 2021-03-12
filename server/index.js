@@ -14,6 +14,9 @@ app.use(cors());
 app.use(express.json()); //req.body
 app.use(express.static(path.join(__dirname, "build")));
 
+//move these to the database eventually
+let refreshTokens = [];
+
 //ROUTES//
 
 //Create a User
@@ -40,8 +43,22 @@ app.get("/user", authenticateToken, async (req, res) => {
   const getUser = await pool.query("SELECT * FROM users WHERE username = $1", [
     req.user.username,
   ]);
-  res.json(getUser.rows);
+  res.json(getUser.username);
+  console.log(getUser.rows);
 });
+
+// deals with the tokens
+app.post("/token", (req, res) => {
+  const refreshToken = req.body.token;
+  if (refreshToken == null) return res.sendStatus(401);
+  if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    const accessToken = generateAccessToken({ name: user.username });
+    res.json({ accessToken: accessToken });
+  });
+});
+
 //authenticate token
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
@@ -52,6 +69,11 @@ function authenticateToken(req, res, next) {
     req.user = loginUser;
     next();
   });
+}
+
+//genarate access token
+function generateAccessToken(user) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
 }
 
 //login user
@@ -68,11 +90,13 @@ app.post("/login", async (req, res) => {
       if (await bcrypt.compare(req.body.password, loginUser.rows[0].password)) {
         //authorized the user
         //create the token for the user
-        const accessToken = jwt.sign(
+        const accessToken = generateAccessToken(loginUser.rows[0]);
+        const refreshToken = jwt.sign(
           loginUser.rows[0],
-          process.env.ACCESS_TOKEN_SECRET
+          process.env.REFRESH_TOKEN_SECRET
         );
-        res.json({ accessToken: accessToken });
+        refreshTokens.push(refreshToken);
+        res.json({ accessToken: accessToken, refreshToken: refreshToken });
       } else {
         res.json({ message: "Password Incorrect!" });
       }
@@ -83,6 +107,13 @@ app.post("/login", async (req, res) => {
     console.error(err.message);
   }
 });
+
+
+//logout users and delete refresh token
+app.delete('/logout', (req, res) => {
+  refreshTokens = refreshTokens.filter(token => token !== req.body.token)
+  res.sendStatus(204)
+})
 
 //wildcard
 app.get("/*", (req, res) => {

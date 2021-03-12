@@ -8,22 +8,14 @@ function Navbar({ setPageStatus, pageStatus }) {
       <nav className="topnav">
         <div className="topnav">
           <div className="signin">
-            {pageStatus !== "Logged_in" ? (
-              <>
-                <a onClick={() => setPageStatus("create")}> Create Account </a>
-                <a onClick={() => setPageStatus("signin")}> Sign In </a>
-              </>
-            ) : (
-              <>
-                <h2>Logout</h2>
-              </>
-            )}
+            <Link to="/signup"> Create Account </Link>
+            <Link to="/login"> Sign In </Link>
           </div>
-          <Link to="./pages/contact.html"> Contact </Link>
-          <Link to="./pages/about.html"> About </Link>
-          <Link to="index.html"> Home </Link>
+          <Link to="/contact.html"> Contact </Link>
+          <Link to={"/about.html"}> About </Link>
+          <Link to="/"> Home </Link>
           <div className="logo">
-            <Link to="index.html"> DreamCode </Link>
+            <Link to="/"> DreamCode </Link>
           </div>
         </div>
       </nav>

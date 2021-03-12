@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
@@ -60,40 +60,45 @@ function App() {
     setError("");
     setPageStatus("");
   };
-
+  const hello = () => {
+    return (
+      <>
+        <h1>yoyooyoyo</h1>
+      </>
+    );
+  };
   return (
     <Router>
       <Navbar setPageStatus={setPageStatus} pageStatus={pageStatus} />
-      <div>
-        {pageStatus === "Logged_in" ? (
+      <Switch>
+        <Route exact path="/">
           <div className="welcome App">
             <h2>
               Welcome, <span> {user.name} </span>
               <button onClick={Logout}> Logout </button>
             </h2>
           </div>
-        ) : pageStatus === "signin" ? (
+        </Route>
+        <Route exact path="/login">
           <div className="App">
-            <Route path="/login" />
             <LoginForm
               Login={Login}
               error={error}
               setPageStatus={setPageStatus}
             />
           </div>
-        ) : pageStatus === "create" ? (
+        </Route>
+        <Route exact path="/signup">
           <div className="App">
-            <Route path="/users" />
             <RegisterForm
               register={register}
               error={error}
               setPageStatus={setPageStatus}
             />
           </div>
-        ) : (
-          ""
-        )}
-      </div>
+        </Route>
+        <Route path="/about.html" component={hello}></Route>
+      </Switch>
       <NavbarBottom />
     </Router>
   );
