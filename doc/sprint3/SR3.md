@@ -32,7 +32,7 @@ This sprint we overestimated our capacity to implement new features, it was a bu
 
 We also underestimated the time it would take to troubleshoot some of the issues we faced while developing in new langauges. Moving forward we will also account for the time it can take to troubleshoot errors that arise while learning.
 
-We did not really coordinate when we would have collaborative problem solving sessions, group meetings served as as both broad progress updates and troubleshooting times, but this was not strictly scheduled. If we scheduled specific collaborative sessions, we could better track our timeline and adjust for solving these individual issues.
+We did not really coordinate when we would have collaborative problem solving sessions, group meetings served as both broad progress updates and troubleshooting times, but this was not strictly scheduled. If we scheduled specific collaborative sessions, we could better track our timeline and adjust for solving these individual issues.
 
 ## Best experience
 
