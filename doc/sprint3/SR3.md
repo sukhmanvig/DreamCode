@@ -26,13 +26,11 @@ We will consider integrating all of our feature branches sooner in sprint 4. Thi
 
 ## Harmful practices to avoid for next sprint
 
--- TODO -- BELOW FROM S2 RETROSPECTIVE --
+We again overestimated our capacity to complete all the user stories, converting plain HTML+Javascript to React components has been a more involved task than anticipated and slowed development during the sprint.
 
-This sprint we overestimated our capacity to implement new features, it was a busy week and we could've accounted better for our other responsibilities and the time they would take.
+We also underestimated the time it would take to troubleshoot some issues we would encounter. Moving forward we will also account for the time it can take to troubleshoot errors that arise while learning.
 
-We also underestimated the time it would take to troubleshoot some of the issues we faced while developing in new langauges. Moving forward we will also account for the time it can take to troubleshoot errors that arise while learning.
-
-We did not really coordinate when we would have collaborative problem solving sessions, group meetings served as as both broad progress updates and troubleshooting times, but this was not strictly scheduled. If we scheduled specific collaborative sessions, we could better track our timeline and adjust for solving these individual issues.
+Collaborative time was better managed in sprint 3, but it still occurred during regular group meetings, we will try to improve scheduling this to better optimize how the team can help each other out.
 
 ## Best experience
 
