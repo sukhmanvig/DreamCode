@@ -9,8 +9,9 @@ function Navbar({ setPageStatus, pageStatus }) {
         <div className="topnav">
           <div className="signin">
             <Link to="/signup"> Create Account </Link>
-            <Link to="/login"> Sign In </Link>
+            <Link to="/login"> Sign in </Link>
           </div>
+
           <Link to="/contact.html"> Contact </Link>
           <Link to={"/about.html"}> About </Link>
           <Link to="/"> Home </Link>

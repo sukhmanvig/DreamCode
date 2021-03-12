@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
@@ -9,7 +9,6 @@ import "./css/nav.css";
 
 function App() {
   const [pageStatus, setPageStatus] = useState("");
-
   const [error, setError] = useState("");
   const [user, setUser] = useState({ name: "", email: "" });
 
@@ -51,6 +50,7 @@ function App() {
       } else {
         setError("");
         setPageStatus("Logged_in");
+        console.log("should switch");
       }
     });
   };
@@ -60,16 +60,10 @@ function App() {
     setError("");
     setPageStatus("");
   };
-  const hello = () => {
-    return (
-      <>
-        <h1>yoyooyoyo</h1>
-      </>
-    );
-  };
   return (
-    <Router>
+    <>
       <Navbar setPageStatus={setPageStatus} pageStatus={pageStatus} />
+      {pageStatus === "Logged_in" ? <Redirect to="/" /> : ""}
       <Switch>
         <Route exact path="/">
           <div className="welcome App">
@@ -97,10 +91,10 @@ function App() {
             />
           </div>
         </Route>
-        <Route path="/about.html" component={hello}></Route>
+        <Route path="/about.html"></Route>
       </Switch>
       <NavbarBottom />
-    </Router>
+    </>
   );
 }
 

@@ -10,6 +10,7 @@ function LoginForm({ Login, error, setPageStatus }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(details);
     Login(details);
   };
   const cancelHandler = (e) => {
