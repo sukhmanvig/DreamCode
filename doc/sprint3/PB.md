@@ -35,7 +35,7 @@ Cos = "Criteria of Satisfaction"
 * Priority: 5
 * Complexity: 1
 
-**As a learner, I want to read about arrays, so that I can learn about them.**
+**As a learner, I want to read about lists, so that I can learn about them.**
 
 * Cos: Explanations and materials are provided in the app to cover this topic.
 * Priority: 5
@@ -54,9 +54,9 @@ Cos = "Criteria of Satisfaction"
 * Priority: 3
 * Complexity: 7
 
-**As a visual learner, I want to interact graphically with how arrays work, so that I can learn the concept in a visual way.**
+**As a visual learner, I want to interact graphically with how lists work, so that I can learn the concept in a visual way.**
 
-* Cos: The User can play a game illustrating the functionality of arrays and common operations on them.
+* Cos: The User can play a game illustrating the functionality of lists and common operations on them.
 * Priority: 3
 * Complexity: 7
 
@@ -78,9 +78,9 @@ Cos = "Criteria of Satisfaction"
 * Priority: 4
 * Complexity: 6
 
-**As a Python Learner, I want to see working Python examples of arrays, so that I can start using them in my own code.**
+**As a Python Learner, I want to see working Python examples of lists, so that I can start using them in my own code.**
 
-* Cos: the User can view functioning python code snippets showing array use.
+* Cos: the User can view functioning python code snippets showing lists use.
 * Priority: 4
 * Complexity: 4
  
