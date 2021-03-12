@@ -9,7 +9,6 @@
 Tasks from sprint 3 that are being moved to sprint 4:
 
 - [DREAM-90] Create a quest map
-- [DREAM-89] Save progress to back-end for all quests
 - [DREAM-88] Website saves and updates sessions when completing quests
 - [DREAM-25] User can save their progress mid-game
 
