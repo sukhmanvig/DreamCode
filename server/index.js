@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const mysql = require("mysql");
 const cors = require("cors");
 const pool = require("./db");
 const port = process.env.PORT || 3001;
