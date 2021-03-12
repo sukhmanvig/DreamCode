@@ -4,33 +4,35 @@
 
 ## Goal
 
-The goal for sprint 3 is to finish implementing user account functionality, improve the featureset of the existing if-statement and stack games, and add a new game to represent Arrays.
+The goal for sprint 3 is to implement features so the user can create an account, view their account information, and change their account password. Additionally, we will implement at 1 new game for the website.
 
-We intend to implement the following for sprint 3:
+Sprint 3 will implement the following:
 
-* Add account creation
-* Add leaderboard
-* Add ability to reset password
-* Add Python learning content
-* Add account authorization functionality
-* Add remember progress functionality
-* Add code snippets for the if-statement and stack games
-* Add a new game for Array data structures
-* Improve website navigation
+* A game teaching users about Python lists
+* Account registration and login
+* Account password modification and reset
+* A biography section for the user in the profile page
+* Code snippets showing if-statement and stack use
+* Information about Python learning resources and links to them
+* Public leaderboard for users to view their scores
+
 
 These features are represented by the below user stories:
 
-* As an unregistered user, I want to create an account that will save my progress between sessions.
-* As a logged in user, I want to see my score on a leaderboard, so that I can see how others are doing in the games.
-* As a user who forgot their password, I want to be able to reset my password with my email, so that I can sign in again.
-* As a user I would like to be able to edit and write my biography on the profile page.
-* As a previously logged in user, I want the game to remember my account ID, so that I don’t have to sign in each time I open the app.
-* As a logged in user, I want the game to remember my progress, so that I don't have to redo everything each time I use the app.
-* As a Python Learner, I want to see Python examples of stacks, so that I can start using them in my own code.
-* As a signed in user, I want to be able to change my login password, so that I can change my login credentials.
-* As a visual learner, I want to interact graphically with how Python lists work, so that I can learn the concept in a visual way.
-* add the navigation functionality to end able users to navigate to different HTML and react pages throughout the app
+* [DREAM-14] As an unregistered user, I want to create an account that will save my progress between sessions.
+* [DREAM-30] As a signed in user, I want to be able to change my login password, so that I can change my login credentials.
+* [DREAM-36] As a visual learner, I want to interact graphically with how Python lists work, so that I can learn the concept in a visual way.
+* [DREAM-18] As a logged in user, I want to see my score on a leaderboard, so that I can see how others are doing in the games.
+* [DREAM-16] As a user who forgot their password, I want to be able to reset my password with my email, so that I can sign in again.
+* [DREAM-20] As a new Python Programmer, I want to read about basic Python syntax.
+* [DREAM-91] As a user I would like to be able to edit and write my biography on the profile page.
+* [DREAM-19] As a Python Learner, I want to see Python examples of stacks, so that I can start using them in my own code.
+* [DREAM-29] As a Python Learner, I want to see working Python examples of if-statements, so that I can start using them in my own code.
 
 ## Spike
 
-There is no Spike for sprint 3, all efforts for sprint 3 are going towards implementing features from the product backlog.
+Potential challenges for this sprint:
+
+* Turning existing HTML pages into React components
+* Figuring out how to link our React components (webpages) together
+
