@@ -36,7 +36,7 @@ We did not really coordinate when we would have collaborative problem solving se
 
 ## Best experience
 
-Seeing the frontend-backend fucntionality of the account features start to work.
+Seeing the frontend-backend functionality of the account features start to work.
 
 ## Worst experience
 
