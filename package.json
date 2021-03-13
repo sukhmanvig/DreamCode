@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "engines": {
     "node": "v15.9.0",
@@ -20,7 +20,6 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "pg": "^8.5.1",
-    "react-router-dom": "^5.2.0"
+    "pg": "^8.5.1"
   }
 }

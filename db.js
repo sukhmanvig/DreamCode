@@ -8,6 +8,11 @@ const pool = new Pool({
     password: "b37ac7ad7e6047f9c7a5fa1f8bb200761989d11c934c1ac0716907e34ed71efd",
     ssl: { rejectUnauthorized: false }
  
+    /*user: "postgres",
+    password: "postgres",
+    host: "localhost",
+    port: 5432,
+    database: "loginsystem"*/
 });
 
 module.exports = pool;
