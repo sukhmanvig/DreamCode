@@ -21,16 +21,20 @@ let refreshTokens = [];
 //Create a User
 app.post("/users", async (req, res) => {
   try {
-    const username = req.body.username;
-    const email = req.body.email;
-    const password = await bcrypt.hash(req.body.password, 10);
+    if (req.body.password === req.body.password_2nd) {
+      const username = req.body.username;
+      const email = req.body.email;
+      const password = await bcrypt.hash(req.body.password, 10);
 
-    const newUser = await pool.query(
-      "INSERT INTO users (username, email, password) VALUES($1, $2, $3)",
-      [username, email, password]
-    );
+      const newUser = await pool.query(
+        "INSERT INTO users (username, email, password) VALUES($1, $2, $3)",
+        [username, email, password]
+      );
 
-    res.json(newUser);
+      res.json(newUser);
+    } else {
+      res.json({ message: "Password does not match!!" });
+    }
   } catch (err) {
     res.json({ message: "Username/email already exists" });
     console.error(err.message);
@@ -43,7 +47,6 @@ app.get("/user", authenticateToken, async (req, res) => {
     req.user.username,
   ]);
   res.json(getUser.username);
-  console.log(getUser.rows);
 });
 
 // deals with the tokens
@@ -78,13 +81,10 @@ function generateAccessToken(user) {
 //login user
 app.post("/login", async (req, res) => {
   try {
-    const username = req.body.username;
     const email = req.body.email;
-
-    const loginUser = await pool.query(
-      "SELECT * FROM users WHERE username = $1 AND email = $2",
-      [username, email]
-    );
+    const loginUser = await pool.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
     if (loginUser.rowCount > 0) {
       if (await bcrypt.compare(req.body.password, loginUser.rows[0].password)) {
         //authorized the user
@@ -107,12 +107,23 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
 //logout users and delete refresh token
-app.delete('/logout', (req, res) => {
-  refreshTokens = refreshTokens.filter(token => token !== req.body.token)
-  res.sendStatus(204)
-})
+app.delete("/logout", (req, res) => {
+  refreshTokens = refreshTokens.filter((token) => token !== req.body.token);
+  res.sendStatus(204);
+});
+
+//Get leaderboard
+app.get("/leaderboard", async (req, res) => {
+  try {
+    const leaderboard = await pool.query(
+      "SELECT username, points FROM users u, leaderboard l WHERE u.users_id = l.uid ORDER BY points DESC LIMIT 5;"
+    );
+    res.json(leaderboard.rows);
+  } catch (err) {
+    console.error(err);
+  }
+});
 
 //wildcard
 app.get("/*", (req, res) => {
