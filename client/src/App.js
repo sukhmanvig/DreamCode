@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
 import NavbarBottom from "./components/NavbarBottom";
-import "./css/nav.css";
+import Dashboard from "./components/dashboard";
 
 function App() {
   const [pageStatus, setPageStatus] = useState("");
@@ -13,20 +13,20 @@ function App() {
   const [user, setUser] = useState({ name: "", email: "" });
 
   const register = (details) => {
-    setUser({
-      name: details.name,
-      email: details.email,
-    });
-
     Axios.post("/users", {
       username: details.name,
       email: details.email,
       password: details.password,
+      password_2nd: details.password_2nd,
     }).then((response) => {
       if (response.data.message) {
         //setLoginStatus(response.data.message);
         setError(response.data.message);
       } else {
+        setUser({
+          name: details.name,
+          email: details.email,
+        });
         setError("");
         setPageStatus("Logged_in");
       }
@@ -34,13 +34,7 @@ function App() {
   };
 
   const Login = (details) => {
-    setUser({
-      name: details.name,
-      email: details.email,
-    });
-
     Axios.post("/login", {
-      username: details.name,
       email: details.email,
       password: details.password,
     }).then((response) => {
@@ -50,7 +44,10 @@ function App() {
       } else {
         setError("");
         setPageStatus("Logged_in");
-        console.log("should switch");
+        setUser({
+          name: details.name,
+          email: details.email,
+        });
       }
     });
   };
@@ -60,6 +57,10 @@ function App() {
     setError("");
     setPageStatus("");
   };
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <>
       <Navbar setPageStatus={setPageStatus} pageStatus={pageStatus} />
@@ -74,24 +75,21 @@ function App() {
           </div>
         </Route>
         <Route exact path="/login">
-          <div className="App">
-            <LoginForm
-              Login={Login}
-              error={error}
-              setPageStatus={setPageStatus}
-            />
+          <div>
+            <LoginForm Login={Login} error={error} setError={setError} />
           </div>
         </Route>
         <Route exact path="/signup">
-          <div className="App">
+          <div>
             <RegisterForm
               register={register}
               error={error}
-              setPageStatus={setPageStatus}
+              setError={setError}
             />
           </div>
         </Route>
-        <Route path="/about.html"></Route>
+        <Route path="/about.html" component={refreshPage}></Route>
+        <Route path="/dashboard" component={Dashboard}></Route>
       </Switch>
       <NavbarBottom />
     </>

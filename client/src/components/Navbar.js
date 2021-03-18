@@ -14,6 +14,7 @@ function Navbar({ setPageStatus, pageStatus }) {
 
           <Link to="/contact.html"> Contact </Link>
           <Link to={"/about.html"}> About </Link>
+          <Link to={"/dashboard"}> Dashboard </Link>
           <Link to="/"> Home </Link>
           <div className="logo">
             <Link to="/"> DreamCode </Link>

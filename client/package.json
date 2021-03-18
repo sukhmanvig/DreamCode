@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "buildncopy": "npm run build && (xcopy build ..\\server\\build /E /Y)"
+    "buildncopy": "npm run build && (xcopy build ..\\build /E /Y)"
   },
   "eslintConfig": {
     "extends": [
