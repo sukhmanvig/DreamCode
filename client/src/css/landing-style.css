@@ -35,7 +35,7 @@ input[type=text], input[type=password] {
 	box-sizing: border-box;
   }
 
-/* Set a style for all buttons */
+/* Set a style for all buttons THIS IS CAUSING ERRORS IN THE SETTINGS PAGE*/ 
 button {
 	background-color: #7fffd4;
 	color: #000000;

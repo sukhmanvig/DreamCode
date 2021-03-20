@@ -1,0 +1,349 @@
+@charset "utf-8";
+/* CSS Document */
+.navbar-dropdown-elements:hover {
+	background: linear-gradient(to bottom, #FFFFFF00 30%, #FFFFFF90 10%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--colscheme1: #050b1f;
+	--colscheme2: #6bcae2;
+	--colscheme3: #0d659d;
+	--colscheme4: #c7d8e7;
+	--colscheme5: #11F7FF;
+}
+
+body {
+	font-family: "Calibri Light", sans-serif;
+	background: black;
+	background: url("../images/pbg-dark.png");
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+
+footer {
+	background: #FFFFFF50;
+	height: 250px;
+	display: flex;
+	color: white;
+}
+footer p {
+	margin: auto;
+	font-style: italic;
+}
+#ft-note {
+	margin: auto;
+}
+.profile-content{
+	width: 80%;
+	margin: 100px auto;
+	display: flex;
+
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	border-radius: 30px;
+}
+
+.p-head {
+	display: flex;
+	flex-basis: 100%;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	padding: 20px 50px;
+	padding-bottom: 50px;
+	background: linear-gradient(to bottom, var(--colscheme3), #AFFCFF, #FFFFFF00);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#user-pfp {
+	background: linear-gradient(to bottom, var(--colscheme4), var(--colscheme2));
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border: 5px var(--colscheme3) solid;
+	box-shadow: 0px 5px 5px black;
+	transition: border 0.1s ease-in;
+	overflow: hidden;
+
+}
+
+#name-title {
+	font-size: 70px;
+	color: white;
+}
+#user-pfp img {
+	max-height: 100%;
+	max-width: 100%;
+}
+#user-pfp:hover {
+	border: 10px var(--colscheme3) solid;
+}
+
+#user-infosec {
+	padding: 50px;
+}
+
+#circle-stats {
+	margin-left: auto;
+	width:250px;
+	height:250px;
+	background: linear-gradient(to bottom, var(--colscheme4), var(--colscheme2));
+	border-radius: 50%;
+	display: flex;
+	position: relative;
+	box-shadow: 0px 5px 5px var(--colscheme3);
+}
+
+#circle-stats:hover .circle-xp {
+	stroke: #0B7AC0;
+
+}
+.div-lvl {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display:flex;
+
+}
+
+.div-lvl div {
+	background: linear-gradient(to bottom, var(--colscheme3), var(--colscheme2));
+	width: 70%;
+	height: 70%;
+	border-radius: 50%;
+	display: flex;
+	margin: auto;
+	border: 2px solid var(--colscheme4);
+}
+
+#circle-stats h3 {
+	padding: 10px;
+	margin: auto;
+	font-size: 30px;
+}
+
+.circle-xp {
+	fill: transparent;
+	stroke: var(--colscheme3);
+	stroke-width: 40;
+
+	transition: stroke 0.2s linear;
+}
+
+
+#circle-stats svg {
+	width: 100%;
+}
+svg {
+
+	transform: rotate(-90deg);
+}
+
+section {
+	background: #ffffff90;
+}
+
+
+.profile-div-left {
+	flex-basis: 25%;
+	display: flex;
+	margin-right: 25px;
+}
+.profile-div-right {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 25%;
+	margin-left: 10px;
+	width: 100%;
+}
+
+
+.pf-sec {
+	width: 100%;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0px 5px 5px var(--colscheme2);
+}
+
+
+.sec-badges {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 25px;
+	padding-bottom: 20px;
+}
+
+.ubadge {
+	height: 100px;
+	width: 100px;
+	margin: 20px;
+	border-radius: 100%;
+	background: #FFFFFF90;
+
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+
+	transition: all 0.1s ease-out;
+}
+.ubadge img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.ubadge h5 {
+
+	color: white;
+	position: relative;
+	bottom: 55px;
+}
+
+.ubadge:hover {
+	box-shadow: 0px 5px 5px var(--colscheme3);
+	transform: scale(1.1);
+}
+
+.sec-most-played {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.game {
+	min-width: 200px;
+	flex-grow: 1;
+
+	height: 100px;
+	margin: 20px;
+
+	background: #FFFFFF90;
+	border-radius: 20px;
+	text-align: center;
+	transition: all 0.1s ease-out;
+	display: flex;
+	cursor: pointer;
+}
+
+.game h5 {
+	margin: auto;
+}
+.game:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 5px 5px var(--colscheme3);
+}
+
+.frn {
+	height: 70px;
+	background: #FFFFFF90;
+	padding: 0 10px;
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	transition: all 0.1s ease-out;
+	position: relative;
+}
+
+.frn:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	box-shadow: 0px 5px 5px var(--colscheme3);
+
+}
+.frn:nth-child(even) {
+	background:#6DA7E550;
+}
+.frn-img {
+	background: #FFFFFF90;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin: auto 5px;
+}
+
+.frn h5 {
+	margin: auto;
+}
+h4 {
+	flex-basis: 100%;
+	padding: 20px;
+	font-size: 30px;
+	color: white;
+	background: linear-gradient(var(--colscheme2), var(--colscheme4), #ffffff);
+}
+
+.bio{
+	color:Blue;
+	border: 1px solid Blue;
+}
+
+@media (max-width: 1340px) {
+
+	#user-pfp {
+		width: 200px;
+		height: 200px;
+	}
+	#user-infosec {
+		margin-right: auto;
+	}
+}
+
+@media (max-width: 1200px) {
+	#circle-stats {
+		display: none;
+	}
+	.profile-div-left {
+		flex-basis: 100%;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 25px;
+	}
+	.profile-div-right {
+		flex-basis: 100%;
+		margin: 0;
+	}
+	.sec-friends {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.frn {
+		flex-basis: 32%;
+		margin: 5px;
+	}
+}
+@media (max-width: 1000px) {
+	.frn {
+		flex-basis: 48%;
+		margin: 5px;
+	}
+}
+@media (max-width: 900px) {
+
+	#user-pfp {
+		margin: auto;
+	}
+	#user-infosec {
+		margin: auto;
+		padding: 20px 50px;
+	}
+}
+@media (max-width:650px) {
+	.frn {
+		flex-basis: 100%;
+		margin: 5px;
+	}
+	.ubadge {
+		margin: 10px;
+	}
+}

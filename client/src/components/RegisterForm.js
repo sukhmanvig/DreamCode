@@ -1,21 +1,42 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 import "../css/index.css";
-function RegisterForm({ register, error, setError }) {
+function RegisterForm() {
+  const [error, setError] = useState("");
+  let history = useHistory();
   const [details, setDetails] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
     password_2nd: "",
   });
 
-  const submitHandler = (e) => {
+  const register = (e) => {
     e.preventDefault();
-    register(details);
+    Axios.post("/users", {
+      username: details.username,
+      email: details.email,
+      password: details.password,
+      password_2nd: details.password_2nd,
+    }).then((response) => {
+      if (response.data.message) {
+        //setLoginStatus(response.data.message);
+        setError(response.data.message);
+      } else {
+        localStorage.setItem("username", details.username);
+        localStorage.setItem("email", details.email);
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("accessToken", response.data.accessToken);
+        localStorage.setItem("refreshToken", response.data.refreshToken);
+        setError("");
+        history.push("/");
+      }
+    });
   };
   return (
     <div className="App">
-      <form onSubmit={submitHandler}>
+      <form onSubmit={register}>
         <div className="form-inner">
           <h2 className="form-group">Register</h2>
           {error !== "" ? <div className="error">{error}</div> : ""}
@@ -26,8 +47,10 @@ function RegisterForm({ register, error, setError }) {
               type="text"
               name="name"
               id="name"
-              onChange={(e) => setDetails({ ...details, name: e.target.value })}
-              value={details.name}
+              onChange={(e) =>
+                setDetails({ ...details, username: e.target.value })
+              }
+              value={details.username}
               required
             />
 

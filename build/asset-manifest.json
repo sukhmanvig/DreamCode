@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.99a48e5d.chunk.css",
-    "main.js": "/static/js/main.d4de6196.chunk.js",
-    "main.js.map": "/static/js/main.d4de6196.chunk.js.map",
+    "main.css": "/static/css/main.725286c1.chunk.css",
+    "main.js": "/static/js/main.17b39ab9.chunk.js",
+    "main.js.map": "/static/js/main.17b39ab9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.900dd88b.js",
     "runtime-main.js.map": "/static/js/runtime-main.900dd88b.js.map",
-    "static/js/2.1be9afad.chunk.js": "/static/js/2.1be9afad.chunk.js",
-    "static/js/2.1be9afad.chunk.js.map": "/static/js/2.1be9afad.chunk.js.map",
+    "static/js/2.7443e1c9.chunk.js": "/static/js/2.7443e1c9.chunk.js",
+    "static/js/2.7443e1c9.chunk.js.map": "/static/js/2.7443e1c9.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.99a48e5d.chunk.css.map": "/static/css/main.99a48e5d.chunk.css.map",
-    "static/js/2.1be9afad.chunk.js.LICENSE.txt": "/static/js/2.1be9afad.chunk.js.LICENSE.txt",
-    "static/media/magn-glass.4b8d2b26.jpg": "/static/media/magn-glass.4b8d2b26.jpg"
+    "static/css/main.725286c1.chunk.css.map": "/static/css/main.725286c1.chunk.css.map",
+    "static/js/2.7443e1c9.chunk.js.LICENSE.txt": "/static/js/2.7443e1c9.chunk.js.LICENSE.txt",
+    "static/media/setting-styles.css": "/static/media/Missing_avatar.fd629692.svg",
+    "static/media/magn-glass.4b8d2b26.jpg": "/static/media/magn-glass.4b8d2b26.jpg",
+    "static/media/profile-style.css": "/static/media/pbg-dark.e493db53.png"
   },
   "entrypoints": [
     "static/js/runtime-main.900dd88b.js",
-    "static/js/2.1be9afad.chunk.js",
-    "static/css/main.99a48e5d.chunk.css",
-    "static/js/main.d4de6196.chunk.js"
+    "static/js/2.7443e1c9.chunk.js",
+    "static/css/main.725286c1.chunk.css",
+    "static/js/main.17b39ab9.chunk.js"
   ]
 }
