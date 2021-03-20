@@ -12,7 +12,7 @@ import "../css/nav.css";
 
 function Settinglist() {
   return (
-    <ul className="setting-list">
+    <ul className="setting-list settings">
       <li>
         <label className="mb-3">
           Recieve newsletters
@@ -35,8 +35,8 @@ function General() {
   return (
     <Container>
       <Row>
-        <Col md={5}>
-          <ul className="setting-list">
+        <Col md={5} className="settings">
+          <ul className="setting-list settings">
             <li>USERNAME:</li>
             <p>username</p>
             <br />
@@ -96,7 +96,7 @@ function Privacy() {
 
   return (
     <>
-      <Container>
+      <Container className="settings">
         <Row>
           <Col md={{ span: 5 }}>
             <ul className="setting-list">
@@ -129,7 +129,7 @@ function Privacy() {
 
 function Settings() {
   return (
-    <Container className="pt-5">
+    <Container className="settings pt-5">
       <Row>
         <Col md={4} sm={{ span: 12 }}>
           <h1 id="setting-tile">Account Settings</h1>

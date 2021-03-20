@@ -1,3 +1,13 @@
+/*Make the scrolling smooth*/
+* {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   height: 100vh;
   display: flex;
@@ -48,7 +58,6 @@
   width: 300px;
   margin-bottom: 15px;
 }
-
 
 .form-inner .form-group label {
   display: block;

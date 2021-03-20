@@ -10,6 +10,9 @@ import PasswordReset from "./components/PasswordReset";
 import Profile from "./components/Profile";
 import PublicRoute from "./components/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import ifgame from "./components/ifgame";
+import IfCodeSnippets from "./components/ifcode";
+import "./css/index.css";
 
 function App() {
   let history = useHistory();
@@ -23,7 +26,7 @@ function App() {
     window.location.reload(false);
   }
   return (
-    <>
+    <div>
       <Navbar />
       <Switch>
         <PublicRoute restricted={false} exact path="/">
@@ -52,10 +55,12 @@ function App() {
         <PrivateRoute path="/about.html" component={refreshPage} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/shell" />
+        <PrivateRoute path="/ifgame" component={ifgame} />
+        <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
         <Route path="/logout" component={Logout} />
       </Switch>
       <NavbarBottom />
-    </>
+    </div>
   );
 }
 

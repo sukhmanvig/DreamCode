@@ -1,24 +1,27 @@
 /* Nav bar general layout */
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-nav {
+.navbar nav {
   position: fixed;
-  z-index: 2;
+  width: 100%;
+  top: 0;
+  z-index: 20;
   background-color: rgb(127, 255, 212);
   display: block;
-  width: 100%;
   background-image: linear-gradient(to right, rgb(127, 255, 212), #c7d8e7);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 /*Make the scrolling smooth*/
-html {
+* {
   scroll-behavior: smooth;
 }
 
 .topnav {
   border-bottom: 1px solid #c7d8e7;
   height: 50px;
+  position: fixed;
+  top: 0;
 }
 
 .topnav a {
@@ -41,8 +44,8 @@ html {
   background-image: linear-gradient(to left, rgb(127, 255, 212), #c7d8e7);
   height: 50px;
   position: fixed;
-  left: 0;
   bottom: 0;
+  width: 100%;
 }
 .bottomnav a {
   bottom: 0;

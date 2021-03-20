@@ -22,7 +22,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Fragment>
+    <Fragment className="dashboard navbar">
       <title> Dashboard </title>
       <body>
         <br></br>
@@ -77,7 +77,7 @@ const Dashboard = () => {
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="ifgame.html">
+            <form action="/ifcode">
               <input
                 type="submit"
                 className="continue"

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "../css/confirmPasswordReset.css";
-import "../css/landing-style.css";///THIS IMPORT AFFECTS THE SETTINGS PAGE LAYOUT BUT IS NEEDED FOR THE PASSWORD RESET PAGE
 
 function PasswordReset() {
     const [details, setDetails] = useState({ name: "", oldpassword: "",newpassword: "" });
@@ -31,8 +30,8 @@ function PasswordReset() {
       };
     return (
         <>
-            <div className=" mt-5 container pure-form">
-                <fieldset>
+            <div className="confirm-pass mt-5 container pure-form ">
+                <fieldset className="confirm-pass">
                         <h1>Set a New Password</h1>
                         {success !== "" ? <div className="error success">{success}</div> : ""}
                         {error !== "" ? <div className="error">{error}</div> : ""}

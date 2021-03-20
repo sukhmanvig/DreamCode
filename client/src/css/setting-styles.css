@@ -1,4 +1,4 @@
-body {
+.settings body {
   margin: 0px;
   background-color: var(--bb);
 }
@@ -54,10 +54,10 @@ body {
   display: inline-block;
 }
 
-* {
+.settings * {
   box-sizing: border-box;
 }
-body {
+.settings body {
   font-family: "Lato", sans-serif;
 }
 

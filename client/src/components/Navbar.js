@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <>
+    <div className="navbar topnav">
       <nav className="topnav">
-        <div className="topnav">
+        <div>
           {localStorage.getItem("isLogin") ? (
             <div className="signin">
               <div className="navbar-dropdown">
@@ -37,7 +37,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
 

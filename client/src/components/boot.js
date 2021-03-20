@@ -13,7 +13,7 @@ import "../css/setting-styles.css";
 function Settinglist() {
 
     return (
-        <ul className="setting-list">            
+        <ul className="settings setting-list">            
                         <li>
                             <label className="mb-3"> Recieve newsletters
                                 <input className="ml-2" type="checkbox" defaultChecked="True"/>
@@ -56,7 +56,7 @@ function General() {
         <Container>
             <Row>
                 <Col md={5}>
-                    <ul className="setting-list">            
+                    <ul className=" settings setting-list">            
                         <li>USERNAME:</li><p>username</p><br/>
                         <li>NAME:</li><p>name</p><br/>
                         <li>EMAIL:</li><p>email</p><br/>
@@ -150,7 +150,7 @@ function Privacy() {
 function Settings () {
 
     return (
-        <Container className="mt-5">
+        <Container className=" settings mt-5">
             <Row>
                 <Col md={4} sm={{ span: 12}}>
                     <h1 id="setting-tile">Account Settings</h1>
