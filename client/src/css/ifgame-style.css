@@ -52,12 +52,11 @@
 	margin-bottom: 20px;
 }
 
-.option > select {
+.option > .ifgame_select {
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border: solid 1px rgba(0,0,0,0.2);
 	padding: 10px 5px 10px 5px;
 	font: bold 14px verdana;
-	opacity: 90%;
 }
 
 #game-window {

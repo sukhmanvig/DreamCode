@@ -29,7 +29,7 @@ const IfGame = () => {
                 <label htmlFor="on-front-wall">
                   If there is a wall in front, go
                 </label>
-                <select id="on-front-wall">
+                <select className="ifgame_select" id="on-front-wall">
                   <option>Up</option>
                   <option>Down</option>
                 </select>
@@ -38,14 +38,14 @@ const IfGame = () => {
                 <label htmlFor="on-bottom-wall">
                   If there is a wall below, go
                 </label>
-                <select id="on-bottom-wall">
+                <select className="ifgame_select" id="on-bottom-wall">
                   <option>Left</option>
                   <option>Right</option>
                 </select>
               </div>
               <div className="option">
                 <label htmlFor="default"> Otherwise, go</label>
-                <select id="default">
+                <select className="ifgame_select" id="default">
                   <option>Down</option>
                   <option>Right</option>
                 </select>
