@@ -1,5 +1,5 @@
 .settings {
-  margin: 0px;
+  padding-bottom: 74px;
   background-color: var(--bb);
 }
 .container-1140 {
@@ -69,7 +69,7 @@
   border: 1px solid #ccc;
   background-color: #6bcae2;
   width: 20%;
-  height: 393px;
+  height: 100%;
 }
 
 /* Style the buttons inside the tab */
@@ -109,12 +109,23 @@
   margin-left: 60px;
   padding-left: 2%;
 }
-#notifs,
+#notifs {
+  display: none;
+  padding-bottom: 120px;
+}
 #privacy {
   display: none;
+  padding-bottom: 130px;
+}
+#general {
+  display: none;
+  padding-bottom: 130px;
 }
 .acc-preview {
   padding-top: 50%;
+}
+.contenttab {
+  padding-bottom: 250px;
 }
 
 .acc-preview > p {

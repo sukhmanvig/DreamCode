@@ -1,8 +1,8 @@
 /* Nav bar general layout */
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-.navbar nav {
-  position: fixed;
+.navbarr nav {
+  padding: 0;
   width: 100%;
   top: 0;
   z-index: 20;
@@ -18,10 +18,12 @@
 }
 
 .topnav {
+  position: fixed;
   border-bottom: 1px solid #c7d8e7;
   height: 50px;
   position: fixed;
   top: 0;
+  z-index: 99;
 }
 
 .topnav a {
@@ -43,9 +45,9 @@
   border-top: 1px solid #c7d8e7;
   background-image: linear-gradient(to left, rgb(127, 255, 212), #c7d8e7);
   height: 50px;
-  position: fixed;
-  bottom: 0;
+  position: relative;
   width: 100%;
+  margin: 0;
 }
 .bottomnav a {
   bottom: 0;

@@ -5,7 +5,7 @@ import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
 import NavbarBottom from "./components/NavbarBottom";
 import Dashboard from "./components/dashboard";
-import Settings from "./components/Settings";
+import Settings from "./components/boot";
 import PasswordReset from "./components/PasswordReset";
 import Profile from "./components/Profile";
 import PublicRoute from "./components/PublicRoute";
@@ -28,37 +28,39 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Switch>
-        <PublicRoute restricted={false} exact path="/">
-          <div className="welcome App">
-            <h2>
-              Welcome, <span> {localStorage.getItem("username")} </span>
-              <button onClick={Logout}> Logout </button>
-            </h2>
-          </div>
-        </PublicRoute>
-        <PublicRoute
-          restricted={true}
-          exact
-          path="/login"
-          component={LoginForm}
-        />
-        <PublicRoute
-          restricted={true}
-          exact
-          path="/signup"
-          component={RegisterForm}
-        />
-        <PrivateRoute path="/settings" component={Settings} />
-        <PrivateRoute path="/passwordreset" component={PasswordReset} />
-        <PrivateRoute path="/profile" component={Profile} />
-        <PrivateRoute path="/about.html" component={refreshPage} />
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/shell" />
-        <PrivateRoute path="/ifgame" component={ifgame} />
-        <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-        <Route path="/logout" component={Logout} />
-      </Switch>
+      <div style={{ paddingTop: "50px", height: "100%" }}>
+        <Switch>
+          <PublicRoute restricted={false} exact path="/">
+            <div className="welcome App">
+              <h2>
+                Welcome, <span> {localStorage.getItem("username")} </span>
+                <button onClick={Logout}> Logout </button>
+              </h2>
+            </div>
+          </PublicRoute>
+          <PublicRoute
+            restricted={true}
+            exact
+            path="/login"
+            component={LoginForm}
+          />
+          <PublicRoute
+            restricted={true}
+            exact
+            path="/signup"
+            component={RegisterForm}
+          />
+          <PrivateRoute path="/settings" component={Settings} />
+          <PrivateRoute path="/passwordreset" component={PasswordReset} />
+          <PrivateRoute path="/profile" component={Profile} />
+          <PrivateRoute path="/about.html" component={refreshPage} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/shell" />
+          <PrivateRoute path="/ifgame" component={ifgame} />
+          <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
+          <Route path="/logout" component={Logout} />
+        </Switch>
+      </div>
       <NavbarBottom />
     </div>
   );

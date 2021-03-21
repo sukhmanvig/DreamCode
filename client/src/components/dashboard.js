@@ -31,7 +31,7 @@ const Dashboard = () => {
           <header> Dashboard </header>
 
           <form action="profile.html">
-            <input type="submit" className="profile" value="PROFILE" />
+            <input type="submit" id="profile" value="PROFILE" />
           </form>
           <div id="leaderboard">
             LEADERBOARD

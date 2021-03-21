@@ -26,7 +26,7 @@ function Profile() {
   getBio(details);
 
   return (
-    <>
+    <body id="profilebody">
       <main className="profile">
         <div className="profile-content profile">
           <section className="p-head">
@@ -42,13 +42,13 @@ function Profile() {
               <p>#000000000000000000</p>
               <p>LEVEL</p>
               <p>XP</p>
-              <div className="bio">
+              <p className="bio">
                 {bio !== "" ? (
-                  <div className="">{bio}</div>
+                  <p className="">{bio}</p>
                 ) : (
-                  <div className="error">{error}</div>
+                  <p className="error">{error}</p>
                 )}
-              </div>
+              </p>
             </div>
             <div id="circle-stats" title="XP">
               <svg>
@@ -123,7 +123,7 @@ function Profile() {
           </div>
         </div>
       </main>
-    </>
+    </body>
   );
 }
 export default Profile;

@@ -1,5 +1,5 @@
 #ifgame_body {
-	position:absolute;
+	position:relative;
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
@@ -7,6 +7,8 @@
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
+	padding-bottom: 50px;
+	padding-top: 10px;
 	font-family: sans-serif;
 	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
 }
