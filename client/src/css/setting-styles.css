@@ -1,4 +1,4 @@
-.settings body {
+.settings {
   margin: 0px;
   background-color: var(--bb);
 }
@@ -57,7 +57,7 @@
 .settings * {
   box-sizing: border-box;
 }
-.settings body {
+.settings {
   font-family: "Lato", sans-serif;
 }
 

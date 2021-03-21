@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ee36e0c.chunk.css",
-    "main.js": "/static/js/main.0632ddc7.chunk.js",
-    "main.js.map": "/static/js/main.0632ddc7.chunk.js.map",
+    "main.css": "/static/css/main.5cf7e9a3.chunk.css",
+    "main.js": "/static/js/main.c7ba4a8f.chunk.js",
+    "main.js.map": "/static/js/main.c7ba4a8f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.900dd88b.js",
     "runtime-main.js.map": "/static/js/runtime-main.900dd88b.js.map",
     "static/js/2.e00676fe.chunk.js": "/static/js/2.e00676fe.chunk.js",
     "static/js/2.e00676fe.chunk.js.map": "/static/js/2.e00676fe.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.2ee36e0c.chunk.css.map": "/static/css/main.2ee36e0c.chunk.css.map",
+    "static/css/main.5cf7e9a3.chunk.css.map": "/static/css/main.5cf7e9a3.chunk.css.map",
     "static/js/2.e00676fe.chunk.js.LICENSE.txt": "/static/js/2.e00676fe.chunk.js.LICENSE.txt",
-    "static/media/setting-styles.css": "/static/media/Missing_avatar.939606ac.svg",
+    "static/media/setting-styles.css": "/static/media/Missing_avatar.fd629692.svg",
     "static/media/magn-glass.4b8d2b26.jpg": "/static/media/magn-glass.4b8d2b26.jpg",
     "static/media/profile-style.css": "/static/media/pbg-dark.e493db53.png"
   },
   "entrypoints": [
     "static/js/runtime-main.900dd88b.js",
     "static/js/2.e00676fe.chunk.js",
-    "static/css/main.2ee36e0c.chunk.css",
-    "static/js/main.0632ddc7.chunk.js"
+    "static/css/main.5cf7e9a3.chunk.css",
+    "static/js/main.c7ba4a8f.chunk.js"
   ]
 }
