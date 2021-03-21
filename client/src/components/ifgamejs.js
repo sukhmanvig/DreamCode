@@ -86,7 +86,7 @@ const IfGameJS = ()  => {
 		}
 		
 		code = 
-`<pre><code> 
+`<pre class='ifgame_pre'><code> 
 	if is_front_wall == True:
 	${front_wall_code}
 	elif is_bottom_wall == True:
