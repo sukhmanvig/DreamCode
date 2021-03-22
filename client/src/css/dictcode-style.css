@@ -7,6 +7,13 @@
 	font-family: sans-serif;
 	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
 }
+
+.dictcode_h1 {
+	font-family: verdana;
+	margin-top: 23px;
+	margin-bottom: 25px;
+}
+
 #content {
 	margin: 0px 60px 10px 65px;
 }

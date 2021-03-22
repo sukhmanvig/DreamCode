@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "../css/nav.css";
 import "../css/dashboard-style.css";
-//import { arrow } from "../js/animations.js"
+import CategoryNav from './CategoryNav';
 import magnGlass from "../images/magn-glass.jpg";
 
 const Dashboard = () => {
@@ -19,18 +19,19 @@ const Dashboard = () => {
   };
   useEffect(() => {
     getLeaderboard();
+    CategoryNav();
   }, []);
 
   return (
     <Fragment className="dashboard navbar">
       <title> Dashboard </title>
-      <body>
+      <body className="dashboard">
         <br></br>
 
         <div id="content">
           <header> Dashboard </header>
 
-          <form action="profile.html">
+          <form action="/Profile">
             <input type="submit" id="profile" value="PROFILE" />
           </form>
           <div id="leaderboard">
@@ -50,7 +51,7 @@ const Dashboard = () => {
           </form>
           <br></br>
           <h1>GAMES</h1>
-          <form action="dashboard.html">
+          <form action="/dashboard">
             <input
               type="text"
               name="search-bar"
@@ -86,9 +87,9 @@ const Dashboard = () => {
             </form>
           </div>
           <div className="category">
-            <i className="arrow left" /*onClick={arrow(0)}*/> </i>
+            <i className="arrow left"></i>
             <div id="js-category-name">CATEGORY1</div>
-            <i className="arrow right" /*onClick={arrow(1)}*/> </i>
+            <i className="arrow right"></i>
 
             <form action="helloworld.html">
               <input type="submit" className="game" value="Hello World Game" />
@@ -102,8 +103,8 @@ const Dashboard = () => {
               />
             </form>
 
-            <form action="category1/game3.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME3" />
+            <form action="/dictcode">
+              <input type="submit" className="game" value="Python Dictionaries" />
             </form>
 
             <form action="category1/game4.html">

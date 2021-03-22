@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import "../css/dictcode-style.css";
 import "../css/nav.css";
 import ChangeFontSize from "./changefontsize.js";
@@ -132,15 +133,14 @@ del my_dict
 print(my_dict) # Error`}
                 </code>
             </pre>
-            {/* <Link to="/dictgame">
+            <Link to="/dictgame">
                 <input
                 type="submit"
                 id="toGameButton"
                 name="game"
                 value="Dictionary Game"
                 />
-            </Link> */}
-            <input type="submit" id="toGameButton" name="game" value="Dictionary Game"/> 
+            </Link>
             </div>
         </body>
       </Fragment>)
