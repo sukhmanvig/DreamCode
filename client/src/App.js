@@ -1,98 +1,68 @@
-import React, { useState } from "react";
-import Axios from "axios";
-import { Route, Switch, Redirect, withRouter } from "react-router-dom";
+import React from "react";
+import { Switch, Redirect, Route, useHistory } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
 import NavbarBottom from "./components/NavbarBottom";
 import Dashboard from "./components/dashboard";
+import Settings from "./components/Settings";
+import PasswordReset from "./components/PasswordReset";
+import Profile from "./components/Profile";
+import PublicRoute from "./components/PublicRoute";
+import PrivateRoute from "./components/PrivateRoute";
+import ifgame from "./components/ifgame";
+import IfCodeSnippets from "./components/ifcode";
+import "./css/index.css";
 
 function App() {
-  const [pageStatus, setPageStatus] = useState("");
-  const [error, setError] = useState("");
-  const [user, setUser] = useState({ name: "", email: "" });
-
-  const register = (details) => {
-    Axios.post("/users", {
-      username: details.name,
-      email: details.email,
-      password: details.password,
-      password_2nd: details.password_2nd,
-    }).then((response) => {
-      if (response.data.message) {
-        //setLoginStatus(response.data.message);
-        setError(response.data.message);
-      } else {
-        setUser({
-          name: details.name,
-          email: details.email,
-        });
-        setError("");
-        setPageStatus("Logged_in");
-      }
-    });
-  };
-
-  const Login = (details) => {
-    Axios.post("/login", {
-      email: details.email,
-      password: details.password,
-    }).then((response) => {
-      if (response.data.message) {
-        //setLoginStatus(response.data.message);
-        setError(response.data.message);
-      } else {
-        setError("");
-        setPageStatus("Logged_in");
-        setUser({
-          name: details.name,
-          email: details.email,
-        });
-      }
-    });
-  };
-
-  const Logout = (details) => {
-    setUser({ name: "", email: "" });
-    setError("");
-    setPageStatus("");
+  let history = useHistory();
+  const Logout = () => {
+    window.location.reload(false);
+    localStorage.clear();
+    return history.push("/");
   };
 
   function refreshPage() {
     window.location.reload(false);
   }
   return (
-    <>
-      <Navbar setPageStatus={setPageStatus} pageStatus={pageStatus} />
-      {pageStatus === "Logged_in" ? <Redirect to="/" /> : ""}
-      <Switch>
-        <Route exact path="/">
-          <div className="welcome App">
-            <h2>
-              Welcome, <span> {user.name} </span>
-              <button onClick={Logout}> Logout </button>
-            </h2>
-          </div>
-        </Route>
-        <Route exact path="/login">
-          <div>
-            <LoginForm Login={Login} error={error} setError={setError} />
-          </div>
-        </Route>
-        <Route exact path="/signup">
-          <div>
-            <RegisterForm
-              register={register}
-              error={error}
-              setError={setError}
-            />
-          </div>
-        </Route>
-        <Route path="/about.html" component={refreshPage}></Route>
-        <Route path="/dashboard" component={Dashboard}></Route>
-      </Switch>
+    <div>
+      <Navbar />
+      <div style={{ paddingTop: "50px", height: "100%" }}>
+        <Switch>
+          <PublicRoute restricted={false} exact path="/">
+            <div className="welcome App">
+              <h2>
+                Welcome, <span> {localStorage.getItem("username")} </span>
+                <button onClick={Logout}> Logout </button>
+              </h2>
+            </div>
+          </PublicRoute>
+          <PublicRoute
+            restricted={true}
+            exact
+            path="/login"
+            component={LoginForm}
+          />
+          <PublicRoute
+            restricted={true}
+            exact
+            path="/signup"
+            component={RegisterForm}
+          />
+          <PrivateRoute path="/settings" component={Settings} />
+          <PrivateRoute path="/passwordreset" component={PasswordReset} />
+          <PrivateRoute path="/profile" component={Profile} />
+          <PrivateRoute path="/about.html" component={refreshPage} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/shell" />
+          <PrivateRoute path="/ifgame" component={ifgame} />
+          <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
+          <Route path="/logout" component={Logout} />
+        </Switch>
+      </div>
       <NavbarBottom />
-    </>
+    </div>
   );
 }
 
