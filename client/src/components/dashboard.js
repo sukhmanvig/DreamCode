@@ -22,37 +22,16 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Fragment>
+    <Fragment className="dashboard navbar">
       <title> Dashboard </title>
       <body>
-        <nav className="topnav">
-          <div className="topnav">
-            {/* eslint-disable-next-line */}
-            <div className="navbar-dropdown">
-              <a>Username</a>
-              <div className="navbar-dropdown-elements">
-                <a href="profile.html">Profile</a>
-                <a href="account-settings.html">Account Settings</a>
-                <a href="index.html">Logout</a>
-              </div>
-            </div>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="/">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="shell.html">Python Shell</a>
-            <div className="logo">
-              <a href="/">DreamCode</a>
-            </div>
-          </div>
-        </nav>
         <br></br>
 
         <div id="content">
           <header> Dashboard </header>
 
           <form action="profile.html">
-            <input type="submit" className="profile" value="PROFILE" />
+            <input type="submit" id="profile" value="PROFILE" />
           </form>
           <div id="leaderboard">
             LEADERBOARD
@@ -98,7 +77,7 @@ const Dashboard = () => {
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="ifgame.html">
+            <form action="/ifcode">
               <input
                 type="submit"
                 className="continue"

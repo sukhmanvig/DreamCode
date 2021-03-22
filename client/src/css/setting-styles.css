@@ -1,60 +1,65 @@
-body {
-    margin: 0px;
-    background-color: #6BCAE2;
+.settings {
+  padding-bottom: 74px;
+  background-color: var(--bb);
 }
 .container-1140 {
-    width: 1140px;
-    margin: auto;
+  width: 1140px;
+  margin: auto;
 }
-.nav-item .active{
-    background-color: none;
-    border: #c7d8e7;
+.nav-item .active {
+  background-color: none;
+  border: #c7d8e7;
 }
-.root{
-    --dblue: #0D659D;
-    --blk: #050B1F;
-    --aqmr: #6BCAE2;
-    --bb: #c7d8e7;
+.root {
+  --dblue: #0d659d;
+  --blk: #050b1f;
+  --aqmr: #6bcae2;
+  --bb: #c7d8e7;
 }
 .mainnav {
-    background-color: #c7d8e7;
+  background-color: #c7d8e7;
 }
-.setting-list li, .setting-list p{
-    font-size: 14px;
-    display: inline-block;
-    margin-right: 5px;
+.setting-list li,
+.setting-list p {
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 5px;
 }
-.setting-list p{
-    font-size: 14px;
-    display: inline-block;
+.setting-list p {
+  font-size: 14px;
+  display: inline-block;
 }
 
 .linebreak {
-    color: #050B1F;
-    width: 20px;
+  color: #050b1f;
+  width: 20px;
 }
 #circle {
-    height: 155px;
-    width: 155px;
-    background-color: #050B1F;
-    border-radius: 50%;
-    float:right;
-    z-index: 3;
-    margin-right: 11%;
-    margin-top: -15%;
-    background-image: url("../images/Missing_avatar.svg"); 
-    background-size: contain;
-  }
+  height: 154px;
+  width: 154px;
+  background-color: #050b1f;
+  border-radius: 50%;
 
-.tab-list, .nav-item {
-    text-decoration: none;
-    list-style-type: none;
-    background: none;
-    display: inline-block;
+  z-index: 3;
+
+  background-image: url("../images/Missing_avatar.svg");
+  background-size: contain;
 }
 
-* {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;}
+.tab-list,
+.nav-item {
+  text-decoration: none;
+  list-style-type: none;
+  background: none;
+  display: inline-block;
+}
+
+.settings * {
+  box-sizing: border-box;
+}
+.settings {
+  font-family: "Lato", sans-serif;
+}
 
 /* Style the tab */
 .tab {
@@ -62,9 +67,9 @@ body {font-family: "Lato", sans-serif;}
   float: left;
   border-radius: 15px;
   border: 1px solid #ccc;
-  background-color: #6BCAE2;
+  background-color: #6bcae2;
   width: 20%;
-  height: 393px;
+  height: 100%;
 }
 
 /* Style the buttons inside the tab */
@@ -89,7 +94,7 @@ body {font-family: "Lato", sans-serif;}
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-  background-color: #0D659D;
+  background-color: #0d659d;
 }
 
 /* Style the tab content */
@@ -104,47 +109,66 @@ body {font-family: "Lato", sans-serif;}
   margin-left: 60px;
   padding-left: 2%;
 }
-#notifs, #privacy {
-    display: none;
+#notifs {
+  display: none;
+  padding-bottom: 120px;
 }
+#privacy {
+  display: none;
+  padding-bottom: 130px;
+}
+#general {
+  display: none;
+  padding-bottom: 130px;
+}
+.acc-preview {
+  padding-top: 50%;
+}
+.contenttab {
+  padding-bottom: 250px;
+}
+
 .acc-preview > p {
-    color: rgb(97, 97, 97);
-    font-weight: 100;
-    font-size: 11px;
-    display: inline-block;
-    margin-bottom: 0%;
-    font-style: italic;
-    margin-top: 0%;
-    margin-bottom: 20px;
+  color: rgb(97, 97, 97);
+  font-weight: 100;
+  font-size: 11px;
+  display: inline-block;
+  margin-bottom: 0%;
+  font-style: italic;
+  margin-top: 0%;
 }
 #user {
-    font-size: 13px;
-    color: rgb(68, 68, 68);
-    font-style: normal;
-    display: inline;
-    margin-left: 62px;
+  font-size: 13px;
+  color: rgb(68, 68, 68);
+  font-style: normal;
+  display: inline;
+  margin-left: 62px;
 }
-#setting-title{
-    margin-top: 5%;
-    margin-left: 290px;
-    margin-bottom: 5px;
+#setting-title {
+  margin-top: 5%;
+  margin-left: 290px;
+  margin-bottom: 5px;
 }
 .half {
-    width: 49%;
-    display: inline-block;
+  width: 49%;
+  display: inline-block;
 }
 .checkboxes {
-    float: right;
-    margin-right: 50px;
-    margin-top: -175px;
-    
+  float: right;
+  margin-right: 50px;
+  margin-top: -175px;
 }
 .setting-list {
-    padding-left: 0%;
+  padding-left: 0%;
 }
 #defaultOpen {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.inline {
+  display: inline;
+}
 
+.success {
+  color: green;
 }

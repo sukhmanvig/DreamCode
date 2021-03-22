@@ -31,7 +31,18 @@ app.post("/users", async (req, res) => {
         [username, email, password]
       );
 
-      res.json(newUser);
+      //authorized the user
+      //create the token for the user
+      const accessToken = generateAccessToken(newUser.rows[0], "15m");
+      const refreshToken = jwt.sign(
+        newUser.rows[0],
+        process.env.REFRESH_TOKEN_SECRET
+      );
+      refreshTokens.push(refreshToken);
+      res.json({
+        accessToken: accessToken,
+        refreshToken: refreshToken,
+      });
     } else {
       res.json({ message: "Password does not match!!" });
     }
@@ -46,7 +57,8 @@ app.get("/user", authenticateToken, async (req, res) => {
   const getUser = await pool.query("SELECT * FROM users WHERE username = $1", [
     req.user.username,
   ]);
-  res.json(getUser.username);
+  res.json(getUser.rows[0].username);
+  console.log(getUser.rows[0].bio);
 });
 
 // deals with the tokens
@@ -56,7 +68,10 @@ app.post("/token", (req, res) => {
   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
-    const accessToken = generateAccessToken({ name: user.username });
+    const accessToken = generateAccessToken({
+      name: user.username,
+      tokenTime: "15m",
+    });
     res.json({ accessToken: accessToken });
   });
 });
@@ -74,8 +89,10 @@ function authenticateToken(req, res, next) {
 }
 
 //genarate access token
-function generateAccessToken(user) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+function generateAccessToken(user, tokenTime) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: tokenTime,
+  });
 }
 
 //login user
@@ -85,17 +102,26 @@ app.post("/login", async (req, res) => {
     const loginUser = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
+    if (req.body.rememberMe) {
+      acessTime = "3d";
+    } else {
+      acessTime = "1h";
+    }
     if (loginUser.rowCount > 0) {
       if (await bcrypt.compare(req.body.password, loginUser.rows[0].password)) {
         //authorized the user
         //create the token for the user
-        const accessToken = generateAccessToken(loginUser.rows[0]);
+        const accessToken = generateAccessToken(loginUser.rows[0], acessTime);
         const refreshToken = jwt.sign(
           loginUser.rows[0],
           process.env.REFRESH_TOKEN_SECRET
         );
         refreshTokens.push(refreshToken);
-        res.json({ accessToken: accessToken, refreshToken: refreshToken });
+        res.json({
+          accessToken: accessToken,
+          refreshToken: refreshToken,
+          username: loginUser.rows[0].username,
+        });
       } else {
         res.json({ message: "Password Incorrect!" });
       }
@@ -122,6 +148,76 @@ app.get("/leaderboard", async (req, res) => {
     res.json(leaderboard.rows);
   } catch (err) {
     console.error(err);
+  }
+});
+
+//put bio
+app.post("/EditBio", async (req, res) => {
+  try {
+    const { name } = req.body;
+    const { bio } = req.body;
+
+    const newUser = await pool.query(
+      "UPDATE users SET bio = $1 WHERE (username= $2);",
+      [bio, name]
+    );
+    if (newUser.rowCount == 0) {
+      await res.status(400).json({ message: "Could not change bio" });
+      return;
+    } else {
+      await res.status(200).json({ message: "Success" });
+      return;
+    }
+  } catch (err) {
+    res.status(500).json({ message: "Something went wrong on our end" });
+    return;
+  }
+});
+
+//get bio
+app.get("/getBio", async (req, res) => {
+  try {
+    const { username } = req.body;
+    const temp = "jayvin";
+    const newUser = await pool.query(
+      "SELECT bio FROM users WHERE username = $1",
+      [temp]
+    );
+
+    if (newUser.rowCount == 0) {
+      await res.status(400).json({ message: "Could not retrieve bio" });
+      return;
+    } else {
+      await res.status(200).json({ message: newUser.rows[0].bio });
+      return;
+    }
+  } catch (err) {
+    res.status(500).json({ message: "Something went wrong on our end" });
+    return;
+  }
+});
+
+//reset password
+app.post("/settingPassword", async (req, res) => {
+  try {
+    const { username } = req.body;
+    const { newpassword } = req.body;
+    const { oldpassword } = req.body;
+
+    const newUser = await pool.query(
+      "UPDATE users SET password = $1 WHERE (username= $2 AND Password=$3);",
+      [newpassword, username, oldpassword]
+    );
+    if (newUser.rowCount == 0) {
+      await res.status(404).json({ message: "Username or password incorrect" });
+      return;
+    } else {
+      await res.status(200).json({ message: "Success" });
+      return;
+    }
+  } catch (err) {
+    res.status(500).json({ message: "password change failed" });
+    return;
   }
 });
 
