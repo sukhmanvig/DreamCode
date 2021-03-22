@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 function LoginForm() {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
+  const [isChecked, setIsChecked] = useState(true);
   let history = useHistory();
 
   const Login = (e) => {
@@ -13,6 +14,7 @@ function LoginForm() {
     Axios.post("/login", {
       email: details.email,
       password: details.password,
+      rememberMe: isChecked,
     }).then((response) => {
       if (response.data.message) {
         //setLoginStatus(response.data.message);
@@ -24,6 +26,7 @@ function LoginForm() {
         localStorage.setItem("isLogin", true);
         localStorage.setItem("accessToken", response.data.accessToken);
         localStorage.setItem("refreshToken", response.data.refreshToken);
+        localStorage.setItem("rememberMe", isChecked);
         setError("");
         history.push("/");
         window.location.reload(false);
@@ -63,6 +66,18 @@ function LoginForm() {
             <span>
               Forgot <a href="forgotPassword.html">password?</a>
             </span>
+            <label style={{ display: "inline ", float: "right" }}>
+              <input
+                style={{
+                  width: "20px",
+                  display: "inline",
+                }}
+                type="checkbox"
+                defaultChecked={isChecked}
+                onChange={() => setIsChecked(!isChecked)}
+              />
+              Remember Me
+            </label>
           </div>
           <input type="submit" value="LOGIN" />
           <Link to="/">

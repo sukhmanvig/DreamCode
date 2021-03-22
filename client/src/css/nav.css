@@ -45,7 +45,8 @@
   border-top: 1px solid #c7d8e7;
   background-image: linear-gradient(to left, rgb(127, 255, 212), #c7d8e7);
   height: 50px;
-  position: relative;
+  position: static;
+  bottom: 0;
   width: 100%;
   margin: 0;
 }

@@ -12,6 +12,7 @@ import PublicRoute from "./components/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
+import Shell from "./components/Shell";
 import "./css/index.css";
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/about.html" component={refreshPage} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
-          <PrivateRoute path="/shell" />
+          <PrivateRoute path="/shell" component={Shell}/>
           <PrivateRoute path="/ifgame" component={ifgame} />
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
           <Route path="/logout" component={Logout} />
