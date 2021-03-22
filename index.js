@@ -33,7 +33,7 @@ app.post("/users", async (req, res) => {
 
       //authorized the user
       //create the token for the user
-      const accessToken = generateAccessToken(newUser.rows[0]);
+      const accessToken = generateAccessToken(newUser.rows[0], "15m");
       const refreshToken = jwt.sign(
         newUser.rows[0],
         process.env.REFRESH_TOKEN_SECRET
@@ -68,7 +68,10 @@ app.post("/token", (req, res) => {
   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
-    const accessToken = generateAccessToken({ name: user.username });
+    const accessToken = generateAccessToken({
+      name: user.username,
+      tokenTime: "15m",
+    });
     res.json({ accessToken: accessToken });
   });
 });
@@ -86,8 +89,10 @@ function authenticateToken(req, res, next) {
 }
 
 //genarate access token
-function generateAccessToken(user) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+function generateAccessToken(user, tokenTime) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: tokenTime,
+  });
 }
 
 //login user
@@ -97,11 +102,16 @@ app.post("/login", async (req, res) => {
     const loginUser = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
+    if (req.body.rememberMe) {
+      acessTime = "3d";
+    } else {
+      acessTime = "1h";
+    }
     if (loginUser.rowCount > 0) {
       if (await bcrypt.compare(req.body.password, loginUser.rows[0].password)) {
         //authorized the user
         //create the token for the user
-        const accessToken = generateAccessToken(loginUser.rows[0]);
+        const accessToken = generateAccessToken(loginUser.rows[0], acessTime);
         const refreshToken = jwt.sign(
           loginUser.rows[0],
           process.env.REFRESH_TOKEN_SECRET
