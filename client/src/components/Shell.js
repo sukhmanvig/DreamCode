@@ -18,9 +18,15 @@ import Axios from "axios";
 
 function Shell() {
 
+    const template =
+    `def main():
+        print ("Hello World")
 
-    const [details, setDetails] = useState({ script: "print (2+2)", output:""});
+if __name__ == "__main__": 
+    main()`;
+    const [details, setDetails] = useState({ script: template, output:""});
     const [output, setOutput] = useState("");
+    const [question, setQuestion] = useState("");
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -73,14 +79,6 @@ function Shell() {
     //         resolve(window.prompt(prompt));
     //     });
     // }
-    const temp = ` 
-    import turtle
-
-    t = turtle.Turtle()
-    t.forward(100)
-
-    user = input("enter name")    
-    print (user) `
     // function testCode() {
     //     var dataToSend;
     //     // spawn new child process to call the python script
@@ -92,10 +90,16 @@ function Shell() {
     //      console.log(dataToSend);
     //     });}
 
-    const Login = (e) => {
+    const Submit = (e) => {
         e.preventDefault();
         Axios.post("/compile", {
-        script: details.script,
+        script: details.script + "\n" +
+`def test_main():
+    assert main() == 6, "Should be 6"
+    
+if __name__ == "__main__":
+    test_main()
+    print("Everything passed")`,
         stdin: "2",
       }).then((response) => {
         if (response.data) {
@@ -109,6 +113,20 @@ function Shell() {
         }
     });
   };
+    const Test = (e) => {
+        e.preventDefault();
+        Axios.post("/compile", {
+        script: details.script + "\n",
+    }).then((response) => {
+        if (response.data) {
+        console.log(response.data);
+        setOutput(response.data.output);
+        } else {
+        console.log(response.data);
+        setOutput(response.data.output);
+        }
+    });
+    };
 
     return (
         <Container className=" mt-5">
@@ -119,12 +137,12 @@ function Shell() {
             </Row>
             <Row>
                 <Col>
-                    <p className="display-5">Question goes here</p>
+                    <p className="display-5">{question}</p>
                 </Col>
             </Row>
             <Row>
                 <Col md={6} sm={{ span: 12}}>
-                    <form onSubmit={Login}>
+                    <form >
                         <CodeMirror className=" mt-5"
                             value={details.script}
                             options={{
@@ -136,11 +154,11 @@ function Shell() {
                             }}
                             onChange={(editor, data, value) => setDetails({ ...details, script: value })}/>
 
-                        <Button className="mt-3 mr-5" type="submit">Run</Button>
-                        <Button onClick={Login} className=" ml-5 mt-3" variant= "danger" type="submit">Submit</Button>
+                        <Button onClick={Test} className="mt-3 mr-5" type="submit">Test</Button>
+                        <Button onClick={Submit} className=" ml-5 mt-3" variant= "danger" type="submit">Submit</Button>
                     </form>
                 </Col>
-                <Col md={3} sm={{ span: 12}}>
+                <Col md={5} sm={{ span: 12}}>
                     <pre className=" mt-5" onChange={(e) => setDetails({...details, output: e.target.value })}>{output}</pre>
                 </Col>
             </Row>
