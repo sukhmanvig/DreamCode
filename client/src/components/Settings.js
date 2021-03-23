@@ -68,7 +68,7 @@ function General({uname,email}) {
                     </ul>
                 </Col>
                 <Col md={{ span: 5, offset: 1 }} className="">
-                    <Button className="mb-1" onClick={() => setPageStatus("EditBio")} variant="info">Edit Bio</Button>
+                    <Button className="mb-1" onClick={() => pageStatus === "EditBio" ? (setPageStatus("")): (setPageStatus("EditBio"))} variant="info">Edit Bio</Button>
                     <Settinglist/>
                 </Col>
             </Row>
@@ -126,12 +126,12 @@ function Privacy() {
 
     return (
         <>
-        <Container>
-            <Row>
+        <Container className="pb-5">
+            <Row className="pb-5">
                 <Col md={{ span: 12}}>
                     <ul className="setting-list">            
                     <li>FORGOT PASSWORD:</li>
-                    <Button variant="danger" className="inline" onClick={() => setPageStatus("ResetPassword")}>Reset Password</Button>
+                    <Button variant="danger" className="inline" onClick={() => pageStatus === "ResetPassword" ? (setPageStatus("")): (setPageStatus("ResetPassword"))}>Reset Password</Button>
                    </ul>
                 </Col>
             </Row>
