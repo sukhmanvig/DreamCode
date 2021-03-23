@@ -2,8 +2,6 @@
 import "../css/codemirror.css";
 import "../css/cobalt.css";
 import React, { useState, useEffect } from "react";
-// require ("../js/python/skulpt.js");
-// require ("../js/python/skulpt-stdlib.js");
 // require ("../js/codemirror-5.59.2/lib/codemirror.js");
 // require ("../js/codemirror-5.59.2/mode/javascript/javascript.js");
 import {UnControlled as CodeMirror} from "react-codemirror2"
@@ -13,6 +11,10 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Axios from "axios";
+//import pycompiler from "./pycompiler.js";
+//import skulpt from "./skulpt.js";
+//import skulpt_stdlib from "./skulpt-stdlib.js";
 
 function Shell() {
 
@@ -28,9 +30,9 @@ function Shell() {
     
     // output functions are configurable.  This one just appends some text
     // to a pre element.
-    function outf(text) {  
-        setDetails({ ...details, output: text })
-    } 
+    // function outf(text) {  
+    //     setDetails({ ...details, output: text })
+    // } 
 
     // function builtinRead(x) {
     //     if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
@@ -38,11 +40,11 @@ function Shell() {
     //     return Sk.builtinFiles["files"][x];
     // }
 
-    // Here's everything you need to run a python program in skulpt
-    // grab the code from your textarea
-    // get a reference to your pre element for output
-    // configure the output function
-    // call Sk.importMainWithBody()
+    // // Here's everything you need to run a python program in skulpt
+    // // grab the code from your textarea
+    // // get a reference to your pre element for output
+    // // configure the output function
+    // // call Sk.importMainWithBody()
     // function runit (details) { 
     //     //var code = myCodeMirror.getValue();
     //     var code = details.script;
@@ -66,11 +68,11 @@ function Shell() {
     //         //mypre.innerText = err.toString(); 
     //     });
     // } 
-    function input(prompt){
-        return new Promise((resolve, reject) => {
-            resolve(window.prompt(prompt));
-        });
-    }
+    // function input(prompt){
+    //     return new Promise((resolve, reject) => {
+    //         resolve(window.prompt(prompt));
+    //     });
+    // }
     const temp = ` 
     import turtle
 
@@ -79,16 +81,34 @@ function Shell() {
 
     user = input("enter name")    
     print (user) `
-    function testCode() {
-        var dataToSend;
-        // spawn new child process to call the python script
-        const python = spawn('python', ['script1.py']);
-        // collect data from script
-        python.stdout.on('data', function (data) {
-         console.log('Pipe data from python script ...');
-         dataToSend = data.toString();
-         console.log(dataToSend);
-        });}
+    // function testCode() {
+    //     var dataToSend;
+    //     // spawn new child process to call the python script
+    //     const python = spawn('python', ['script1.py']);
+    //     // collect data from script
+    //     python.stdout.on('data', function (data) {
+    //      console.log('Pipe data from python script ...');
+    //      dataToSend = data.toString();
+    //      console.log(dataToSend);
+    //     });}
+
+    const Login = (e) => {
+        e.preventDefault();
+        Axios.post("/compile", {
+        script: details.script,
+        stdin: "2",
+      }).then((response) => {
+        if (response.data) {
+          //setLoginStatus(response.data.message);
+          console.log(response.data);
+          setOutput(response.data.output);
+        } else {
+          console.log(response.data);
+          //set all the values in the local storage
+          setOutput(response.data.output);
+        }
+    });
+  };
 
     return (
         <Container className=" mt-5">
@@ -104,7 +124,7 @@ function Shell() {
             </Row>
             <Row>
                 <Col md={6} sm={{ span: 12}}>
-                    <form onSubmit={submitHandler}>
+                    <form onSubmit={Login}>
                         <CodeMirror className=" mt-5"
                             value={details.script}
                             options={{
@@ -117,7 +137,7 @@ function Shell() {
                             onChange={(editor, data, value) => setDetails({ ...details, script: value })}/>
 
                         <Button className="mt-3 mr-5" type="submit">Run</Button>
-                        <Button className=" ml-5 mt-3" variant= "danger" type="submit">Submit</Button>
+                        <Button onClick={Login} className=" ml-5 mt-3" variant= "danger" type="submit">Submit</Button>
                     </form>
                 </Col>
                 <Col md={3} sm={{ span: 12}}>
