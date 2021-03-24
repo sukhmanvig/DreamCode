@@ -1,0 +1,338 @@
+@charset "utf-8";
+/* CSS Document */
+.navbar-dropdown-elements:hover {
+  background: linear-gradient(to bottom, #ffffff00 30%, #ffffff90 10%);
+}
+
+.profile * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --colscheme1: #050b1f;
+  --colscheme2: #6bcae2;
+  --colscheme3: #0d659d;
+  --colscheme4: #c7d8e7;
+  --colscheme5: #11f7ff;
+}
+
+#profilebody {
+  font-family: "Calibri Light", sans-serif;
+  background: black;
+  background: url("../images/pbg-dark.png");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.profile footer {
+  background: #ffffff50;
+  height: 250px;
+  display: flex;
+  color: white;
+}
+.profile footer p {
+  margin: auto;
+  font-style: italic;
+}
+#ft-note {
+  margin: auto;
+}
+.profile-content {
+  width: 80%;
+  padding: 100px 0 100px 0;
+  margin: 0 auto;
+  display: flex;
+
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  border-radius: 30px;
+}
+
+.profile .p-head {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 20px 50px;
+  padding-bottom: 50px;
+  background: linear-gradient(to bottom, var(--colscheme3), #affcff, #ffffff00);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.profile #user-pfp {
+  background: linear-gradient(to bottom, var(--colscheme4), var(--colscheme2));
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px var(--colscheme3) solid;
+  box-shadow: 0px 5px 5px black;
+  transition: border 0.1s ease-in;
+  overflow: hidden;
+}
+
+.profile #name-title {
+  font-size: 70px;
+  color: white;
+}
+.profile #user-pfp img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.profile #user-pfp:hover {
+  border: 10px var(--colscheme3) solid;
+}
+
+.profile #user-infosec {
+  padding: 50px;
+}
+
+.profile #circle-stats {
+  margin-left: auto;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(to bottom, var(--colscheme4), var(--colscheme2));
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  box-shadow: 0px 5px 5px var(--colscheme3);
+}
+
+.profile #circle-stats:hover .circle-xp {
+  stroke: #0b7ac0;
+}
+.profile .div-lvl {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+}
+
+.profile .div-lvl div {
+  background: linear-gradient(to bottom, var(--colscheme3), var(--colscheme2));
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  display: flex;
+  margin: auto;
+  border: 2px solid var(--colscheme4);
+}
+
+.profile #circle-stats h3 {
+  padding: 10px;
+  margin: auto;
+  font-size: 30px;
+}
+
+.profile .circle-xp {
+  fill: transparent;
+  stroke: var(--colscheme3);
+  stroke-width: 40;
+
+  transition: stroke 0.2s linear;
+}
+
+.profile #circle-stats svg {
+  width: 100%;
+}
+.profile svg {
+  transform: rotate(-90deg);
+}
+
+.profile section {
+  background: #ffffff90;
+}
+
+.profile .profile-div-left {
+  flex-basis: 25%;
+  display: flex;
+  margin-right: 25px;
+}
+.profile .profile-div-right {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 25%;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.profile .pf-sec {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px var(--colscheme2);
+}
+
+.profile .sec-badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+}
+
+.profile .ubadge {
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  border-radius: 100%;
+  background: #ffffff90;
+
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+
+  transition: all 0.1s ease-out;
+}
+.profile .ubadge img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profile .profile.ubadge h5 {
+  color: white;
+  position: relative;
+  bottom: 55px;
+}
+
+.profile .ubadge:hover {
+  box-shadow: 0px 5px 5px var(--colscheme3);
+  transform: scale(1.1);
+}
+
+.profile .sec-most-played {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile .game {
+  min-width: 200px;
+  flex-grow: 1;
+
+  height: 100px;
+  margin: 20px;
+
+  background: #ffffff90;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.1s ease-out;
+  display: flex;
+  cursor: pointer;
+}
+
+.profile .game h5 {
+  margin: auto;
+}
+.profile .game:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 5px var(--colscheme3);
+}
+
+.profile .frn {
+  height: 70px;
+  background: #ffffff90;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  transition: all 0.1s ease-out;
+  position: relative;
+}
+
+.profile .frn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  box-shadow: 0px 5px 5px var(--colscheme3);
+}
+.profile .frn:nth-child(even) {
+  background: #6da7e550;
+}
+.profile .frn-img {
+  background: #ffffff90;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto 5px;
+}
+
+.profile .frn h5 {
+  margin: auto;
+}
+.profile .profile h4 {
+  flex-basis: 100%;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+  background: linear-gradient(var(--colscheme2), var(--colscheme4), #ffffff);
+}
+
+.profile .bio {
+  color: Blue;
+  border: 1px solid Blue;
+}
+
+@media (max-width: 1340px) {
+  .profile #user-pfp {
+    width: 200px;
+    height: 200px;
+  }
+  .profile #user-infosec {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .profile #circle-stats {
+    display: none;
+  }
+  .profile .profile-div-left {
+    flex-basis: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  .profile .profile-div-right {
+    flex-basis: 100%;
+    margin: 0;
+  }
+  .profile .sec-friends {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .profile .frn {
+    flex-basis: 32%;
+    margin: 5px;
+  }
+}
+@media (max-width: 1000px) {
+  .profile .frn {
+    flex-basis: 48%;
+    margin: 5px;
+  }
+}
+@media (max-width: 900px) {
+  .profile #user-pfp {
+    margin: auto;
+  }
+  .profile #user-infosec {
+    margin: auto;
+    padding: 20px 50px;
+  }
+}
+@media (max-width: 650px) {
+  .profile .frn {
+    flex-basis: 100%;
+    margin: 5px;
+  }
+  .profile .ubadge {
+    margin: 10px;
+  }
+}
