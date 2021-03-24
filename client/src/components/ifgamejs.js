@@ -10,6 +10,7 @@ const IfGameJS = ()  => {
 	var level = 0;
 	var level_start_positions = [0];
 	var level_goal_positions = [8];
+	var attempts = 0;
 
 	//show/hide the code section
 	function changeCodeVisibility() {
@@ -25,9 +26,10 @@ const IfGameJS = ()  => {
 	//Send the robot back it's starting position in the array
 	function robotRestart() {
 
-		//Clear the robot from its current position
+		//Clear the robot from its current position and reset state
 		var robot = document.querySelector("#robot");
 		robot.parentNode.innerHTML = '';
+		attempts = 0;
 
 		//Place the robot back at the start position
 		var game_grid = document.querySelector("#game-grid");
@@ -38,7 +40,7 @@ const IfGameJS = ()  => {
 		position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png'i />";
 
 		//clear game status message 
-		document.querySelector("#game-status").innerHTML = '';
+		resetAttempts();
 
 		//hide the play again button and enable the go button
 		document.querySelector("#robot-try-again").style.visibility = "hidden";
@@ -99,6 +101,16 @@ const IfGameJS = ()  => {
 
 	}
 
+	function increment() {
+		attempts++;
+		document.querySelector("#game-attempts").innerHTML = attempts;
+	}
+
+	function resetAttempts() {
+		attempts = 0;
+		document.querySelector("#game-attempts").innerHTML = attempts;
+	}
+
 	//Move the robot according the actions specified by the user
 	function robotGo() {
 		var on_front_wall = document.querySelector("#on-front-wall").value;
@@ -130,7 +142,10 @@ const IfGameJS = ()  => {
 		var error = 0;
 		clearInterval(id); //stop any previous animation
 		id = setInterval(moveRobot, 1000); //call the function moveRobot every second
+		// Increment attempts counter
+		increment();
 
+		// Move the robot, based on instructions.
 		function moveRobot() {
 			moves++;
 			error = false;
