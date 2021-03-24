@@ -1,7 +1,7 @@
 //import "../css/shell.css";
 import "../css/codemirror.css";
 import "../css/cobalt.css";
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 // require ("../js/codemirror-5.59.2/lib/codemirror.js");
 // require ("../js/codemirror-5.59.2/mode/javascript/javascript.js");
 import {UnControlled as CodeMirror} from "react-codemirror2"
@@ -12,9 +12,6 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Axios from "axios";
-//import pycompiler from "./pycompiler.js";
-//import skulpt from "./skulpt.js";
-//import skulpt_stdlib from "./skulpt-stdlib.js";
 
 function Shell() {
 
@@ -24,110 +21,54 @@ function Shell() {
 
 if __name__ == "__main__": 
     main()`;
+
     const [details, setDetails] = useState({ script: template, output:""});
     const [output, setOutput] = useState("");
     const [question, setQuestion] = useState("");
+    let check;
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-        setOutput(details.script);
-        console.log(details);
-      };
+    Axios.get("/getQuestion", {
+      }).then((response) => {
+        setQuestion(response.data.question);
+        check = response.data.check;
+    });
+
+//     check =
+// `
+// def test_main():
+//     assert main() == 6, "Should be 6"
     
-    // output functions are configurable.  This one just appends some text
-    // to a pre element.
-    // function outf(text) {  
-    //     setDetails({ ...details, output: text })
-    // } 
-
-    // function builtinRead(x) {
-    //     if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-    //             throw "File not found: '" + x + "'";
-    //     return Sk.builtinFiles["files"][x];
-    // }
-
-    // // Here's everything you need to run a python program in skulpt
-    // // grab the code from your textarea
-    // // get a reference to your pre element for output
-    // // configure the output function
-    // // call Sk.importMainWithBody()
-    // function runit (details) { 
-    //     //var code = myCodeMirror.getValue();
-    //     var code = details.script;
-    //     //var prog = document.getElementById("yourcode").value; 
-    //     var mypre = details.output;
-    //     //mypre.innerHTML = ''; 
-    //     Sk.pre = "output";
-    //     Sk.configure({output:outf,inputfun: input, inputfunTakesPrompt: true}); 
-    //     (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'draw-output';
-    //     var myPromise = Sk.misceval.asyncToPromise(function() {
-    //         return Sk.importMainWithBody("<stdin>", false, code, true);
-    //     });
-    //     myPromise.then(function(mod) {
-    //         console.log('success');
-    //         //mypre.style.color = "black";
-    //         //mypre.style.opacity = 1;
-    //     },
-    //         function(err) {
-    //         console.err(err.toString());
-    //         //mypre.style.color = "red";
-    //         //mypre.innerText = err.toString(); 
-    //     });
-    // } 
-    // function input(prompt){
-    //     return new Promise((resolve, reject) => {
-    //         resolve(window.prompt(prompt));
-    //     });
-    // }
-    // function testCode() {
-    //     var dataToSend;
-    //     // spawn new child process to call the python script
-    //     const python = spawn('python', ['script1.py']);
-    //     // collect data from script
-    //     python.stdout.on('data', function (data) {
-    //      console.log('Pipe data from python script ...');
-    //      dataToSend = data.toString();
-    //      console.log(dataToSend);
-    //     });}
+// if __name__ == "__main__":
+//     test_main()
+//     print("Everything passed")`;
 
     const Submit = (e) => {
         e.preventDefault();
         Axios.post("/compile", {
-        script: details.script + "\n" +
-`def test_main():
-    assert main() == 6, "Should be 6"
-    
-if __name__ == "__main__":
-    test_main()
-    print("Everything passed")`,
-        stdin: "2",
+        script: details.script + check,
       }).then((response) => {
-        if (response.data) {
-          //setLoginStatus(response.data.message);
-          console.log(response.data);
-          setOutput(response.data.output);
-        } else {
-          console.log(response.data);
-          //set all the values in the local storage
-          setOutput(response.data.output);
-        }
+        DisplayOutput(response);
     });
   };
+
     const Test = (e) => {
         e.preventDefault();
         Axios.post("/compile", {
         script: details.script + "\n",
     }).then((response) => {
-        if (response.data) {
-        console.log(response.data);
-        setOutput(response.data.output);
-        } else {
-        console.log(response.data);
-        setOutput(response.data.output);
-        }
+        DisplayOutput(response);
     });
     };
 
+    function DisplayOutput(response) {
+        if (response.data) {
+            console.log(response.data);
+            setOutput(response.data.output);
+          } else {
+            console.log(response.data);
+            setOutput(response.data.output);
+          }
+    }
     return (
         <Container className=" mt-5">
             <Row>
