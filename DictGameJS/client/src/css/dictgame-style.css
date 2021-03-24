@@ -44,7 +44,7 @@
 	width: 80%;
 }
 
-.dictGameButton {
+[class^='dictGameButton'] {
 	display: block;
 	text-align: center;
 	font: normal 15px verdana;

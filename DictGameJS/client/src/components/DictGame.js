@@ -1,16 +1,20 @@
 import React, { Fragment, useEffect } from 'react';
 import '../css/dictgame-style.css';
 import '../css/nav.css';
-import generateDict from './DictGameLogic.js';
+import { GameSetup, GenerateDict } from './DictGameLogic.js';
 
-var MAX_NODES = 5;
-var MIN_NODES = 2;
+var MAX_NODES = 4;
+var MIN_NODES = 1;
 
 const DictGame = () => {
 	useEffect(() => {
+		GameSetup();
+
 		var numNodes = Math.floor(Math.random()*(MAX_NODES-MIN_NODES)) + MIN_NODES;
-		generateDict(document.querySelector("#dictContainer"), numNodes);
-		generateDict(document.querySelector("#solDictContainer"), numNodes);
+		GenerateDict(document.querySelector("#dictContainer"), numNodes);
+
+		numNodes = Math.floor(Math.random()*(MAX_NODES-MIN_NODES)) + MIN_NODES;
+		GenerateDict(document.querySelector("#solDictContainer"), numNodes);
 	});
 
     return(
@@ -42,20 +46,20 @@ const DictGame = () => {
 	    				</div>
 	    			</div>
 	    			<div id="dictModify">
-	    				<h2 className="dictgame_h2">Dictionary Update</h2>
-	    				<label for="dictGameSelectAddKey">Key</label>
+	    				<h2 className="dictgame_h2">Dictionary Add/Update</h2>
+	    				<label htmlFor="dictGameSelectAddKey">Key</label>
 	    				<select id="dictGameSelectAddKey"></select>
-	    				<label for="dictGameSelectAddValue">Value</label>
+	    				<label htmlFor="dictGameSelectAddValue">Value</label>
 	    				<select id="dictGameSelectAddValue"></select>
-	    				<button className="dictGameButton">Add Key and Value to Dictionary</button>
+	    				<button className="dictGameButtonUpdate">Add Key and Value to Dictionary</button>
 	   			</div>
 				<div id="dictRemove">
 	    				<h2 className="dictgame_h2">Dictionary Remove</h2>
-	    				<label for="dictGameSelectRemoveKey">Key</label>
+	    				<label htmlFor="dictGameSelectRemoveKey">Key</label>
 	    				<select id="dictGameSelectRemoveKey"></select>
-	    				<label for="dictGameSelectRemoveValue">Value</label>
+	    				<label htmlFor="dictGameSelectRemoveValue">Value</label>
 	    				<select id="dictGameSelectRemoveValue"></select>
-	    				<button className="dictGameButton">Add Key and Value to Dictionary</button>
+	    				<button className="dictGameButtonRemove">Remove Key and Value From Dictionary</button>
 	   			</div>
 
 	    		</div>
