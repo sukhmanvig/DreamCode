@@ -44,7 +44,7 @@ li{
 }
 .main-nav li {
   list-style: none;
-  position: absolute;
+  position: absolute; 
   background: white;
   transition: 0.5s;
   margin: -70px;
