@@ -54,6 +54,7 @@ function ResetForm({ type, error, success, setPageStatus }) {
             onChange={(e) =>
               setDetails({ ...details, newpassword: e.target.value })
             }
+            maxLength = {250}
             value={details.newpassword}
             required
           />
