@@ -1,16 +1,42 @@
-import "../css/index.css";
-import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import Axios from "axios";
+import "../css/index.css";
+import { Link, useHistory } from "react-router-dom";
 
-function LoginForm({ Login, error, setError }) {
+function LoginForm() {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
-  const submitHandler = (e) => {
+  const [error, setError] = useState("");
+  const [isChecked, setIsChecked] = useState(true);
+  let history = useHistory();
+
+  const Login = (e) => {
     e.preventDefault();
-    Login(details);
+    Axios.post("/login", {
+      email: details.email,
+      password: details.password,
+      rememberMe: isChecked,
+    }).then((response) => {
+      if (response.data.message) {
+        //setLoginStatus(response.data.message);
+        setError(response.data.message);
+      } else {
+        //set all the values in the local storage
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("email", details.email);
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("accessToken", response.data.accessToken);
+        localStorage.setItem("refreshToken", response.data.refreshToken);
+        localStorage.setItem("rememberMe", isChecked);
+        setError("");
+        history.push("/");
+        window.location.reload(false);
+      }
+    });
   };
+
   return (
     <div className="App">
-      <form onSubmit={submitHandler}>
+      <form onSubmit={Login}>
         <div className="form-inner">
           <h2 className="form-group">Login</h2>
           {error !== "" ? <div className="error">{error}</div> : ""}
@@ -40,6 +66,18 @@ function LoginForm({ Login, error, setError }) {
             <span>
               Forgot <a href="forgotPassword.html">password?</a>
             </span>
+            <label style={{ display: "inline ", float: "right" }}>
+              <input
+                style={{
+                  width: "20px",
+                  display: "inline",
+                }}
+                type="checkbox"
+                defaultChecked={isChecked}
+                onChange={() => setIsChecked(!isChecked)}
+              />
+              Remember Me
+            </label>
           </div>
           <input type="submit" value="LOGIN" />
           <Link to="/">
