@@ -9,7 +9,6 @@ const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
 const request = require("request");
 
-
 const app = express();
 
 app.use(cors());
@@ -227,7 +226,6 @@ app.post("/settingPassword", async (req, res) => {
 //compile python
 app.post("/compile", async (req, res) => {
   const { script } = req.body;
-  const { stdin } = req.body;
   var program = {
     script :script,
     language: "python3",
@@ -244,11 +242,20 @@ app.post("/compile", async (req, res) => {
   const json = await resc.json();
   res.send(json);
   console.log(json);
+});
 
-  // const compile_res = await request(`https://api.jdoodle.com/v1/execute?script=${script}&language=python3&versionIndex=0
-  //                                 &clientId=d8896e07b8825674c4927370ca242325
-  //                                 &clientSecret=d426f22083d9109ab085bbb0d62066b935f03a5a7163a9550982ff807724e065                                  `);
-  // console.log( await compile_res.json());
+app.get("/getQuestion", async (req, res) => {
+  
+  res.json({question:"Print Hello World",
+            check:
+`
+def test_main():
+  assert main() == 6, "Should be 6"
+                
+if __name__ == "__main__":
+  test_main()
+  print("Everything passed")`
+          });
 });
 
 //wildcard

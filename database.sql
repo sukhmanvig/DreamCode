@@ -14,3 +14,8 @@ CREATE TABLE leaderboard(
 	REFERENCES users (users_id)
     ON DELETE CASCADE
 );
+
+CREATE TABLE dailyQuestions (
+    question VARCHAR(255),
+    test VARCHAR(255)
+);
