@@ -12,6 +12,7 @@ import PublicRoute from "./components/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
+import DictCodeSnippets from "./components/dictcode";
 import "./css/index.css";
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <PrivateRoute path="/shell" />
           <PrivateRoute path="/ifgame" component={ifgame} />
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
+	  <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
           <Route path="/logout" component={Logout} />
         </Switch>
       </div>
