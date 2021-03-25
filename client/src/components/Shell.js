@@ -65,7 +65,7 @@ componentWillMount() {
     }).then((response) => {
         this.handleInputChange("question", response.data.question);
         this.handleInputChange("check", response.data.check);
-        //this.handleInputChange("attempt", response.data.attempt); NEED TO ADD ATTEMPT TRACKER TO DASHBOARD
+        //this.handleInputChange("attempt", response.data.attempt); NEED TO ADD ATTEMPT TRACKER TO DB
         let script = response.data.starter;
         this.handleInputChange("script", script);
         this.setState({script});
