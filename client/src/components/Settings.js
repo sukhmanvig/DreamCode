@@ -63,8 +63,7 @@ function General({uname,email}) {
                         <li>USERNAME:</li><p>{uname}</p><br/>
                         <li>NAME:</li><p>{uname}</p><br/>
                         <li>EMAIL:</li><p>{email}</p><br/>
-                        <li>BIRTHDAY:</li><p>birthday</p><br/>
-                        <li>PASSWORD:</li><p>*******</p>
+                        <li>BIRTHDAY:</li><p>{date}</p><br/>
                     </ul>
                 </Col>
                 <Col md={{ span: 5, offset: 1 }} className="">
