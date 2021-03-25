@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b90a1a9f.chunk.css",
-    "main.js": "/static/js/main.f05c3455.chunk.js",
-    "main.js.map": "/static/js/main.f05c3455.chunk.js.map",
+    "main.css": "/static/css/main.18d48c14.chunk.css",
+    "main.js": "/static/js/main.139fac38.chunk.js",
+    "main.js.map": "/static/js/main.139fac38.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.900dd88b.js",
     "runtime-main.js.map": "/static/js/runtime-main.900dd88b.js.map",
     "static/js/2.cdd17153.chunk.js": "/static/js/2.cdd17153.chunk.js",
     "static/js/2.cdd17153.chunk.js.map": "/static/js/2.cdd17153.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b90a1a9f.chunk.css.map": "/static/css/main.b90a1a9f.chunk.css.map",
+    "static/css/main.18d48c14.chunk.css.map": "/static/css/main.18d48c14.chunk.css.map",
     "static/js/2.cdd17153.chunk.js.LICENSE.txt": "/static/js/2.cdd17153.chunk.js.LICENSE.txt",
     "static/media/setting-styles.css": "/static/media/Missing_avatar.fd629692.svg",
     "static/media/magn-glass.4b8d2b26.jpg": "/static/media/magn-glass.4b8d2b26.jpg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.900dd88b.js",
     "static/js/2.cdd17153.chunk.js",
-    "static/css/main.b90a1a9f.chunk.css",
-    "static/js/main.f05c3455.chunk.js"
+    "static/css/main.18d48c14.chunk.css",
+    "static/js/main.139fac38.chunk.js"
   ]
 }

@@ -163,7 +163,9 @@ function Settings () {
         }).then((response) => {
             setUname(response.data.username)
             setEmail(response.data.email)
-            setDate(response.data.date_created)
+            console.log(response.data.date_created);
+            console.log(response.data);
+            setDate(response.data.date_created.substring(0,10))
 
             }, (error) => {
                 console.error(error)
@@ -179,8 +181,8 @@ function Settings () {
                 </Col>
                 <Col md={3} sm={12}>
                     <div className="acc-preview">
-                        <p className="mr-1" id="usr">{uname} </p>
-                        <p className=""> Member Since {date}</p>
+                        <p className="mr-1" id="usr">{uname}'s </p>
+                        <p className=""> been a member since {date}</p>
                     </div>
                 </Col>
                 <Col md={{ span: 3, offset:2}} xs={{span: 4, offset:3}} sm={{span: 4, offset:6}}>
