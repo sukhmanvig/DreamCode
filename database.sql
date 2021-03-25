@@ -2,8 +2,11 @@ CREATE DATABASE LoginSystem;
 
 CREATE TABLE users(
     users_id SERIAL PRIMARY KEY,
-    username VARCHAR(255),
-    password VARCHAR(25)
+    username VARCHAR(255) UNIQUE, 
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255),
+    bio VARCHAR(255),
+    date_created DATE
 );
 
 CREATE TABLE playerstats (
