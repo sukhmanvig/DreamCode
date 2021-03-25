@@ -31,7 +31,7 @@ function Settinglist() {
     )
 }
 
-function General({uname,email}) {
+function General({uname,email,date}) {
     const [pageStatus, setPageStatus] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -63,7 +63,6 @@ function General({uname,email}) {
                         <li>USERNAME:</li><p>{uname}</p><br/>
                         <li>NAME:</li><p>{uname}</p><br/>
                         <li>EMAIL:</li><p>{email}</p><br/>
-                        <li>BIRTHDAY:</li><p>{date}</p><br/>
                     </ul>
                 </Col>
                 <Col md={{ span: 5, offset: 1 }} className="">
@@ -206,7 +205,7 @@ function Settings () {
                     <Col sm={{ span: 7, offset: 1}} className="mt-5 border ">
                         <Tab.Content>
                             <Tab.Pane eventKey="general" className="mt-5">
-                                <General uname={uname} email={email}/>
+                                <General uname={uname} email={email} date={date}/>
                             </Tab.Pane>
                             <Tab.Pane eventKey="notif" className="mt-5">
                                 <Notifs id="notif"/>
