@@ -163,7 +163,7 @@ function Settings () {
         }).then((response) => {
             setUname(response.data.username)
             setEmail(response.data.email)
-            setDate(response.data.date)
+            setDate(response.data.date_created)
 
             }, (error) => {
                 console.error(error)
