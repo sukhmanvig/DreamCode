@@ -7,8 +7,6 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
-const request = require("request");
-const fs = require('fs');
 var DailyQuestions = require('./DailyQuestions.json');
 
 
