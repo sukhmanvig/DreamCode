@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import '../css/dictgame-style.css';
 import '../css/nav.css';
 import { GameSetup, GenerateDict, CheckIfWon, GameRestart } from './DictGameLogic.js';
@@ -32,7 +33,9 @@ const DictGame = () => {
 	    				<p>Add and remove key-value pairs from the dictionary <strong>myDict</strong> so that it</p>
 	    				<p> matches the dictionary <strong>targetDict</strong>.</p>
 	    				<div id="gameStatus"></div>
-	    				<button className="dictGameButton" id="toDictTutorial">Return to Tutorial</button>
+	    				<Link to="/dictcode" style={{textDecoration: 'none'}}>
+							<button className="dictGameButton" id="toDictTutorial">Return to Tutorial</button>
+						</Link>
 	    				<button className="dictGameButton" id="dictShowHideCode">Show/Hide Code</button>
 	    				<button className="dictGameButton" id="dictPlayAgain">Play Again</button>
 	    				<div id="gameActions">

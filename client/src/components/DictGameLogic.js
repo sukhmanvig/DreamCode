@@ -81,7 +81,7 @@ const createNode = type => {
 
     var imgNode = document.createElement('img');
     imgNode.className += (' ' +  type);
-    imgNode.src = 'images/' + type + '.png';
+    imgNode.src = 'images/dict' + (type.charAt(0).toUpperCase() + type.slice(1)) + '.png';
     imgNode.alt =  type;
 
     return imgNode;
