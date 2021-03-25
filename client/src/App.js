@@ -31,7 +31,7 @@ function App() {
         setPageStatus("Logged_in");
       }
     });
-  };
+  }; 
 
   const Login = (details) => {
     Axios.post("/login", {

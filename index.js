@@ -113,7 +113,7 @@ app.delete("/logout", (req, res) => {
   res.sendStatus(204);
 });
 
-//Get leaderboard
+//Get leaderboard 
 app.get("/leaderboard", async (req, res) => {
   try {
     const leaderboard = await pool.query(
