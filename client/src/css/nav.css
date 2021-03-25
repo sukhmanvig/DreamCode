@@ -1,24 +1,29 @@
 /* Nav bar general layout */
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-nav {
-  position: fixed;
-  z-index: 2;
+.navbarr nav {
+  padding: 0;
+  width: 100%;
+  top: 0;
+  z-index: 20;
   background-color: rgb(127, 255, 212);
   display: block;
-  width: 100%;
   background-image: linear-gradient(to right, rgb(127, 255, 212), #c7d8e7);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 /*Make the scrolling smooth*/
-html {
+* {
   scroll-behavior: smooth;
 }
 
 .topnav {
+  position: fixed;
   border-bottom: 1px solid #c7d8e7;
   height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
 }
 
 .topnav a {
@@ -40,9 +45,10 @@ html {
   border-top: 1px solid #c7d8e7;
   background-image: linear-gradient(to left, rgb(127, 255, 212), #c7d8e7);
   height: 50px;
-  position: fixed;
-  left: 0;
+  position: static;
   bottom: 0;
+  width: 100%;
+  margin: 0;
 }
 .bottomnav a {
   bottom: 0;
@@ -114,9 +120,9 @@ html {
 }
 /*Username dropdown list css*/
 .topnav .navbar-dropdown a {
-  margin: 7px 25px 10px 75px;
-  padding: 7.5px 0px 7.5px 0px;
+  margin: 12px 35px 10px 20px;
   background-color: transparent;
+  border: none;
 }
 .topnav .navbar-dropdown-elements {
   overflow: hidden;
@@ -126,8 +132,7 @@ html {
   transition: max-height 0.7s ease;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   padding: 35px 0px 0px;
-  margin: 5px 0px 0px 0px;
-  border: solid 1px rgba(0, 0, 0, 0.2);
+  margin: 10px 0px 0px 0px;
   border-radius: 10px;
 }
 .topnav .navbar-dropdown-elements a {
@@ -136,10 +141,13 @@ html {
   text-decoration: none;
   color: black;
   padding: 10px 5px 0px;
-  text-align: right;
+  text-align: center;
   margin: 5px;
+  background-color: #c7d8e7;
 }
 
-.topnav .navbar-dropdown:hover .navbar-dropdown-elements {
+.topnav .navbar-dropdown:hover .navbar-dropdown-elements:hover {
   max-height: 250px;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }

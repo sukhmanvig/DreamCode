@@ -34,7 +34,7 @@ function App() {
   }; 
 
   const Login = (details) => {
-    Axios.post("/login", {
+    Axios.post("/login", { 
       email: details.email,
       password: details.password,
     }).then((response) => {
