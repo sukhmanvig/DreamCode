@@ -48,7 +48,7 @@ function General({uname,email,date}) {
             setError(""); 
 
             }, (error) => {
-                console.log(error)
+                console.error(error)
                 setSuccess("");
                 setError("Bio error"); 
             }
@@ -115,7 +115,7 @@ function Privacy() {
             setError(""); 
 
             }, (error) => {
-                console.log(error)
+                console.error(error)
                 setSuccess("");
                 setError("Username or password incorrect"); 
             }
@@ -161,8 +161,6 @@ function Settings () {
         }).then((response) => {
             setUname(response.data.username)
             setEmail(response.data.email)
-            console.log(response.data.date_created);
-            console.log(response.data);
             setDate(response.data.date_created.substring(0,10))
 
             }, (error) => {
