@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import Axios from "axios";
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
 import NavbarBottom from "./components/NavbarBottom";
-import Dashboard from "./components/dashboard";
+import PythonLearningResources from './components/python-learning-resources';
 
 function App() {
   const [pageStatus, setPageStatus] = useState("");
@@ -89,9 +89,16 @@ function App() {
           </div>
         </Route>
         <Route path="/about.html" component={refreshPage}></Route>
-        <Route path="/dashboard" component={Dashboard}></Route>
+        <Route path="/python-learning-resources" component = {PythonLearningResources}></Route>
       </Switch>
       <NavbarBottom />
+      
+      <Route exact path="/python-learning-resources">
+          <div>
+          <PythonLearningResources/>
+          </div>
+      </Route>
+      
     </>
   );
 }
