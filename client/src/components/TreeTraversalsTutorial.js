@@ -94,8 +94,12 @@ root.right.insertRight(Node(9))
         <pre><code>{`print(root.preorder(root))
 print(root.inorder(root))
 print(root.postorder(root))
+
+`}
+
 <span class="comment">
 # Output:</span>
+{`
 [4, 2, 5, 3, 1, 6, 9]`} <span class="comment"># Preorder</span>
 {`
 [5, 2, 1, 3, 4, 6, 9]`} <span class="comment"># Inorder</span>
