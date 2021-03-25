@@ -55,17 +55,17 @@ h1 {
 	font-size: 50px;
 }
 
-.notes #fontsizer {
+.notes#fontsizer {
 	font-family: calibri;
 	width: 100%;
 	display: block;
 
 	overflow: auto;
 }
-.notes #fontsizer ul {
+.notes#fontsizer ul {
 	list-style-type: none;
 }
-.notes #fontsizer li {
+.notes#fontsizer li {
 
 	text-align: center;
 	display: inline-block;
@@ -77,15 +77,15 @@ h1 {
 	line-height: 50px;
 
 }
-#fontsizer li:hover {
+.notes #fontsizer li:hover {
 	background: var(--colscheme4);
 	cursor: pointer;
 }
-#fontsizer li:nth-child(2) {
+.notes #fontsizer li:nth-child(2) {
 	font-size: 20px;
 }
 
-#fontsizer li:nth-child(3) {
+.notes #fontsizer li:nth-child(3) {
 	font-size: 30px;
 }		
 
