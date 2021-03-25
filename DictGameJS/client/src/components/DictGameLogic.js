@@ -80,6 +80,65 @@ const createNode = type => {
 }
 
 const updateKeyValue = () => {
+	var keySelect = document.querySelector("#dictGameSelectAddKey");
+	var valSelect = document.querySelector("#dictGameSelectAddValue");
+
+	var keyClass = keySelect.options[keySelect.selectedIndex].value; //key to add
+	var valClass = valSelect.options[valSelect.selectedIndex].value; //value to add
+	
+	var keyColumn = document.querySelector("#dictContainer #dictKeys");
+	var valColumn = document.querySelector("#dictContainer #dictValues");  
+
+	var i = 0;
+	var key, keyIndex = -1;
+	var valNode, keyNode = '';
+
+	//Find key index in key column
+	for (i = 1; i < keyColumn.childElementCount; i++) {
+		key = keyColumn.childNodes[i];
+
+		if (keyClass === key.childNodes[0].className.trim()) {
+			//found index of key
+			keyIndex = i;
+			break;
+		}
+	}
+
+	//Key-value pair doesn't exist
+	if (keyIndex === -1) {
+
+		//Create key-value blocks
+        	var keyBlock = document.createElement('div');
+		var valBlock = document.createElement('div');
+        	keyBlock.className += ' keyBlock';
+		valBlock.className += ' valueBlock';
+
+
+        	//Create key-value nodes
+        	keyNode = createNode(keyClass);
+		valNode = createNode(valClass);
+        	keyBlock.appendChild(keyNode);
+		valBlock.appendChild(valNode);
+
+        
+       	 	//Append key-value blocks to container
+        	keyColumn.appendChild(keyBlock);
+		valColumn.appendChild(valBlock);
+
+		return;
+	}
+	
+	//Overwite value in dictionary
+	var val = valColumn.childNodes[keyIndex];
+
+	if (typeof val === 'undefined') {
+		console.log("Dictionary is malformed.");
+		return;
+	}
+	
+	valNode = createNode(valClass);
+	val.textContent = '';
+	val.appendChild(valNode);
 }
 
 const removeKeyValue = () => {
