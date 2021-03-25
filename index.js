@@ -8,6 +8,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
 const request = require("request");
+const fs = require('fs');
+var DailyQuestions = require('./DailyQuestions.json');
+
 
 const app = express();
 
@@ -245,17 +248,10 @@ app.post("/compile", async (req, res) => {
 });
 
 app.get("/getQuestion", async (req, res) => {
-  
-  res.json({question:"Print Hello World",
-            check:
-`
-def test_main():
-  assert main() == 6, "Should be 6"
-                
-if __name__ == "__main__":
-  test_main()
-  print("Everything passed")`
+  const x = Math.ceil(Math.random() * 4);
+  res.json({question: DailyQuestions[x].prompt, check: DailyQuestions[x].test_code, starter: DailyQuestions[x].starter_code
           });
+  return;
 });
 
 //wildcard
