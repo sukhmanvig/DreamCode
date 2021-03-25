@@ -111,6 +111,10 @@ const IfGameJS = ()  => {
 		document.querySelector("#game-attempts").innerHTML = attempts;
 	}
 
+	function submitScore(userid, score) {
+
+	}
+
 	//Move the robot according the actions specified by the user
 	function robotGo() {
 		var on_front_wall = document.querySelector("#on-front-wall").value;
@@ -226,6 +230,8 @@ const IfGameJS = ()  => {
 					game_status.innerHTML = "Yay, Rob successfully retrieved the treasure!";
 					document.querySelector("#robot-try-again").style.visibility = "visible";
 					document.querySelector("#next-level").style.visibility = "visible";
+					// Save game TODO
+					submitScore(localStorage.getItem("username"), attempts);
 					return;
 				}	
 			}
