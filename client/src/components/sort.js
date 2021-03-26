@@ -60,12 +60,12 @@ const SortGameJS = () => {
 	});
 
 	document.querySelector("#sortstep").addEventListener('click', ()=>{
-		if (gamestate.autosolve == "Selection") {
+		if (gamestate.autosolve === "Selection") {
 			console.log(gamestate.autosolve);
-			var recmin = NaN;
+			var recmin = array[k];
 			var kmin = gamestate.autosolvehint[0];
 			var innersteps = 0;
-			for (var k = gamestate.autosolvehint[0]; k < array.length; k++) {
+			for (var k = gamestate.autosolvehint[0] + 1; k < array.length; k++) {
 				gamestate.autosolvehint[1]++;
 				innersteps++;
 				console.log(recmin, array[k]);
@@ -81,7 +81,7 @@ const SortGameJS = () => {
 			clickSwapInput(kmin)();
 			gamestate.autosolvehint[0]++;
 		}
-		else if (gamestate.autosolve == "Insertion") {
+		else if (gamestate.autosolve === "Insertion") {
 			console.log(gamestate.autosolve);
 			var k = NaN;
 			for (k = gamestate.autosolvehint[0]; k > 0 && array[k-1] < array[k]; k--) {
@@ -94,10 +94,10 @@ const SortGameJS = () => {
 			document.querySelector("#gamehint").innerHTML = `"Inserted" element #${gamestate.autosolvehint[0]} at position #${k}. ${gamestate.autosolvehint[1]} bubbles total.`;
 			gamestate.autosolvehint[0]++;
 		}
-		else if (gamestate.autosolve == "Quick") {
+		else if (gamestate.autosolve === "Quick") {
 			console.log(gamestate.autosolve);
 		}
-		else if (gamestate.autosolve == "Radix") {
+		else if (gamestate.autosolve === "Radix") {
 			console.log(gamestate.autosolve);
 		}
 		else {
@@ -183,14 +183,14 @@ const SortGameJS = () => {
 	function isSorted(sc) {
 		// Determine function to detect criteria for not being sorted.
 		var falsecriteria = function(){};
-		if (sc == -1)
+		if (sc === -1)
 			falsecriteria = function(k){return (array[k] > array[k-1])}
-		else if (sc == 1)
+		else if (sc === 1)
 			falsecriteria = function(k){return (array[k] < array[k-1])}
 		else
 			throw 'Need to specify -1 for descending and +1 for ascending'
 		// Input check
-		if (array == null)
+		if (array === null)
 			throw 'Array is nonexistant, cannot sort';
 		// Perform linear search to see if array is sorted.
 		for (var k = 1; k < array.length; k++) {
@@ -263,7 +263,7 @@ const SortGameJS = () => {
 /**Auxiliary function to determine if index is in bounds.
  */
 function inbounds(k, array) {
-	if (array == null)
+	if (array === null)
 		throw 'Array is nonexistant, cannot sort';
 	return (k >= 0 && k < array.length);
 }

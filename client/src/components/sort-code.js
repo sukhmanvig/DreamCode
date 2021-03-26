@@ -52,24 +52,33 @@ const SortCodeSnippets = () => {
 					</p>
 					<p>
 						The inner loop searches all <var>n</var> elements and picks which one to swap.
+						It starts at one place after the current value of the outer loop counter.
 						This algorithm takes inefficient quadratic time without regard to how sorted this list
 						is.
 					</p>
-					<pre className="code_pre">
+					<p>
+						The selection sort takes eight Python lines and two layers of loops to implement.
+						This function takes in an <code>array</code> as a list and modifies it inside the function.
+
+						Let <code>position</code> and <code>index</code> represent the index of the outer and
+						inner loop.
+					</p>
+					<pre className="codesnippet_pre">
 						<code>{`
-def selection_sort(L):
-# i indicates how many items were sorted
-for i in range(len(L)-1):
-	# To find the minimum value of the unsorted segment
-	# We first assume that the first element is the lowest
-	min_index = i
-	# We then use j to loop through the remaining elements
-	for j in range(i+1, len(L)-1):
-		# Update the min_index if the element at j is lower than it
-		if L[j] < L[min_index]:
-			min_index = j
-	# After finding the lowest item of the unsorted regions, swap with the first unsorted item
-	L[i], L[min_index] = L[min_index], L[i]`}
+def selectionsort(array: list):
+	# The outer loop indicates the overall number of items in sorted order.
+	for position in range(len(array)):
+		minswap = array[position]
+		swapindex = position
+		# The inner loop checks which index after the outer loop index to swap.
+		for index in range(position + 1, len(array)):
+			if minswap == None or array[index] < minswap:
+				minswap = array[index]
+				swapindex = index
+		# Perform swap
+		array[position], array[swapindex] = array[swapindex], array[position]
+	# End of algorithm
+`}
 						</code>
 					</pre>
 					<h2 className="codesnippet_h2">Insertion sort</h2>
@@ -82,29 +91,31 @@ for i in range(len(L)-1):
 						is at position <var>k</var>, all the elements from position 0 to <var>k</var> are sorted.
 						This algorithm takes quadratic time on average, but works almost linear time for nearly
 						sorted and small arrays.
+
+						Let <code>array</code> 
 					</p>
-					<pre className="code_pre">
+					<p>
+						The insertion sort takes six Python lines and an outer foreach-loop and an inner for-loop
+						which needs to be implemented as a while-loop in Python.
+
+						The overall complexity depends on the number of bubble-downs. This is done by repeatedly
+						swapping the target item to the correct spot given that the first few elements should be
+						in sorted order.
+					</p>
+					<pre className="codesnippet_pre">
 						<code>{`
-def insertion_sort(array):
-
-# We start from 1 since the first element is trivially sorted
-for index in range(1, len(array)):
-	currentValue = array[index]
-	currentPosition = index
-
-	# As long as we haven't reached the beginning and there is an element
-	# in our sorted array larger than the one we're trying to insert - move
-	# that element to the right
-	while currentPosition > 0 and array[currentPosition - 1] > currentValue:
-		array[currentPosition] = array[currentPosition -1]
-		currentPosition = currentPosition - 1
-
-
-	# We have either reached the beginning of the array or we have found
-	# an element of the sorted array that is smaller than the element
-	# we're trying to insert at index currentPosition - 1.
-	# Either way - we insert the element at currentPosition
-	array[currentPosition] = currentValue`}
+def insertionsort(array: list):
+	# The outer loop indicates the overall number of items in the sorted region.
+	# The sorted region is from index 0 to the outer loop position.
+	for position in range(1, len(array)):
+		# The inner loop bubbles the next element, which is off the sorted order
+		# into the correct spot in the sorted region.
+		index = position
+		while index > 0 and array[index] < array[index-1]: # Bubble down
+			array[index], array[index-1] = array[index-1], array[index]
+			index -= 1
+	# End of algorithm
+`}
 						</code>
 					</pre>
 					<h2 className="codesnippet_h2">Quick sort</h2>
@@ -128,36 +139,47 @@ for index in range(1, len(array)):
 						Rarely will this algorithm exhibit quadratic complexity, if the pivot is always the largest
 						or the smallest element across all recursive calls.
 					</p>
-					<pre className="code_pre">
+					<p>
+						Being a recursive algorithm, we can use recursion or implement an auxiliary data structure to
+						implement a smaller instance of a quicksort only sorting a segment of the array. An implementation
+						with an eleven-line recursive part is featured.
+					</p>
+					<pre className="codesnippet_pre">
 						<code>{`
-def partition(array, start, end, compare_func):
-	pivot = array[start]
-	low = start + 1
-	high = end
-
-	while True:
-		while low <= high and compare_func(array[high], pivot):
-			high = high - 1
-
-		while low <= high and not compare_func(array[low], pivot):
-			low = low + 1
-
-		if low <= high:
-			array[low], array[high] = array[high], array[low]
-		else:
-			break
-
-	array[start], array[high] = array[high], array[start]
-
-	return high
-
-def quick_sort(array, start, end, compare_func):
-	if start >= end:
+def quicksort(array: list, ini = 0, fin = None):
+	# Base case: Stop for zero-length segments and perform insertion sort for
+	# small segments. A few input checks are used.
+	if fin == None:
+		fin = len(array)
+	if fin - ini <= 1:
+		return
+	if fin - ini <= 2:
+		if array[fin-1] < array[ini]:
+			array[ini], array[fin-1] = array[fin-1], array[ini]
 		return
 
-	p = partition(array, start, end, compare_func)
-	quick_sort(array, start, p-1, compare_func)
-	quick_sort(array, p+1, end, compare_func)`}
+	# Recursive case: partition, arrange into halves, quicksort the halves
+	# Perform arrangement, tracking size of first partition.
+	# The pivot is on the first partition. lowercount is the number of elements
+	# known to be on the on first partition. Stash pivot to first index ini.
+	pivotindex = (ini+fin)//2 # Midpoint is a candid arrangement position
+	pivotvalue = array[pivotindex]
+	array[ini], array[pivotindex] = array[pivotindex], array[ini]
+	lowercount = 1
+	# The lowercount is also the index of next candidate first-partition element.
+	# After rearranging, the first partition elements are from ini to ini+lowercount-1,
+	# in the same relative order to the unsorted stage.
+	for k in range(ini+1, fin):
+		# Place element on first partition to the next available spot on the first partition.
+		if array[k] <= pivotvalue:
+			array[k], array[ini+lowercount] = array[ini+lowercount], array[k]
+			lowercount += 1
+	# Recursively quicksort the two partitions. Pivot is at index ini+lowercount-1.
+	array[ini+lowercount-1], array[ini] = array[ini], array[ini+lowercount-1]
+	quicksort(array, ini, ini+lowercount-1) # First partition
+	quicksort(array, ini+lowercount, fin)   # Second partition
+	return
+`}
 						</code>
 					</pre>
 					<h2 className="codesnippet_h2">Radix sort</h2>
@@ -169,25 +191,65 @@ def quick_sort(array, start, end, compare_func):
 						the numbers by the largest digit.
 					</p>
 					<p>
-						Being a non-comparison sort, it can achieve up to linear time. 
+						Being a non-comparison sort, it can achieve up to linear time. However, it requires extra memory
+						to store the buckets, and it is not flexible, as simple implementations may only work for natural
+						numbers or strings. It is also well suited if the range of numbers [and thus the number of digits to examine]
+						is small.
 					</p>
-					<pre className="code_pre">
+					<pre className="codesnippet_pre">
 						<code>{`
-# Method to do Radix Sort
-def radixSort(arr):
- 
-    # Find the maximum number to know number of digits
-    max1 = max(arr)
- 
-    # Do counting sort for every digit. Note that instead
-    # of passing digit number, exp is passed. exp is 10^i
-    # where i is current digit number
-    exp = 1
-    while max1 / exp > 0:
-        countingSort(arr, exp)
-        exp *= 10`}
+def radixsort_nat(array: list):
+	# Count the longest element
+	longestrep = 0
+	for x in array:
+		if x > longestrep:
+			longestrep = x
+
+	# Place numbers in buckets
+	placevalue = 1
+	while longestrep != 0:
+		# Count the frequency of that digit given place value.
+		# We end up with a ragged list.
+		bucketcount = [None]*10
+		for k in range(len(bucketcount)):
+			bucketcount[k] = []
+		for x in array:
+			bucketcount[x//placevalue%10].append(x)
+
+		print("Place value {0:d}\n\t{1:s}".format(placevalue, repr(bucketcount)))
+
+		# Fill in array with the smallest place values in sorted order
+		nextarray = []
+		for k in range(len(bucketcount)):
+			for x in bucketcount[k]:
+				nextarray.append(x)
+		array = nextarray
+		print(array)
+
+		# Move on to next larger digit
+		longestrep //= 10
+		placevalue *= 10
+
+	return array
+`}
 						</code>
 					</pre>
+					<h2 className="codesnippet_h2">Stable sorts</h2>
+					<p>
+						A sort is stable if after sorting, the relative order of the elements that are "equal" in value during
+						the sorting process is preserved. Consider sorting <code>[(0,A),(1,A),(0,B)]</code> by the first input.
+						There are two elements which are equal in value during the sort, but in order they are <code>(0,A),(0,B)</code>.
+						Thus, after the sort, a stable sort always yields <code>[(0,A),(0,B),(1,A)]</code> while an unstable sort
+						can scramble the relative order, yielding <code>[(0,B),(0,A),(1,B)]</code>.
+					</p>
+					<p>
+						The selection sort and quick sort are not always stable sorts, as a subtle change in implementation is required
+						to convert to a stable sort. The insertion sort and radix sorts are always stable regardless of implementation.
+					</p>
+					<p>
+						If you want to implement multi-level sorting, it must be done using a sequence of stable sorts, with the highest
+						priority sorting done last.
+					</p>
 					<Link to="/sort-page">
 						<input
 							type="submit"
@@ -196,7 +258,6 @@ def radixSort(arr):
 							value="Play game"
 						/>
 					</Link>
-					Source: StackAbuse
 				</div>
 			</body>
 		</Fragment>
