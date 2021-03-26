@@ -42,11 +42,11 @@ const Dashboard = () => {
               ))}
             </ol>
           </div>
-          <form action="stack_game/stack_game.html">
+          <form action="/shell">
             <input
               type="submit"
               className="daily-challenge"
-              value="DAILY CHALLENGE: Stack Game"
+              value="DAILY CHALLENGE"
             />
           </form>
           <br></br>
@@ -66,23 +66,23 @@ const Dashboard = () => {
               alt="submit"
             />
           </form>
-          <div className="dropdown">
+          <div className="dashdropdown">
             SELECT OPTION
             <div className="dropdown-elements">
-              <a href="./">Option 1</a>
-              <a href="./">Option 2</a>
-              <a href="./">Option 3</a>
+              <a href="/dashboard">Option 1</a>
+              <a href="/dashboard">Option 2</a>
+              <a href="/dashboard">Option 3</a>
             </div>
           </div>
           <h2>Sort by</h2>
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="/ifcode">
+            <form action="">
               <input
                 type="submit"
                 className="continue"
-                value="CONTINUE PLAYING: Learn If Statements"
+                value="CONTINUE PLAYING"
               />
             </form>
           </div>
@@ -91,28 +91,34 @@ const Dashboard = () => {
             <div id="js-category-name">CATEGORY1</div>
             <i className="arrow right"></i>
 
-            <form action="helloworld.html">
-              <input type="submit" className="game" value="Hello World Game" />
+            <form action="/stack_game">
+              <input type="submit" className="game" value="Stacks" />
             </form>
 
-            <form action="python-problem-repository.html">
+            <form action="/treetravtut">
               <input
                 type="submit"
                 className="game"
-                value="Python Problem Repository"
+                value="Tree Traversals"
               />
             </form>
 
             <form action="/dictcode">
               <input type="submit" className="game" value="Python Dictionaries" />
             </form>
-
-            <form action="category1/game4.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME4" />
+            <form action="/ifcode">
+              <input type="submit" className="game" value="If Statements" />
             </form>
 
-            <form action="category1/game5.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME5" />
+            <form action="/queue_game">
+              <input type="submit" className="game" value="Queues" />
+
+            <form action="/sort-code">
+              <input type="submit" className="game" value="Sorting" />
+            </form>
+
+            <form action="/hash-code">
+              <input type="submit" className="game" value="Hashing" />
             </form>
           </div>
         </div>
