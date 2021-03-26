@@ -172,13 +172,13 @@ app.post("/EditBio", async (req, res) => {
 });
 
 //get bio
-app.get("/getBio", async (req, res) => {
+app.post("/getBio", async (req, res) => {
   try {
     const { username } = req.body;
     const temp = "jayvin";
     const newUser = await pool.query(
       "SELECT bio FROM users WHERE username = $1",
-      [temp]
+      [username]
     );
 
     if (newUser.rowCount == 0) {

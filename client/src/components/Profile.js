@@ -3,17 +3,18 @@ import Axios from "axios";
 import "../css/profile-style.css";
 
 function Profile() {
-  const [details, setDetails] = useState({ name: "" });
+  const [details, setDetails] = useState("");
   const [bio, setBio] = useState("");
   const [error, setError] = useState("");
 
   function getBio(details) {
-    Axios.get("/getBio", {
-      username: "jayvin", //HARDCODED TO JAYVIN USER SINCE NO OTHER USER IN DB
+    Axios.post("/getBio", {
+      username: localStorage.getItem("username"), //HARDCODED TO JAYVIN USER SINCE NO OTHER USER IN DB
     }).then(
       (response) => {
         console.log(response.data.message);
         setBio(response.data.message);
+        setDetails(localStorage.getItem("username"));
         setError("");
       },
       (error) => {
@@ -37,7 +38,7 @@ function Profile() {
               />
             </div>
             <div id="user-infosec">
-              <h1 id="name-title">Username</h1>
+              <h1 id="name-title">{details}</h1>
               <p>LEADERBOARD RANKING</p>
               <p>#000000000000000000</p>
               <p>LEVEL</p>
