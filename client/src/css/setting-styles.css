@@ -124,6 +124,7 @@
 .acc-preview {
   padding-top: 50%;
 }
+
 @media only screen and (max-width: 768px) {
   .acc-preview {
     padding-top: 0%;

@@ -106,7 +106,6 @@ const Dashboard = () => {
             <form action="/dictcode">
               <input type="submit" className="game" value="Python Dictionaries" />
             </form>
-
             <form action="/ifcode">
               <input type="submit" className="game" value="If Statements" />
             </form>

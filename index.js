@@ -9,7 +9,6 @@ const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
 var DailyQuestions = require('./DailyQuestions.json');
 
-
 const app = express();
 
 app.use(cors());

@@ -220,4 +220,4 @@ function Settings () {
         </Container>
     )
 }
-export default Settings
+export default Settings;
