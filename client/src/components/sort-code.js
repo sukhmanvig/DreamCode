@@ -32,13 +32,13 @@ const SortCodeSnippets = () => {
 					<p>
 						Given an array or datastructure of numbers, objects, or Comparable items,
 						sorting the array or datastructure means that we rearrange the items such that
-						for any pair of indices <var>a, b</var>: the items <var>X[a] &leq; X[b]</var> 
-						or <var>X[a] &geq; X[b]</var>.
+						for any pair of indices <var>a</var>, <var>b</var>: the items <var>X</var>[<var>a</var>] &leq; <var>X</var>[<var>b</var>]
+						or <var>X</var>[<var>a</var>] &geq; <var>X</var>[<var>b</var>].
 					</p>
 					<h1 className="codesnippet_h1">Sorting algorithms</h1>
 					<p>
 						Most conventional sorting algorithms are based on <i>swapping</i> items.
-						Simple sorting algorithms can take up to <var>n<sup>2</sup></var> time,
+						Simple sorting algorithms can take up to <var>n</var><sup>2</sup> time,
 						while the best comparison algorithms take <var>n</var> log <var>n</var> time
 						on average.
 					</p>
@@ -48,7 +48,6 @@ const SortCodeSnippets = () => {
 						Thus, the first iteration of the outer loop puts the first element in sorted order
 						in its correct position; the second iteration puts the second element in sorted order
 						in its correct position, and so on.
-						def selection_sort(L):
 					</p>
 					<p>
 						The inner loop searches all <var>n</var> elements and picks which one to swap.
@@ -92,7 +91,8 @@ def selectionsort(array: list):
 						This algorithm takes quadratic time on average, but works almost linear time for nearly
 						sorted and small arrays.
 
-						Let <code>array</code> 
+						Let <code>array</code> represent the array and <code>position</code> represent the current
+						position of the item to be inserted into the sorted partition.
 					</p>
 					<p>
 						The insertion sort takes six Python lines and an outer foreach-loop and an inner for-loop
@@ -129,10 +129,10 @@ def insertionsort(array: list):
 						we perform insertion sort instead.
 					</p>
 					<p>
-						For larger arrays, we select some element in the array <var>A</var> as the pivot, <var>A[k]</var>
+						For larger arrays, we select some element in the array <var>A</var> as the pivot, <var>A</var>[<var>k</var>]
 						where <var>k</var> is the position of the pivot element. We examine all the elements in the
 						array or sub-array and partially sort that array by putting all the <var>m</var> elements below
-						<var>A[k]</var> on one side and the others on the other side.
+						<var>A</var>[<var>k</var>] on one side and the others on the other side.
 					</p>
 					<p>
 						This algorithm usually takes a much better <var>n</var> log <var>n</var> time to complete.

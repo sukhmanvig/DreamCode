@@ -1,3 +1,19 @@
 .game_button.active {
 	background-color:yellow
 }
+
+.game_button:disabled {
+	background-color:red
+}
+
+.game_button.hinted:disabled {
+	background-color:orange
+}
+
+.game_button.partial:disabled {
+	background-color:pink
+}
+
+.sorthint {
+	width: 128px;
+}

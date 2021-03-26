@@ -19,15 +19,18 @@ const SortGamepage = () => {
 				Entries: <input class="game_input" type="text" id="init-array-entries" placeholder="Entries" width="20pt" defaultValue="12"/>
 				<button className="game_button" id="init-array">Randomize array</button>
 				<div id="gamestate">Click to start game</div>
-				<div id="gamehint">Click to start game</div>
-				<gamestage id="gamestage">
+				<div id="gamehint">Uninitialized...</div>
+				<gamestage id="gamestage" display="block">
 					...
 				</gamestage>
-				<button className="game_button sorthint" id="selectionsort" disabled="true">Selection Sort</button>
-				<button className="game_button sorthint" id="insertionsort" disabled="true">Insertion Sort</button>
-				<button className="game_button sorthint" id="quicksort" disabled="true"></button>
-				<button className="game_button sorthint" id="radixsort" disabled="true"></button>
-				<button className="game_button sorthint" id="sortstep" disabled="true">Step</button>
+				<div id="sortmodes" display="block">
+					<button className="game_button sorthint" id="swapmode" disabled="true">Swap</button>
+					<button className="game_button sorthint" id="selectionsort" disabled="true">Selection</button>
+					<button className="game_button sorthint" id="insertionsort" disabled="true">Insertion</button>
+					<button className="game_button sorthint" id="quicksort" disabled="true">Quick</button>
+					<button className="game_button sorthint" id="radixsort" disabled="true">Radix</button>
+					<button className="game_button sorthint" id="sortstep" disabled="true">Step</button>
+				</div>
 			</body>
 		</Fragment>
 	);
