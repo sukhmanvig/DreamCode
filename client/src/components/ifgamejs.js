@@ -25,7 +25,6 @@ const IfGameJS = ()  => {
 
 	//Send the robot back it's starting position in the array
 	function robotRestart() {
-
 		//Clear the robot from its current position and reset state
 		var robot = document.querySelector("#robot");
 		robot.parentNode.innerHTML = '';
@@ -41,6 +40,7 @@ const IfGameJS = ()  => {
 
 		//clear game status message 
 		resetAttempts();
+		document.querySelector("#game-status").innerHTML = '';
 
 		//hide the play again button and enable the go button
 		document.querySelector("#robot-try-again").style.visibility = "hidden";

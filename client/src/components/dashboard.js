@@ -42,11 +42,11 @@ const Dashboard = () => {
               ))}
             </ol>
           </div>
-          <form action="stack_game/stack_game.html">
+          <form action="/shell">
             <input
               type="submit"
               className="daily-challenge"
-              value="DAILY CHALLENGE: Stack Game"
+              value="DAILY CHALLENGE"
             />
           </form>
           <br></br>
@@ -78,11 +78,11 @@ const Dashboard = () => {
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="/ifcode">
+            <form action="">
               <input
                 type="submit"
                 className="continue"
-                value="CONTINUE PLAYING: Learn If Statements"
+                value="CONTINUE PLAYING"
               />
             </form>
           </div>
@@ -106,9 +106,8 @@ const Dashboard = () => {
             <form action="/dictcode">
               <input type="submit" className="game" value="Python Dictionaries" />
             </form>
-
-            <form action="category1/game4.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME4" />
+            <form action="/ifcode">
+              <input type="submit" className="game" value="If Statements" />
             </form>
 
             <form action="category1/game5.html">

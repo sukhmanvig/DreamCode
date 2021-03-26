@@ -32,6 +32,10 @@ CREATE TABLE follow (
 	-- A friend is someone who mutually follows each other.
 );
 
+CREATE TABLE dailyQuestions (
+    question VARCHAR(255),
+    test VARCHAR(255)
+  
 CREATE TABLE quest (
 	id int PRIMARY KEY,
 	name varchar(30) NOT NULL
