@@ -173,7 +173,7 @@ export default class StackGame extends Component {
 
     render() {
         return (
-        <div>
+        <div id="stackContent">
 
         <h1>Learn about Stacks</h1>
         <br /><br /><br />

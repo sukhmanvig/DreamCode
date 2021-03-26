@@ -109,13 +109,13 @@
 
 
 /*Code output section*/
-#code {
+#ifCode {
 	visibility: hidden;
 	background-color: #050b1f;
 	color: #fbfaf5;
 }
 
-#code > #code-output {
+#ifCode > #code-output {
 	visibility: inherit;
 	text-align: left;
 	background-color: #050b1f;

@@ -172,7 +172,7 @@ export default class QueueGame extends Component {
 
     render() {
         return (
-        <div>
+        <div id="queueContent">
 
         <h1>Learn about Queues</h1>
         <br /><br /><br />

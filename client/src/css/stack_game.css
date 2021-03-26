@@ -1,5 +1,5 @@
-* {
-    margin: 5px;
+#stackContent {
+    margin: 25px;
 }
 
 #explanationDiv {
@@ -22,6 +22,7 @@
     border-radius: 10px;
     background-color: lightblue;
     width: 25%;
+    margin-left: 15px;
 }
 
 #code {
@@ -46,6 +47,8 @@
     background-color: #05D5FF;
     border: 1px solid black;
     border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .game_button:hover {
@@ -61,6 +64,8 @@
     color: black;
     background-color: #ff91008a;
     border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .new_game_button:hover {
