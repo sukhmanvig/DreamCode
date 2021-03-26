@@ -7,13 +7,22 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
-var DailyQuestions = require('./DailyQuestions.json');
+const DailyQuestions = require('./DailyQuestions.json');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json()); //req.body
 app.use(express.static(path.join(__dirname, "build")));
+
+//keeps track of daily question number
+var question_number;
+//changes daily question number
+function ChangeQuestion() {
+  question_number = Math.ceil(Math.random() * 4);
+}
+//calls changequestion function every day 
+setInterval(ChangeQuestion, 86400000);
 
 //move these to the database eventually
 let refreshTokens = [];
@@ -279,8 +288,9 @@ app.post("/compile", async (req, res) => {
 });
 
 app.get("/getQuestion", async (req, res) => {
-  const x = Math.ceil(Math.random() * 4);
-  res.json({question: DailyQuestions[x].prompt, check: DailyQuestions[x].test_code, starter: DailyQuestions[x].starter_code
+  res.json({question: DailyQuestions[question_number].prompt, 
+            check: DailyQuestions[question_number].test_code, 
+            starter: DailyQuestions[question_number].starter_code
           });
   return;
 });
