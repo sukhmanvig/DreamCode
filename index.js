@@ -35,11 +35,8 @@ app.post("/users", async (req, res) => {
 
       //authorized the user
       //create the token for the user
-      const accessToken = generateAccessToken(newUser.rows[0], "15m");
-      const refreshToken = jwt.sign(
-        newUser.rows[0],
-        process.env.REFRESH_TOKEN_SECRET
-      );
+      const accessToken = generateAccessToken(req.body, 3600); //1hour
+      const refreshToken = jwt.sign(req.body, process.env.REFRESH_TOKEN_SECRET);
       refreshTokens.push(refreshToken);
       res.json({
         accessToken: accessToken,
@@ -60,7 +57,6 @@ app.get("/user", authenticateToken, async (req, res) => {
     req.user.username,
   ]);
   res.json(getUser.rows[0].username);
-  console.log(getUser.rows[0].bio);
 });
 
 // deals with the tokens
@@ -70,10 +66,7 @@ app.post("/token", (req, res) => {
   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
-    const accessToken = generateAccessToken({
-      name: user.username,
-      tokenTime: "15m",
-    });
+    const accessToken = generateAccessToken(user, 3600);
     res.json({ accessToken: accessToken });
   });
 });
@@ -105,9 +98,9 @@ app.post("/login", async (req, res) => {
       email,
     ]);
     if (req.body.rememberMe) {
-      acessTime = "3d";
+      acessTime = 259200; // 1 week
     } else {
-      acessTime = "1h";
+      acessTime = 3600; //1 hour
     }
     if (loginUser.rowCount > 0) {
       if (await bcrypt.compare(req.body.password, loginUser.rows[0].password)) {

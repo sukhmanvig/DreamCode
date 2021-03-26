@@ -31,6 +31,7 @@ function RegisterForm() {
         localStorage.setItem("refreshToken", response.data.refreshToken);
         setError("");
         history.push("/");
+        window.location.reload(false);
       }
     });
   };

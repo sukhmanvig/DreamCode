@@ -13,13 +13,29 @@ import PrivateRoute from "./components/PrivateRoute";
 import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
 import DictCodeSnippets from "./components/dictcode";
+import Contact from "./components/Contact";
+import ListsGame from "./components/ListsGame";
+import ListsGameTutorial from "./components/ListsGameTutorial";
 import "./css/index.css";
+//import Axios from "axios";
 
 function App() {
   let history = useHistory();
   const Logout = () => {
-    window.location.reload(false);
+    {
+      /*let token = localStorage.getItem("accessToken");
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token, //the token is a variable which holds the token
+    };
+    Axios.get("/user", {
+      email: "details.email",
+    }).then((response) => {
+      console.log(response);
+    });*/
+    }
     localStorage.clear();
+    window.location.reload(false);
     return history.push("/");
   };
 
@@ -51,16 +67,23 @@ function App() {
             path="/signup"
             component={RegisterForm}
           />
-          <PrivateRoute path="/settings" component={Settings} />
-          <PrivateRoute path="/passwordreset" component={PasswordReset} />
-          <PrivateRoute path="/profile" component={Profile} />
-          <PrivateRoute path="/about.html" component={refreshPage} />
-          <PrivateRoute path="/dashboard" component={Dashboard} />
-          <PrivateRoute path="/shell" />
-          <PrivateRoute path="/ifgame" component={ifgame} />
-          <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-	  <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
-          <Route path="/logout" component={Logout} />
+          <PrivateRoute exact path="/settings" component={Settings} />
+          <PrivateRoute exact path="/contact" component={Contact} />
+          <PrivateRoute exact path="/passwordreset" component={PasswordReset} />
+          <PrivateRoute exact path="/profile" component={Profile} />
+          <PrivateRoute exact path="/about" component={refreshPage} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/shell" />
+          <PrivateRoute exact path="/listsgame" component={ListsGame} />
+          <PrivateRoute exact path="/ifgame" component={ifgame} />
+          <PrivateRoute
+            exact
+            path="/ListsGameTutorial"
+            component={ListsGameTutorial}
+          />
+          <PrivateRoute exact path="/ifcode" component={IfCodeSnippets} />
+          <PrivateRoute exact path="/dictcode" component={DictCodeSnippets} />
+          <Route exact path="/logout" component={Logout} />
         </Switch>
       </div>
       <NavbarBottom />
