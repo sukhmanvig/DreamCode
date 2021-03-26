@@ -27,8 +27,8 @@ const DictGame = () => {
 	    <body id="dictgame_body">
 	    	<div id="dictgame_content">
            		<h1 className="dictgame_h1">Dictionary Game</h1>
-	    		<div id="gameWindow">
-				<div id="gameDescription">
+	    		<div id="dictGameWindow">
+				<div id="dictGameDescription">
 	    				<h2 className="dictgame_h2">Goal</h2>
 	    				<p>Add and remove key-value pairs from the dictionary <strong>myDict</strong> so that it</p>
 	    				<p> matches the dictionary <strong>targetDict</strong>.</p>

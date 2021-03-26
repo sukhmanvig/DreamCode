@@ -89,7 +89,7 @@ const Dashboard = () => {
               <input
                 type="submit"
                 className="continue"
-                value="CONTINUE PLAYING: Lists Game"
+                value="Lists Game"
               />
             </form>
           </div>

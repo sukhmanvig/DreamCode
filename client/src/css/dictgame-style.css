@@ -25,9 +25,10 @@
 }
 
 .dictgame_h1 {
+	margin: 0px;
 	font: bold 30px verdana;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .dictgame_h2, .dictgame_h3 {
@@ -68,7 +69,7 @@
 
 /*Dictionary Containers*/
 
-#gameWindow, #dictContainer, #solDictContainer, #gameActions {
+#dictGameWindow, #dictContainer, #solDictContainer, #gameActions {
 	display: flex;
 	flex-direction: row;
 }
@@ -131,7 +132,7 @@
 
 /*Other CSS*/
 
-#gameDescription {
+#dictGameDescription {
 	margin-right: 50px;
 	text-align: center;
 }

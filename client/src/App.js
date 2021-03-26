@@ -15,15 +15,12 @@ import IfCodeSnippets from "./components/ifcode";
 import TreeTravTutorial from "./components/TreeTraversalsTutorial";
 import Shell from "./components/Shell";
 import DictCodeSnippets from "./components/dictcode";
-<<<<<<< HEAD
 import DictGame from "./components/DictGame";
 import StackGame from "./components/stack_game";
 import QueueGame from "./components/queue_game";
-=======
 import Contact from "./components/Contact";
 import ListsGame from "./components/ListsGame";
 import ListsGameTutorial from "./components/ListsGameTutorial";
->>>>>>> DREAM-25-save-game
 import "./css/index.css";
 //import Axios from "axios";
 

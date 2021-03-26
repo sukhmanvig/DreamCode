@@ -43,6 +43,10 @@
 	background-color: #fbfaf5;
 }
 
+.dictNotes {
+	margin-bottom: 15px;
+}
+
 #fontsizer {  
 	display: inline-block;	
 	font-family: calibri;

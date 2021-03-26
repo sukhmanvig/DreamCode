@@ -15,7 +15,7 @@ const IfCodeSnippets = () => {
       <body id="ifcode_body">
         <div id="content">
           <h1 className="ifcode_h1">If Statements</h1>
-          <div className="notes">
+          <div className="ifNotes">
             <div id="fontsizer">
               <ul>
                 <li>A</li>
