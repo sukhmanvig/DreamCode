@@ -36,10 +36,8 @@
 
 
 .game_button {
-	display: block;
 	text-align: center;
 	font: normal 15px verdana;
-	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-top: 15px;
