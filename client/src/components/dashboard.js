@@ -95,11 +95,11 @@ const Dashboard = () => {
               <input type="submit" className="game" value="Stacks" />
             </form>
 
-            <form action="python-problem-repository.html">
+            <form action="/treetravtut">
               <input
                 type="submit"
                 className="game"
-                value="Python Problem Repository"
+                value="Tree Traversals"
               />
             </form>
 
