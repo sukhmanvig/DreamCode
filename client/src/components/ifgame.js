@@ -51,6 +51,7 @@ const IfGame = () => {
                 </select>
               </div>
               <div id="game-status"></div>
+              <div id="game-attempts">0</div>
 
               <button className="ifgame_button" id="robot-submit">
                 Go
@@ -80,7 +81,7 @@ const IfGame = () => {
                 <img id="goal" alt="goal" src="images/treasure.png" />
               </div>
             </div>
-            <div id="code">
+            <div id="ifCode">
               <h2 className="ifgame_h2">Code For Actions</h2>
               <div id="code-output"></div>
 

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "../css/nav.css";
 import "../css/dashboard-style.css";
-//import { arrow } from "../js/animations.js"
+import CategoryNav from './CategoryNav';
 import magnGlass from "../images/magn-glass.jpg";
 
 const Dashboard = () => {
@@ -19,18 +19,19 @@ const Dashboard = () => {
   };
   useEffect(() => {
     getLeaderboard();
+    CategoryNav();
   }, []);
 
   return (
     <Fragment className="dashboard navbar">
       <title> Dashboard </title>
-      <body>
+      <body className="dashboard">
         <br></br>
 
         <div id="content">
           <header> Dashboard </header>
 
-          <form action="profile.html">
+          <form action="/Profile">
             <input type="submit" id="profile" value="PROFILE" />
           </form>
           <div id="leaderboard">
@@ -41,16 +42,16 @@ const Dashboard = () => {
               ))}
             </ol>
           </div>
-          <form action="stack_game/stack_game.html">
+          <form action="/shell">
             <input
               type="submit"
               className="daily-challenge"
-              value="DAILY CHALLENGE: Stack Game"
+              value="DAILY CHALLENGE"
             />
           </form>
           <br></br>
           <h1>GAMES</h1>
-          <form action="dashboard.html">
+          <form action="/dashboard">
             <input
               type="text"
               name="search-bar"
@@ -65,33 +66,33 @@ const Dashboard = () => {
               alt="submit"
             />
           </form>
-          <div className="dropdown">
+          <div className="dashdropdown">
             SELECT OPTION
             <div className="dropdown-elements">
-              <a href="./">Option 1</a>
-              <a href="./">Option 2</a>
-              <a href="./">Option 3</a>
+              <a href="/dashboard">Option 1</a>
+              <a href="/dashboard">Option 2</a>
+              <a href="/dashboard">Option 3</a>
             </div>
           </div>
           <h2>Sort by</h2>
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="/ifcode">
+            <form action="">
               <input
                 type="submit"
                 className="continue"
-                value="CONTINUE PLAYING: Learn If Statements"
+                value="CONTINUE PLAYING"
               />
             </form>
           </div>
           <div className="category">
-            <i className="arrow left" /*onClick={arrow(0)}*/> </i>
+            <i className="arrow left"></i>
             <div id="js-category-name">CATEGORY1</div>
-            <i className="arrow right" /*onClick={arrow(1)}*/> </i>
+            <i className="arrow right"></i>
 
-            <form action="helloworld.html">
-              <input type="submit" className="game" value="Hello World Game" />
+            <form action="/stack_game">
+              <input type="submit" className="game" value="Stacks" />
             </form>
 
             <form action="python-problem-repository.html">
@@ -102,16 +103,15 @@ const Dashboard = () => {
               />
             </form>
 
-            <form action="category1/game3.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME3" />
+            <form action="/dictcode">
+              <input type="submit" className="game" value="Python Dictionaries" />
+            </form>
+            <form action="/ifcode">
+              <input type="submit" className="game" value="If Statements" />
             </form>
 
-            <form action="category1/game4.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME4" />
-            </form>
-
-            <form action="category1/game5.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME5" />
+            <form action="/queue_game">
+              <input type="submit" className="game" value="Queues" />
             </form>
           </div>
         </div>

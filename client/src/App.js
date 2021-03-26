@@ -5,7 +5,7 @@ import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
 import NavbarBottom from "./components/NavbarBottom";
 import Dashboard from "./components/dashboard";
-import Settings from "./components/boot";
+import Settings from "./components/Settings";
 import PasswordReset from "./components/PasswordReset";
 import Profile from "./components/Profile";
 import PublicRoute from "./components/PublicRoute";
@@ -13,6 +13,11 @@ import PrivateRoute from "./components/PrivateRoute";
 import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
 import TreeTravTutorial from "./components/TreeTraversalsTutorial";
+import Shell from "./components/Shell";
+import DictCodeSnippets from "./components/dictcode";
+import DictGame from "./components/DictGame";
+import StackGame from "./components/stack_game";
+import QueueGame from "./components/queue_game";
 import "./css/index.css";
 
 function App() {
@@ -56,10 +61,14 @@ function App() {
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/about.html" component={refreshPage} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
-          <PrivateRoute path="/shell" />
+          <PrivateRoute path="/shell" component={Shell}/>
           <PrivateRoute path="/ifgame" component={ifgame} />
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-	  <PrivateRoute path="/treetravtut" component={TreeTravTutorial} />
+	        <PrivateRoute path="/treetravtut" component={TreeTravTutorial} />
+	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
+          <PrivateRoute path="/dictgame" component={DictGame} />
+          <PrivateRoute path="/stack_game" component={StackGame} />
+          <PrivateRoute path="/queue_game" component={QueueGame} />
           <Route path="/logout" component={Logout} />
         </Switch>
       </div>
