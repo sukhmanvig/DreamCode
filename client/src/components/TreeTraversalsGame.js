@@ -15,10 +15,10 @@ const TreeTraversalsGame = ({title}) => {
 
 		<div id="contentSec">
 			<h1 className="gameTitle">Tree Traversals</h1>
-			<span className="gpgBtn">Dashboard</span>
-			<span className="gpgBtn">Tree Traversals Tutorial</span>
+			<Link style={{textDecoration : 'none'}} to="/dashboard"><span className="gpgBtn">Dashboard</span></Link>
+			<Link style={{textDecoration : 'none'}} to="/treetravtut"><span className="gpgBtn">Tree Traversals Tutorial</span></Link>
 			
-			<div id="gameWindow">
+			<div id="treeGameWindow">
 				<section>
 					<div id="treeBuildDisplay"><h3 className="secHead">tree</h3>
 						
@@ -51,7 +51,7 @@ const TreeTraversalsGame = ({title}) => {
 					<div id="overlayContent">
 						<h1>Tree Traversals</h1>
 						Build the tree that yields the same output when traversed using the given traversal method.
-						<div id="playBtn" className="menuBtn">PLAY</div>
+						<div id="treePlayBtn" className="menuBtn">PLAY</div>
 					</div>
 				</div>
 			

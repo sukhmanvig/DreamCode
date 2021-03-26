@@ -2,7 +2,7 @@ const TreeTraversalsGameLogic = () => {
 var gOverlay = document.querySelector("#treetravgame #gameOverlay")
 var gameTimer = document.querySelector("#treetravgame #travGameTimer")
 gameTimer.innerHTML = `1:00`
-var playBtn = document.querySelector("#treetravgame #playBtn")
+var playBtn = document.querySelector("#treetravgame #treePlayBtn")
 var travPrompt = document.querySelector("#treetravgame #travPrompt")
 var orderPrompt = document.querySelector("#treetravgame #orderPrompt")
 var opts = document.querySelectorAll("#treetravgame .uChose pre")

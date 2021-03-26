@@ -30,6 +30,8 @@
 	font-family: Montserrat, Calibri;
 	font-size: 50px;
 	margin: 5px 0 20px 0;
+	font-weight: 600;
+	line-height: 1.5;
 }
 
 #treetravgame .gpgBtn {
@@ -46,19 +48,18 @@
 #treetravgame .gpgBtn:hover {
 	background: var(--colscheme2);
 }
-#treetravgame #gameWindow {
+#treetravgame #treeGameWindow {
 /*	border: 2px solid black;*/
 	overflow: hidden;
 	border-radius: 10px;
 	display: flex;
-	height: 80vh;
 	position: relative;
 	margin: 30px 0; 
 	background: #ECE8E8;
 	user-select: none;
 }
 
-#treetravgame #gameWindow section {
+#treetravgame #treeGameWindow section {
 	position: relative;
 	display: flex;
 	flex-flow: column;
@@ -70,12 +71,12 @@
 	font-weight: bold;
 	font-family: Montserrat, Arial, Calibri, sans-serif;
 }
-#treetravgame #gameWindow section:nth-child(1) {
+#treetravgame #treeGameWindow section:nth-child(1) {
 /*	border: 1px solid red;*/
 	width: 70%;
 }
 
-#treetravgame #gameWindow #treeBuildDisplay {
+#treetravgame #treeGameWindow #treeBuildDisplay {
 	
 	padding: 20px;
 	margin: 10px 0 0 10px;
@@ -133,7 +134,7 @@
 	margin-bottom: 
 }
 /*pre*/
-#treetravgame #gameWindow #traversalCode {
+#treetravgame #treeGameWindow #traversalCode {
 	background: black;
 	color: white;
 	height: 200px;
@@ -145,7 +146,7 @@
 	overflow-x: auto;
 }
 
-#treetravgame #gameWindow #traversalCode span {
+#treetravgame #treeGameWindow #traversalCode span {
 	font-size: 1.5em;
 	font-weight: bold;
 	font-family: Montserrat, Arial, Calibri, sans-serif;
