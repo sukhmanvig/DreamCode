@@ -21,10 +21,7 @@ body {
 
 .container {
     background-color: var(--bg-panel);
-    padding: 300px;
-    border-radius: 15px;
-    margin: 0;
-    height: 800px;
+    
 }
 
 h1 {
