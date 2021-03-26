@@ -6,6 +6,9 @@ const port = process.env.PORT || 3001;
 const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const fetch = require("node-fetch");
+var DailyQuestions = require('./DailyQuestions.json');
+
 
 const app = express();
 
@@ -221,6 +224,34 @@ app.post("/settingPassword", async (req, res) => {
     res.status(500).json({ message: "password change failed" });
     return;
   }
+});
+
+//compile python
+app.post("/compile", async (req, res) => {
+  const { script } = req.body;
+  var program = {
+    script :script,
+    language: "python3",
+    versionIndex: "0",
+    clientId: "d8896e07b8825674c4927370ca242325",
+    clientSecret:"d426f22083d9109ab085bbb0d62066b935f03a5a7163a9550982ff807724e065",
+  };
+  const options = {
+      method: 'POST',
+      body: JSON.stringify(program),
+      headers: { 'Content-Type': 'application/json' }
+  }
+  const resc = await fetch(`https://api.jdoodle.com/v1/execute`, options);
+  const json = await resc.json();
+  res.send(json);
+  console.log(json);
+});
+
+app.get("/getQuestion", async (req, res) => {
+  const x = Math.ceil(Math.random() * 4);
+  res.json({question: DailyQuestions[x].prompt, check: DailyQuestions[x].test_code, starter: DailyQuestions[x].starter_code
+          });
+  return;
 });
 
 //wildcard
