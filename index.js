@@ -262,7 +262,7 @@ app.post("/settingInfo", async (req, res) => {
 app.post("/compile", async (req, res) => {
   const { script } = req.body;
   var program = {
-    script :script,
+    script : "import random\n"+ script,
     language: "python3",
     versionIndex: "0",
     clientId: "d8896e07b8825674c4927370ca242325",
@@ -276,7 +276,6 @@ app.post("/compile", async (req, res) => {
   const resc = await fetch(`https://api.jdoodle.com/v1/execute`, options);
   const json = await resc.json();
   res.send(json);
-  console.log(json);
 });
 
 app.get("/getQuestion", async (req, res) => {

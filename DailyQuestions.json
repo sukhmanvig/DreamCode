@@ -2,17 +2,17 @@
     "1":
         {"prompt": "Write a program that takes in 2 lists and returns a list containing elements that appear in both lists",
         "starter_code": "def compListChallenge (lst1,lst2): \n#DON'T CHANGE THE FUNCTION NAME",
-        "test_code":"\ndef test_list():\n\tassert compListChallenge([1,2,3],[3,-2,5]) == [3], 'Should be one element'\n\tassert compListChallenge([],['hey']) == [], 'Should be empty'\n\nif __name__ == '__main__':\n\ttest_list()\n\tprint('Everything passed')"
+        "test_code":"\ndef test_list():\n\tx = random.randint(0,50)\n\ty = random.randint(0,50)\n\tz = random.randint(0,50)\n\tassert compListChallenge([x,y,z],[z,-y,x+y+z]) == [z], 'Should be one element'\n\tassert compListChallenge([],['hey!']) == [], 'Should be empty'\n\nif __name__ == '__main__':\n\ttest_list()\n\tprint('Everything passed')"
         },
     "2":
         {"prompt": "Write a program that takes in one integer and returns True if even, False if odd.",
         "starter_code": "def evenChallenge (num): \n#DON'T CHANGE THE FUNCTION NAME",
-        "test_code":"\ndef test_even():\n\tassert evenChallenge(1) == 'Foo', 'Should be Foo'\n\tassert evenChallenge(2) == 'Buzz', 'Should be Buzz'\n\nif __name__ == '__main__':\n\ttest_even()\n\tprint('Everything passed')"
+        "test_code":"\ndef test_even():\n\tx = random.randrange(2,50,2)\n\ty = random.randrange(1,50,2)\n\tassert evenChallenge(y) == 'Foo', 'Should be Foo'\n\tassert evenChallenge(x) == 'Buzz', 'Should be Buzz'\n\nif __name__ == '__main__':\n\ttest_even()\n\tprint('Everything passed')"
         },
     "3":
         {"prompt": "Write a program that takes in a dictionary, key and value which returns the value stored in key or if the key is not present in the dictionary, it will add the key and value into the dictionary and return the updated dictionary.",
         "starter_code": "def dictChallenge (dict1,key,val): \n#DON'T CHANGE THE FUNCTION NAME",
-        "test_code": "\ndef test_dict():\n\tassert dictChallenge({'brand': 'Ford','model': 'Mustang','year': 1964},'model','Corolla') == 'Mustang', 'Should be Mustang'\n\tassert dictChallenge({'brand': 'Ford','model': 'Mustang','year': 1964},'price',2000) == {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'price' : 2000}, 'Should be dictionary'\nif __name__ == '__main__':\n\ttest_dict()\n\tprint('Everything passed')"
+        "test_code": "\ndef test_dict():\n\tt_dict= {'brand': 'Ford','model': 'Mustang','year': 1964}\n\tmylist = ['brand', 'model', 'year']\n\trkey = random.choice(mylist)\n\tprice = random.randint(1000,3000)\n\tassert dictChallenge(t_dict,rkey,'Corolla') == t_dict.get(rkey), 'Should be value'\n\tassert dictChallenge(t_dict,'price',price) == {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'price' : price}, 'Should be dictionary'\nif __name__ == '__main__':\n\ttest_dict()\n\tprint('Everything passed')"
         },
     "4":
         {"prompt": "Write a program that removes all vowels from a string and returns the string.",
@@ -23,6 +23,6 @@
     "5":
         {"prompt": "Write a program that adds all the values in a stack and return the sum.",
         "starter_code": "def sumChallenge (stack): \n#DON'T CHANGE THE FUNCTION NAME",
-        "test_code": "\ndef test_sum():\n\tassert sumChallenge([1, 2, 3]) == 6, 'Should be 6'\n\tassert stringChallenge('Hello World') == 'Hll Wrld', '2 words fail'\n\nif __name__ == '__main__':\n\ttest_sum()\n\tprint('Everything passed')"
+        "test_code": "\ndef test_sum():\n\tx = random.randint(-50,50)\n\ty = random.randint(-50,50)\n\tz = random.randint(-50,50)\n\ta=x+y+z\n\tassert sumChallenge([3, 2, 1]) == 6, 'Should be 6'\n\tassert sumChallenge([x, y, z]) == x+y+z, 'Should be x+y+z'\n\nif __name__ == '__main__':\n\ttest_sum()\n\tprint('Everything passed')"
         }
 }
