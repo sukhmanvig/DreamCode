@@ -111,7 +111,8 @@ const Dashboard = () => {
             </form>
 
             <form action="/queue_game">
-              <input type="submit" className="game" value="Queues" />
+              <input type="submit" className="game" value="Queues" />\
+            </form>
 
             <form action="/sort-code">
               <input type="submit" className="game" value="Sorting" />
