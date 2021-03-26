@@ -1,3 +1,5 @@
+const PythonProblemRepositoryJS = () => {
+
 var acc =  document.getElementsByClassName('icon_accordion');
 var i;
 var len = acc.length;
@@ -12,3 +14,7 @@ for (i=0; i < len; i++){
     }
   })
 }
+
+}
+
+export default PythonProblemRepositoryJS;
