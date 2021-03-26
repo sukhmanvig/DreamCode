@@ -53,7 +53,8 @@ playBtn.addEventListener("click", startGame)
 var choiceCard = document.querySelectorAll("#treetravgame .uChose")
 for (let i = 0; i < 3; i++ ) {
     choiceCard[i].addEventListener("click", ()=>{selectOpt(i)
-                                                console.log("clicked")})
+                                                // console.log("clicked")
+                                            })
 }
 
 function selectOpt(num) {
@@ -71,6 +72,19 @@ function selectOpt(num) {
         sc.innerHTML = _score;
         }
     }
+    let ansCards = document.querySelectorAll("#treetravgame .uChose")
+    for (let i = 0; i < 3; i++) {
+        if (_choicesAns[i] == true) {
+            ansCards[i].style.background = "#aee8d9"
+        } else {
+            ansCards[i].style.background = "#fcd2d2"
+        }
+    }
+    setTimeout(()=>{
+        for (let i = 0; i < 3; i++) {
+            ansCards[i].style.background = "white"
+        
+        }}, 300)
     genNewQuestion()
 }
 function startGame() {
@@ -471,9 +485,9 @@ function displayOptions(thisAns, compareToThis){
     
     // console.log("orderToMatch : " + _orderToMatch)
     // console.log("currentTreeToMatch : " +  traversalPick(_traversalPick, currentTree))
-    // console.log("tree1 : " + or1)
-    // console.log("tree2 : " + or2)
-    // console.log("tree3 : " + or3)
+    console.log("tree1 : " + or1)
+    console.log("tree2 : " + or2)
+    console.log("tree3 : " + or3)
 
     // // console.log("checking: "+checking)
     // console.log(checkEq(copArray(or1), checking))
@@ -485,7 +499,7 @@ function displayOptions(thisAns, compareToThis){
         checkEq(copArray(or2), checking),
         checkEq(copArray(or3), checking)]
 
-    // console.log(_choicesAns)
+    console.log(_choicesAns)
         // refers to querysel'd
     opts[0].innerHTML = `<code>${ansOpts[numsOpt[0]]}</code>`
     opts[1].innerHTML = `<code>${ansOpts[numsOpt[1]]}</code>`

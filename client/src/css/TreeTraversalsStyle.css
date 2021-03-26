@@ -189,10 +189,11 @@
 	background: #09275C;
 	color: white;
 	padding: 20px;
+	font-weight: bold;
 	border-radius: 10px;
 	height: 80%;
 	margin: 20px 0;
-	font-family: arial;
+	font-family: Montserrat, arial;
 }
 
 #treetravgame #rightSidebar #travPrompt {
@@ -257,7 +258,7 @@
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
-	overflow: auto
+	overflow: hidden;
 	
 }
 

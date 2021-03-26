@@ -1,6 +1,7 @@
 import '../css/TreeTraversalsStyle.css'
 import React, { Fragment, useEffect } from 'react';
 import TreeTraversalsGameLogic from './TreeTraversalsGameLogic'; 
+import { Link } from 'react-router-dom'
 
 const TreeTraversalsGame = ({title}) => {
 
@@ -36,7 +37,8 @@ const TreeTraversalsGame = ({title}) => {
 				<section id="rightSidebar">
 					
 					<div id="travGameTimer"></div>
-					<div id="gameInstruc"><span>Build the tree that would result in this traversal order.</span>
+					<div id="gameInstruc"><span>Build the tree that would result in this traversal order!<br></br><br></br>
+                        It might help to draw out the trees in the cards! Do the given traversal on the trees to see which ones match the output below.</span>
 						<div id="travPrompt">traversal</div>
 						# Match this output:
 						<div id="orderPrompt">1, 2, 3, 4, 5, 6</div>
