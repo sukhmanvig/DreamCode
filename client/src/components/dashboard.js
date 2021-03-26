@@ -66,12 +66,12 @@ const Dashboard = () => {
               alt="submit"
             />
           </form>
-          <div className="dropdown">
+          <div className="dashdropdown">
             SELECT OPTION
             <div className="dropdown-elements">
-              <a href="./">Option 1</a>
-              <a href="./">Option 2</a>
-              <a href="./">Option 3</a>
+              <a href="/dashboard">Option 1</a>
+              <a href="/dashboard">Option 2</a>
+              <a href="/dashboard">Option 3</a>
             </div>
           </div>
           <h2>Sort by</h2>
@@ -91,8 +91,8 @@ const Dashboard = () => {
             <div id="js-category-name">CATEGORY1</div>
             <i className="arrow right"></i>
 
-            <form action="helloworld.html">
-              <input type="submit" className="game" value="Hello World Game" />
+            <form action="/stack_game">
+              <input type="submit" className="game" value="Stacks" />
             </form>
 
             <form action="python-problem-repository.html">
@@ -110,8 +110,8 @@ const Dashboard = () => {
               <input type="submit" className="game" value="If Statements" />
             </form>
 
-            <form action="category1/game5.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME5" />
+            <form action="/queue_game">
+              <input type="submit" className="game" value="Queues" />
             </form>
           </div>
         </div>
