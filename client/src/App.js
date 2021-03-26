@@ -12,6 +12,7 @@ import PublicRoute from "./components/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
+import TreeTravTutorial from "./components/TreeTraversalsTutorial";
 import Shell from "./components/Shell";
 import DictCodeSnippets from "./components/dictcode";
 import DictGame from "./components/DictGame";
@@ -63,7 +64,8 @@ function App() {
           <PrivateRoute path="/shell" component={Shell}/>
           <PrivateRoute path="/ifgame" component={ifgame} />
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-	  <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
+	        <PrivateRoute path="/treetravtut" component={TreeTravTutorial} />
+	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
           <PrivateRoute path="/dictgame" component={DictGame} />
           <PrivateRoute path="/stack_game" component={StackGame} />
           <PrivateRoute path="/queue_game" component={QueueGame} />
