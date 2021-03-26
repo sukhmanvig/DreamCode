@@ -6,8 +6,11 @@ return (
 <Fragment>
   <title>Python Learning Resources</title>
   <body>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0ca4fef4f4fbe4d875392e111598396023c4880d
   <h1 id="center-page">Python Learning Resources</h1>
 
   <ul className="main-nav">
@@ -15,8 +18,11 @@ return (
     <li className="item1">
         <div className="bg">
           <label className="textOverImage" style={{backgroundImage: 'url("images/udemy.png")'}}></label>
+<<<<<<< HEAD
          
           
+=======
+>>>>>>> 0ca4fef4f4fbe4d875392e111598396023c4880d
           <input type="checkbox"></input>
           <h2><a href="https://www.udemy.com/course/complete-python-bootcamp/?LSNPUBID=jU79Zysihs4&siteID=jU79Zysihs4-wy57L5rBsHZNKZ2IjcYiTg" target="_blank">Udemy</a></h2>
           <div>
