@@ -28,10 +28,12 @@ app.post("/users", async (req, res) => {
       const username = req.body.username;
       const email = req.body.email;
       const password = await bcrypt.hash(req.body.password, 10);
+      const bio = "";
+      const date_created = new Date().toISOString().slice(0, 10);
 
       const newUser = await pool.query(
-        "INSERT INTO users (username, email, password) VALUES($1, $2, $3)",
-        [username, email, password]
+        "INSERT INTO users (username, email, password, bio, date_created) VALUES($1, $2, $3, $4, $5)",
+        [username, email, password, bio, date_created]
       );
 
       //authorized the user

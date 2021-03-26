@@ -51,6 +51,7 @@ const IfGame = () => {
                 </select>
               </div>
               <div id="game-status"></div>
+              <div id="game-attempts">0</div>
 
               <button className="ifgame_button" id="robot-submit">
                 Go
