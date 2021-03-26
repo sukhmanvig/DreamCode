@@ -86,6 +86,11 @@ const Dashboard = () => {
               />
             </form>
           </div>
+	  <div className="continue-game">
+          	<form action="/sort-code">
+	        	  <input type="submit" className="continue" value="Sorting" />
+          	</form>
+	  </div>
           <div className="category">
             <i className="arrow left"></i>
             <div id="js-category-name">CATEGORY1</div>
@@ -109,17 +114,8 @@ const Dashboard = () => {
             <form action="/ifcode">
               <input type="submit" className="game" value="If Statements" />
             </form>
-
             <form action="/queue_game">
               <input type="submit" className="game" value="Queues" />\
-            </form>
-
-            <form action="/sort-code">
-              <input type="submit" className="game" value="Sorting" />
-            </form>
-
-            <form action="/hash-code">
-              <input type="submit" className="game" value="Hashing" />
             </form>
           </div>
         </div>

@@ -20,7 +20,7 @@ const SortCodeSnippets = () => {
 			<body id="codesnippet_body">
 				<div id="content">
 					<h1 className="codesnippet_h1">Sorting</h1>
-					<div className="notes">
+					<div className="sortNotes">
 						<div id="fontsizer">
 							<ul>
 								<li>A</li>

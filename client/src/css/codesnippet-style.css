@@ -36,6 +36,10 @@
 	background-color: #fbfaf5;
 }
 
+.sortNotes {
+	margin-bottom: 10px;
+}
+
 #fontsizer {  
 	display: inline-block;	
 	font-family: calibri;
