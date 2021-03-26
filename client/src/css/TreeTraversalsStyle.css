@@ -1,0 +1,283 @@
+/*Montserrat font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--colscheme1: #050b1f;
+	--colscheme2: #6bcae2;
+	--colscheme3: #0d659d;
+	--colscheme4: #c7d8e7;
+	--colscheme5: #11F7FF;
+}
+
+#treetravgame {
+	width: 100%;
+	position: relative;
+	padding: 5px 0;
+	
+}
+#treetravgame #contentSec {
+	width: 80%;
+	margin: auto;
+/*	border: 2px solid black;*/
+}
+
+#treetravgame .gameTitle {
+	font-family: Montserrat, Calibri;
+	font-size: 50px;
+	margin: 5px 0 20px 0;
+}
+
+#treetravgame .gpgBtn {
+	padding: 10px;
+	background: var(--colscheme3);
+	border-radius: 10px;
+	margin-right: 10px;
+	font-family: Arial, "Calibri Light", Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/*	font-weight: bold;*/
+	color: white;
+	transition: all 0.1s ease-out;
+	user-select: none;
+}
+#treetravgame .gpgBtn:hover {
+	background: var(--colscheme2);
+}
+#treetravgame #gameWindow {
+/*	border: 2px solid black;*/
+	overflow: hidden;
+	border-radius: 10px;
+	display: flex;
+	height: 80vh;
+	position: relative;
+	margin: 30px 0; 
+	background: #ECE8E8;
+	user-select: none;
+}
+
+#treetravgame #gameWindow section {
+	position: relative;
+	display: flex;
+	flex-flow: column;
+
+}
+
+.secHead {
+	font-size: 1.5em;
+	font-weight: bold;
+	font-family: Montserrat, Arial, Calibri, sans-serif;
+}
+#treetravgame #gameWindow section:nth-child(1) {
+/*	border: 1px solid red;*/
+	width: 70%;
+}
+
+#treetravgame #gameWindow #treeBuildDisplay {
+	
+	padding: 20px;
+	margin: 10px 0 0 10px;
+	background: var(--colscheme4);
+	flex: 1 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#treetravgame #treeBuildDisplay h3{
+	flex-basis: 100%;
+	
+}
+
+#treeBuildDisplay .uChose {
+/*	border: 1px solid black;*/
+	flex: 0 1 auto;
+	width: 30%;
+	padding: 20px;
+	background: #FFFFFF;
+	margin: 10px;
+	border-radius: 20px;
+	box-shadow: 0 5px 5px #A4A4A4;
+	display: flex;
+	align-items: center;
+	height: 50%;
+	overflow: hidden;
+	overflow-x:auto;
+	border: 5px solid transparent;
+	transition: all 0.1s ease-out;
+	user-select: none;
+}
+
+#treetravgame .uChose:hover {
+	background: #E8FFFE;
+	border: 5px solid var(--colscheme3);
+}
+
+#treetravgame .uChose::-webkit-scrollbar {
+	height: 20px;
+	background: white; 
+	width: 5px;
+	border-radius: 20px;
+
+	padding: 5px;
+
+}
+#treetravgame .uChose::-webkit-scrollbar-thumb {
+	background: var(--colscheme3); 
+
+	border-radius: 10px;
+	box-shadow: inset 0 0 5px var(--colscheme4);
+	width: 3px;
+	border: 6px solid white;
+	margin-bottom: 
+}
+/*pre*/
+#treetravgame #gameWindow #traversalCode {
+	background: black;
+	color: white;
+	height: 200px;
+	padding: 20px;
+
+	margin: 10px 0 10px 10px;
+	flex: 0 0 auto;
+	
+	overflow-x: auto;
+}
+
+#treetravgame #gameWindow #traversalCode span {
+	font-size: 1.5em;
+	font-weight: bold;
+	font-family: Montserrat, Arial, Calibri, sans-serif;
+}
+/*drag items container*/
+/*
+#treetravgame #gameWindow section:nth-child(2) {
+
+	width: 15%;
+	padding: 20px;
+	background: #D8D8D8;
+	margin: 10px;
+}
+*/
+
+#treetravgame #rightSidebar {
+	align-items: center;
+	margin: 10px 10px 10px 10px;
+	padding: 10px;
+	justify-content: space-between;
+	background: var(--colscheme4);
+	width: 30%;
+	overflow: hidden;
+}
+
+#treetravgame #travGameTimer {
+	width: 200px;
+	font-size: 2.5em;
+	background: var(--colscheme3);
+	padding: 10px ;
+	color: #fff;
+	border-radius: 20px;
+	text-align: center;
+	border: 5px solid var(--colscheme2);
+	box-shadow: 0 5px 3px #454545;
+}
+
+
+#treetravgame #rightSidebar #gameInstruc {
+	
+	background: #09275C;
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+	height: 80%;
+	margin: 20px 0;
+	font-family: arial;
+}
+
+#treetravgame #rightSidebar #travPrompt {
+	background: var(--colscheme2);
+	width: 100%;
+	padding: 20px;
+	margin: 20px 0;
+	font-size: 2em;
+	border-radius: 10px;
+	
+}
+#treetravgame #rightSidebar #orderPrompt {
+	margin: 10px;
+	font-size: 2em;
+	
+}
+#treetravgame #rightSidebar #gameScore {
+	font-size: 2em;
+	padding: 10px;
+	margin: 10px;
+}
+#treetravgame #rightSidebar #matchBtn {
+	background: var(--colscheme3);
+	color: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 2em;
+	max-width: 200px;
+	text-align: center;
+	border: 3px solid transparent;
+/*	transition: all 0.1s ease-out;*/
+}
+/*
+
+#treetravgame #rightSidebar #matchBtn:hover {
+	border: 3px solid white;
+	background: var(--colscheme2);
+}
+*/
+
+#treetravgame #gameOverlay {
+	position: absolute;
+	background: #00000090;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#treetravgame #overlayContent {
+	width: 50%;
+	background: #050b1f;
+	height: 50%;
+	padding: 30px;
+	font-family: Montserrat, Arial, sans-serif;
+	font-size: 30px;
+	color: white;
+	border: 1px solid var(--colscheme4);
+	border-radius: 20px;
+	box-shadow: 0 5px 5px black;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	overflow: auto
+	
+}
+
+#treetravgame .menuBtn {
+	padding: 10px;
+	font-size: 30px;
+	background: var(--colscheme3);
+	border-radius: 50px;
+	width: 200px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	border: 5px solid transparent;
+	margin: 5px auto;
+	
+	transition: all 0.1s ease-out;
+}
+
+#treetravgame .menuBtn:hover {
+	background: var(--colscheme2);
+	cursor: pointer;
+	
+}
