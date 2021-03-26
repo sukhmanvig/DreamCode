@@ -40,8 +40,7 @@ function General({uname,email,date}) {
     const EditBio = (details) => {
         Axios.post('/EditBio', {
           bio: details.bio,
-          name: details.name,
-          token: localStorage.getItem("username")
+          name: localStorage.getItem("username")
           ,
         }).then((response) => {
             setSuccess(response.data.message);
