@@ -48,12 +48,30 @@ const SortCodeSnippets = () => {
 						Thus, the first iteration of the outer loop puts the first element in sorted order
 						in its correct position; the second iteration puts the second element in sorted order
 						in its correct position, and so on.
+						def selection_sort(L):
 					</p>
 					<p>
 						The inner loop searches all <var>n</var> elements and picks which one to swap.
 						This algorithm takes inefficient quadratic time without regard to how sorted this list
 						is.
 					</p>
+					<pre className="code_pre">
+						<code>{`
+def selection_sort(L):
+# i indicates how many items were sorted
+for i in range(len(L)-1):
+	# To find the minimum value of the unsorted segment
+	# We first assume that the first element is the lowest
+	min_index = i
+	# We then use j to loop through the remaining elements
+	for j in range(i+1, len(L)-1):
+		# Update the min_index if the element at j is lower than it
+		if L[j] < L[min_index]:
+			min_index = j
+	# After finding the lowest item of the unsorted regions, swap with the first unsorted item
+	L[i], L[min_index] = L[min_index], L[i]`}
+						</code>
+					</pre>
 					<h2 className="codesnippet_h2">Insertion sort</h2>
 					<p>
 						The outer loop controls which element, in sorted order overall, to examine.
@@ -65,6 +83,30 @@ const SortCodeSnippets = () => {
 						This algorithm takes quadratic time on average, but works almost linear time for nearly
 						sorted and small arrays.
 					</p>
+					<pre className="code_pre">
+						<code>{`
+def insertion_sort(array):
+
+# We start from 1 since the first element is trivially sorted
+for index in range(1, len(array)):
+	currentValue = array[index]
+	currentPosition = index
+
+	# As long as we haven't reached the beginning and there is an element
+	# in our sorted array larger than the one we're trying to insert - move
+	# that element to the right
+	while currentPosition > 0 and array[currentPosition - 1] > currentValue:
+		array[currentPosition] = array[currentPosition -1]
+		currentPosition = currentPosition - 1
+
+
+	# We have either reached the beginning of the array or we have found
+	# an element of the sorted array that is smaller than the element
+	# we're trying to insert at index currentPosition - 1.
+	# Either way - we insert the element at currentPosition
+	array[currentPosition] = currentValue`}
+						</code>
+					</pre>
 					<h2 className="codesnippet_h2">Quick sort</h2>
 					<p>
 						This is a recursive sort algorithm, which divides the array into two partitions based on
@@ -86,6 +128,38 @@ const SortCodeSnippets = () => {
 						Rarely will this algorithm exhibit quadratic complexity, if the pivot is always the largest
 						or the smallest element across all recursive calls.
 					</p>
+					<pre className="code_pre">
+						<code>{`
+def partition(array, start, end, compare_func):
+	pivot = array[start]
+	low = start + 1
+	high = end
+
+	while True:
+		while low <= high and compare_func(array[high], pivot):
+			high = high - 1
+
+		while low <= high and not compare_func(array[low], pivot):
+			low = low + 1
+
+		if low <= high:
+			array[low], array[high] = array[high], array[low]
+		else:
+			break
+
+	array[start], array[high] = array[high], array[start]
+
+	return high
+
+def quick_sort(array, start, end, compare_func):
+	if start >= end:
+		return
+
+	p = partition(array, start, end, compare_func)
+	quick_sort(array, start, p-1, compare_func)
+	quick_sort(array, p+1, end, compare_func)`}
+						</code>
+					</pre>
 					<h2 className="codesnippet_h2">Radix sort</h2>
 					<p>
 						This is a noncomparison sort, and can only work if the elements are representable as finite strings,
@@ -97,6 +171,23 @@ const SortCodeSnippets = () => {
 					<p>
 						Being a non-comparison sort, it can achieve up to linear time. 
 					</p>
+					<pre className="code_pre">
+						<code>{`
+# Method to do Radix Sort
+def radixSort(arr):
+ 
+    # Find the maximum number to know number of digits
+    max1 = max(arr)
+ 
+    # Do counting sort for every digit. Note that instead
+    # of passing digit number, exp is passed. exp is 10^i
+    # where i is current digit number
+    exp = 1
+    while max1 / exp > 0:
+        countingSort(arr, exp)
+        exp *= 10`}
+						</code>
+					</pre>
 					<Link to="/sort-page">
 						<input
 							type="submit"
@@ -105,6 +196,7 @@ const SortCodeSnippets = () => {
 							value="Play game"
 						/>
 					</Link>
+					Source: StackAbuse
 				</div>
 			</body>
 		</Fragment>

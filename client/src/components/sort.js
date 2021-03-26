@@ -84,7 +84,7 @@ const SortGameJS = () => {
 		else if (gamestate.autosolve == "Insertion") {
 			console.log(gamestate.autosolve);
 			var k = NaN;
-			for (k = gamestate.autosolvehint[0]; k > 0 && array[k-1] < array[k]; k++) {
+			for (k = gamestate.autosolvehint[0]; k > 0 && array[k-1] < array[k]; k--) {
 				gamestate.autosolvehint[1]++;
 				// Perform updating swap
 				clickSwapInput(k-1)();
@@ -121,7 +121,7 @@ const SortGameJS = () => {
 	document.querySelector("#insertionsort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
 		gamestate.autosolve = "Insertion";
-		gamestate.autosolvehint = [0, "Start Insertion Sort"];
+		gamestate.autosolvehint = [0, 0];
 		
 		document.querySelector("#gamehint").innerHTML = "Starting Insertion Sort";
 		var elems = document.getElementsByClassName("sorthint");
