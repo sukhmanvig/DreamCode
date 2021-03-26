@@ -48,7 +48,7 @@ const TreeTraversalsGame = ({title}) => {
 				<div id="gameOverlay">
 					<div id="overlayContent">
 						<h1>Tree Traversals</h1>
-						Drag and drop nodes to build a binary tree! Your tree should yield the same output when traversed using the given traversal method.
+						Build the tree that yields the same output when traversed using the given traversal method.
 						<div id="playBtn" className="menuBtn">PLAY</div>
 					</div>
 				</div>
