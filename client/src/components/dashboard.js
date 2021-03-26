@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "../css/nav.css";
 import "../css/dashboard-style.css";
-import CategoryNav from './CategoryNav';
+import CategoryNav from "./CategoryNav";
 import magnGlass from "../images/magn-glass.jpg";
 
 const Dashboard = () => {
@@ -85,6 +85,13 @@ const Dashboard = () => {
                 value="CONTINUE PLAYING"
               />
             </form>
+            <form action="/listsgame">
+              <input
+                type="submit"
+                className="continue"
+                value="CONTINUE PLAYING: Lists Game"
+              />
+            </form>
           </div>
           <div className="category">
             <i className="arrow left"></i>
@@ -104,7 +111,11 @@ const Dashboard = () => {
             </form>
 
             <form action="/dictcode">
-              <input type="submit" className="game" value="Python Dictionaries" />
+              <input
+                type="submit"
+                className="game"
+                value="Python Dictionaries"
+              />
             </form>
             <form action="/ifcode">
               <input type="submit" className="game" value="If Statements" />

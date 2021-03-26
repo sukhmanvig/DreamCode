@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Redirect, Route, useHistory } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
@@ -15,16 +15,35 @@ import IfCodeSnippets from "./components/ifcode";
 import TreeTravTutorial from "./components/TreeTraversalsTutorial";
 import Shell from "./components/Shell";
 import DictCodeSnippets from "./components/dictcode";
+<<<<<<< HEAD
 import DictGame from "./components/DictGame";
 import StackGame from "./components/stack_game";
 import QueueGame from "./components/queue_game";
+=======
+import Contact from "./components/Contact";
+import ListsGame from "./components/ListsGame";
+import ListsGameTutorial from "./components/ListsGameTutorial";
+>>>>>>> DREAM-25-save-game
 import "./css/index.css";
+//import Axios from "axios";
 
 function App() {
   let history = useHistory();
   const Logout = () => {
-    window.location.reload(false);
+    {
+      /*let token = localStorage.getItem("accessToken");
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token, //the token is a variable which holds the token
+    };
+    Axios.get("/user", {
+      email: "details.email",
+    }).then((response) => {
+      console.log(response);
+    });*/
+    }
     localStorage.clear();
+    window.location.reload(false);
     return history.push("/");
   };
 
@@ -56,20 +75,7 @@ function App() {
             path="/signup"
             component={RegisterForm}
           />
-          <PrivateRoute path="/settings" component={Settings} />
-          <PrivateRoute path="/passwordreset" component={PasswordReset} />
-          <PrivateRoute path="/profile" component={Profile} />
-          <PrivateRoute path="/about.html" component={refreshPage} />
-          <PrivateRoute path="/dashboard" component={Dashboard} />
-          <PrivateRoute path="/shell" component={Shell}/>
-          <PrivateRoute path="/ifgame" component={ifgame} />
-          <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-	        <PrivateRoute path="/treetravtut" component={TreeTravTutorial} />
-	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
-          <PrivateRoute path="/dictgame" component={DictGame} />
-          <PrivateRoute path="/stack_game" component={StackGame} />
-          <PrivateRoute path="/queue_game" component={QueueGame} />
-          <Route path="/logout" component={Logout} />
+	  <PrivateRoute exact path="/settings" component={Settings} />                                                            <PrivateRoute exact path="/contact" component={Contact} />                                                              <PrivateRoute exact path="/passwordreset" component={PasswordReset} />                                                  <PrivateRoute exact path="/profile" component={Profile} />                                                              <PrivateRoute exact path="/about" component={refreshPage} />                                                            <PrivateRoute exact path="/about.html" component={refreshPage} />                                                       <PrivateRoute exact path="/dashboard" component={Dashboard} />                                                          <PrivateRoute exact path="/shell" component={Shell}/>                                                                   <PrivateRoute exact path="/ifgame" component={ifgame} />                                                                <PrivateRoute exact path="/ifcode" component={IfCodeSnippets} />                                                        <PrivateRoute exact path="/treetravtut" component={TreeTravTutorial} />                                                 <PrivateRoute exact path="/dictcode" component={DictCodeSnippets} />                                                    <PrivateRoute exact path="/dictgame" component={DictGame} />                                                            <PrivateRoute exact path="/stack_game" component={StackGame} />                                                         <PrivateRoute exact path="/queue_game" component={QueueGame} />                                                         <PrivateRoute exact path="/listsgame" component={ListsGame} />                                                          <PrivateRoute exact path="/ListsGameTutorial" component={ListsGameTutorial} />                                          <Route exact path="/logout" component={Logout} />
         </Switch>
       </div>
       <NavbarBottom />
