@@ -485,9 +485,9 @@ function displayOptions(thisAns, compareToThis){
     
     // console.log("orderToMatch : " + _orderToMatch)
     // console.log("currentTreeToMatch : " +  traversalPick(_traversalPick, currentTree))
-    console.log("tree1 : " + or1)
-    console.log("tree2 : " + or2)
-    console.log("tree3 : " + or3)
+    // console.log("tree1 : " + or1)
+    // console.log("tree2 : " + or2)
+    // console.log("tree3 : " + or3)
 
     // // console.log("checking: "+checking)
     // console.log(checkEq(copArray(or1), checking))
@@ -499,7 +499,7 @@ function displayOptions(thisAns, compareToThis){
         checkEq(copArray(or2), checking),
         checkEq(copArray(or3), checking)]
 
-    console.log(_choicesAns)
+    // console.log(_choicesAns)
         // refers to querysel'd
     opts[0].innerHTML = `<code>${ansOpts[numsOpt[0]]}</code>`
     opts[1].innerHTML = `<code>${ansOpts[numsOpt[1]]}</code>`
