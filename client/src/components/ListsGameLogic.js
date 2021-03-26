@@ -136,14 +136,14 @@ const ListsGameLogic = () => {
 
   function startCd() {
     if (time >= 0) {
-      if (time == 0) {
+      if (time === 0) {
         gameTimer.innerHTML = "0:00";
         setTimeout(() => {
           gameTimer.style.fontSize = "xx-large";
           gameTimer.innerHTML = "Time's up!";
           gameOver();
         }, 1000);
-      } else if (time == 10) {
+      } else if (time === 10) {
         gameTimer.style.backgroundColor = "#E10002";
       } else if (time <= 9) {
         gameTimer.style.backgroundColor = "#E10002";
@@ -368,10 +368,10 @@ const ListsGameLogic = () => {
 
       // check inp is number
 
-      if (_shoppingCart.length == 0) {
+      if (_shoppingCart.length === 0) {
         resp.innerHTML = "Cannot pop from empty list.";
       } else {
-        if (inp == "") {
+        if (inp === "") {
           let itemName = _shoppingCart.pop();
 
           checkOpenMsg();
@@ -402,7 +402,7 @@ const ListsGameLogic = () => {
           if (!isNaN(num) && Number.isInteger(num)) {
             // check does index exist
             let popped = _shoppingCart.splice(num, 1);
-            if (popped.length != 0) {
+            if (popped.length !== 0) {
               // item was popped
               checkOpenMsg();
 
@@ -479,9 +479,9 @@ const ListsGameLogic = () => {
 
       let ind = _shoppingCart.indexOf(inp);
 
-      if (inp == "") {
+      if (inp === "") {
         resp.innerHTML = "remove() takes exactly one argument.";
-      } else if (ind == -1) {
+      } else if (ind === -1) {
         resp.innerHTML = "Item not found.";
       } else if (ind >= -1) {
         _shoppingCart.splice(ind, 1);
@@ -510,7 +510,7 @@ const ListsGameLogic = () => {
     // sort
     // compare
     // if yes win, else not quite
-    if (shopList.length != _shoppingCart.length) {
+    if (shopList.length !== _shoppingCart.length) {
       showCmd("Keep trying!");
     } else {
       let sortedShopList = copyArray(shopList);
@@ -557,7 +557,7 @@ const ListsGameLogic = () => {
   function checkEqual(arr1, arr2) {
     for (let i = 0; i < arr1.length; i++) {
       console.log("arr1: " + arr1[i] + " arr2: " + arr2[i]);
-      if (arr1[i] != arr2[i]) {
+      if (arr1[i] !== arr2[i]) {
         return false;
       }
     }
