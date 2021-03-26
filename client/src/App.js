@@ -93,12 +93,6 @@ function App() {
       </Switch>
       <NavbarBottom />
       
-      <Route exact path="/python-learning-resources">
-          <div>
-          <PythonLearningResources/>
-          </div>
-      </Route>
-      
     </>
   );
 }
