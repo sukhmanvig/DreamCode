@@ -47,6 +47,7 @@ const DictGame = () => {
 	    						<select id="dictGameSelectAddValue"></select>
 	    						<div id="dictModifyStatus"></div>
 	    						<button className="dictGameButton" id="dictGameButtonModify">Add Key and Value to Dictionary</button>
+								Modifications performed: <div id="dictModifications">0</div>
 	   					</div>
 						<div id="dictRemove">
 	    						<h2 className="dictgame_h2">Dictionary Remove</h2>
@@ -54,6 +55,7 @@ const DictGame = () => {
 	    						<select id="dictGameSelectRemoveKey"></select>
 	    						<div id="dictRemoveStatus"></div>
 	    						<button className="dictGameButton" id="dictGameButtonRemove">Remove Key From Dictionary</button>
+								Removals performed: <div id="dictRemovals">0</div>
 	   					</div>
 					</div>
 	    			</div>

@@ -14,7 +14,7 @@ const IfGameJS = ()  => {
 
 	//show/hide the code section
 	function changeCodeVisibility() {
-		var code = document.querySelector("#code");
+		var code = document.querySelector("#ifCode");
 		if (getComputedStyle(code).visibility === "hidden") {
 			code.style.visibility = "visible";
 		}
@@ -25,7 +25,6 @@ const IfGameJS = ()  => {
 
 	//Send the robot back it's starting position in the array
 	function robotRestart() {
-
 		//Clear the robot from its current position and reset state
 		var robot = document.querySelector("#robot");
 		robot.parentNode.innerHTML = '';
@@ -41,6 +40,7 @@ const IfGameJS = ()  => {
 
 		//clear game status message 
 		resetAttempts();
+		document.querySelector("#game-status").innerHTML = '';
 
 		//hide the play again button and enable the go button
 		document.querySelector("#robot-try-again").style.visibility = "hidden";
@@ -109,6 +109,10 @@ const IfGameJS = ()  => {
 	function resetAttempts() {
 		attempts = 0;
 		document.querySelector("#game-attempts").innerHTML = attempts;
+	}
+
+	function submitScore(userid, score) {
+
 	}
 
 	//Move the robot according the actions specified by the user
@@ -226,6 +230,8 @@ const IfGameJS = ()  => {
 					game_status.innerHTML = "Yay, Rob successfully retrieved the treasure!";
 					document.querySelector("#robot-try-again").style.visibility = "visible";
 					document.querySelector("#next-level").style.visibility = "visible";
+					// Save game TODO
+					submitScore(localStorage.getItem("username"), attempts);
 					return;
 				}	
 			}
