@@ -14,7 +14,7 @@ const IfGameJS = ()  => {
 
 	//show/hide the code section
 	function changeCodeVisibility() {
-		var code = document.querySelector("#code");
+		var code = document.querySelector("#ifCode");
 		if (getComputedStyle(code).visibility === "hidden") {
 			code.style.visibility = "visible";
 		}
