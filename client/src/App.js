@@ -61,7 +61,7 @@ function App() {
           <PrivateRoute path="/shell" component={Shell}/>
           <PrivateRoute path="/ifgame" component={ifgame} />
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
+	  <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
           <PrivateRoute path="/dictgame" component={DictGame} />
           <Route path="/logout" component={Logout} />
         </Switch>

@@ -26,7 +26,6 @@ function Navbar() {
           )}
 
           <Link to={"/dashboard"}> Dashboard </Link>
-          <Link to="/shell"> Python Shell </Link>
           <Link to="/contact"> Contact </Link>
           <Link to={"/about"}> About </Link>
           <Link to="/"> Home </Link>
