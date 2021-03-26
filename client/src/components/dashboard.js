@@ -107,12 +107,12 @@ const Dashboard = () => {
               <input type="submit" className="game" value="Python Dictionaries" />
             </form>
 
-            <form action="category1/game4.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME4" />
+            <form action="/sort-code">
+              <input type="submit" className="game" value="Sorting" />
             </form>
 
-            <form action="category1/game5.html">
-              <input type="submit" className="game" value="CATEGORY1 GAME5" />
+            <form action="/hash-code">
+              <input type="submit" className="game" value="Hashing" />
             </form>
           </div>
         </div>
