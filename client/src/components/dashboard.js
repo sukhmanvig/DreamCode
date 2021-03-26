@@ -106,14 +106,13 @@ const Dashboard = () => {
             <form action="/dictcode">
               <input type="submit" className="game" value="Python Dictionaries" />
             </form>
-<<<<<<< HEAD
             <form action="/ifcode">
               <input type="submit" className="game" value="If Statements" />
             </form>
 
             <form action="/queue_game">
-              <input type="submit" className="game" value="Queues" />
-=======
+              <input type="submit" className="game" value="Queues" />\
+            </form>
 
             <form action="/sort-code">
               <input type="submit" className="game" value="Sorting" />
@@ -121,7 +120,6 @@ const Dashboard = () => {
 
             <form action="/hash-code">
               <input type="submit" className="game" value="Hashing" />
->>>>>>> DREAM-135-Sorting
             </form>
           </div>
         </div>
