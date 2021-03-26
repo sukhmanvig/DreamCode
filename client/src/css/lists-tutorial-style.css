@@ -1,0 +1,88 @@
+:root {
+  --colscheme1: #050b1f;
+  --colscheme2: #6bcae2;
+  --colscheme3: #0d659d;
+  --colscheme4: #c7d8e7;
+  --colscheme5: #11f7ff;
+}
+
+.notes * {
+  margin: 0;
+  padding: 0;
+}
+.notes {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.notes p {
+  font-family: calibri;
+  margin: 20px 0;
+}
+
+.notes pre {
+  background: var(--colscheme1);
+  color: var(--colscheme5);
+  padding: 30px 50px;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 5px 5px var(--colscheme3);
+}
+
+.notes pre::-webkit-scrollbar {
+  height: 20px;
+  background: var(--colscheme1);
+  width: 5px;
+  border-radius: 20px;
+
+  padding: 5px;
+}
+.notes pre::-webkit-scrollbar-thumb {
+  background: var(--colscheme3);
+
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px var(--colscheme4);
+  width: 3px;
+  border: 6px solid black;
+}
+.notes h1 {
+  margin: 40px auto 40px 0;
+  font-family: Calibri;
+  font-size: 50px;
+}
+
+#fontsizer {
+  font-family: calibri;
+  width: 100%;
+  display: block;
+
+  overflow: auto;
+}
+#fontsizer ul {
+  list-style-type: none;
+}
+#fontsizer li {
+  text-align: center;
+  display: inline-block;
+  float: left;
+  background: var(--colscheme1);
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+#fontsizer li:hover {
+  background: var(--colscheme4);
+  cursor: pointer;
+}
+#fontsizer li:nth-child(2) {
+  font-size: 20px;
+}
+
+#fontsizer li:nth-child(3) {
+  font-size: 30px;
+}
+
+.comment {
+  color: #bdbdbd;
+}
