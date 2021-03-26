@@ -9,7 +9,7 @@ function NavbarBottom() {
         <div>
           <Link to="./pages/contact.html"> Contact </Link>
           <Link to="./pages/about.html"> About </Link>
-          <Link to="index.html"> Home </Link>
+          <Link to="./"> Home </Link>
         </div>
       </nav>
     </div>

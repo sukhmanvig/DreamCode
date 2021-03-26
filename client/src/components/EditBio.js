@@ -37,6 +37,7 @@ function BioForm({ type, error, success, setPageStatus }) {
             <Form.Control as="textarea" rows={3}
                 onChange={(e) => setDetails({ ...details, bio: e.target.value })}
                 value={details.bio}
+                maxLength = {250}
                 required/>
         </Form.Group>
         <input type="submit" value="Update Bio"/>

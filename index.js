@@ -6,6 +6,8 @@ const port = process.env.PORT || 3001;
 const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const fetch = require("node-fetch");
+var DailyQuestions = require('./DailyQuestions.json');
 
 const app = express();
 
@@ -25,10 +27,12 @@ app.post("/users", async (req, res) => {
       const username = req.body.username;
       const email = req.body.email;
       const password = await bcrypt.hash(req.body.password, 10);
+      const bio = "";
+      const date_created = new Date().toISOString().slice(0, 10);
 
       const newUser = await pool.query(
-        "INSERT INTO users (username, email, password) VALUES($1, $2, $3)",
-        [username, email, password]
+        "INSERT INTO users (username, email, password, bio, date_created) VALUES($1, $2, $3, $4, $5)",
+        [username, email, password, bio, date_created]
       );
 
       //authorized the user
@@ -201,24 +205,92 @@ app.get("/getBio", async (req, res) => {
 app.post("/settingPassword", async (req, res) => {
   try {
     const { username } = req.body;
+    const { token } = req.body;
     const { newpassword } = req.body;
     const { oldpassword } = req.body;
-
-    const newUser = await pool.query(
-      "UPDATE users SET password = $1 WHERE (username= $2 AND Password=$3);",
-      [newpassword, username, oldpassword]
+    //gets user info
+    const bcryptinfo = await pool.query(
+      "SELECT password FROM users WHERE username = $1",
+      [token]
     );
-    if (newUser.rowCount == 0) {
-      await res.status(404).json({ message: "Username or password incorrect" });
-      return;
-    } else {
-      await res.status(200).json({ message: "Success" });
-      return;
+    console.log(bcryptinfo.rows[0].password);
+    //checks if db password matches the entered password
+    if (await bcrypt.compare(oldpassword, bcryptinfo.rows[0].password)) {
+      console.log("yo");
+      //updates the password
+      const updatedUser = await pool.query(
+        "UPDATE users SET password = $1 WHERE (username= $2 AND password=$3);",
+        [newpassword, token, bcryptpass.rows[0].password]
+      );
+
+      if (updatedUser.rowCount == 0) {
+        await res.status(404).json({ message: "Username or password incorrect" });
+        return;
+      } else {
+          await res.status(200).json({ message: "Success" });
+          return;
+      }
     }
+    await res.status(404).json({ message: "Username or password incorrect" });
+    return;
   } catch (err) {
     res.status(500).json({ message: "password change failed" });
     return;
   }
+});
+
+//gets settings info
+app.post("/settingInfo", async (req, res) => {
+  try {
+    const { token } = req.body;
+
+      //gets user info
+      const userInfo = await pool.query(
+        "SELECT * FROM users WHERE username= $1;",
+        [token]
+      );
+
+      if (userInfo.rowCount == 0) {
+        await res.status(404).json({ message: "Username or password incorrect" });
+        return;
+      } else {
+          console.log(userInfo.rows[0]);
+          await res.status(200).json(userInfo.rows[0]);
+          return;
+      }
+
+  } catch (err) {
+    res.status(500).json({ message: "password change failed" });
+    return;
+  }
+});
+
+//compile python
+app.post("/compile", async (req, res) => {
+  const { script } = req.body;
+  var program = {
+    script :script,
+    language: "python3",
+    versionIndex: "0",
+    clientId: "d8896e07b8825674c4927370ca242325",
+    clientSecret:"d426f22083d9109ab085bbb0d62066b935f03a5a7163a9550982ff807724e065",
+  };
+  const options = {
+      method: 'POST',
+      body: JSON.stringify(program),
+      headers: { 'Content-Type': 'application/json' }
+  }
+  const resc = await fetch(`https://api.jdoodle.com/v1/execute`, options);
+  const json = await resc.json();
+  res.send(json);
+  console.log(json);
+});
+
+app.get("/getQuestion", async (req, res) => {
+  const x = Math.ceil(Math.random() * 4);
+  res.json({question: DailyQuestions[x].prompt, check: DailyQuestions[x].test_code, starter: DailyQuestions[x].starter_code
+          });
+  return;
 });
 
 //wildcard
