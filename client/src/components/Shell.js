@@ -188,7 +188,7 @@ DisplayOutput = (response) => {
                                 <Button onClick={this.Test} className="mt-3" type="submit">Test</Button>
                             </Col>
                             <Col md={{ span: 2, offset: 7 }}>
-                                <Button onClick={this.Submit} className='mt-3' variant= "danger" type="submit">Submit</Button>
+                                <Button onClick={this.Submit} className='mt-3 mb-3' variant= "danger" type="submit">Submit</Button>
                             </Col>
                         </Row>
                     </form>
