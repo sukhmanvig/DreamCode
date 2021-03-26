@@ -111,11 +111,11 @@
 }
 #notifs {
   display: none;
-  padding-bottom: 120px;
+  padding-bottom: 200px;
 }
 #privacy {
   display: none;
-  padding-bottom: 130px;
+  padding-bottom: 230px;
 }
 #general {
   display: none;
@@ -124,6 +124,12 @@
 .acc-preview {
   padding-top: 50%;
 }
+@media only screen and (max-width: 768px) {
+  .acc-preview {
+    padding-top: 0%;
+  }
+}
+
 .contenttab {
   padding-bottom: 250px;
 }

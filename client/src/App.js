@@ -5,7 +5,7 @@ import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
 import NavbarBottom from "./components/NavbarBottom";
 import Dashboard from "./components/dashboard";
-import Settings from "./components/boot";
+import Settings from "./components/Settings";
 import PasswordReset from "./components/PasswordReset";
 import Profile from "./components/Profile";
 import PublicRoute from "./components/PublicRoute";
