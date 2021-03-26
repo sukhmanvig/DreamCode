@@ -25,8 +25,7 @@ const SortGamepage = () => {
 				</gamestage>
 				<button className="game_button sorthint" id="selectionsort" disabled="true">Selection Sort</button>
 				<button className="game_button sorthint" id="insertionsort" disabled="true">Insertion Sort</button>
-				<button className="game_button sorthint" id="quicksort" disabled="true">Quick Sort</button>
-				<button className="game_button sorthint" id="radixsort" disabled="true">Radix Sort</button>
+
 				<button className="game_button sorthint" id="sortstep" disabled="true">Step</button>
 			</body>
 		</Fragment>
