@@ -14,6 +14,8 @@ import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
 import DictCodeSnippets from "./components/dictcode";
 import DictGame from "./components/DictGame";
+import StackGame from "./components/stack_game";
+import QueueGame from "./components/queue_game";
 import "./css/index.css";
 
 function App() {
@@ -62,6 +64,8 @@ function App() {
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
 	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
           <PrivateRoute path="/dictgame" component={DictGame} />
+          <PrivateRoute path="/stack_game" component={StackGame} />
+          <PrivateRoute path="/queue_game" component={QueueGame} />
           <Route path="/logout" component={Logout} />
         </Switch>
       </div>
