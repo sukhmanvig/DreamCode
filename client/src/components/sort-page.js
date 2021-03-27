@@ -30,6 +30,7 @@ const SortGamepage = () => {
 					<button className="game_button sorthint" id="quicksort" disabled="true">Quick</button>
 					<button className="game_button sorthint" id="radixsort" disabled="true">Radix</button>
 					<button className="game_button sorthint" id="sortstep" disabled="true">Step</button>
+					<button className="game_button sorthint" id="fastforward" disabled="true">Fast Forward</button>
 				</div>
 			</body>
 		</Fragment>
