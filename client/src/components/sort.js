@@ -61,6 +61,7 @@ const SortGameJS = () => {
 		document.querySelector("#swapmode").click();
 	});
 
+	/* Sort Step features */
 	document.querySelector("#sortstep").addEventListener('click', ()=>{
 		console.log(gamestate.autosolve);
 		console.log(gamestate.autosolvehint);
@@ -146,11 +147,11 @@ const SortGameJS = () => {
 			}
 			gamestate.autosolve = "Insertion";
 		}
-		else if (gamestate.autosolve === "Quick") {
-			console.log(gamestate.autosolve);
+		else if (gamestate.autosolve === "Quick") { /* Perform a Quicksort */
+			quicksort(array, 0, array.length);
 		}
-		else if (gamestate.autosolve === "Radix") {
-			console.log(gamestate.autosolve);
+		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
+			radixsort_N(array);
 		}
 		else {
 			console.log("OMG");
@@ -201,7 +202,7 @@ const SortGameJS = () => {
 	document.querySelector("#quicksort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
 		gamestate.autosolve = "Quick";
-		gamestate.autosolvehint = [0, "Start Quick Sort"];
+		gamestate.autosolvehint = [0, 0, []];
 		disableSwapInput();
 		
 		document.querySelector("#gamehint").innerHTML = "Starting Quick Sort";
@@ -215,7 +216,7 @@ const SortGameJS = () => {
 	document.querySelector("#radixsort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
 		gamestate.autosolve = "Radix";
-		gamestate.autosolvehint = [0, "Start Radix Sort"];
+		gamestate.autosolvehint = [0, 0, []];
 		disableSwapInput();
 		
 		document.querySelector("#gamehint").innerHTML = "Starting Radix Sort";
@@ -360,6 +361,77 @@ const SortGameJS = () => {
 		array[k2] = temp;
 		// Increment moves
 		moves++;
+	}
+
+	/**Perform a quicksort on a segment of an array
+	 * @param {*} array 
+	 * @param {*} ini 
+	 * @param {*} fin 
+	 */
+	function quicksort(array, ini, fin) {
+		var count = 0;
+		if (fin - ini <= 1)
+			return 1;
+		if (fin - ini <= 2) {
+			if (array[fin-1] < array[ini])
+				swap(ini, fin-1);
+			return
+		}
+
+		var pivotindex = Math.trunc((ini+fin)/2); console.log(array);
+		var pivotvalue = array[pivotindex];
+		swap(ini, pivotindex); 
+		var lowercount = 1;
+
+		for (var k = ini+1; k < fin; k++) {
+			count++;
+			if (array[k] <= pivotvalue) {
+				swap(k, ini+lowercount);
+				lowercount++; console.log(array);
+			}
+		}
+		// Recursive call
+		swap(ini+lowercount-1, ini); console.log(array);
+		return count + quicksort(array, ini, ini+lowercount-1) + quicksort(array, ini+lowercount, fin);
+	}
+		
+	/**Perform a quicksort partition.
+	 */
+	
+	/**Perform a radixsort.
+	 */
+	function radixsort_N(array) {
+		var longestrep = 0;
+		for (var x in array) {
+			if (array[x] > longestrep)
+				longestrep = array[x];
+		}
+
+		var placevalue = 1;
+		while (longestrep != 0) {
+			var bucketcount = [];
+			for (var k = 0; k < 10; k++) {
+				bucketcount[k] = [];
+			}
+
+			for (var x in array) {
+				bucketcount[Math.trunc(array[x]/placevalue)%10].push(array[x]);
+				console.log(bucketcount);
+			}
+
+			var nextarray = [];
+			for (var k = 0; k < bucketcount.length; k++) {
+				for (var x in bucketcount[k]) {
+					nextarray.push(bucketcount[k][x]);
+					console.log(nextarray);
+				}
+			}
+			array = nextarray;
+
+			longestrep = Math.trunc(longestrep/10);
+			placevalue *= 10;
+			console.log(array);
+		}
 	}
 }
 
