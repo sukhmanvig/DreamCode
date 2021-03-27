@@ -156,13 +156,13 @@ const SortGameJS = () => {
 						clickSwapInput(ini)();clickSwapInput(fin-1)();
 					}
 				}
-				gamestate.autosolvehint[0] = gamestate.autosolvehint[4].pop();
 				for (var k = 0; k < array.length; k++) {
-					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
+					if (k >= ini && k < fin)
 						document.querySelector(`#swap_${k}`).className = "game_button hinted";
 					else
 						document.querySelector(`#swap_${k}`).className = "game_button offscope";
 				}
+				gamestate.autosolvehint[0] = gamestate.autosolvehint[4].pop();
 				document.querySelector("#gamehint").innerHTML = `Base case with ${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
 			}
 			else {
@@ -171,7 +171,6 @@ const SortGameJS = () => {
 				clickSwapInput(ini)();clickSwapInput(pivotindex)();
 				var lowercount = 1;
 	
-				gamestate.autosolvehint[0] = [0,array.length];
 				gamestate.autosolvehint[1] = pivotindex;
 				gamestate.autosolvehint[2] = pivotvalue;
 				gamestate.autosolvehint[3] = lowercount;
@@ -179,7 +178,7 @@ const SortGameJS = () => {
 				// Update display
 				document.querySelector("#gamehint").innerHTML = `Perform Pivot on ${pivotvalue} from #${pivotindex}`;
 				for (var k = 0; k < array.length; k++) {
-					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
+					if (k >= ini && k < fin)
 						document.querySelector(`#swap_${k}`).className = "game_button";
 					else
 						document.querySelector(`#swap_${k}`).className = "game_button offscope";
@@ -208,7 +207,8 @@ const SortGameJS = () => {
 			document.querySelector("#gamehint").innerHTML = `Performed partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickPartition";
 			for (var k = 0; k < array.length; k++) {
-				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
+				console.log(ini + " " + k + " " + fin);
+				if (k >= ini && k < fin) {
 					if (array[k] <= pivotvalue)
 						document.querySelector(`#swap_${k}`).className = "game_button hinted";
 					else
@@ -228,7 +228,7 @@ const SortGameJS = () => {
 			document.querySelector("#gamehint").innerHTML = `Highlighted partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickRecursive"
 			for (var k = 0; k < array.length; k++) {
-				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
+				if (k >= ini && k < fin) {
 					if (k < lowercount-1)
 						document.querySelector(`#swap_${k}`).className = "game_button hinted";
 					else if (k === lowercount-1)
@@ -245,6 +245,7 @@ const SortGameJS = () => {
 			var lowercount = gamestate.autosolvehint[3];
 			gamestate.autosolvehint[4].push([ini+lowercount, fin]);
 			gamestate.autosolvehint[4].push([ini, ini+lowercount-1]);
+			console.log(gamestate.autosolvehint[4]);
 
 			// Update display
 			gamestate.autosolve = "Quick";
