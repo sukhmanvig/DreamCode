@@ -16,3 +16,5 @@ let trans = () => {
         document.documentElement.classList.remove('transition')
     }, 1000)
 }
+
+//<input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
