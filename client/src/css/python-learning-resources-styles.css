@@ -4,43 +4,43 @@
   font-family: poppins, sans-serif;
 
 }
-#py-learning{
+body{
   background-color: #c7d8e7;
 }
 
-#py-learning a:link {
+a:link {
   color: green;
   background-color: transparent;
   text-decoration: none;
 }
-#py-learning a:visited {
+a:visited {
   background-color: transparent;
   text-decoration: none;
 }
-#py-learning a:hover {
+a:hover {
   color: red;
   background-color: transparent;
   text-decoration: underline;
 }
-#py-learning a:active {
+a:active {
   color: yellow;
   background-color: transparent;
   text-decoration: underline;
 }
 
-#py-learning .main-nav {
+.main-nav {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-60%, -60%);
   margin: 0;
   padding: 0;
-  width: 800px;
+  width: 900px;
   height: 200px;
 
 }
 
-#py-learning .main-nav li {
+.main-nav li {
   list-style: none;
   position: absolute;
   background: white;
@@ -50,83 +50,83 @@
   opacity: 0.8;
 }
 
-#py-learning .main-nav li:hover {
+.main-nav li:hover {
   opacity: 1;
 }
 
-#py-learning .main-nav li.item1 {
+.main-nav li.item1 {
   top: 0;
   left: 0;
 }
 
-#py-learning .main-nav li.item2 {
+.main-nav li.item2 {
   bottom: 0;
   left: 25%;
 }
 
-#py-learning .main-nav li.item3 {
+.main-nav li.item3 {
   top: 0;
   left: 50%;
 }
 
-#py-learning .main-nav li.item4 {
+.main-nav li.item4 {
   bottom: 0;
   left: 75%;
 }
 
-#py-learning .main-nav li.item5 {
+.main-nav li.item5 {
   top: 0;
   left: 100%;
 }
 
-#py-learning .main-nav li .bg {
-  width: 200px;
+.main-nav li .bg {
+  width: 100%;
   height: 100%;
   transform: scale(1.1);
 }
 
-#py-learning .main-nav li.item1 .bg {
+.main-nav li.item1 .bg {
   /*background: url(../images/udemy.png);*/
   background-size: cover;
   background-position: center;
   border: 10px solid;
 }
 
-#py-learning .main-nav li.item2 .bg  {
+.main-nav li.item2 .bg  {
   /*background: url(../images/codeAcademy.png);*/
   background-size: cover;
   background-position: center;
   border: 10px solid;
 }
 
-#py-learning .main-nav li.item3 .bg {
+.main-nav li.item3 .bg {
   /*background: url(../images/tutorialspoint.png);*/
   background-size: cover;
   background-position: center;
   border: 10px solid;
 }
 
-#py-learning .main-nav li.item4 .bg {
+.main-nav li.item4 .bg {
   /*background: url(https://imgur.com/sz1BSkB.jpg);*/
   background-size: cover;
   background-position: center;
   border: 10px solid;
 }
 
-#py-learning .main-nav li.item5 .bg {
+.main-nav li.item5 .bg {
   /*background: url(https://imgur.com/ara0hoV.jpg);*/
   background-size: cover;
   background-position: center;
   border: 10px solid #0d659d;
 }
 
-#py-learning #center-page{
+#center-page{
   text-align: center;
   color: #6BCAE2;
   background: #0D659D;
 }
 
-#py-learning .textOverImage{
+.textOverImage{
     width:200px;
     height:200px;
     display:inline-block;
@@ -138,11 +138,11 @@
     overflow:hidden;
   }
 
-  #py-learning .textOverImage > input{
+  .textOverImage > input{
     display:none;
   }
 
-  #py-learning .textOverImage > div,.textOverImage > h2{
+  .textOverImage > div,.textOverImage > h2{
     position:absolute;
     background-color:rgba(255,255,255,0.8);
     bottom:20px;
@@ -155,16 +155,16 @@
     transition:.3s;
   }
 
-  #py-learning .textOverImage:hover > h2,.textOverImage > input:checked + h2 + div{
+  .textOverImage:hover > h2,.textOverImage > input:checked + h2 + div{
     bottom:4px;
     opacity:1;
   }
 
-  #py-learning .textOverImage > input:checked + h2{
+  .textOverImage > input:checked + h2{
     bottom:-20px;
     opacity:0;
   }
 
-  #py-learning .textOverImage > h2{
+  .textOverImage > h2{
     margin:0;
   }
