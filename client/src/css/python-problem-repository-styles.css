@@ -1,0 +1,96 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap");
+
+.ppr {
+  font-family: "Baloo Bhaina 2", cursive;
+  background-color: white;
+}
+
+.ppr pre {
+  color: white;
+  background-color: #050b1f;
+}
+
+#italize {
+  font-style: italic;
+  font-size: 15px;
+}
+.container-fluid {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+#center-page {
+  text-align: center;
+  background-color: #0d659d;
+}
+.container-fluid h1 {
+  color: #6bcae2;
+  position: relative;
+  width: 23rem;
+}
+
+.container-fluid h1 ::after {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  width: 67px;
+  height: 2px;
+  background-color: #6bcae2;
+}
+
+.icon_accordion {
+  width: 100%;
+  padding: 0 5px;
+  border: 2px solid #0d659d;
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.icon_accordion .icon {
+  margin: 0 10px 0 0;
+  width: 30px;
+  height: 30px;
+  background: #0d659d;
+  border-radius: 50%;
+  float: left;
+  transition: all 0.5s ease-in;
+}
+
+.icon_accordion h5 {
+  font-size: 15px;
+  margin: 0;
+  padding: 3px 0 0 0;
+  font-weight: normal;
+  color: #1f5c9a;
+  transition: all 0.5s ease-in;
+}
+
+.active .icon {
+  background: #fff;
+  z-index: 1;
+}
+
+.active {
+  background-color: #0d659d;
+  color: #fff;
+}
+
+.active h5 {
+  color: #fff;
+}
+
+.panel {
+  padding: 0 18px;
+  border-left: 1px solid #0d659d;
+  margin-left: 25px;
+  font-size: 14px;
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all 0.5s ease-in;
+}
