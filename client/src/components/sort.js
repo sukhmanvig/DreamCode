@@ -187,6 +187,9 @@ const SortGameJS = () => {
 				document.querySelector(`#swap_${pivotindex}`).className = "game_button hinted";
 				gamestate.autosolve = "QuickPivot";
 			}
+			for (var k in gamestate.autosolvehint[5]) {
+				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
+			}
 		}
 		else if (gamestate.autosolve === "QuickPivot") { /* Perform a Quicksort */
 			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
@@ -217,15 +220,20 @@ const SortGameJS = () => {
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
 			}
+			for (var k in gamestate.autosolvehint[5]) {
+				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
+			}
 		}
 		else if (gamestate.autosolve === "QuickPartition") { /* Perform a Quicksort */
 			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
 			var pivotvalue = gamestate.autosolvehint[2];
 			var lowercount = gamestate.autosolvehint[3];
+			// The pivot, now at position indexed one before ini+lowercount, is known to be in correct position.
 			clickSwapInput(ini+lowercount-1)();clickSwapInput(ini)();
+			gamestate.autosolvehint[5].push(ini+lowercount-1);
 
 			// Update display
-			document.querySelector("#gamehint").innerHTML = `Highlighted partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
+			document.querySelector("#gamehint").innerHTML = `Declared partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickRecursive"
 			for (var k = 0; k < array.length; k++) {
 				if (k >= ini && k < fin) {
@@ -238,6 +246,9 @@ const SortGameJS = () => {
 				}
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
+			}
+			for (var k in gamestate.autosolvehint[5]) {
+				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
 			}
 		}
 		else if (gamestate.autosolve === "QuickRecursive") { /* Perform a Quicksort */
@@ -256,6 +267,9 @@ const SortGameJS = () => {
 					document.querySelector(`#swap_${k}`).className = "game_button hinted";
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
+			}
+			for (var k in gamestate.autosolvehint[5]) {
+				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
 			}
 		}
 		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
@@ -362,7 +376,7 @@ const SortGameJS = () => {
 		document.querySelector("#sortstep").removeAttribute("disabled");
 		document.querySelector("#fastforward").removeAttribute("disabled");
 		gamestate.autosolve = "Quick";
-		gamestate.autosolvehint = [[0,array.length],NaN,NaN,NaN,[]];
+		gamestate.autosolvehint = [[0,array.length],NaN,NaN,NaN,[],[]];
 		disableSwapInput();
 		
 		document.querySelector("#gamehint").innerHTML = `Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}] `;
