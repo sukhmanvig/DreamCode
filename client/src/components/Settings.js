@@ -16,16 +16,16 @@ function Settinglist() {
     return (
         <ul className="settings setting-list">            
                         <li>
-                            <label className="mb-3"> Recieve newsletters
-                                <input className="ml-2" type="checkbox" defaultChecked="True"/>
-                                <span className="checkmark"></span>
-                            </label>
+                            <div class="form-check">
+                                <label class="form-check-label" for="exampleCheck1">Recieve newsletters</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
+                            </div>
                         </li>
                         <li>
-                            <label className="mb-2"> Display name on profile
-                                <input className="ml-2 mt-1" type="checkbox" defaultChecked="True"/>
-                                <span className="checkmark"></span>
-                            </label>
+                        <div class="form-check">
+                                <label class="form-check-label" for="exampleCheck2">Display name on profile</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2"></input>
+                            </div>
                         </li>
                     </ul>
     )
@@ -57,14 +57,14 @@ function General({uname,email,date}) {
         <>
         <Container>
             <Row>
-                <Col md={5}>
+                <Col md={5} xs={6}>
                     <ul className=" settings setting-list">            
                         <li>USERNAME:</li><p>{uname}</p><br/>
                         <li>NAME:</li><p>{uname}</p><br/>
                         <li>EMAIL:</li><p>{email}</p><br/>
                     </ul>
                 </Col>
-                <Col md={{ span: 5, offset: 1 }} className="">
+                <Col xs={6} md={{ span: 5, offset: 1 }} className="">
                     <Button className="mb-1" onClick={() => pageStatus === "EditBio" ? (setPageStatus("")): (setPageStatus("EditBio"))} variant="info">Edit Bio</Button>
                     <Settinglist/>
                 </Col>
@@ -89,7 +89,7 @@ function Notifs() {
     return (
         <Container>
             <Row>
-                <Col md={{ span: 5}}>
+                <Col md={{ span: 6}}>
                     <Settinglist/>
                 </Col>
             </Row>
@@ -176,11 +176,10 @@ function Settings () {
                 </Col>
                 <Col md={3} sm={12}>
                     <div className="acc-preview">
-                        <p className="mr-1" id="usr">{uname}'s </p>
-                        <p className=""> been a member since {date}</p>
+                        <p>{uname}'s been a member since {date}</p>
                     </div>
                 </Col>
-                <Col md={{ span: 3, offset:2}} xs={{span: 4, offset:3}} sm={{span: 4, offset:6}}>
+                <Col md={{ span: 3, offset:2}} xs={{span: 4, offset:3}} sm={{span: 4, offset:6}} xs={{span: 12, offset:0}}>
                     <div attribution= "Peter Southwood, CC0, via Wikimedia Commons" id="circle"></div>
                 </Col>
             </Row>
@@ -188,13 +187,13 @@ function Settings () {
                 <Row >
                     <Col sm={4} md={3}>
                     <ListGroup variant="flush" className="rounded">
-                        <ListGroup.Item eventKey="general" className="pb-3">
+                        <ListGroup.Item eventKey="general" className="s-category pt-3 pb-3">
                         General Settings
                         </ListGroup.Item>
-                        <ListGroup.Item eventKey="notif" className="pb-3">
+                        <ListGroup.Item eventKey="notif" className="s-category pt-3 pb-3">
                         Notifications
                         </ListGroup.Item>
-                        <ListGroup.Item eventKey="privacy" className="pb-3 mb-5 border-bottom">
+                        <ListGroup.Item eventKey="privacy" className="s-category pt-3 pb-3 mb-5 border-bottom">
                         Privacy
                         </ListGroup.Item>
                     </ListGroup>
