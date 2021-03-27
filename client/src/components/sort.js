@@ -18,10 +18,13 @@ const SortGameJS = () => {
 	document.querySelector("#init-array").addEventListener('click', ()=>{
 		// Perform array initialization
 		var entries = parseInt(document.querySelector("#init-array-entries").value);
-		console.log("Created array of size " + entries);
 		if (isNaN(entries))
 			entries=12;
-		initRandom(entries,0,12);
+		var rangemax = parseInt(document.querySelector("#init-array-rangemax").value);
+		if (isNaN(entries))
+			entries=12;
+		console.log("Created array of size " + entries + " with values from 0 to " + rangemax);
+		initRandom(entries,0,rangemax);
 
 		// Put array and array buttons to front end
 		document.querySelector("#gamestage").innerHTML = "";
@@ -155,6 +158,10 @@ const SortGameJS = () => {
 					if (array[fin-1] < array[ini]) {
 						clickSwapInput(ini)();clickSwapInput(fin-1)();
 					}
+					else {
+						gamestate.autosolvehint[5].push(ini);
+						gamestate.autosolvehint[5].push(fin-1);
+					}
 				}
 				for (var k = 0; k < array.length; k++) {
 					if (k >= ini && k < fin)
@@ -237,9 +244,9 @@ const SortGameJS = () => {
 			gamestate.autosolve = "QuickRecursive"
 			for (var k = 0; k < array.length; k++) {
 				if (k >= ini && k < fin) {
-					if (k < lowercount-1)
+					if (k < ini+lowercount-1)
 						document.querySelector(`#swap_${k}`).className = "game_button hinted";
-					else if (k === lowercount-1)
+					else if (k === ini+lowercount-1)
 						document.querySelector(`#swap_${k}`).className = "game_button partial";
 					else
 						document.querySelector(`#swap_${k}`).className = "game_button";
