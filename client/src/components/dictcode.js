@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import "../css/dictcode-style.css";
 import "../css/nav.css";
-import ChangeFontSize from "./changefontsize.js";
+import ChangeFontSize from "./ChangeFontSize.js";
 
 const DictionaryCodeSnippets = () => {
     useEffect(() => {
@@ -15,7 +15,7 @@ const DictionaryCodeSnippets = () => {
         <body id="dictcode_body">
             <div id="content">
             <h1 className="dictcode_h1">Python Dictionaries</h1>
-            <div className="notes">
+            <div className="dictNotes">
                 <div id="fontsizer">
                 <ul>
                     <li>A</li>

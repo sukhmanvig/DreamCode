@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/ifcode-style.css";
 import "../css/nav.css";
-import ChangeFontSize from "./changefontsize.js";
+import ChangeFontSize from "./ChangeFontSize.js";
 
 const IfCodeSnippets = () => {
   useEffect(() => {
@@ -15,7 +15,7 @@ const IfCodeSnippets = () => {
       <body id="ifcode_body">
         <div id="content">
           <h1 className="ifcode_h1">If Statements</h1>
-          <div className="notes">
+          <div className="ifNotes">
             <div id="fontsizer">
               <ul>
                 <li>A</li>

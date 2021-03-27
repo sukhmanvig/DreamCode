@@ -36,6 +36,10 @@
 	background-color: #fbfaf5;
 }
 
+.ifNotes {
+	margin-bottom: 15px;
+}
+
 #fontsizer {  
 	display: inline-block;	
 	font-family: calibri;

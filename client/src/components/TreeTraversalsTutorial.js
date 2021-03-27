@@ -1,6 +1,6 @@
 import '../css/tutorial-lists-style.css'
 import React, { Fragment, useEffect } from 'react';
-import ChangeFontSize from './changefontsize'
+import ChangeFontSize from './ChangeFontSize'
 import {Link} from 'react-router-dom'
 
 const TreeTraversalsTutorial = ({title}) => {
@@ -13,7 +13,7 @@ const TreeTraversalsTutorial = ({title}) => {
 	return (	
     <main id="treeTravPage">
         <div class="notes">
-            <h1>Tree Traversals</h1>
+            <h1 className="treetrav_h1">Tree Traversals</h1>
             <div id="fontsizer">
                 <ul>
                     <li>A</li>
