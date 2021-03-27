@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/nav.css";
 import { Link } from "react-router-dom";
+import Toggle from "./Toggle";
 
 function Navbar() {
   return (
@@ -26,6 +27,8 @@ function Navbar() {
           )}
 
           <Link to={"/dashboard"}> Dashboard </Link>
+          {/*<Toggle />
+          above is the code for the toggle button*/}
           <Link to="/contact"> Contact </Link>
           <Link to={"/about"}> About </Link>
           <Link to="/"> Home </Link>

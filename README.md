@@ -1,9 +1,6 @@
 # Getting Started with Create React App
 
-# Notes
-This is for running the client-side code.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can also run `bash setup.bash` to completely build the application, then run `npm start` at the root directory.
 
 ## Available Scripts
 

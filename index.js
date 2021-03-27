@@ -7,13 +7,22 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
-var DailyQuestions = require('./DailyQuestions.json');
+const DailyQuestions = require('./DailyQuestions.json');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json()); //req.body
 app.use(express.static(path.join(__dirname, "build")));
+
+//keeps track of daily question number
+var question_number = 5;
+//changes daily question number
+function ChangeQuestion() {
+  question_number = Math.ceil(Math.random() * 5);
+}
+//calls changequestion function every day 
+setInterval(ChangeQuestion, 86400000);
 
 //move these to the database eventually
 let refreshTokens = [];
@@ -136,7 +145,7 @@ app.delete("/logout", (req, res) => {
   res.sendStatus(204);
 });
 
-//Get leaderboard
+//Get leaderboard 
 app.get("/leaderboard", async (req, res) => {
   try {
     const leaderboard = await pool.query(
@@ -172,13 +181,13 @@ app.post("/EditBio", async (req, res) => {
 });
 
 //get bio
-app.get("/getBio", async (req, res) => {
+app.post("/getBio", async (req, res) => {
   try {
     const { username } = req.body;
     const temp = "jayvin";
     const newUser = await pool.query(
       "SELECT bio FROM users WHERE username = $1",
-      [temp]
+      [username]
     );
 
     if (newUser.rowCount == 0) {
@@ -251,7 +260,6 @@ app.post("/settingInfo", async (req, res) => {
           await res.status(200).json(userInfo.rows[0]);
           return;
       }
-
   } catch (err) {
     res.status(500).json({ message: "password change failed" });
     return;
@@ -262,7 +270,7 @@ app.post("/settingInfo", async (req, res) => {
 app.post("/compile", async (req, res) => {
   const { script } = req.body;
   var program = {
-    script :script,
+    script : "import random\n"+ script,
     language: "python3",
     versionIndex: "0",
     clientId: "d8896e07b8825674c4927370ca242325",
@@ -276,12 +284,12 @@ app.post("/compile", async (req, res) => {
   const resc = await fetch(`https://api.jdoodle.com/v1/execute`, options);
   const json = await resc.json();
   res.send(json);
-  console.log(json);
 });
 
 app.get("/getQuestion", async (req, res) => {
-  const x = Math.ceil(Math.random() * 4);
-  res.json({question: DailyQuestions[x].prompt, check: DailyQuestions[x].test_code, starter: DailyQuestions[x].starter_code
+  res.json({question: DailyQuestions[question_number].prompt, 
+            check: DailyQuestions[question_number].test_code, 
+            starter: DailyQuestions[question_number].starter_code
           });
   return;
 });

@@ -13,7 +13,7 @@ const TreeTraversalsTutorial = ({title}) => {
 	return (	
     <main id="treeTravPage">
         <div class="notes">
-            <h1>Tree Traversals</h1>
+        <h1 className="treetrav_h1">Tree Traversals</h1>
             <div id="fontsizer">
                 <ul>
                     <li>A</li>
@@ -107,7 +107,7 @@ print(root.postorder(root))
 [5, 1, 3, 2, 9, 6, 4]`} <span class="comment"># Postorder</span>
 </code></pre>
             
-    <div id="gameLink">Tree Traversals Game</div>
+    	   <Link to="/treetravgame"><div id="gameLink">Tree Traversals Game</div></Link>
            
            </div>
         </main>

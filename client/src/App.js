@@ -10,9 +10,9 @@ import PasswordReset from "./components/PasswordReset";
 import Profile from "./components/Profile";
 import PublicRoute from "./components/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute";
-import ifgame from "./components/ifgame";
 import IfCodeSnippets from "./components/ifcode";
 import TreeTravTutorial from "./components/TreeTraversalsTutorial";
+import TreeTravGame from "./components/TreeTraversalsGame";
 import Shell from "./components/Shell";
 import DictCodeSnippets from "./components/dictcode";
 import DictGame from "./components/DictGame";
@@ -21,6 +21,11 @@ import QueueGame from "./components/queue_game";
 import Contact from "./components/Contact";
 import ListsGame from "./components/ListsGame";
 import ListsGameTutorial from "./components/ListsGameTutorial";
+import ifgame from "./components/ifgame";
+import SortCodeSnippets from "./components/sort-code";
+import SortGamepage from "./components/sort-page";
+import PythonLearningResources from "./components/python-learning-resources";
+import PythonProblemRepository from "./components/python-problem-repository";
 import "./css/index.css";
 //import Axios from "axios";
 
@@ -72,7 +77,15 @@ function App() {
             path="/signup"
             component={RegisterForm}
           />
-	  <PrivateRoute exact path="/settings" component={Settings} />                                                            <PrivateRoute exact path="/contact" component={Contact} />                                                              <PrivateRoute exact path="/passwordreset" component={PasswordReset} />                                                  <PrivateRoute exact path="/profile" component={Profile} />                                                              <PrivateRoute exact path="/about" component={refreshPage} />                                                            <PrivateRoute exact path="/about.html" component={refreshPage} />                                                       <PrivateRoute exact path="/dashboard" component={Dashboard} />                                                          <PrivateRoute exact path="/shell" component={Shell}/>                                                                   <PrivateRoute exact path="/ifgame" component={ifgame} />                                                                <PrivateRoute exact path="/ifcode" component={IfCodeSnippets} />                                                        <PrivateRoute exact path="/treetravtut" component={TreeTravTutorial} />                                                 <PrivateRoute exact path="/dictcode" component={DictCodeSnippets} />                                                    <PrivateRoute exact path="/dictgame" component={DictGame} />                                                            <PrivateRoute exact path="/stack_game" component={StackGame} />                                                         <PrivateRoute exact path="/queue_game" component={QueueGame} />                                                         <PrivateRoute exact path="/listsgame" component={ListsGame} />                                                          <PrivateRoute exact path="/ListsGameTutorial" component={ListsGameTutorial} />                                          <Route exact path="/logout" component={Logout} />
+	  <PrivateRoute exact path="/settings" component={Settings} />                                                            <PrivateRoute exact path="/contact" component={Contact} />                                                              <PrivateRoute exact path="/passwordreset" component={PasswordReset} />                                                  <PrivateRoute exact path="/profile" component={Profile} />                                                              <PrivateRoute exact path="/about" component={refreshPage} /> 
+	  <PrivateRoute exact path="/dashboard" component={Dashboard} />                                                          <PrivateRoute exact path="/shell" component={Shell}/>                                                                   <PrivateRoute exact path="/ifgame" component={ifgame} />                                                                <PrivateRoute exact path="/ifcode" component={IfCodeSnippets} />                                                        <PrivateRoute exact path="/treetravtut" component={TreeTravTutorial} />             
+	  <PrivateRoute exact path="/treetravgame" component={TreeTravGame} />
+	  <PrivateRoute exact path="/dictcode" component={DictCodeSnippets} />                                                    <PrivateRoute exact path="/dictgame" component={DictGame} />                                                            <PrivateRoute exact path="/stack_game" component={StackGame} />                                                         <PrivateRoute exact path="/queue_game" component={QueueGame} />                                                         <PrivateRoute exact path="/listsgame" component={ListsGame} />                                                          <PrivateRoute exact path="/ListsGameTutorial" component={ListsGameTutorial} />
+	  <PrivateRoute exact path="/pythonlearn" component={PythonLearningResources} />
+          <PrivateRoute exact path="/PythonProblemRepository" component={PythonProblemRepository} />
+          <PrivateRoute exact path="/sort-page" component={SortGamepage} />
+          <PrivateRoute exact path="/sort-code" component={SortCodeSnippets} />
+	  <Route exact path="/logout" component={Logout} />
         </Switch>
       </div>
       <NavbarBottom />
