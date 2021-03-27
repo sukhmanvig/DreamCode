@@ -91,6 +91,9 @@ const Dashboard = () => {
                 value="Lists Game"
               />
             </form>
+	    <form action="/pythonlearn">
+	     <input type="submit" className="continue" value="Python Learning Resources" />
+	    </form>
           </div>
 	  <div className="continue-game">
           	<form action="/sort-code">
