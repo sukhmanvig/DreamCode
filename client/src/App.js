@@ -20,6 +20,7 @@ import QueueGame from "./components/queue_game";
 import ifgame from "./components/ifgame";
 import SortCodeSnippets from "./components/sort-code";
 import SortGamepage from "./components/sort-page";
+import PythonLearningResources from "./components/python-learning-resources";
 import "./css/index.css";
 
 function App() {
@@ -64,17 +65,17 @@ function App() {
           <PrivateRoute path="/about.html" component={refreshPage} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/shell" />
-
           <PrivateRoute path="/ifgame" component={ifgame} />
           <PrivateRoute path="/ifcode" component={IfCodeSnippets} />
-	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
-	        <PrivateRoute path="/treetravtut" component={TreeTravTutorial} />
-	        <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
+	  <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
+	  <PrivateRoute path="/treetravtut" component={TreeTravTutorial} />
+	  <PrivateRoute path="/dictcode" component={DictCodeSnippets} />
           <PrivateRoute path="/dictgame" component={DictGame} />
           <PrivateRoute path="/stack_game" component={StackGame} />
           <PrivateRoute path="/queue_game" component={QueueGame} />
           <PrivateRoute path="/sort-code" component={SortCodeSnippets} />
           <PrivateRoute path="/sort-page" component={SortGamepage} />
+	  <PrivateRoute path="/pythonlearn" component={PythonLearningResources} />
           <Route path="/logout" component={Logout} />
         </Switch>
       </div>

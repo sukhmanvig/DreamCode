@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react";
 import "../css/nav.css";
 import "../css/dashboard-style.css";
 import CategoryNav from './CategoryNav';
-import magnGlass from "../images/magn-glass.jpg";
 
 const Dashboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -61,7 +60,7 @@ const Dashboard = () => {
             <input
               type="image"
               name="submit"
-              src={magnGlass}
+              src="images/magn-glass.jpg"
               className="search-button"
               alt="submit"
             />
