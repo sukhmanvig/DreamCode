@@ -16,7 +16,10 @@ const SortGamepage = () => {
 		<Fragment>
 			<title>Learn Sorting</title>
 			<body id="sortgame_body">
-				Entries: <input class="game_input" type="text" id="init-array-entries" placeholder="Entries" width="20pt" defaultValue="12"/>
+				<div id="initmodes" display="block">
+				Entries: <input class="game_input" type="text" id="init-array-entries" placeholder="Entries" width="20pt" defaultValue="12" display="inline"/>
+				Range: <input class="game_input" type="text" id="init-array-rangemax" placeholder="Maximum" width="20pt" defaultValue="12" display="inline"/>
+				</div>
 				<button className="game_button" id="init-array">Randomize array</button>
 				<div id="gamestate">Click to start game</div>
 				<div id="gamehint">Uninitialized...</div>
