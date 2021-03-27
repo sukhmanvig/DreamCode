@@ -35,4 +35,3 @@ Potential challenges for this sprint:
 
 * Turning existing HTML pages into React components
 * Figuring out how to link our React components (webpages) together
-

@@ -1,11 +1,6 @@
 /*Montserrat font*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 :root {
 	--colscheme1: #050b1f;
 	--colscheme2: #6bcae2;
@@ -15,6 +10,9 @@
 }
 
 #treetravgame {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 	width: 100%;
 	position: relative;
 	padding: 5px 0;

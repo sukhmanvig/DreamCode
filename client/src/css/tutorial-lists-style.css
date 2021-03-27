@@ -6,7 +6,7 @@
 	--colscheme5: #11F7FF;
 }
 
-* {
+#treeTravPage {
 	margin: 0;
 	padding: 0;
 }
@@ -49,7 +49,7 @@
 	margin-bottom: 
 
 }
-#treetrav_h1 h1 {
+.treetrav_h1 {
 	margin: 40px auto 40px 0;
 	font-family: Calibri;
 	font-size: 50px;

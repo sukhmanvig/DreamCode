@@ -35,6 +35,8 @@ export default class QueueGame extends Component {
 
         let codeBlock = document.getElementById("code");
 
+        let moves=0;
+
         ///////////////////////////////
         let i =0; // iterator index
 
@@ -56,6 +58,7 @@ export default class QueueGame extends Component {
             writeCodePopInput(codeBlock, gameModel); 
             gameModel.popFromInput();
             gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+            makemove()
         };
         buttonContainer.appendChild(popInputButton);
 
@@ -67,6 +70,7 @@ export default class QueueGame extends Component {
             writeCodePushOutput(codeBlock, gameModel); 
             gameModel.pushToOutput();
             gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+            makemove()
         };
         buttonContainer.appendChild(pushOutputButton);
 
@@ -78,6 +82,7 @@ export default class QueueGame extends Component {
             writeCodePopOutput(codeBlock, gameModel); 
             gameModel.popFromOutput();
             gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+            makemove()
         };
         buttonContainer.appendChild(popFromOutputButton);
 
@@ -104,6 +109,7 @@ export default class QueueGame extends Component {
                 writeCodeEnqueue(queueIndex, codeBlock, gameModel); 
                 gameModel.enqueueTo(queueIndex.valueOf());
                 gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+                makemove()
             };
             buttonContainer.appendChild(b);
         }
@@ -128,8 +134,18 @@ export default class QueueGame extends Component {
             gameGoal = pg.generateGoal(gameProb);
             gameModel = new Model(gameProb, gameGoal, 2);
             gameModel.drawOnCanvas(canvasContext, canvasWidth, canvasHeight);
+            resetmove();
         }
 
+        function makemove() {
+            moves++;
+            document.querySelector("#movecount").innerHTML = moves;
+        }
+
+        function resetmove() {
+            moves = 0;
+            document.querySelector("#movecount").innerHTML = moves;
+        }
 
         function writeCodeEnqueue(queueNum, htmlElement, gameModel) {
             if (!gameModel.currentSelectionIsNull()) {
@@ -241,6 +257,9 @@ export default class QueueGame extends Component {
                 <h3>Sample Method Calls</h3>
                 <code><pre id="code"></pre></code>
             </div>
+            <span id="score_container">
+                Moves: <span id="movecount">0</span>
+            </span>
 
         </div>
         </div>

@@ -1,8 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "../css/nav.css";
 import "../css/dashboard-style.css";
-import CategoryNav from "./CategoryNav";
-import magnGlass from "../images/magn-glass.jpg";
+import CategoryNav from './CategoryNav';
 
 const Dashboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -61,7 +60,7 @@ const Dashboard = () => {
             <input
               type="image"
               name="submit"
-              src={magnGlass}
+              src="images/magn-glass.jpg"
               className="search-button"
               alt="submit"
             />
@@ -93,6 +92,11 @@ const Dashboard = () => {
               />
             </form>
           </div>
+	  <div className="continue-game">
+          	<form action="/sort-code">
+	        	  <input type="submit" className="continue" value="Sorting" />
+          	</form>
+	  </div>
           <div className="category">
             <i className="arrow left"></i>
             <div id="js-category-name">CATEGORY1</div>
@@ -120,9 +124,8 @@ const Dashboard = () => {
             <form action="/ifcode">
               <input type="submit" className="game" value="If Statements" />
             </form>
-
             <form action="/queue_game">
-              <input type="submit" className="game" value="Queues" />
+              <input type="submit" className="game" value="Queues" />\
             </form>
           </div>
         </div>
