@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "devstart": "nodemon index.js",
-    "build": "cd client && npm ci && npm run buildncopy"
+    "build": "cd client && npm ci && npm run buildncopy && cd ../ && npm start"
   },
   "engines": {
     "node": "v15.9.0",
