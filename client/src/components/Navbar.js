@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/nav.css";
 import { Link } from "react-router-dom";
+import Toggle from "./Toggle";
 
 function Navbar() {
   return (
@@ -25,6 +26,8 @@ function Navbar() {
             </div>
           )}
 
+          {/*<Toggle />
+          above is the code for the toggle button*/}
           <Link to={"/dashboard"}> Dashboard </Link>
           <Link to="/shell"> Python Shell </Link>
           <Link to="/contact"> Contact </Link>

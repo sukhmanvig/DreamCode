@@ -1,20 +1,22 @@
-var checkbox = document.querySelector('input[name=theme]');
+const ColourDayNight = () => {
+  var checkbox = document.querySelector("input[name=theme]");
 
-checkbox.addEventListener('change', function() {
-    if(this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      trans();
+      document.documentElement.setAttribute("data-theme", "dark");
     } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
+      trans();
+      document.documentElement.setAttribute("data-theme", "light");
     }
-})
+  });
 
-let trans = () => {  
-    document.documentElement.classList.add('transition');
+  let trans = () => {
+    document.documentElement.classList.add("transition");
     window.setTimeout(() => {
-        document.documentElement.classList.remove('transition')
-    }, 1000)
-}
+      document.documentElement.classList.remove("transition");
+    }, 1000);
+  };
+};
 
-//<input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+export default ColourDayNight;
