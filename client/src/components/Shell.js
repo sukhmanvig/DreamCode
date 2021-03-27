@@ -153,7 +153,7 @@ DisplayOutput = (response) => {
             </Row>
             <Row>
                 <Col>
-                    <p className="display-6">{this.state.question}</p>
+                    <p className="lead">{this.state.question}</p>
                 </Col>
             </Row>
             <Row>
