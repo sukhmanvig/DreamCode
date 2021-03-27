@@ -16,10 +16,10 @@ app.use(express.json()); //req.body
 app.use(express.static(path.join(__dirname, "build")));
 
 //keeps track of daily question number
-var question_number;
+var question_number = 5;
 //changes daily question number
 function ChangeQuestion() {
-  question_number = Math.ceil(Math.random() * 4);
+  question_number = Math.ceil(Math.random() * 5);
 }
 //calls changequestion function every day 
 setInterval(ChangeQuestion, 86400000);
