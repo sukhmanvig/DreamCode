@@ -3,7 +3,7 @@ import '../css/python-learning-resources-styles.css';
 
 const PythonLearningResources = () => {
 return (
-  <body>
+  <body id="pybody">
   <h1 id="center-page">Python Learning Resources</h1>
 
   <ul className="main-nav">
