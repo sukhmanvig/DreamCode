@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "devstart": "nodemon index.js",
-    "build": "cd client && npm ci && npm run buildncopy && cd ../ && npm start"
+    "build": "cd client && npm ci && npm run buildncopy"
   },
   "engines": {
     "node": "v15.9.0",
