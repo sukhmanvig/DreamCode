@@ -296,8 +296,11 @@ const SortGameJS = () => {
 		}
 	}
 
+	/**Declare victory, updating the view and disabling the swap and hint buttons.
+	 * @param {*} message 
+	 */
 	function declareVictory(message) {
-		document.querySelector("#gamestate").innerHTML = message;
+		document.querySelector("#gamestate").innerHTML = message + " in " + moves + " swaps.";
 		gamestate.won = message;
 		document.querySelector("#sortstep").removeAttribute("disabled");
 		var elems = document.getElementsByClassName("sorthint");
@@ -335,15 +338,16 @@ const SortGameJS = () => {
 				document.querySelector(`#swap_${gamestate.swapinputs[0]}`).className = "game_button";
 				document.querySelector("#gamehint").innerHTML = "Swapped element #" + gamestate.swapinputs[0] + " and element #" + k + "."
 				gamestate.swapinputs[0] = null;
-				// Check if sorted
-				if (isSorted(1)) {
-					declareVictory("Sorted ASC")
-				}
-				else if (isSorted(-1)) {
-					declareVictory("Sorted DESC")
-				}
-				else
-					document.querySelector("#gamestate").innerHTML = "Swaps: " + moves;
+			}
+			// Check if sorted
+			if (isSorted(1)) {
+				declareVictory("Sorted ASC")
+			}
+			else if (isSorted(-1)) {
+				declareVictory("Sorted DESC")
+			}
+			else {
+				document.querySelector("#gamestate").innerHTML = "Swaps: " + moves;
 			}
 		}
 	}
@@ -363,6 +367,24 @@ const SortGameJS = () => {
 		moves++;
 	}
 
+	function redisplay_array() {
+		console.log(array);
+		for (var k = 0; k < array.length; k++) {
+			document.querySelector(`#index_${k}`).innerHTML = array[k];
+		}
+
+		// Check if sorted
+		if (isSorted(1)) {
+			declareVictory("Sorted ASC")
+		}
+		else if (isSorted(-1)) {
+			declareVictory("Sorted DESC")
+		}
+		else {
+			document.querySelector("#gamestate").innerHTML = "Swaps: " + moves;
+		}
+	}
+
 	/**Perform a quicksort on a segment of an array
 	 * @param {*} array 
 	 * @param {*} ini 
@@ -370,33 +392,34 @@ const SortGameJS = () => {
 	 */
 	function quicksort(array, ini, fin) {
 		var count = 0;
+		// Base case
 		if (fin - ini <= 1)
 			return 1;
 		if (fin - ini <= 2) {
-			if (array[fin-1] < array[ini])
-				swap(ini, fin-1);
+			if (array[fin-1] < array[ini]) {
+				clickSwapInput(ini)();clickSwapInput(fin-1)();
+			}
 			return
 		}
 
-		var pivotindex = Math.trunc((ini+fin)/2); console.log(array);
+		// Pivot phase
+		var pivotindex = Math.trunc((ini+fin)/2);
 		var pivotvalue = array[pivotindex];
-		swap(ini, pivotindex); 
+		clickSwapInput(ini)();clickSwapInput(pivotindex)();
 		var lowercount = 1;
 
+		// Partition phase
 		for (var k = ini+1; k < fin; k++) {
 			count++;
 			if (array[k] <= pivotvalue) {
-				swap(k, ini+lowercount);
-				lowercount++; console.log(array);
+				clickSwapInput(k)();clickSwapInput(ini+lowercount)();
+				lowercount++;
 			}
 		}
 		// Recursive call
-		swap(ini+lowercount-1, ini); console.log(array);
+		clickSwapInput(ini+lowercount-1)();clickSwapInput(ini)();
 		return count + quicksort(array, ini, ini+lowercount-1) + quicksort(array, ini+lowercount, fin);
 	}
-		
-	/**Perform a quicksort partition.
-	 */
 	
 	/**Perform a radixsort.
 	 */
@@ -409,6 +432,7 @@ const SortGameJS = () => {
 
 		var placevalue = 1;
 		while (longestrep != 0) {
+			var count = 0;
 			var bucketcount = [];
 			for (var k = 0; k < 10; k++) {
 				bucketcount[k] = [];
@@ -416,21 +440,27 @@ const SortGameJS = () => {
 
 			for (var x in array) {
 				bucketcount[Math.trunc(array[x]/placevalue)%10].push(array[x]);
-				console.log(bucketcount);
+				count++;
+				moves++;
 			}
 
 			var nextarray = [];
 			for (var k = 0; k < bucketcount.length; k++) {
 				for (var x in bucketcount[k]) {
 					nextarray.push(bucketcount[k][x]);
-					console.log(nextarray);
+					count++;
+					moves++;
 				}
 			}
-			array = nextarray;
+
+			// Update array in place and view. The loop is required only as an artifact.
+			for (x in array)
+				array[x] = nextarray[x]; 
+			redisplay_array();
+			document.querySelector("#gamehint").innerHTML = "Performed " + count + " transfers from bucket to array";
 
 			longestrep = Math.trunc(longestrep/10);
 			placevalue *= 10;
-			console.log(array);
 		}
 	}
 }
