@@ -157,6 +157,12 @@ const SortGameJS = () => {
 					}
 				}
 				gamestate.autosolvehint[0] = gamestate.autosolvehint[4].pop();
+				for (var k = 0; k < array.length; k++) {
+					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
+						document.querySelector(`#swap_${k}`).className = "game_button hinted";
+					else
+						document.querySelector(`#swap_${k}`).className = "game_button offscope";
+				}
 				document.querySelector("#gamehint").innerHTML = `Base case with ${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
 			}
 			else {
@@ -170,14 +176,13 @@ const SortGameJS = () => {
 				gamestate.autosolvehint[2] = pivotvalue;
 				gamestate.autosolvehint[3] = lowercount;
 	
+				// Update display
 				document.querySelector("#gamehint").innerHTML = `Perform Pivot on ${pivotvalue} from #${pivotindex}`;
 				for (var k = 0; k < array.length; k++) {
-					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
+					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
 						document.querySelector(`#swap_${k}`).className = "game_button";
-					}
-					else {
+					else
 						document.querySelector(`#swap_${k}`).className = "game_button offscope";
-					}
 				}
 				document.querySelector(`#swap_${ini}`).className = "game_button hinted";
 				document.querySelector(`#swap_${pivotindex}`).className = "game_button hinted";
@@ -192,51 +197,48 @@ const SortGameJS = () => {
 			var count = 0;
 			for (var k = ini+1; k < fin; k++) {
 				count++;
-				if (array[k] < pivotvalue) {
+				if (array[k] <= pivotvalue) {
 					clickSwapInput(k)();clickSwapInput(ini+lowercount)();
 					lowercount++;
 				}
 			}
 			gamestate.autosolvehint[3] = lowercount;
 
-			for (var k = 0; k < array.length; k++) {
-				if (k <= pivotvalue)
-					document.querySelector(`#swap_${k}`).className = "game_button hinted";
-				else {
-					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
-						document.querySelector(`#swap_${k}`).className = "game_button";
-					}
-					else {
-						document.querySelector(`#swap_${k}`).className = "game_button offscope";
-					}
-				}
-			}
+			// Update display
 			document.querySelector("#gamehint").innerHTML = `Performed partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickPartition";
+			for (var k = 0; k < array.length; k++) {
+				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
+					if (array[k] <= pivotvalue)
+						document.querySelector(`#swap_${k}`).className = "game_button hinted";
+					else
+						document.querySelector(`#swap_${k}`).className = "game_button";
+				}
+				else
+					document.querySelector(`#swap_${k}`).className = "game_button offscope";
+			}
 		}
 		else if (gamestate.autosolve === "QuickPartition") { /* Perform a Quicksort */
 			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
 			var pivotvalue = gamestate.autosolvehint[2];
 			var lowercount = gamestate.autosolvehint[3];
-			console.log(ini + lowercount-1);
 			clickSwapInput(ini+lowercount-1)();clickSwapInput(ini)();
 
-			for (var k = 0; k < array.length; k++) {
-				if (k < lowercount-1)
-					document.querySelector(`#swap_${k}`).className = "game_button hinted";
-				else if (k === lowercount-1)
-					document.querySelector(`#swap_${k}`).className = "game_button partial";
-				else {
-					if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
-						document.querySelector(`#swap_${k}`).className = "game_button";
-					}
-					else {
-						document.querySelector(`#swap_${k}`).className = "game_button offscope";
-					}
-				}
-			}
+			// Update display
 			document.querySelector("#gamehint").innerHTML = `Highlighted partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickRecursive"
+			for (var k = 0; k < array.length; k++) {
+				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1]) {
+					if (k < lowercount-1)
+						document.querySelector(`#swap_${k}`).className = "game_button hinted";
+					else if (k === lowercount-1)
+						document.querySelector(`#swap_${k}`).className = "game_button partial";
+					else
+						document.querySelector(`#swap_${k}`).className = "game_button";
+				}
+				else
+					document.querySelector(`#swap_${k}`).className = "game_button offscope";
+			}
 		}
 		else if (gamestate.autosolve === "QuickRecursive") { /* Perform a Quicksort */
 			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
@@ -244,15 +246,16 @@ const SortGameJS = () => {
 			gamestate.autosolvehint[4].push([ini+lowercount, fin]);
 			gamestate.autosolvehint[4].push([ini, ini+lowercount-1]);
 
+			// Update display
 			gamestate.autosolve = "Quick";
 			gamestate.autosolvehint[0] = gamestate.autosolvehint[4].pop();
+			document.querySelector("#gamehint").innerHTML = `${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
 			for (var k = 0; k < array.length; k++) {
 				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
 					document.querySelector(`#swap_${k}`).className = "game_button hinted";
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
 			}
-			document.querySelector("#gamehint").innerHTML = `${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
 		}
 		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
 			var count = 0;
