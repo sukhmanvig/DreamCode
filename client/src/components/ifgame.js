@@ -50,7 +50,7 @@ const IfGame = () => {
                   <option>Right</option>
                 </select>
               </div>
-              <div id="game-status">...</div>
+              <div id="game-status"></div>
               <span>Attempts: <div id="game-attempts">0</div></span>
 
               <button className="ifgame_button" id="robot-submit">

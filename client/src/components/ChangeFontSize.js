@@ -31,4 +31,3 @@ const ChangeFontSize = () => {
 }
 
 export default ChangeFontSize;
-

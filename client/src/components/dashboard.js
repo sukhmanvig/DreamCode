@@ -77,13 +77,6 @@ const Dashboard = () => {
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="">
-              <input
-                type="submit"
-                className="continue"
-                value="CONTINUE PLAYING"
-              />
-            </form>
             <form action="/listsgame">
               <input
                 type="submit"
@@ -91,8 +84,8 @@ const Dashboard = () => {
                 value="Lists Game"
               />
             </form>
-	    <form action="/pythonlearn">
-	     <input type="submit" className="continue" value="Python Learning Resources" />
+	    <form action="/PythonProblemRepository">
+	     <input type="submit" className="continue" value="Python Problems" />
 	    </form>
           </div>
 	  <div className="continue-game">

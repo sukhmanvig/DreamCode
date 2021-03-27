@@ -11,6 +11,11 @@
 	margin: 0px 60px 10px 65px;
 }
 
+.codesnippet_h1 {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
 .codesnippet_pre {
 	padding: 15px 50px 15px 50px;
 	background-color: #050b1f;

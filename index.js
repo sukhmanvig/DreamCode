@@ -260,7 +260,6 @@ app.post("/settingInfo", async (req, res) => {
           await res.status(200).json(userInfo.rows[0]);
           return;
       }
-
   } catch (err) {
     res.status(500).json({ message: "password change failed" });
     return;

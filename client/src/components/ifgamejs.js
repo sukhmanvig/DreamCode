@@ -230,6 +230,7 @@ const IfGameJS = ()  => {
 					game_status.innerHTML = "Yay, Rob successfully retrieved the treasure!";
 					document.querySelector("#robot-try-again").style.visibility = "visible";
 					document.querySelector("#next-level").style.visibility = "visible";
+					
 					// Save game TODO
 					submitScore(localStorage.getItem("username"), attempts);
 					return;

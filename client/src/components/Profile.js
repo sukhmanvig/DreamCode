@@ -9,7 +9,7 @@ function Profile() {
 
   function getBio(details) {
     Axios.post("/getBio", {
-      username: localStorage.getItem("username"), //HARDCODED TO JAYVIN USER SINCE NO OTHER USER IN DB
+      username: localStorage.getItem("username"), 
     }).then(
       (response) => {
         console.log(response.data.message);
