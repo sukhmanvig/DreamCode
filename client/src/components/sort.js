@@ -150,16 +150,74 @@ const SortGameJS = () => {
 		else if (gamestate.autosolve === "Quick") { /* Perform a Quicksort */
 			quicksort(array, 0, array.length);
 		}
+		else if (gamestate.autosolve === "QuickPivot") { /* Perform a Quicksort */
+			quicksort(array, 0, array.length);
+		}
+		else if (gamestate.autosolve === "QuickPartition") { /* Perform a Quicksort */
+			quicksort(array, 0, array.length);
+		}
+		else if (gamestate.autosolve === "QuickRecursive") { /* Perform a Quicksort */
+			quicksort(array, 0, array.length);
+		}
 		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
-			radixsort_N(array);
+			var count = 0;
+			var bucketcount = [];
+			for (var k = 0; k < 10; k++) {
+				bucketcount[k] = [];
+			}
+
+			for (var x in array) {
+				bucketcount[Math.trunc(array[x]/gamestate.autosolvehint[1])%10].push(array[x]);
+				count++;
+				moves++;
+			}
+
+			var nextarray = [];
+			for (var k = 0; k < bucketcount.length; k++) {
+				for (var x in bucketcount[k]) {
+					nextarray.push(bucketcount[k][x]);
+					count++;
+					moves++;
+				}
+			}
+			gamestate.autosolvehint[2] = nextarray;
+			gamestate.autosolvehint[3] = count;
+
+			document.querySelector("#gamehint").innerHTML = "The distribution of digits in the place value " + gamestate.autosolvehint[1] + " is: [";
+			for (var k = 0; k < bucketcount.length; k++) {
+				document.querySelector("#gamehint").innerHTML += bucketcount[k].length + " ";
+			}
+			document.querySelector("#gamehint").innerHTML += "]";
+			gamestate.autosolve = "Radix2";
+		}
+		else if (gamestate.autosolve === "Radix2") { /* Perform a Radixsort */
+			// Update array in place and view. The loop is required only as an artifact.
+			for (x in array)
+				array[x] = gamestate.autosolvehint[2][x]; 
+			redisplay_array();
+			document.querySelector("#gamehint").innerHTML = "Performed " + gamestate.autosolvehint[3] + " transfers from bucket to array with " + moves + " transfers total.";
+
+			gamestate.autosolvehint[0] = Math.trunc(gamestate.autosolvehint[0]/10);
+			gamestate.autosolvehint[1] *= 10;
+			gamestate.autosolve = "Radix";
 		}
 		else {
 			console.log("OMG");
 		}
 	});
 
+	document.querySelector("#fastforward").addEventListener('click', ()=>{
+		if (gamestate.autosolve === "Quick") { /* Perform a Quicksort */
+			quicksort(array, 0, array.length);
+		}
+		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
+			radixsort_N(array);
+		}
+	});
+
 	document.querySelector("#swapmode").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").setAttribute("disabled", "true");
+		document.querySelector("#fastforward").setAttribute("disabled", "true");
 		gamestate.autosolve = null;
 		enableSwapInput();
 
@@ -173,6 +231,7 @@ const SortGameJS = () => {
 
 	document.querySelector("#selectionsort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
+		document.querySelector("#fastforward").setAttribute("disabled", "true");
 		gamestate.autosolve = "Selection";
 		gamestate.autosolvehint = [0, 0, 0];
 		disableSwapInput();
@@ -187,6 +246,7 @@ const SortGameJS = () => {
 
 	document.querySelector("#insertionsort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
+		document.querySelector("#fastforward").setAttribute("disabled", "true");
 		gamestate.autosolve = "Insertion";
 		gamestate.autosolvehint = [0, 0, 0];
 		disableSwapInput();
@@ -201,6 +261,7 @@ const SortGameJS = () => {
 
 	document.querySelector("#quicksort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
+		document.querySelector("#fastforward").removeAttribute("disabled");
 		gamestate.autosolve = "Quick";
 		gamestate.autosolvehint = [0, 0, []];
 		disableSwapInput();
@@ -215,8 +276,14 @@ const SortGameJS = () => {
 
 	document.querySelector("#radixsort").addEventListener('click', ()=>{
 		document.querySelector("#sortstep").removeAttribute("disabled");
+		document.querySelector("#fastforward").removeAttribute("disabled");
 		gamestate.autosolve = "Radix";
-		gamestate.autosolvehint = [0, 0, []];
+		var longestrep = 0;
+		for (var x in array) {
+			if (array[x] > longestrep)
+				longestrep = array[x];
+		}
+		gamestate.autosolvehint = [longestrep, 1, []];
 		disableSwapInput();
 		
 		document.querySelector("#gamehint").innerHTML = "Starting Radix Sort";
