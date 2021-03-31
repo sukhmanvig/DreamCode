@@ -1,3 +1,4 @@
+import Axios from "axios";
 /**
  */
 const SortGameJS = () => {
@@ -494,6 +495,25 @@ const SortGameJS = () => {
 		for (var k = 0; k < elems.length; k++) {
 			elems[k].setAttribute("disabled", "true");
 		}
+
+		Axios.post("/highscore", {
+			username: details.username,
+			score: -1
+		}).then((response) => {
+			if (response.data.message) {
+				//setLoginStatus(response.data.message);
+				setError(response.data.message);
+			} else {
+				localStorage.setItem("username", details.username);
+				localStorage.setItem("email", details.email);
+				localStorage.setItem("isLogin", true);
+				localStorage.setItem("accessToken", response.data.accessToken);
+				localStorage.setItem("refreshToken", response.data.refreshToken);
+				setError("");
+				history.push("/");
+				window.location.reload(false);
+			}
+		});
 	}
 
 	/**Update the input based on swap buttons pressed. This can be done in hint mode as well.
