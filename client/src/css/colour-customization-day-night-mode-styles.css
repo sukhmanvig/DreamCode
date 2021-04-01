@@ -15,12 +15,11 @@ html[data-theme="dark"] {
   --profilebg: #222222;
   --bg-panel: #434343;
   --color-headings: #3694ff;
-  --color-text: #b5b5b5;
+  --color-text: #b5b5b5 !important;
 }
 
 .togglee {
-  margin: 15px;
-  float: right;
+  margin-left: 7px;
 }
 
 * {

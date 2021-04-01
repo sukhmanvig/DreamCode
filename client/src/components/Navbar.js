@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/nav.css";
 import { Link } from "react-router-dom";
-import Toggle from "./Toggle";
 
 function Navbar() {
   return (
@@ -35,7 +34,6 @@ function Navbar() {
               DreamCode
             </Link>
           </div>
-	  <Toggle />
         </div>
       </nav>
     </div>
