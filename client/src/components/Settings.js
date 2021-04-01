@@ -8,6 +8,7 @@ import Axios from "axios";
 import React, { useState } from "react";
 import ResetForm from "./ResetForm";
 import BioForm from "./EditBio";
+import Toggle from "./Toggle";
 import "../css/setting-styles.css";
 import "../css/index.css"
 

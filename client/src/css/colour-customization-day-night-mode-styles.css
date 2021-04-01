@@ -1,7 +1,9 @@
 html {
   font-family: "Montserrat";
 
-  --bg: #fcfcfc;
+  --bg: transparent linear-gradient(90deg, #c7d8e7, #f8f8ff);
+  --navbg: transparent linear-gradient(90deg, #7fffd4, #c7d8e7);
+  --profilebg: url('../images/pbg-dark.png');
   --bg-panel: #ebebeb;
   --color-headings: #0077ff;
   --color-text: #333333;
@@ -9,40 +11,45 @@ html {
 
 html[data-theme="dark"] {
   --bg: #333333;
+  --navbg: #222222;
+  --profilebg: #222222;
   --bg-panel: #434343;
   --color-headings: #3694ff;
   --color-text: #b5b5b5;
 }
 
 .togglee {
-  margin: 0;
-  padding: 0;
-  margin-top: 5px;
-  padding-top: 5px;
+  margin: 15px;
+  float: right;
 }
 
-.containerr {
-  background-color: var(--bg-panel);
+* {
+  color: var(--color-text);
 }
 
-h1 {
+.topnav, .bottomnav {
+	background: var(--navbg);
+}
+
+#profilebody {
+	background: var(--profilebg);
+}
+
+body, #content, [id$='body'], [id$='content'] {
+	background: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6, header {
   color: var(--color-headings);
 }
 
-p {
-  color: var(--color-text);
-  font-size: 1.1em;
-  line-height: 1.8em;
-  margin-top: 2em;
-}
-
-input[type="checkbox"] {
+.togglee input[type="checkbox"] {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-label {
+.togglee label {
   cursor: pointer;
   width: 52px;
   height: 27px;
@@ -52,7 +59,7 @@ label {
   position: relative;
 }
 
-label:after {
+.togglee label:after {
   content: "";
   position: absolute;
   top: 3px;
@@ -64,16 +71,16 @@ label:after {
   transition: 0.3s;
 }
 
-input:checked + label {
+.togglee input:checked + label {
   background: var(--color-headings);
 }
 
-input:checked + label:after {
+.togglee input:checked + label:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
 }
 
-label:active:after {
+.togglee label:active:after {
   width: 45px;
 }
 

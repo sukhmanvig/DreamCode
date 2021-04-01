@@ -1,8 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-.navbar-dropdown-elements:hover {
-  background: linear-gradient(to bottom, #ffffff00 30%, #ffffff90 10%);
-}
 
 .profile * {
   margin: 0;
@@ -25,8 +22,6 @@ html {
 
 #profilebody {
   font-family: "Calibri Light", sans-serif;
-  background: black;
-  background: url("../images/pbg-dark.png");
   background-attachment: fixed;
   background-size: cover;
 }

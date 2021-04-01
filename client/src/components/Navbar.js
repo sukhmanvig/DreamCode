@@ -27,8 +27,6 @@ function Navbar() {
           )}
 
           <Link to={"/dashboard"}> Dashboard </Link>
-          {/*<Toggle />
-          above is the code for the toggle button*/}
           <Link to="/contact"> Contact </Link>
           <Link to={"/about"}> About </Link>
           <Link to="/"> Home </Link>
@@ -37,6 +35,7 @@ function Navbar() {
               DreamCode
             </Link>
           </div>
+	  <Toggle />
         </div>
       </nav>
     </div>

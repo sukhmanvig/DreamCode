@@ -121,7 +121,7 @@ const Dashboard = () => {
               <input type="submit" className="game" value="If Statements" />
             </form>
             <form action="/queue_game">
-              <input type="submit" className="game" value="Queues" />\
+              <input type="submit" className="game" value="Queues" />
             </form>
           </div>
         </div>
