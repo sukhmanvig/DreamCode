@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   font-family: poppins, sans-serif;
-  background-color: #c7d8e7;
   height: 100vh;
 }
 
 #pybody a:link {
-  color: green;
+  color: green !important;
   background-color: transparent;
   text-decoration: none;
 }
@@ -16,12 +15,12 @@
   text-decoration: none;
 }
 #pybody a:hover {
-  color: red;
+  color: red !important;
   background-color: transparent;
   text-decoration: underline;
 }
 #pybody a:active {
-  color: yellow;
+  color: yellow !important;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -120,7 +119,7 @@
 
 #pybody #center-page{
   text-align: center;
-  color: #6BCAE2;
+  color: #6BCAE2 !important;
   background: #0D659D;
   margin: 0px;
 }
@@ -163,7 +162,11 @@
 #pybody .textOverImage:hover > a, #pybody .textOverImage > input:checked + a + div{
     bottom:4px;
     opacity:1;
-  }
+}
+
+#pybody .textOverImage > input:checked + a + div{
+	color: black !important;
+}
 
 #pybody .textOverImage > input:checked + a{
     bottom:-20px;

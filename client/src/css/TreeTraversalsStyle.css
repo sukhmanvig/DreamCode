@@ -39,7 +39,7 @@
 	margin-right: 10px;
 	font-family: Arial, "Calibri Light", Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 /*	font-weight: bold;*/
-	color: white;
+	color: white !important;
 	transition: all 0.1s ease-out;
 	user-select: none;
 }
@@ -106,6 +106,7 @@
 	border: 5px solid transparent;
 	transition: all 0.1s ease-out;
 	user-select: none;
+	color: black !important;
 }
 
 #treetravgame .uChose:hover {
@@ -131,10 +132,15 @@
 	border: 6px solid white;
 	margin-bottom: 
 }
+
+.uChose pre code {
+	color: black !important;
+}
+
 /*pre*/
 #treetravgame #treeGameWindow #traversalCode {
 	background: black;
-	color: white;
+	color: white !important;
 	height: 200px;
 	padding: 20px;
 
@@ -149,6 +155,11 @@
 	font-weight: bold;
 	font-family: Montserrat, Arial, Calibri, sans-serif;
 }
+
+.secHead {
+	color: white !important;
+}
+
 /*drag items container*/
 /*
 #treetravgame #gameWindow section:nth-child(2) {
@@ -175,7 +186,7 @@
 	font-size: 2.5em;
 	background: var(--colscheme3);
 	padding: 10px ;
-	color: #fff;
+	color: #fff !important;
 	border-radius: 20px;
 	text-align: center;
 	border: 5px solid var(--colscheme2);
@@ -186,13 +197,17 @@
 #treetravgame #rightSidebar #gameInstruc {
 	
 	background: #09275C;
-	color: white;
+	color: white !important;
 	padding: 20px;
 	font-weight: bold;
 	border-radius: 10px;
 	height: 80%;
 	margin: 20px 0;
 	font-family: Montserrat, arial;
+}
+
+#gameInstruc span {
+	color: white !important;
 }
 
 #treetravgame #rightSidebar #travPrompt {
@@ -202,21 +217,29 @@
 	margin: 20px 0;
 	font-size: 2em;
 	border-radius: 10px;
+	color: black !important;
 	
 }
 #treetravgame #rightSidebar #orderPrompt {
 	margin: 10px;
 	font-size: 2em;
+	color: #fbfaf5 !important;
 	
 }
 #treetravgame #rightSidebar #gameScore {
 	font-size: 2em;
 	padding: 10px;
 	margin: 10px;
+	color: black !important;
 }
+
+#gameScore span {
+	color: black !important;
+}
+
 #treetravgame #rightSidebar #matchBtn {
 	background: var(--colscheme3);
-	color: #fff;
+	color: #fff !important;
 	padding: 10px;
 	border-radius: 10px;
 	font-size: 2em;
@@ -250,7 +273,7 @@
 	padding: 30px;
 	font-family: Montserrat, Arial, sans-serif;
 	font-size: 30px;
-	color: white;
+	color: white !important;
 	border: 1px solid var(--colscheme4);
 	border-radius: 20px;
 	box-shadow: 0 5px 5px black;
@@ -268,7 +291,7 @@
 	border-radius: 50px;
 	width: 200px;
 	text-align: center;
-	color: white;
+	color: white !important;
 	font-weight: bold;
 	border: 5px solid transparent;
 	margin: 5px auto;

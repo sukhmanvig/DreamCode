@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ColourDayNight from "./colour-customization-day-night-mode-javascript";
-//import "../css/colour-customization-day-night-mode-styles.css";
+import "../css/colour-customization-day-night-mode-styles.css";
 
 const Toggle = () => {
   useEffect(() => {
@@ -8,10 +8,10 @@ const Toggle = () => {
   }, []);
 
   return (
-    <a className="togglee">
+    <div className="togglee">
       <input type="checkbox" id="switch" name="theme" />
-      <label for="switch"></label>
-    </a>
+      <label id="switchLabel" for="switch"></label>
+    </div>
   );
 };
 

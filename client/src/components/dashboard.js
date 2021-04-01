@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import "../css/nav.css";
 import "../css/dashboard-style.css";
 import CategoryNav from './CategoryNav';
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -30,9 +31,9 @@ const Dashboard = () => {
         <div id="content">
           <header> Dashboard </header>
 
-          <form action="/Profile">
+          <Link to="/Profile">
             <input type="submit" id="profile" value="PROFILE" />
-          </form>
+          </Link>
           <div id="leaderboard">
             LEADERBOARD
             <ol>
@@ -41,16 +42,16 @@ const Dashboard = () => {
               ))}
             </ol>
           </div>
-          <form action="/shell">
+          <Link to="/shell">
             <input
               type="submit"
               className="daily-challenge"
               value="DAILY CHALLENGE"
             />
-          </form>
+          </Link>
           <br></br>
           <h1>GAMES</h1>
-          <form action="/dashboard">
+          <Link to="/dashboard">
             <input
               type="text"
               name="search-bar"
@@ -64,7 +65,7 @@ const Dashboard = () => {
               className="search-button"
               alt="submit"
             />
-          </form>
+          </Link>
           <div className="dashdropdown">
             SELECT OPTION
             <div className="dropdown-elements">
@@ -77,52 +78,52 @@ const Dashboard = () => {
           <br></br>
           <hr />
           <div className="continue-game">
-            <form action="/listsgame">
+            <Link to="/listsgame">
               <input
                 type="submit"
                 className="continue"
                 value="Lists Game"
               />
-            </form>
-	    <form action="/PythonProblemRepository">
+            </Link>
+	    <Link to="/PythonProblemRepository">
 	     <input type="submit" className="continue" value="Python Problems" />
-	    </form>
+	    </Link>
           </div>
 	  <div className="continue-game">
-          	<form action="/sort-code">
+          	<Link to="/sort-code">
 	        	  <input type="submit" className="continue" value="Sorting" />
-          	</form>
+          	</Link>
 	  </div>
           <div className="category">
             <i className="arrow left"></i>
             <div id="js-category-name">CATEGORY1</div>
             <i className="arrow right"></i>
 
-            <form action="/stack_game">
+            <Link to="/stack_game">
               <input type="submit" className="game" value="Stacks" />
-            </form>
+            </Link>
 
-            <form action="/treetravtut">
+            <Link to="/treetravtut">
               <input
                 type="submit"
                 className="game"
                 value="Tree Traversals"
               />
-            </form>
+            </Link>
 
-            <form action="/dictcode">
+            <Link to="/dictcode">
               <input
                 type="submit"
                 className="game"
                 value="Python Dictionaries"
               />
-            </form>
-            <form action="/ifcode">
+            </Link>
+            <Link to="/ifcode">
               <input type="submit" className="game" value="If Statements" />
-            </form>
-            <form action="/queue_game">
-              <input type="submit" className="game" value="Queues" />\
-            </form>
+            </Link>
+            <Link to="/queue_game">
+              <input type="submit" className="game" value="Queues" />
+            </Link>
           </div>
         </div>
       </body>
