@@ -125,7 +125,7 @@ DisplayOutput = (response) => {
         return (
         <Container className=" mt-5">
             <Modal show={this.state.fail} onHide={this.handleFailClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                 <Modal.Title>Attempt Limit reached</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Sorry! You only get one attempt per day but you can visit our code repository for more practice questions.</Modal.Body>
@@ -136,7 +136,7 @@ DisplayOutput = (response) => {
                 </Modal.Footer>
             </Modal>
             <Modal show={this.state.success} onHide={this.handleSuccessClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                 <Modal.Title>Congrats</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Congratulations! You got the challenge done. If you want more questions visit our code repository.</Modal.Body>

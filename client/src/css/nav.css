@@ -57,7 +57,7 @@
 
 .bottomnav a:hover {
   border-radius: 10px;
-  color: #000000;
+  color: #000000 !important;
   background-color: #fbfaf5;
 }
 .signin a {
@@ -87,7 +87,7 @@
 }
 
 .logo a:hover {
-  color: #fbfaf5;
+  color: #fbfaf5 !important;
   background-color: transparent;
 }
 
@@ -106,7 +106,7 @@
   border: ridge;
   outline: none;
   background-color: #7fffd4;
-  color: #000000;
+  color: #000000 !important;
   cursor: pointer;
   padding: 5px 15px 20px 15px;
   border-radius: 10px;

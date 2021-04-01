@@ -19,7 +19,7 @@
   background: #e8e8e8;
   height: 250px;
   display: flex;
-  color: black;
+  color: black !important;
 }
 .contact footer p {
   margin: auto;
@@ -76,7 +76,7 @@
   padding: 10px;
   width: 100%;
   margin: 10px 0;
-  color: #000000;
+  color: #000000 !important;
   border: 1px solid var(--colscheme4);
   border-bottom: 3px solid var(--colscheme4);
 }
@@ -105,7 +105,7 @@
   padding: 10px;
   border-radius: 20px;
   width: 200px;
-  color: white;
+  color: white !important;
   margin: 30px 0 0 auto;
 
   transition: background 0.1s linear;
@@ -113,7 +113,7 @@
 
 #contact-form #btn-submit:hover {
   background: var(--colscheme2);
-  color: #000;
+  color: #000 !important;
 }
 #contact-info {
   width: 40%;
@@ -123,7 +123,7 @@
   position: absolute;
   top: 300px;
   box-shadow: 3px 3px 5px #787878;
-  color: white;
+  color: white !important;
 }
 
 #contact-info h2 {
@@ -133,7 +133,7 @@
   margin: 30px 0;
 }
 #contact-info a {
-  color: white;
+  color: white !important;
 }
 
 #contact-info img {

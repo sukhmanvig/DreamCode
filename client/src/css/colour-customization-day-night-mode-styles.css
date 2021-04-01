@@ -6,6 +6,8 @@ html {
   --profilebg: url('../images/pbg-dark.png');
   --bg-panel: #ebebeb;
   --color-headings: #0077ff;
+  --nav-links: black;
+  --logo: #0d6efd;
   --color-text: #333333;
 }
 
@@ -15,7 +17,9 @@ html[data-theme="dark"] {
   --profilebg: #222222;
   --bg-panel: #434343;
   --color-headings: #3694ff;
-  --color-text: #b5b5b5 !important;
+  --nav-links: #b5b5b5;
+  --logo: #0d6efd;
+  --color-text: #b5b5b5;
 }
 
 .togglee {
@@ -30,6 +34,14 @@ html[data-theme="dark"] {
 	background: var(--navbg);
 }
 
+.topnav a:not(.links), .bottomnav a:not(.links) {
+	color: var(--nav-links) !important;
+}
+
+.links {
+	color: var(--logo) !important;
+}
+
 #profilebody {
 	background: var(--profilebg);
 }
@@ -39,7 +51,7 @@ body, #content, [id$='body'], [id$='content'] {
 }
 
 h1, h2, h3, h4, h5, h6, header {
-  color: var(--color-headings);
+  color: var(--color-headings) !important;
 }
 
 .togglee input[type="checkbox"] {

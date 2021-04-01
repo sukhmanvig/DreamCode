@@ -33,7 +33,7 @@ export default class QueueGame extends Component {
         let ctx = canvas.getContext("2d");
 
 
-        let codeBlock = document.getElementById("code");
+        let codeBlock = document.getElementById("queueCode");
 
         let moves=0;
 
@@ -255,7 +255,7 @@ export default class QueueGame extends Component {
             </div>
             <div id="code_container">
                 <h3>Sample Method Calls</h3>
-                <code><pre id="code"></pre></code>
+                <code><pre id="queueCode"></pre></code>
             </div>
             <span id="score_container">
                 Moves: <span id="movecount">0</span>

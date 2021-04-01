@@ -34,7 +34,7 @@
 	font: bold 22.5px verdana;
 	text-align: center;
 	background-color: #0d659d;
-	color: #fbfaf5;
+	color: #fbfaf5 !important;
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -82,11 +82,11 @@
 	font: normal 14px verdana;
 	margin-left: 5px;
 	margin-bottom: 10px;
-	color: black;
+	color: black !important;
 }
 
 #dictModify select option, #dictRemove select option {
-	color: black;
+	color: black !important;
 }
 
 .keyBlock, .valueBlock {
@@ -107,7 +107,7 @@
 /*Code output section*/
 #dictCode {
 	background-color: #050b1f;
-	color: #fbfaf5;
+	color: #fbfaf5 !important;
 	width: 26%;
 	max-height: 85vh;
 }
@@ -116,7 +116,7 @@
 	visibility: inherit;
 	text-align: left;
 	background-color: #050b1f;
-	color: #6bcae2;
+	color: #6bcae2 !important;
 	font-size: 17px;
 }
 

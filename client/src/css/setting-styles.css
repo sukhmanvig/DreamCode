@@ -30,8 +30,12 @@
   display: inline-block;
 }
 
+.modal-header .modal-title, .modal-body, .modal-footer {
+	color: black !important;
+}
+
 .linebreak {
-  color: #050b1f;
+  color: #050b1f !important;
   width: 20px;
 }
 #circle {
@@ -76,7 +80,7 @@
 .tab button {
   display: block;
   background-color: inherit;
-  color: black;
+  color: black !important;
   padding: 22px 16px;
   width: 100%;
   border: none;
@@ -136,7 +140,7 @@
 }
 
 .acc-preview > p {
-  color: rgb(97, 97, 97);
+  color: rgb(97, 97, 97) !important;
   font-weight: 100;
   font-size: 11px;
   display: inline-block;
@@ -146,7 +150,7 @@
 }
 #user {
   font-size: 13px;
-  color: rgb(68, 68, 68);
+  color: rgb(68, 68, 68) !important;
   font-style: normal;
   display: inline;
   margin-left: 62px;
@@ -177,5 +181,5 @@
 }
 
 .success {
-  color: green;
+  color: green !important;
 }

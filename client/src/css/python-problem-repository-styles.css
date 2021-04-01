@@ -6,7 +6,7 @@
 }
 
 .ppr pre {
-  color: white;
+  color: white !important;
   background-color: #050b1f;
 }
 
@@ -26,7 +26,7 @@
   margin-bottom: 25px;
 }
 .ppr .container-fluid h1 {
-  color: #6bcae2;
+  color: #6bcae2 !important;
   position: relative;
   width: 23rem;
 }
@@ -66,7 +66,7 @@
   margin: 0;
   padding: 3px 0 0 0;
   font-weight: normal;
-  color: #1f5c9a;
+  color: #1f5c9a !important;
   transition: all 0.5s ease-in;
 }
 
@@ -77,11 +77,11 @@
 
 .ppr .active {
   background-color: #0d659d;
-  color: #fff;
+  color: #fff !important;
 }
 
 .ppr .active h5 {
-  color: #fff;
+  color: #fff !important;
 }
 
 .ppr .panel {
