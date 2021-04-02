@@ -9,7 +9,7 @@ function NavbarBottom() {
         <div>
           <Link to="/contact"> Contact </Link>
           <Link to="/about"> About </Link>
-	  <Link to="/pythonlearn"> Resources </Link>
+          <Link to="/pythonlearn"> Resources </Link>
           <Link to="/"> Home </Link>
         </div>
       </nav>

@@ -1,0 +1,12 @@
+.navbar-custom {
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, rgb(127, 255, 212), #c7d8e7);
+  float: right;
+}
+
+.navbar-item {
+  float: right;
+  right: 0%;
+  
+}
