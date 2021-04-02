@@ -49,9 +49,6 @@ function App() {
     return history.push("/");
   };
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
   return (
     <div>
       <Navbar />
@@ -61,7 +58,6 @@ function App() {
             <div className="welcome App">
               <h2>
                 Welcome, <span> {localStorage.getItem("username")} </span>
-                <button onClick={Logout}> Logout </button>
               </h2>
             </div>
           </PublicRoute>
@@ -79,9 +75,9 @@ function App() {
           />
           <PrivateRoute exact path="/settings" component={Settings} />{" "}
           <PrivateRoute exact path="/contact" component={Contact} />{" "}
-          <PrivateRoute exact path="/passwordreset" component={PasswordReset} />{" "}
+          <PublicRoute exact path="/passwordreset" component={PasswordReset} />{" "}
           <PrivateRoute exact path="/profile" component={Profile} />{" "}
-          <PrivateRoute exact path="/about" component={refreshPage} />
+          <PrivateRoute exact path="/about" />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />{" "}
           <PrivateRoute exact path="/shell" component={Shell} />{" "}
           <PrivateRoute exact path="/ifgame" component={ifgame} />{" "}

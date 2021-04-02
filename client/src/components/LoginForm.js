@@ -64,7 +64,7 @@ function LoginForm() {
               required
             />
             <span>
-              Forgot <a href="forgotPassword.html">password?</a>
+              Forgot <Link to="/passwordreset">password?</Link>
             </span>
             <label style={{ display: "inline ", float: "right" }}>
               <input
