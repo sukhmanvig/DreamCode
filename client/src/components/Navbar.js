@@ -1,43 +1,53 @@
 import React from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from 'react-router-dom';
 import "../css/nav.css";
-import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar2() {
   return (
-    <div className="navbarr topnav">
-      <nav className="topnav">
-        <div>
-          {localStorage.getItem("isLogin") ? (
-            <div className="signin">
-              <div className="navbar-dropdown">
-                <a>{localStorage.getItem("username")}</a>
-                <div className="navbar-dropdown-elements">
-                  <Link to="/profile">Profile</Link>
-                  <Link to="/settings">Account Settings</Link>
-                  <Link to="/logout"> Logout</Link>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="signin">
-              <Link to="/signup"> Create Account </Link>
-              <Link to="/login"> Sign in </Link>
-            </div>
-          )}
-
-          <Link to={"/dashboard"}> Dashboard </Link>
-          <Link to="/contact"> Contact </Link>
-          <Link to={"/about"}> About </Link>
-          <Link to="/"> Home </Link>
-          <div className="logo">
-            <Link className="links" to="/">
-              DreamCode
-            </Link>
-          </div>
-        </div>
-      </nav>
+    <div>
+      <Navbar
+        collapseOnSelect
+        expand="md"
+        variant="dark"
+        className="topnav mr-auto "
+        fixed="top"
+      >
+        <Navbar.Brand className="logo" href="/">
+          DreamCode
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav ">
+          <Nav className="topnav-item">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+            {localStorage.getItem("isLogin") ? (
+              <NavDropdown
+                title={localStorage.getItem("username")}
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/settings">
+                  Account Settings
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Nav className="signin">
+                <Nav.Link as={Link} to="/login">SIGN IN</Nav.Link>
+                <Nav.Link as={Link} to="/signup">CREATE ACCOUNT</Nav.Link>
+              </Nav>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 }
 
-export default Navbar;
+export default Navbar2;
