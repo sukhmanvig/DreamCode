@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b747b7c7.chunk.css",
+    "main.css": "/static/css/main.b10c0cd1.chunk.css",
     "main.js": "/static/js/main.f8dd7b3a.chunk.js",
     "main.js.map": "/static/js/main.f8dd7b3a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.03887cff.js",
@@ -8,7 +8,7 @@
     "static/js/2.f7f05eb1.chunk.js": "/static/js/2.f7f05eb1.chunk.js",
     "static/js/2.f7f05eb1.chunk.js.map": "/static/js/2.f7f05eb1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b747b7c7.chunk.css.map": "/static/css/main.b747b7c7.chunk.css.map",
+    "static/css/main.b10c0cd1.chunk.css.map": "/static/css/main.b10c0cd1.chunk.css.map",
     "static/js/2.f7f05eb1.chunk.js.LICENSE.txt": "/static/js/2.f7f05eb1.chunk.js.LICENSE.txt",
     "static/media/setting-styles.css": "/static/media/Missing_avatar.939606ac.svg",
     "static/media/colour-customization-day-night-mode-styles.css": "/static/media/pbg-dark.e493db53.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.03887cff.js",
     "static/js/2.f7f05eb1.chunk.js",
-    "static/css/main.b747b7c7.chunk.css",
+    "static/css/main.b10c0cd1.chunk.css",
     "static/js/main.f8dd7b3a.chunk.js"
   ]
 }

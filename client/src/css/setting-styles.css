@@ -34,6 +34,10 @@
 	color: black !important;
 }
 
+.CodeMirror-code span {
+	color: #fbfaf5 !important;
+}
+
 .linebreak {
   color: #050b1f !important;
   width: 20px;
