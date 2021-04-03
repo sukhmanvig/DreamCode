@@ -60,6 +60,7 @@
 
 .bottomnav a:hover {
   background-color: #c7d8e7;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .signin a {
   border-style: inset;
