@@ -13,7 +13,7 @@ const TreeTraversalsTutorial = ({title}) => {
 	return (	
     <main id="treeTravPage">
         <div class="notes">
-            <h1 id="treetrav_h1">Tree Traversals</h1>
+        <h1 className="treetrav_h1">Tree Traversals</h1>
             <div id="fontsizer">
                 <ul>
                     <li>A</li>

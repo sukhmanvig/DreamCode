@@ -1,5 +1,8 @@
 var nodeTypes = ['square', 'triangle', 'circle'];
 var MAX_CODE_LINES = 12;
+//Keep track of score
+var modifyScore = 0;
+var removeScore = 0;
 
 const GameSetup = () => {
 	//Add event listeners
@@ -171,6 +174,10 @@ const modifyKeyValue = () => {
 	//Add equivalent code to code output section
 	PrintCodeLine(`myDict["` + keyClass + `"] = "` + valClass + `"`);
 
+	// Update score
+	modifyScore++;
+	document.querySelector("#dictModifications").innerHTML = modifyScore;
+
 	if (CheckIfWon()) {
 		onWon();
 	}
@@ -228,6 +235,10 @@ const removeKey = () => {
 	valColumn.removeChild(val);
 
 	PrintCodeLine(`del myDict["`+ keyClass + `"]`); 
+
+	// Update score
+	removeScore++;
+	document.querySelector("#dictRemovals").innerHTML = removeScore;
 
 	//Check if game is won
 	if(CheckIfWon()) {

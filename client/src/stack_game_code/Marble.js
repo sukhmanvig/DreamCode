@@ -1,19 +1,18 @@
 export default class Marble {
+  constructor(colour, letter) {
+    this.colour = colour;
+    this.letter = letter;
+  }
 
-    constructor(colour, letter) {
-        this.colour = colour;
-        this.letter = letter;
-    }
+  getColour() {
+    return this.colour;
+  }
 
-    getColour() {
-        return this.colour;
-    }
+  getLetter() {
+    return this.letter;
+  }
 
-    getLetter() {
-        return this.letter;
-    }
-
-    equals(other) {
-        return (this.colour == other.colour) && (this.letter == other.letter);
-    }
+  equals(other) {
+    return this.colour === other.colour && this.letter === other.letter;
+  }
 }

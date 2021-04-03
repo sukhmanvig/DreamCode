@@ -1,6 +1,5 @@
 #content {
   margin: 0px 60px 10px 65px;
-  background-image: linear-gradient(to right, #c7d8e7, rgb(248, 248, 255));
 }
 #content .dashdropdown {
   float: right;
@@ -36,6 +35,7 @@
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
+  color: black !important;
 }
 .daily-challenge {
   width: 50%;
@@ -45,11 +45,12 @@
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
+  color: black !important;
 }
 #leaderboard {
   width: 40%;
   background-color: #7fa6c9;
-  color: #fdfaf5;
+  color: #fdfaf5 !important;
   min-height: 100px;
   display: inline-block;
   margin-left: 30px;
@@ -72,7 +73,7 @@
   margin: 7.5px 10px 7.5px 10px;
   padding: 10px 0px 10px 25px;
   background-color: #050b1f;
-  color: #fdfaf5;
+  color: #fdfaf5 !important;
   text-decoration: none;
   font: 15px verdana;
   overflow: hidden;
@@ -81,18 +82,18 @@
 
 #leaderboard li:nth-child(1) {
   background-image: linear-gradient(to right, gold 0%, #050b1f 3%);
-  color: gold;
+  color: gold !important;
 }
 
 #leaderboard li:nth-child(2) {
   background-image: linear-gradient(to right, silver 0%, #050b1f 3%);
 
-  color: silver;
+  color: silver !important;
 }
 #leaderboard li:nth-child(3) {
   background-image: linear-gradient(to right, #cd7f32 0%, #050b1f 3%);
 
-  color: #cd7f32;
+  color: #cd7f32 !important;
 }
 
 #content .dropdown-elements {
@@ -115,7 +116,7 @@
   text-decoration: none;
   padding: 5px;
   margin: 5px;
-  color: black;
+  color: black !important;
   text-align: right;
 }
 #content .dashdropdown:hover .dropdown-elements {
@@ -161,6 +162,7 @@
   border-radius: 25px;
   margin: 5px 20px 10px 20px;
   min-width: 15%;
+  color: black !important;
 }
 #content .continue {
   width: 100%;
@@ -169,6 +171,7 @@
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   margin: 0px 0px 30px 0px;
+  color: black !important;
 }
 #content .search-bar {
   float: left;
@@ -181,3 +184,4 @@
   width: 29px;
   height: 29px;
 }
+

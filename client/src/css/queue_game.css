@@ -25,11 +25,19 @@
     margin-left: 15px;
 }
 
-#code {
+#code_container h3 {
+	color: black !important;
+}
+
+#code_container code {
+	color: black !important;
+}
+
+#queueCode {
     padding: 5px;
     border-radius: 10px;
     background-color: rgb(5, 0, 77);
-    color: rgb(94, 255, 255);
+    color: rgb(94, 255, 255) !important;
 }
 
 .button_div {
@@ -43,7 +51,7 @@
     padding-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    color: black;
+    color: black !important;
     background-color: #05D5FF;
     border: 1px solid black;
     border-radius: 20px;
@@ -52,7 +60,7 @@
 }
 
 .game_button:hover {
-    color: black;
+    color: black !important;
     background-color: #5dff48;
 }
 
@@ -61,7 +69,7 @@
     padding-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    color: black;
+    color: black !important;
     background-color: #ff91008a;
     border: 1px solid black;
     margin-top: 10px;
@@ -69,6 +77,6 @@
 }
 
 .new_game_button:hover {
-    color: white;
+    color: white !important;
     border-color: white;
 }

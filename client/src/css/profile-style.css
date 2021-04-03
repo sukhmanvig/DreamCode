@@ -1,8 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-.navbar-dropdown-elements:hover {
-  background: linear-gradient(to bottom, #ffffff00 30%, #ffffff90 10%);
-}
 
 .profile * {
   margin: 0;
@@ -25,8 +22,6 @@ html {
 
 #profilebody {
   font-family: "Calibri Light", sans-serif;
-  background: black;
-  background: url("../images/pbg-dark.png");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -35,7 +30,7 @@ html {
   background: #ffffff50;
   height: 250px;
   display: flex;
-  color: white;
+  color: white !important;
 }
 .profile footer p {
   margin: auto;
@@ -81,7 +76,7 @@ html {
 
 .profile #name-title {
   font-size: 70px;
-  color: white;
+  color: white !important;
 }
 .profile #user-pfp img {
   max-height: 100%;
@@ -198,7 +193,7 @@ html {
 }
 
 .profile .profile.ubadge h5 {
-  color: white;
+  color: white !important;
   position: relative;
   bottom: 55px;
 }
@@ -270,12 +265,12 @@ html {
   flex-basis: 100%;
   padding: 20px;
   font-size: 30px;
-  color: white;
+  color: white !important;
   background: linear-gradient(var(--colscheme2), var(--colscheme4), #ffffff);
 }
 
 .profile .bio {
-  color: Blue;
+  color: Blue !important;
   border: 1px solid Blue;
 }
 

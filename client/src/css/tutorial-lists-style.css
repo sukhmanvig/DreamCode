@@ -6,7 +6,7 @@
 	--colscheme5: #11F7FF;
 }
 
-* {
+#treeTravPage {
 	margin: 0;
 	padding: 0;
 }
@@ -23,7 +23,7 @@
 
 .notes pre {
 	background: var(--colscheme1);
-	color: var(--colscheme5);
+	color: var(--colscheme5) !important;
 	padding: 30px 50px;
 	border-radius: 10px;
 	overflow-x: auto;
@@ -49,7 +49,7 @@
 	margin-bottom: 
 
 }
-#treetrav_h1 h1 {
+.treetrav_h1 {
 	margin: 40px auto 40px 0;
 	font-family: Calibri;
 	font-size: 50px;
@@ -90,7 +90,7 @@
 }		
 
 .comment {
-	color: #BDBDBD;
+	color: #BDBDBD !important;
 }
 
 #treeEx {
@@ -116,7 +116,7 @@
 	margin: 50px 0 ;
 	background: var(--colscheme3);
 	transition: background 0.1s ease-out;
-	color: white;
+	color: white !important;
 	display: inline-block;
 	margin-right: 10px;
 	font-size: 20px;

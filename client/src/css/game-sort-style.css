@@ -1,0 +1,23 @@
+.game_button.active {
+	background-color:yellow
+}
+
+.game_button:disabled {
+	background-color:red
+}
+
+.game_button.hinted:disabled {
+	background-color:orange
+}
+
+.game_button.partial:disabled {
+	background-color:pink
+}
+
+.game_button.offscope:disabled {
+	background-color:gray
+}
+
+.sorthint {
+	width: 128px;
+}
