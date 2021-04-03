@@ -1,5 +1,5 @@
 .settings {
-  padding-bottom: 74px;
+  padding-bottom: 20.5vmax ;
   background-color: var(--bb);
 }
 .container-1140 {
@@ -30,12 +30,14 @@
   display: inline-block;
 }
 
-.modal-header .modal-title, .modal-body, .modal-footer {
-	color: black !important;
+.modal-header .modal-title,
+.modal-body,
+.modal-footer {
+  color: black !important;
 }
 
 .CodeMirror-code span {
-	color: #fbfaf5 !important;
+  color: #fbfaf5 !important;
 }
 
 .linebreak {

@@ -13,10 +13,6 @@ import "../css/setting-styles.css";
 import "../css/index.css";
 
 function Settinglist() {
-  Axios.defaults.headers = {
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
-  };
   return (
     <ul className="settings setting-list">
       <li>
@@ -45,6 +41,10 @@ function General({ uname, email, date }) {
   const [success, setSuccess] = useState("");
 
   const EditBio = (details) => {
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
+    };
     Axios.post("/EditBio", {
       bio: details.bio,
       name: localStorage.getItem("username"),
@@ -130,6 +130,10 @@ function Privacy() {
   const [success, setSuccess] = useState("");
 
   const resetPass = (details) => {
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
+    };
     Axios.post("/settingPassword", {
       username: details.name,
       token: localStorage.getItem("username"),
@@ -192,6 +196,10 @@ function Settings() {
   const [date, setDate] = useState("");
 
   const settingInfo = () => {
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
+    };
     Axios.post("/settingInfo", {
       token: localStorage.getItem("username"),
     }).then(
