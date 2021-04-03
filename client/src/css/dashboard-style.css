@@ -142,7 +142,7 @@
 }
 #content .right {
   float: right;
-  margin: 10px 10px 0px 0px;
+  margin: -10px 10px 0px 0px;
   transform: rotate(315deg);
 }
 #content .left {
@@ -150,9 +150,7 @@
   margin: 10px 0px 0px 10px;
   transform: rotate(-225deg);
 }
-#content #js-category-name {
-  display: inline-block;
-}
+
 #content .game {
   width: auto;
   float: left;

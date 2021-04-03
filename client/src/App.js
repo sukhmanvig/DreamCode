@@ -57,7 +57,7 @@ function App() {
           <PublicRoute restricted={false} exact path="/">
             <div className="welcome App">
               <h2>
-                Welcome, <span> {localStorage.getItem("username")} </span>
+                Welcome <span> {localStorage.getItem("username")} </span>
               </h2>
             </div>
           </PublicRoute>
