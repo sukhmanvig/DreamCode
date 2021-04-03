@@ -92,6 +92,10 @@ if __name__==="__main__":#DON'T CHANGE BELOW
   Submit = (e) => {
     if (this.state.attempt === 0) {
       e.preventDefault();
+      Axios.defaults.headers = {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
+      };
       Axios.post("/compile", {
         script: this.state.script + this.state.check,
       }).then((response) => {
@@ -115,6 +119,10 @@ if __name__==="__main__":#DON'T CHANGE BELOW
   //when user just wants to test their code
   Test = (e) => {
     e.preventDefault();
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
+    };
     Axios.post("/compile", {
       script: this.state.script + "\n",
     }).then((response) => {
