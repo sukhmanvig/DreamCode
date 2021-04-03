@@ -8,6 +8,10 @@
   height: 100%;
 }
 
+.profile h5, .profile h3 {
+	color: #fbfaf5 !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
