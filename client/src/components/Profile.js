@@ -8,11 +8,15 @@ function Profile() {
   const [error, setError] = useState("");
 
   function getBio(details) {
+    Axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"), //the token is a variable which holds the token
+    };
     Axios.post("/getBio", {
-      username: localStorage.getItem("username"), 
+      username: localStorage.getItem("username"),
     }).then(
       (response) => {
-        console.log(response.data.message);
+        //console.log(response.data.message);
         setBio(response.data.message);
         setDetails(localStorage.getItem("username"));
         setError("");

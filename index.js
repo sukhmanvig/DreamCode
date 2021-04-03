@@ -7,7 +7,7 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
-const DailyQuestions = require('./DailyQuestions.json');
+const DailyQuestions = require("./DailyQuestions.json");
 
 const app = express();
 
@@ -21,11 +21,30 @@ var question_number = 5;
 function ChangeQuestion() {
   question_number = Math.ceil(Math.random() * 5);
 }
-//calls changequestion function every day 
+//calls changequestion function every day
 setInterval(ChangeQuestion, 86400000);
 
 //move these to the database eventually
 let refreshTokens = [];
+
+//authenticate token
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) return res.sendStatus(401);
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, loginUser) => {
+    if (err) return res.sendStatus(403);
+    req.user = loginUser;
+    next();
+  });
+}
+
+//genarate access token
+function generateAccessToken(user, tokenTime) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: tokenTime,
+  });
+}
 
 //ROUTES//
 
@@ -62,15 +81,7 @@ app.post("/users", async (req, res) => {
   }
 });
 
-//get all users
-app.get("/user", authenticateToken, async (req, res) => {
-  const getUser = await pool.query("SELECT * FROM users WHERE username = $1", [
-    req.user.username,
-  ]);
-  res.json(getUser.rows[0].username);
-});
-
-// deals with the tokens
+// takes a refresh token and return a new access token
 app.post("/token", (req, res) => {
   const refreshToken = req.body.token;
   if (refreshToken == null) return res.sendStatus(401);
@@ -81,25 +92,6 @@ app.post("/token", (req, res) => {
     res.json({ accessToken: accessToken });
   });
 });
-
-//authenticate token
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-  if (token == null) return res.sendStatus(401);
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, loginUser) => {
-    if (err) return res.sendStatus(403);
-    req.user = loginUser;
-    next();
-  });
-}
-
-//genarate access token
-function generateAccessToken(user, tokenTime) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: tokenTime,
-  });
-}
 
 //login user
 app.post("/login", async (req, res) => {
@@ -145,7 +137,7 @@ app.delete("/logout", (req, res) => {
   res.sendStatus(204);
 });
 
-//Get leaderboard 
+//Get leaderboard
 app.get("/leaderboard", async (req, res) => {
   try {
     const leaderboard = await pool.query(
@@ -158,7 +150,7 @@ app.get("/leaderboard", async (req, res) => {
 });
 
 //put bio
-app.post("/EditBio", async (req, res) => {
+app.post("/EditBio", authenticateToken, async (req, res) => {
   try {
     const { name } = req.body;
     const { bio } = req.body;
@@ -181,7 +173,7 @@ app.post("/EditBio", async (req, res) => {
 });
 
 //get bio
-app.post("/getBio", async (req, res) => {
+app.post("/getBio", authenticateToken, async (req, res) => {
   try {
     const { username } = req.body;
     const temp = "jayvin";
@@ -204,7 +196,7 @@ app.post("/getBio", async (req, res) => {
 });
 
 //reset password
-app.post("/settingPassword", async (req, res) => {
+app.post("/settingPassword", authenticateToken, async (req, res) => {
   try {
     const { username } = req.body;
     const { token } = req.body;
@@ -215,10 +207,9 @@ app.post("/settingPassword", async (req, res) => {
       "SELECT password FROM users WHERE username = $1",
       [token]
     );
-    console.log(bcryptinfo.rows[0].password);
+    //console.log(bcryptinfo.rows[0].password);
     //checks if db password matches the entered password
     if (await bcrypt.compare(oldpassword, bcryptinfo.rows[0].password)) {
-      console.log("yo");
       //updates the password
       const updatedUser = await pool.query(
         "UPDATE users SET password = $1 WHERE (username= $2 AND password=$3);",
@@ -226,11 +217,13 @@ app.post("/settingPassword", async (req, res) => {
       );
 
       if (updatedUser.rowCount == 0) {
-        await res.status(404).json({ message: "Username or password incorrect" });
+        await res
+          .status(404)
+          .json({ message: "Username or password incorrect" });
         return;
       } else {
-          await res.status(200).json({ message: "Success" });
-          return;
+        await res.status(200).json({ message: "Success" });
+        return;
       }
     }
     await res.status(404).json({ message: "Username or password incorrect" });
@@ -242,24 +235,24 @@ app.post("/settingPassword", async (req, res) => {
 });
 
 //gets settings info
-app.post("/settingInfo", async (req, res) => {
+app.post("/settingInfo", authenticateToken, async (req, res) => {
   try {
     const { token } = req.body;
 
-      //gets user info
-      const userInfo = await pool.query(
-        "SELECT * FROM users WHERE username= $1;",
-        [token]
-      );
+    //gets user info
+    const userInfo = await pool.query(
+      "SELECT * FROM users WHERE username= $1;",
+      [token]
+    );
 
-      if (userInfo.rowCount == 0) {
-        await res.status(404).json({ message: "Username or password incorrect" });
-        return;
-      } else {
-          console.log(userInfo.rows[0]);
-          await res.status(200).json(userInfo.rows[0]);
-          return;
-      }
+    if (userInfo.rowCount == 0) {
+      await res.status(404).json({ message: "Username or password incorrect" });
+      return;
+    } else {
+      //console.log(userInfo.rows[0]);
+      await res.status(200).json(userInfo.rows[0]);
+      return;
+    }
   } catch (err) {
     res.status(500).json({ message: "password change failed" });
     return;
@@ -267,30 +260,32 @@ app.post("/settingInfo", async (req, res) => {
 });
 
 //compile python
-app.post("/compile", async (req, res) => {
+app.post("/compile", authenticateToken, async (req, res) => {
   const { script } = req.body;
   var program = {
-    script : "import random\n"+ script,
+    script: "import random\n" + script,
     language: "python3",
     versionIndex: "0",
     clientId: "d8896e07b8825674c4927370ca242325",
-    clientSecret:"d426f22083d9109ab085bbb0d62066b935f03a5a7163a9550982ff807724e065",
+    clientSecret:
+      "d426f22083d9109ab085bbb0d62066b935f03a5a7163a9550982ff807724e065",
   };
   const options = {
-      method: 'POST',
-      body: JSON.stringify(program),
-      headers: { 'Content-Type': 'application/json' }
-  }
+    method: "POST",
+    body: JSON.stringify(program),
+    headers: { "Content-Type": "application/json" },
+  };
   const resc = await fetch(`https://api.jdoodle.com/v1/execute`, options);
   const json = await resc.json();
   res.send(json);
 });
 
 app.get("/getQuestion", async (req, res) => {
-  res.json({question: DailyQuestions[question_number].prompt, 
-            check: DailyQuestions[question_number].test_code, 
-            starter: DailyQuestions[question_number].starter_code
-          });
+  res.json({
+    question: DailyQuestions[question_number].prompt,
+    check: DailyQuestions[question_number].test_code,
+    starter: DailyQuestions[question_number].starter_code,
+  });
   return;
 });
 

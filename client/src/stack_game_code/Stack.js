@@ -11,7 +11,7 @@ export default class Stack {
     }
 
     pop() {
-        if (this.length == 0)
+        if (this.length === 0)
             return;
         this.length--;
         return this.items.pop();
