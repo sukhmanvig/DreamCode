@@ -26,7 +26,7 @@ import SortCodeSnippets from "./components/sort-code";
 import SortGamepage from "./components/sort-page";
 import PythonLearningResources from "./components/python-learning-resources";
 import PythonProblemRepository from "./components/python-problem-repository";
-import "./css/index.css";
+import LandingPage from "./components/LandingPage";
 //import Axios from "axios";
 
 function App() {
@@ -54,13 +54,12 @@ function App() {
       <Navbar />
       <div style={{ paddingTop: "50px", height: "100%" }}>
         <Switch>
-          <PublicRoute restricted={false} exact path="/">
-            <div className="welcome App">
-              <h2>
-                Welcome, <span> {localStorage.getItem("username")} </span>
-              </h2>
-            </div>
-          </PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/"
+            component={LandingPage}
+          ></PublicRoute>
           <PublicRoute
             restricted={true}
             exact
@@ -77,7 +76,7 @@ function App() {
           <PrivateRoute exact path="/contact" component={Contact} />{" "}
           <PublicRoute exact path="/passwordreset" component={PasswordReset} />{" "}
           <PrivateRoute exact path="/profile" component={Profile} />{" "}
-          <PrivateRoute exact path="/about" />
+          {/*<PrivateRoute exact path="/about" />*/}
           <PrivateRoute exact path="/dashboard" component={Dashboard} />{" "}
           <PrivateRoute exact path="/shell" component={Shell} />{" "}
           <PrivateRoute exact path="/ifgame" component={ifgame} />{" "}
