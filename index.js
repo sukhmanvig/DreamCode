@@ -132,7 +132,7 @@ app.post("/login", async (req, res) => {
 });
 
 //logout users and delete refresh token
-app.delete("/logout", (req, res) => {
+app.post("/logout", (req, res) => {
   refreshTokens = refreshTokens.filter((token) => token !== req.body.token);
   res.sendStatus(204);
 });

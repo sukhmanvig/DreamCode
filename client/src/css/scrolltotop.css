@@ -1,0 +1,45 @@
+.scrollTop {
+  position: fixed;
+  width: 40px;
+  bottom: 70px;
+  right: 1%;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 100%;
+  cursor: pointer;
+  animation: fadeIn 1s;
+  transition: opacity 0.4s;
+  opacity: 0.6;
+  background: #7fffd4;
+  
+}
+.scrollTop .icon {
+  animation: scrollTop 0.5s alternate ease infinite;
+  color: #000000;
+  opacity: 1;
+  z-index: 1001;
+  font-size: 2rem;
+  font-weight:400;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+@keyframes scrollTop {
+  from {
+    transform: translateY(1px);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
