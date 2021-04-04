@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ProfileSample from "./ProfileSample"
 import Axios from "axios";
 import "../css/profile-style.css";
+import ProfileSetXP from "./ProfileSetXP";
 
 function Profile() {
   const [details, setDetails] = useState("");
@@ -30,6 +32,12 @@ function Profile() {
   }
   getBio(details);
 
+  useEffect(() => {
+    document.title = {details} + "'s Profile";
+    ProfileSample();
+    ProfileSetXP();
+  }, []);
+
   return (
     <body id="profilebody">
       <main className="profile">
@@ -44,9 +52,9 @@ function Profile() {
             <div id="user-infosec">
               <h1 id="name-title">{details}</h1>
               <p>LEADERBOARD RANKING</p>
-              <p>#000000000000000000</p>
-              <p>LEVEL</p>
-              <p>XP</p>
+              <p>#<span className="setrank"></span></p>
+              <p>LEVEL <span className="setlvl"></span></p>
+              <p><span className="setxp"></span> XP</p>
               <p className="bio">
                 {bio !== "" ? (
                   <p className="">{bio}</p>
@@ -67,7 +75,7 @@ function Profile() {
 
               <div className="div-lvl">
                 <div>
-                  <h3>Level 0</h3>
+                  <h3>Level <span className="setlvl">0</span></h3>
                 </div>
               </div>
             </div>
