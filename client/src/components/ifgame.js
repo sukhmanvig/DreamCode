@@ -71,7 +71,7 @@ const IfGame = () => {
             </div>
             <div id="game-grid">
               <div className="grid-position">
-                <img id="robot" alt="robot" src="images/robot.png" />
+                <img id="robot" alt="robot" src="images/robot.png" draggable='false' />
               </div>
               <div className="grid-position"></div>
               <div className="grid-position"></div>
@@ -81,7 +81,7 @@ const IfGame = () => {
               <div className="grid-position"></div>
               <div className="grid-position"></div>
               <div className="grid-position">
-                <img id="goal" alt="goal" src="images/treasure.png" />
+                <img id="goal" alt="goal" src="images/treasure.png" draggable='false' />
               </div>
             </div>
             <div id="ifCode">

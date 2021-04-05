@@ -35,8 +35,8 @@ const IfGameJS = ()  => {
 		var position_array = game_grid.childNodes;
 		var robot_start_pos = level_start_positions[level];
 		var goal_pos = level_goal_positions[level];
-		position_array[goal_pos].innerHTML = "<img id='goal' src='../images/treasure.png' />";
-		position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png'i />";
+		position_array[goal_pos].innerHTML = "<img id='goal' src='../images/treasure.png' draggable='false' />";
+		position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png' draggable='false' />";
 
 		//clear game status message 
 		resetAttempts();
@@ -157,7 +157,7 @@ const IfGameJS = ()  => {
 			if (moves >= MAX_MOVES) { //ran out of moves
 				game_status.innerHTML("The robot took too many moves and ran out of steam. Try again.");
 				position_array[robot_array_pos].innerHTML = '';
-				position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png'>";
+				position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png' draggable='false'>";
 				clearInterval(id);
 				return;
 			}
@@ -216,7 +216,7 @@ const IfGameJS = ()  => {
 				if (error) {
 					game_status.innerHTML = "Oops that path wasn't quite right. Try again.";
 					position_array[robot_array_pos].innerHTML = '';
-					position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png' />";
+					position_array[robot_start_pos].innerHTML = "<img id='robot' src='../images/robot.png' draggable='false'/>";
 
 					go_button.disabled = false;
 					clearInterval(id);
@@ -224,7 +224,7 @@ const IfGameJS = ()  => {
 				}
 				position_array[robot_array_pos].innerHTML = '';
 				robot_array_pos = vpos * num_rows + hpos;
-				position_array[robot_array_pos].innerHTML = "<img id='robot' src='../images/robot.png' />";
+				position_array[robot_array_pos].innerHTML = "<img id='robot' src='../images/robot.png' draggable='false'/>";
 				if ((hpos*num_columns + vpos) === goal_pos) {
 					clearInterval(id); //stop animation
 					game_status.innerHTML = "Yay, Rob successfully retrieved the treasure!";
