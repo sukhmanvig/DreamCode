@@ -1,86 +1,91 @@
 #ifcode_body {
-	top: 0px;
-	bottom: 0px;
-	right: 0px;
-	left: 0px;
-	margin: 0px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: 0;
 	font-family: sans-serif;
-	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
+	font-size: 1.5vw;
 }
 
-#content {
-	margin: 0px 60px 10px 65px;
+#ifCodeContent p {
+	margin-bottom: 1vw;
+}
+
+#ifCodeContent {
+	margin: 0 6vw 1vw 6.5vw;
 }
 
 .ifcode_h1 {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+	font-size: 2.5vw;
+	font-weight: 700;
 }
 
 .ifcode_pre {
-	padding: 15px 50px 15px 50px;
+	padding: 1.5vw 5vw 1.5vw 5vw;
 	background-color: #050b1f;
 	color: #6bcae2;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
-#toGameButton {
+#ifCodeContent #toGameButton {
 	display: inline-block;
 	background-color: #050b1f;
 	color: #6bcae2;
 	text-align: center;
-	font: normal 20px verdana;
-	padding: 15px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	font: normal 2vw verdana;
+	padding: 1.5vw;
+	margin-top: 1.5vw;
+	margin-bottom: 1.5vw;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
 
-#toGameButton:hover {
+#ifCodeContent #toGameButton:hover {
 	background-color: #fbfaf5;
 }
 
 .ifNotes {
-	margin-bottom: 15px;
+	margin-bottom: 1.5vw;
 }
 
-#fontsizer {  
+#ifCodeContent #fontsizer {  
 	display: inline-block;	
 	font-family: calibri;
 }
-#fontsizer ul {
+#ifCodeContent #fontsizer ul {
 	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
-#fontsizer li {
+#ifCodeContent #fontsizer li {
 	text-align: center;
-        display: inline-block;
 	margin: 0;
 	float: left;
-	width: 50px;		
-	height: 50px;
-	line-height: 50px;
+	width: 5vw;		
+	height: 5vw;
+	line-height: 5vw;
 	background: #050b1f;
 	color: #6bcae2;
 }
 
-#fontsizer li:hover {
+#ifCodeContent #fontsizer li:hover {
 	background: #fbfaf5;
 }
 
-#fontsizer li:nth-child(2) {
-	font-size: 20px;
+#ifCodeContent #fontsizer li:nth-child(2) {
+	font-size: 2vw;
 }
 
-#fontsizer li:nth-child(3) {
-	font-size: 30px;
+#ifCodeContent #fontsizer li:nth-child(3) {
+	font-size: 3vw;
 	border-radius: 0px 10px 10px 0px;
 }
 
-#fontsizer li:nth-child(1) {
+#ifCodeContent #fontsizer li:nth-child(1) {
 	border-radius: 10px 0px 0px 10px;
 }
