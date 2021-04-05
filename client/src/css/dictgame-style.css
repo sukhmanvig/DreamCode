@@ -1,100 +1,96 @@
 #dictgame_body {
-	position:relative;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	width: 100%;
-	height: 100vh;
-	margin: 0px;
-	padding: 0px;
-	padding-bottom: 50px;
-	padding-top: 10px;
+	padding: 0;
+	padding-bottom: 5vw;
+	padding-top: 1vw;
 	font-family: sans-serif;
-	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
+	font-size: 1vw;
 }
 
 #dictgame_content {
-	margin: 0px 60px 10px 65px;
+	margin: 0px 6vw 1vw 6.5vw;
+}
+
+#dictgame_content p {
+	margin-bottom: 1vw;
+}
+
+#dictgame_content .dictGameButton:hover:enabled {
+	background-color: #d5d5d5;
 }
 
 .dictgame_pre {
-	color: inherit;
 	font-size: 100%;
-	margin-left: 20px;
+	margin: 1vw 2vw 2vw 2vw;
 }
 
 .dictgame_h1 {
-	margin: 0px;
-	font: bold 30px verdana;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	font: bold 3vw verdana;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
 }
 
 .dictgame_h2, .dictgame_h3 {
-	font: bold 22.5px verdana;
+	font: bold 1.5vw verdana;
 	text-align: center;
 	background-color: #0d659d;
 	color: #fbfaf5;
 	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 1vw;
 }
 
-.dictgame_h2 {
-	font: bold 24px verdana;
-}
 
 [class^='dictGameButton'] {
 	display: block;
 	text-align: center;
-	font: normal 15px verdana;
+	font: normal 1.1vw verdana;
 	width: 100%;
-	padding: 10px;
-	margin-top: 10px;
-	margin-bottom: 15px;
+	padding: 1vw;
+	margin-top: 1vw;
+	margin-bottom: 1.5vw;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border: solid 1px rgba(0,0,0,0.2);
-}
-
-
-
-[class^='dictGameSelect'] {
-	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-	border: solid 1px rgba(0,0,0,0.2);
-	padding: 10px 5px 10px 5px;
-	font: bold 14px verdana;
-	margin-left: 5px;
 }
 
 /*Dictionary Containers*/
 
-#dictGameWindow, #dictContainer, #solDictContainer, #gameActions {
+#dictGameWindow, #dictContainer, #solDictContainer, #dictgame_content #gameActions {
 	display: flex;
 	flex-direction: row;
 }
 
-#dictKeys, #dictValues, .dictOuterContainer, #dictModify, #dictRemove {
+#dictgame_content #gameActions {
+	margin-top: 2vw;
+}
+
+#dictKeys, #dictValues, .dictOuterContainer, #allDicts #dictModify, #dictRemove {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
 .dictOuterContainer, #dictModify {
-	margin-right: 40px;
+	margin-right: 4vw;
+}
+
+.dictOuterContainer {
+	margin-bottom: 4vw;
 }
 
 /*Dictionary Add/Remove UI */
 #dictModify select, #dictRemove select {
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border: solid 1px rgba(0,0,0,0.2);
-	padding: 10px 5px 10px 5px;     
-	font: normal 14px verdana;
-	margin-left: 5px;
-	margin-bottom: 10px;
+	padding: 1vw .5vw 1vw .5vw;     
+	font: normal 1.1vw verdana;
+	margin-left: .5vw;
+	margin-bottom: 1vw;
 }
 
-.keyBlock, .valueBlock {
+#dictgame_content label {
+	display: block;
+}
+
+#dictgame_content .keyBlock, #dictgame_content .valueBlock {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -103,37 +99,30 @@
 	background-color: #555;
 }
 
+#dictgame_content img {
+	width: 10vw;
+	height: 10vw;
+}
+
 #dictPlayAgain {
 	visibility: hidden;
 	display: block;
 }
 
-
 /*Code output section*/
 #dictCode {
 	background-color: #050b1f;
-	color: #fbfaf5;
-	width: 26%;
-	max-height: 85vh;
 }
 
 #dictCode > #dictCodeOutput {
-	visibility: inherit;
-	text-align: left;
-	background-color: #050b1f;
 	color: #6bcae2;
-	font-size: 17px;
-}
-
-#dictCode > .dictgame_h2 {
-	margin-top: 0;
-	width: auto;
+	font-size: 1.1vw;
 }
 
 /*Other CSS*/
 
 #dictGameDescription {
-	margin-right: 50px;
+	margin-right: 5vw;
 	text-align: center;
 }
 

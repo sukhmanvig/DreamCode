@@ -86,6 +86,7 @@ const createNode = type => {
     imgNode.className += (' ' +  type);
     imgNode.src = 'images/dict' + (type.charAt(0).toUpperCase() + type.slice(1)) + '.png';
     imgNode.alt =  type;
+	imgNode.draggable = false;
 
     return imgNode;
 }
@@ -343,13 +344,12 @@ const PrintCodeLine = codeLine => {
 //show/hide the code section
 const ChangeCodeVisibility = () => {
 	var code = document.querySelector("#dictCode");
-	if (getComputedStyle(code).visibility === "hidden") {
-		code.style.visibility = "visible";
+	if (getComputedStyle(code).display === "block") {
+		code.style.display = "none";
 	}
 	else {
-		code.style.visibility = "hidden";
+		code.style.display = "block";
 	}
 }
-
 
 export {GameSetup, GenerateDict, CheckIfWon, GameRestart};
