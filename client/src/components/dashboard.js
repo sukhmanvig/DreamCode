@@ -24,13 +24,9 @@ const Dashboard = () => {
 
   return (
     <Fragment className="dashboard navbar">
-      <title> Dashboard </title>
       <body className="dashboard">
-        <br></br>
-
-        <div id="content">
+        <div id="gameContent">
           <header> Dashboard </header>
-
           <div id="tophalf">
               <Link to="/Profile">
                 <input type="submit" id="profile" value="PROFILE" />

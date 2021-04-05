@@ -1,4 +1,4 @@
-#content {
+#gameContent {
   margin: 0px 6vw 1vw 6.5vw;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   font-family: Verdana;
 }
 
-#content input[type=submit] {
+#gameContent input[type=submit] {
   height: 7.5vw;
 }
 
@@ -16,7 +16,7 @@
 .dashboard header {
   font: bold 2.5vw verdana;
   width: 100%;
-  margin: 0 0 1.5vw 0;
+  margin: 2vw 0 2vw 0;
 }
 
 .dashboard h1 {
@@ -88,7 +88,7 @@
   color: #cd7f32;
 }
 
-#content .category {
+#gameContent .category {
   width: 100%;
   height: 50vw;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -98,38 +98,38 @@
   text-align: center; 
 }
 
-#content .category-games {
+#gameContent .category-games {
   text-align: left;
   margin-top: 4vw;
 }
 
-#content #js-category-name {
+#gameContent #js-category-name {
   display: inline-block;
 }
 
-#content .arrow {
+#gameContent .arrow {
   display: inline-block;
   border: solid black;
   border-width: 0 .2vw .2vw 0;
   padding: .45vw;
 }
-#content .right {
+#gameContent .right {
   margin: -1vw 0 0 1vw;
   transform: rotate(315deg);
 }
-#content .left {
+#gameContent .left {
   margin: 1vw 1vw 0 0;
   transform: rotate(-225deg);
 
 }
-#content .game {
+#gameContent .game {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   margin: 0 3.65vw 3vw 3.65vw;
   width: 20vw;
 }
-#content .search-bar {
+#gameContent .search-bar {
   width: 80%;
   margin: 3vw 0 0 0;
 }
