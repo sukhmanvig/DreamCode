@@ -10,19 +10,17 @@
   height: 7.5vw;
 }
 
-.dashboard hr {
-  width: 100%;
+#gameContent input[type=submit]:hover {
+  background-color: #d5d5d5;
 }
+
 .dashboard header {
   font: bold 2.5vw verdana;
-  width: 100%;
   margin: 2vw 0 2vw 0;
 }
 
 .dashboard h1 {
-  float: left;
   font: bold 2vw verdana;
-  width: 37%;
   margin: 2vw 0 0 0;
 }
 #profile {
@@ -56,8 +54,8 @@
 
 #leaderboard ol {
   list-style-type: none;
-  margin: 1vw 0px 2vw 0px;
-  padding: 0px;
+  margin: 1vw 0 2vw 0;
+  padding: 0;
 }
 #leaderboard li {
   text-align: left;
@@ -89,8 +87,6 @@
 }
 
 #gameContent .category {
-  width: 100%;
-  height: 50vw;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
@@ -113,6 +109,11 @@
   border-width: 0 .2vw .2vw 0;
   padding: .45vw;
 }
+
+#gameContent .arrow:hover {
+  cursor: pointer;
+}
+
 #gameContent .right {
   margin: -1vw 0 0 1vw;
   transform: rotate(315deg);
@@ -127,20 +128,25 @@
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   margin: 0 3.65vw 3vw 3.65vw;
-  width: 20vw;
+  width: 91%;
 }
 #gameContent .search-bar {
   width: 80%;
   margin: 3vw 0 0 0;
+  font-size: 1vw;
 }
 
+
+/*For desktop*/
 @media only screen and (min-width: 768px) {
   #leaderboard {
     width: 40%;
     margin: 0 0 0 3vw;
   }
-
   #profile, .daily-challenge {
     width: 50%;
+  }
+  #gameContent .category .game {
+    width: 24%;
   }
 }
