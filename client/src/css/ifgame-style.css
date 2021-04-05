@@ -10,7 +10,7 @@
 	margin-bottom: 1vw;
 }
 
-#ifgame_body button:hover {
+#ifgame_body button:hover:enabled {
 	background-color: #d5d5d5;
 }
 
