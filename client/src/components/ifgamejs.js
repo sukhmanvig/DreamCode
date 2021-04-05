@@ -2,7 +2,7 @@ const IfGameJS = ()  => {
 	//Add onclick listeners
 	document.querySelector("#robot-submit").addEventListener('click', ()=>{robotGo();});
 	document.querySelector("#robot-try-again").addEventListener('click', ()=>{robotRestart();});
-	document.querySelector("#show-hide-code").addEventListener('click', ()=>{changeCodeVisibility();});
+	document.querySelector("#show-hide-ifGameCode").addEventListener('click', ()=>{changeCodeVisibility();});
 	
 	//These will become PHP session variables 
 	var MAX_MOVES = 20;
@@ -53,8 +53,8 @@ const IfGameJS = ()  => {
 		var bottom_wall_code = ''; //action to perform on bottom wall
 		var default_code = ''; //default action to perform
 
-		var code_output = document.querySelector("#code-output");
-		var code_elements = document.querySelector("#code-elements");
+		var code_output = document.querySelector("#ifGameCode-output");
+		var code_elements = document.querySelector("#ifGameCode-elements");
 		var code = ''; //the user's actions translated to python code
 
 		switch (on_front_wall) {
@@ -229,7 +229,6 @@ const IfGameJS = ()  => {
 					clearInterval(id); //stop animation
 					game_status.innerHTML = "Yay, Rob successfully retrieved the treasure!";
 					document.querySelector("#robot-try-again").style.visibility = "visible";
-					document.querySelector("#next-level").style.visibility = "visible";
 					
 					// Save game TODO
 					submitScore(localStorage.getItem("username"), attempts);
