@@ -1,5 +1,6 @@
-import React from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
+import Axios from "axios";
+import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
@@ -27,31 +28,36 @@ import SortGamepage from "./components/sort-page";
 import PythonLearningResources from "./components/python-learning-resources";
 import PythonProblemRepository from "./components/python-problem-repository";
 import LandingPage from "./components/LandingPage";
+import ScrollToTop from "./components/ScrollToTop";
 //import Axios from "axios";
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [pathname]);
+
   let history = useHistory();
   const Logout = () => {
-    {
-      /*let token = localStorage.getItem("accessToken");
+    let token = localStorage.getItem("refreshToken");
     Axios.defaults.headers = {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token, //the token is a variable which holds the token
     };
-    Axios.get("/user", {
+    Axios.post("/logout", {
       email: "details.email",
-    }).then((response) => {
-      console.log(response);
-    });*/
-    }
+    });
     localStorage.clear();
+    history.push("/");
     window.location.reload(false);
-    return history.push("/");
+    return null;
   };
 
   return (
     <div>
       <Navbar />
+      <ScrollToTop />
       <div style={{ paddingTop: "50px", height: "100%" }}>
         <Switch>
           <PublicRoute
