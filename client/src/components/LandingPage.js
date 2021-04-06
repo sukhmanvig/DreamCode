@@ -65,7 +65,7 @@ function LandingPage() {
 						<div className="devImg"><img/></div>
 						<div className="cardInfo">
 						<h3>Jayvin Chang</h3>
-						<p>Computer Science Student, University of Toronto Mississauga.</p>
+						<p>CS student at UofT. I enjoy developing web applications and information security. Aspiring to become a ReactJS developer.</p>
 						</div>
 					</div>
 					<div className="customCard">						
