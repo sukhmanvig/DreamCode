@@ -13,7 +13,7 @@ return (
           <label className="textOverImage" style={{backgroundImage: 'url("images/udemy.png")'}}>
           <input type="checkbox"></input>
           <a href="https://www.udemy.com/course/complete-python-bootcamp/?LSNPUBID=jU79Zysihs4&siteID=jU79Zysihs4-wy57L5rBsHZNKZ2IjcYiTg" target="_blank">Udemy</a>
-          <div>
+          <div className="fontsize">
             Introduction of Python, Python objects and Data structure basics, Python statements
           </div>
           </label>
@@ -26,7 +26,7 @@ return (
         <label className="textOverImage" style={{backgroundImage: 'url("images/codeAcademy.png")'}}>
         <input type="checkbox"></input>
         <a href="https://www.codecademy.com/learn/learn-python" target="_blank">codeAcademy</a>
-        <div>
+        <div className="fontsize">
           Conditionals and control flow, Functions, List and dictionaries, Loops
         </div>
         </label>
@@ -39,7 +39,7 @@ return (
         <label className="textOverImage" style={{backgroundImage: 'url("images/tutorialspoint.png")'}}>
         <input type="checkbox"></input>
         <a href="https://www.tutorialspoint.com/python/" target="_blank">Tutorials Point</a>
-        <div>
+        <div className="fontsize">
           Basic syntax, Variable types, Basic operators, Decision making
         </div>
         </label>
@@ -52,7 +52,7 @@ return (
         <label className="textOverImage" style={{backgroundImage: 'url("images/studytonight.jpg")'}}>
         <input type="checkbox"></input>
         <a href="https://www.studytonight.com/" target="_blank">StudyTonight</a>
-        <div>
+        <div className="fontsize">
           Modules and functions, Lists, Data types, Conditional statements
         </div>
         </label>
@@ -65,7 +65,7 @@ return (
         <label className="textOverImage" style={{backgroundImage: 'url("images/intellipaat.jpg")'}}>
         <input type="checkbox"></input>
         <a href="https://intellipaat.com/blog/tutorial/python-tutorial/" target="_blank">IntelliPaat</a>
-        <div>
+        <div className="fontsize">
           Conditional control flow, Modules, Exception handling, Regular expressions
         </div>
         </label>
