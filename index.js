@@ -157,6 +157,20 @@ app.get("/leaderboard", async (req, res) => {
   }
 });
 
+//Post to leaderboard
+app.post("/leaderboard", async (req, res) => {
+  try {
+    const { uid } = req.body;
+    const { thisscore } = req.body;
+    const leaderboard = await pool.query(
+      "UPDATE Leaderboard SET points = points + ${thisscore} WHERE uid = ${uid};"
+    );
+    res.json(leaderboard.rows);
+  } catch (err) {
+    console.error(err);
+  }
+})
+
 //put bio
 app.post("/EditBio", async (req, res) => {
   try {
