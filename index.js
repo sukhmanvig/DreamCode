@@ -127,6 +127,7 @@ app.post("/login", async (req, res) => {
           accessToken: accessToken,
           refreshToken: refreshToken,
           username: loginUser.rows[0].username,
+          users_id: loginUser.rows[0].users_id
         });
       } else {
         res.json({ message: "Password Incorrect!" });
@@ -162,12 +163,18 @@ app.post("/leaderboard", async (req, res) => {
   try {
     const { uid } = req.body;
     const { thisscore } = req.body;
+    console.log(uid, thisscore);
     const leaderboard = await pool.query(
-      "UPDATE Leaderboard SET points = points + ${thisscore} WHERE uid = ${uid};"
+      "UPDATE Leaderboard SET points = points + $2 WHERE uid = $1;",
+      [uid, thisscore]
     );
     res.json(leaderboard.rows);
+    res.sendStatus(204);
+    return;
   } catch (err) {
     console.error(err);
+    res.sendStatus(500);
+    return;
   }
 })
 

@@ -17,6 +17,11 @@ const SortGameJS = () => {
 	
 	/** Add the on-click listeners */
 	document.querySelector("#init-array").addEventListener('click', ()=>{
+		// If won reset
+		if (gamestate.won)
+			postToLeaderboard(array.length*array.length - moves);
+		gamestate.won = null;
+
 		// Perform array initialization
 		var entries = parseInt(document.querySelector("#init-array-entries").value);
 		if (isNaN(entries))
@@ -184,7 +189,7 @@ const SortGameJS = () => {
 				gamestate.autosolvehint[3] = lowercount;
 	
 				// Update display
-				document.querySelector("#gamehint").innerHTML = `Perform Pivot on ${pivotvalue} from #${pivotindex}`;
+				document.querySelector("#gamehint").innerHTML = `Pivot phase: Perform Pivot on ${pivotvalue} from #${pivotindex}`;
 				for (var k = 0; k < array.length; k++) {
 					if (k >= ini && k < fin)
 						document.querySelector(`#swap_${k}`).className = "game_button";
@@ -215,7 +220,7 @@ const SortGameJS = () => {
 			gamestate.autosolvehint[3] = lowercount;
 
 			// Update display
-			document.querySelector("#gamehint").innerHTML = `Performed partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
+			document.querySelector("#gamehint").innerHTML = `Partition Phase: Performed partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickPartition";
 			for (var k = 0; k < array.length; k++) {
 				console.log(ini + " " + k + " " + fin);
@@ -241,7 +246,7 @@ const SortGameJS = () => {
 			gamestate.autosolvehint[5].push(ini+lowercount-1);
 
 			// Update display
-			document.querySelector("#gamehint").innerHTML = `Declared partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
+			document.querySelector("#gamehint").innerHTML = `Indexing Phase: Declared partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickRecursive"
 			for (var k = 0; k < array.length; k++) {
 				if (k >= ini && k < fin) {
@@ -269,7 +274,7 @@ const SortGameJS = () => {
 			// Update display
 			gamestate.autosolve = "Quick";
 			gamestate.autosolvehint[0] = gamestate.autosolvehint[4].pop();
-			document.querySelector("#gamehint").innerHTML = `${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
+			document.querySelector("#gamehint").innerHTML = `Recursive Calls: ${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
 			for (var k = 0; k < array.length; k++) {
 				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
 					document.querySelector(`#swap_${k}`).className = "game_button hinted";
@@ -495,23 +500,20 @@ const SortGameJS = () => {
 		for (var k = 0; k < elems.length; k++) {
 			elems[k].setAttribute("disabled", "true");
 		}
+	}
 
-		Axios.post("/highscore", {
-			username: details.username,
-			score: -1
+	/**Post to the leaderboard.
+	 * @param {*} score 
+	 */
+	function postToLeaderboard(score) {
+		Axios.post("/leaderboard", {
+			uid: localStorage.getItem("users_id"),
+			thisscore: score
 		}).then((response) => {
 			if (response.data.message) {
-				//setLoginStatus(response.data.message);
-				setError(response.data.message);
+				console.error(response.data.message);
 			} else {
-				localStorage.setItem("username", details.username);
-				localStorage.setItem("email", details.email);
-				localStorage.setItem("isLogin", true);
-				localStorage.setItem("accessToken", response.data.accessToken);
-				localStorage.setItem("refreshToken", response.data.refreshToken);
-				setError("");
-				history.push("/");
-				window.location.reload(false);
+				console.log(`User #${localStorage.getItem("users_id")} earned ${score} points. `);
 			}
 		});
 	}
