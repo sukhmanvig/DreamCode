@@ -7,11 +7,15 @@
   box-sizing: border-box;
 }
 
+.profile p {
+  color: black !important;
+}
+
 .profile h3 {
 	color: #fbfaf5 !important;
 }
 
-.profile h5 {
+.profile h5, .profile p, .profile p span {
   color: black !important;
 }
 html {

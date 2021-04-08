@@ -17,7 +17,7 @@ function Settinglist() {
         <ul className="settings setting-list">            
                         <li>
                             <div class="form-check">
-                                <label class="form-check-label" for="exampleCheck1">Recieve newsletters</label>
+                                <label class="form-check-label" for="exampleCheck1">Receive newsletters</label>
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
                             </div>
                         </li>
@@ -90,7 +90,6 @@ function General({ uname, email, date }) {
             >
               Edit Bio
             </Button>
-            <Settinglist />
           </Col>
         </Row>
       </Container>
@@ -218,7 +217,7 @@ function Settings() {
         </Col>
         <Col md={3} sm={12}>
           <div className="acc-preview">
-            <p>{uname}'s been a member since ' + {date}</p>
+            <p>{uname}'s been a member since {date}</p>
           </div>
         </Col>
         <Col

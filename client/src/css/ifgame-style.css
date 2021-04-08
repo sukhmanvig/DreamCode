@@ -72,6 +72,10 @@
 	margin-left: .5vw;
 }
 
+#ifGameContent .ifgame_select option {
+	color: black !important;
+}
+
 #ifGameContent #game-window {
 	position: relative;
 	display: grid;
@@ -131,6 +135,7 @@
 }
 
 #ifGameContent #ifGameCode-elements > div {
+	color: white !important;
 	margin-top: .5vw;
 	margin-left: 1vw;
 	margin-right: 1vw;

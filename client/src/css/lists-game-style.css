@@ -219,6 +219,7 @@
 #instructions h1 {
   font-size: 50px;
   margin-bottom: 20px;
+  color: #3694ff !important;
 }
 #instructions p {
   color: #fbfaf5 !important;
@@ -508,11 +509,8 @@
     font-weight: initial;
   }
   .listgamestyle #instructions h1 {
-
     font-family: arial, "calibri light", sans-serif;
-    color: white;
   }
-
 }
 @media (max-width: 1100px) {
   #gameWindow {

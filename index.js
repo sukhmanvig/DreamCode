@@ -59,8 +59,13 @@ app.post("/users", async (req, res) => {
       const date_created = new Date().toISOString().slice(0, 10);
 
       const newUser = await pool.query(
-        "INSERT INTO users (username, email, password, bio, date_created) VALUES($1, $2, $3, $4, $5)",
+        "INSERT INTO users (username, email, password, bio, date_created) VALUES($1, $2, $3, $4, $5) RETURNING users_id",
         [username, email, password, bio, date_created]
+      );
+      
+      const addToLeaderboard = await pool.query(
+        "INSERT INTO leaderboard (uid, points) VALUES($1, 0)",
+	 [newUser.rows[0].users_id]
       );
 
       //authorized the user

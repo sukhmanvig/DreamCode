@@ -5,8 +5,9 @@ html {
   --navbg: transparent linear-gradient(90deg, #7fffd4, #c7d8e7);
   --profilebg: url('../images/pbg-dark.png');
   --bg-panel: #ebebeb;
-  --color-headings: #0077ff;
+  --color-headings: black;
   --nav-links: black;
+  --nav-links-hover: #7fffd4;
   --logo: #0d6efd;
   --color-text: #333333;
 }
@@ -14,10 +15,11 @@ html {
 html[data-theme="dark"] {
   --bg: #333333;
   --navbg: #222222;
-  --profilebg: #222222;
+  --profilebg: #333333;
   --bg-panel: #434343;
   --color-headings: #3694ff;
   --nav-links: #b5b5b5;
+  --nav-links-hover: #c7d8e7;
   --logo: #0d6efd;
   --color-text: #b5b5b5;
 }
@@ -34,8 +36,12 @@ html[data-theme="dark"] {
 	background: var(--navbg);
 }
 
-.topnav a:not(.links), .bottomnav a:not(.links) {
+.topnav a:not(.logo), .bottomnav a:not(.logo) {
 	color: var(--nav-links) !important;
+}
+
+.topnav a:hover:not(.logo), .bottomnav a:hover:not(.logo) {
+	background-color: var(--nav-links-hover) !important;
 }
 
 .links {
@@ -43,7 +49,7 @@ html[data-theme="dark"] {
 }
 
 #profilebody {
-	background: var(--profilebg);
+	background: var(--profilebg) !important;
 }
 
 body, #content, [id$='body'], [id$='content'] {

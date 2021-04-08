@@ -19,6 +19,7 @@
 }
 
 .dictgame_pre {
+	color: #6bcae2 !important;
 	font-size: 100%;
 	margin: 1vw 2vw 2vw 2vw;
 }
@@ -88,6 +89,10 @@
 	margin-bottom: 1vw;
 }
 
+#dictModify select option, #dictRemove select option {
+	color: black !important;
+}
+
 #dictgame_content label {
 	display: block;
 }
@@ -118,7 +123,6 @@
 }
 
 #dictCode > #dictCodeOutput {
-	color: #6bcae2 !important;
 	font-size: 1.1vw;
 }
 

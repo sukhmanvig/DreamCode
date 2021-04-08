@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-
+import { Link } from 'react-router-dom';
 import "../css/index.css";
 import "../css/landing-style.css";
 import LandingCarousel from "./LandingCarousel";
@@ -19,7 +19,7 @@ function LandingPage() {
           <div>
           <h1 id="logoTitle">DreamCode</h1>
           <p className="dctagline">Game. Code. Dream.</p>
-          <div id="btnStartLearn">Start Learning</div>
+          <Link to="/login" style={{textDecoration: 'none' }}><div id="btnStartLearn">Start Learning</div></Link>
           </div>
         </div>
 
