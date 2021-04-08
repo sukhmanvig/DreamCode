@@ -87,36 +87,16 @@ function App() {
           <PrivateRoute exact path="/shell" component={Shell} />{" "}
           <PrivateRoute exact path="/ifgame" component={ifgame} />{" "}
           <PrivateRoute exact path="/ifcode" component={IfCodeSnippets} />{" "}
-          <PrivateRoute
-            exact
-            path="/treetravtut"
-            component={TreeTravTutorial}
-          />
+          <PrivateRoute exact path="/treetravtut"component={TreeTravTutorial}/>
           <PrivateRoute exact path="/treetravgame" component={TreeTravGame} />
-          <PrivateRoute
-            exact
-            path="/dictcode"
-            component={DictCodeSnippets}
-          />{" "}
+          <PrivateRoute exact path="/dictcode"component={DictCodeSnippets} />{" "}
           <PrivateRoute exact path="/dictgame" component={DictGame} />{" "}
           <PrivateRoute exact path="/stack_game" component={StackGame} />{" "}
           <PrivateRoute exact path="/queue_game" component={QueueGame} />{" "}
           <PrivateRoute exact path="/listsgame" component={ListsGame} />{" "}
-          <PrivateRoute
-            exact
-            path="/ListsGameTutorial"
-            component={ListsGameTutorial}
-          />
-          <PrivateRoute
-            exact
-            path="/pythonlearn"
-            component={PythonLearningResources}
-          />
-          <PrivateRoute
-            exact
-            path="/PythonProblemRepository"
-            component={PythonProblemRepository}
-          />
+          <PrivateRoute exact path="/ListsGameTutorial" component={ListsGameTutorial} />
+          <PrivateRoute exact path="/pythonlearn" component={PythonLearningResources} />
+          <PrivateRoute exact path="/PythonProblemRepository" component={PythonProblemRepository} />
           <PrivateRoute exact path="/sort-page" component={SortGamepage} />
           <PrivateRoute exact path="/sort-code" component={SortCodeSnippets} />
           <Route exact path="/logout" component={Logout} />

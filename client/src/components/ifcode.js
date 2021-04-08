@@ -13,7 +13,7 @@ const IfCodeSnippets = () => {
     <Fragment>
       <title>Learn If Statements</title>
       <body id="ifcode_body">
-        <div id="content">
+        <div id="ifCodeContent">
           <h1 className="ifcode_h1">If Statements</h1>
           <div className="ifNotes">
             <div id="fontsizer">

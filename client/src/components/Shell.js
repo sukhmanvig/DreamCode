@@ -128,8 +128,63 @@ if __name__==="__main__":#DON'T CHANGE BELOW
     }).then((response) => {
       this.DisplayOutput(response);
     });
-  };
+    };
 
+    render() {
+        return (
+        <Container className=" mt-5">
+            <Modal show={this.state.fail} onHide={this.handleFailClose}>
+                <Modal.Header>
+                <Modal.Title>Attempt Limit reached</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Sorry! You only get one attempt per day but you can visit our code repository for more practice questions.</Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={this.handleFailClose}>
+                    Close
+                </Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal show={this.state.success} onHide={this.handleSuccessClose}>
+                <Modal.Header>
+                <Modal.Title>Congrats</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Congratulations! You got the challenge done. If you want more questions visit our code repository.</Modal.Body>
+                <Modal.Footer>
+                <Button variant="success" onClick={this.handleSuccessClose}>
+                    Close
+                </Button>
+                </Modal.Footer>
+            </Modal>
+            <Row>
+                <Col className="mb-5">
+                    <p className="display-3">Daily Challenge</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className="lead">{this.state.question}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col noGutters md={8} sm={{ span: 12}}>
+                    <form >
+                        <CodeMirror className=" mt-5"
+                            ref={this.nameRef}
+                            type="text"
+                            autoComplete="off"
+                            id="name"
+                            value={this.state.script}
+                            options={{
+                                mode: 'python',
+                                theme: 'cobalt',
+                                lineNumbers: true,
+                                indentWithTabs: true,
+                                smartIndent: true,
+                            }}
+                            onBeforeChange={(editor, data, script) => {
+                                this.handleInputChange("script", script);
+                                this.value = this.state.script;
+                            }}
   render() {
     return (
       <Container className=" mt-5">

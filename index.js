@@ -119,6 +119,7 @@ app.post("/login", async (req, res) => {
           accessToken: accessToken,
           refreshToken: refreshToken,
           username: loginUser.rows[0].username,
+          users_id: loginUser.rows[0].users_id
         });
       } else {
         res.json({ message: "Password Incorrect!" });
@@ -148,6 +149,25 @@ app.get("/leaderboard", async (req, res) => {
     console.error(err);
   }
 });
+
+//Post to leaderboard
+app.post("/leaderboard", async (req, res) => {
+  try {
+    const { uid } = req.body;
+    const { thisscore } = req.body;
+    console.log(uid, thisscore);
+    const leaderboard = await pool.query(
+      "UPDATE Leaderboard SET points = points + $2 WHERE uid = $1;",
+      [uid, thisscore]
+    );
+    res.status(204).json(leaderboard.rows);
+    return;
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({});
+    return;
+  }
+})
 
 //put bio
 app.post("/EditBio", authenticateToken, async (req, res) => {
