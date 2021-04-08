@@ -59,28 +59,30 @@ const DictGame = () => {
 	   					</div>
 					</div>
 	    			</div>
-				<div className="dictOuterContainer">
-	    				<h2 className="dictgame_h2">myDict</h2>
-		 			<div id="dictContainer">
-	    				        <div id="dictKeys">
-			 				<h3 className="dictgame_h3">Keys</h3>
-	    		 	 		</div>
-	    			 		<div id="dictValues">
-	    		 				<h3 className="dictgame_h3">Values</h3>
-	    			 		</div>
-	    				</div>
-	    			</div>
-				<div className="dictOuterContainer">
-	    				<h2 className="dictgame_h2">targetDict</h2>
-					<div id="solDictContainer">
-	    					 <div id="dictKeys">
-						 	<h3 className="dictgame_h3">Keys</h3>
-	    					 </div>
-	    					 <div id="dictValues">
-	    		 				<h3 className="dictgame_h3">Values</h3>
-	    		 		 	 </div>
-	   				</div>
-	    			</div>
+				<div className="allDicts">
+					<div className="dictOuterContainer">
+							<h2 className="dictgame_h2">myDict</h2>
+						<div id="dictContainer">
+									<div id="dictKeys">
+								<h3 className="dictgame_h3">Keys</h3>
+								</div>
+								<div id="dictValues">
+									<h3 className="dictgame_h3">Values</h3>
+								</div>
+							</div>
+						</div>
+					<div className="dictOuterContainer">
+							<h2 className="dictgame_h2">targetDict</h2>
+						<div id="solDictContainer">
+								<div id="dictKeys">
+								<h3 className="dictgame_h3">Keys</h3>
+								</div>
+								<div id="dictValues">
+									<h3 className="dictgame_h3">Values</h3>
+								</div>
+						</div>
+					</div>
+				</div>
 				<div id="dictCode">
               				<h2 className="dictgame_h2">Code For Actions</h2>
               				<div id="dictCodeOutput"></div>

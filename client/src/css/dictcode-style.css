@@ -1,87 +1,85 @@
 #dictcode_body {
-	top: 0px;
-	bottom: 0px;
-	right: 0px;
-	left: 0px;
-	margin: 0px;
 	font-family: sans-serif;
-	background-image: linear-gradient(to right, #c7d8e7, rgb(248,248,255));
+	font-size: 1.5vw;
 }
 
 .dictcode_h1 {
-	font-family: verdana;
-	margin-top: 23px;
-	margin-bottom: 25px;
+	font: bold 2.5vw verdana;
+	margin-top: 2.3vw;
+	margin-bottom: 2.5vw;
 }
 
-#content {
-	margin: 0px 60px 10px 65px;
+#dictCodeContent {
+	margin: 0 6vw 1vw 6.5vw;
+}
+
+#dictCodeContent p {
+	margin-bottom: 1vw;
 }
 
 .dictcode_pre {
-	padding: 15px 50px 15px 50px;
+	padding: 1.5vw 5vw 1.5vw 5vw;
 	background-color: #050b1f;
 	color: #6bcae2;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
-#toGameButton {
+#dictCodeContent #toGameButton {
 	display: inline-block;
 	background-color: #050b1f;
 	color: #6bcae2;
 	text-align: center;
-	font: normal 20px verdana;
-	padding: 15px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	font: normal 2vw verdana;
+	padding: 1.5vw;
+	margin-top: 1.5vw;
+	margin-bottom: 1.5vw;
 	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 	border: solid 1px rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
 
-#toGameButton:hover {
+#dictCodeContent #toGameButton:hover {
 	background-color: #fbfaf5;
 }
 
 .dictNotes {
-	margin-bottom: 15px;
+	margin-bottom: 1.5vw;
 }
 
-#fontsizer {  
+#dictCodeContent #fontsizer {  
 	display: inline-block;	
 	font-family: calibri;
 }
-#fontsizer ul {
+#dictCodeContent #fontsizer ul {
 	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
-#fontsizer li {
+#dictCodeContent #fontsizer li {
 	text-align: center;
-        display: inline-block;
 	margin: 0;
 	float: left;
-	width: 50px;		
-	height: 50px;
-	line-height: 50px;
+	width: 5vw;		
+	height: 5vw;
+	line-height: 5vw;
 	background: #050b1f;
 	color: #6bcae2;
 }
 
-#fontsizer li:hover {
+#dictCodeContent #fontsizer li:hover {
 	background: #fbfaf5;
 }
 
-#fontsizer li:nth-child(2) {
-	font-size: 20px;
+#dictCodeContent #fontsizer li:nth-child(2) {
+	font-size: 2vw;
 }
 
-#fontsizer li:nth-child(3) {
-	font-size: 30px;
+#dictCodeContent #fontsizer li:nth-child(3) {
+	font-size: 3vw;
 	border-radius: 0px 10px 10px 0px;
 }
 
-#fontsizer li:nth-child(1) {
+#dictCodeContent #fontsizer li:nth-child(1) {
 	border-radius: 10px 0px 0px 10px;
 }
