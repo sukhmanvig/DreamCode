@@ -1,5 +1,5 @@
 import '../css/tutorial-lists-style.css'
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ChangeFontSize from './ChangeFontSize'
 import {Link} from 'react-router-dom'
 

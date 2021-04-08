@@ -1,8 +1,7 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import '../css/stack_game.css';
 import '../css/nav.css';
 import '../css/dashboard-style.css';
-import Stack from "../stack_game_code/Stack.js";
 import Marble from "../stack_game_code/Marble.js";
 import ProblemGenerator from "../stack_game_code/ProblemGenerator.js";
 import Model from "../stack_game_code/Model.js";
@@ -12,9 +11,9 @@ export default class StackGame extends Component {
 
 
     componentDidMount() {
+	document.title = "Stack Game";
 
         let x = new Marble("red", "A");
-        let xx = new Marble("red", "A");
         let y = new Marble("green", "B");
         let z = new Marble("blue", "C");
         let w = new Marble("orange", "D");
@@ -23,7 +22,6 @@ export default class StackGame extends Component {
         let marbs = [x,y,z,w,v];
 
         let pg = new ProblemGenerator(marbs)
-        let prob = pg.generateProblem(4);
 
         let canvasWidth = 800;
         let canvasHeight = 600;
@@ -203,7 +201,7 @@ export default class StackGame extends Component {
             <p>
                 Stacks can be used to store data, and <i>LIFO</i> refers to that the data in the stack can only be accessed in the reverse order it was added in. A helpful way to think about stacks is to compare them to how a pack of 3 tennis balls works. The container is cylindrical and just wide enough to fit a tennis ball. Only the top most tennis ball can be accessed and it is also the most recently added. Thus, the top most tennis ball is the <strong>"last one in"</strong> and must be the <strong>"first one out"</strong>, just like in the image below.
             </p>
-            <img src={tennis_balls} width="100px" height="150px"/> 
+            <img src={tennis_balls} width="100px" height="150px" alt="Tennis Balls"/> 
             <p>
                 It can also be helpful to think of the items of a stack organized vertically, with the top of the stack representing the last item added. There are 2 main methods to interact with stacks.
             </p>

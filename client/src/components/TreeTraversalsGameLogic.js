@@ -38,14 +38,12 @@ def postorder(root):
 
   var time = 59;
   var _currentNodeValsList = [];
-  var _currentTreeToMatch = null;
   var _orderToMatch = null;
 
   // 0 1 2
   var _traversalPick = -1;
 
   var _score = 0;
-  var _ans = -1;
 
   var _choicesAns = [];
 
@@ -113,13 +111,10 @@ def postorder(root):
   function replay() {
     time = 59;
     _currentNodeValsList = [];
-    _currentTreeToMatch = null;
     _orderToMatch = null;
     _choicesAns = [];
-    var _traversalPick = -1;
 
     _score = 0;
-    _ans = -1;
     gOverlay.style.display = "none";
     startCd();
     genNewQuestion();
@@ -127,8 +122,6 @@ def postorder(root):
   function genNewQuestion() {
     let choice = chooseTraversal();
     let rootNode = genTree(genNodeValues(6));
-
-    _currentTreeToMatch = rootNode;
 
     switch (choice) {
       case 0:
@@ -140,6 +133,7 @@ def postorder(root):
       case 2:
         _orderToMatch = rootNode.postorder(rootNode);
         break;
+      default:
     }
     orderPrompt.innerHTML = _orderToMatch;
     // console.log("orderToMatchHere : " + _orderToMatch)
@@ -347,7 +341,6 @@ def postorder(root):
   }
 
   function updateTreeStructs() {
-    var treeStructsVis = [];
     var treeStructs = [
       //`(${_currentNodeValsList[0]})
       // |
@@ -447,8 +440,6 @@ root.right.right.right = Node(${_currentNodeValsList[5]})`,
       numsOpt.splice(ind, 0, thisAns);
     }
 
-    _ans = numsOpt.indexOf(thisAns);
-
     // console.log("choiceans = "+_ans)
     // console.log("final options: " + numsOpt)
 
@@ -503,6 +494,7 @@ root.right.right.right = Node(${_currentNodeValsList[5]})`,
       case 2:
         result = tree.postorder(tree);
         break;
+      default:
     }
     return result;
   }

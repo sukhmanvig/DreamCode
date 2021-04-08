@@ -1,5 +1,6 @@
-import React from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
+import Axios from "axios";
+import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Navbar from "./components/Navbar";
@@ -26,41 +27,45 @@ import SortCodeSnippets from "./components/sort-code";
 import SortGamepage from "./components/sort-page";
 import PythonLearningResources from "./components/python-learning-resources";
 import PythonProblemRepository from "./components/python-problem-repository";
-import "./css/index.css";
+import LandingPage from "./components/LandingPage";
+import ScrollToTop from "./components/ScrollToTop";
 //import Axios from "axios";
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [pathname]);
+
   let history = useHistory();
   const Logout = () => {
-    {
-      /*let token = localStorage.getItem("accessToken");
+    let token = localStorage.getItem("refreshToken");
     Axios.defaults.headers = {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token, //the token is a variable which holds the token
     };
-    Axios.get("/user", {
+    Axios.post("/logout", {
       email: "details.email",
-    }).then((response) => {
-      console.log(response);
-    });*/
-    }
+    });
     localStorage.clear();
+    history.push("/");
     window.location.reload(false);
-    return history.push("/");
+    return null;
   };
 
   return (
     <div>
       <Navbar />
+      <ScrollToTop />
       <div style={{ paddingTop: "50px", height: "100%" }}>
         <Switch>
-          <PublicRoute restricted={false} exact path="/">
-            <div className="welcome App">
-              <h2>
-                Welcome <span> {localStorage.getItem("username")} </span>
-              </h2>
-            </div>
-          </PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/"
+            component={LandingPage}
+          ></PublicRoute>
           <PublicRoute
             restricted={true}
             exact
@@ -77,41 +82,21 @@ function App() {
           <PrivateRoute exact path="/contact" component={Contact} />{" "}
           <PublicRoute exact path="/passwordreset" component={PasswordReset} />{" "}
           <PrivateRoute exact path="/profile" component={Profile} />{" "}
-          <PrivateRoute exact path="/about" />
+          {/*<PrivateRoute exact path="/about" />*/}
           <PrivateRoute exact path="/dashboard" component={Dashboard} />{" "}
           <PrivateRoute exact path="/shell" component={Shell} />{" "}
           <PrivateRoute exact path="/ifgame" component={ifgame} />{" "}
           <PrivateRoute exact path="/ifcode" component={IfCodeSnippets} />{" "}
-          <PrivateRoute
-            exact
-            path="/treetravtut"
-            component={TreeTravTutorial}
-          />
+          <PrivateRoute exact path="/treetravtut"component={TreeTravTutorial}/>
           <PrivateRoute exact path="/treetravgame" component={TreeTravGame} />
-          <PrivateRoute
-            exact
-            path="/dictcode"
-            component={DictCodeSnippets}
-          />{" "}
+          <PrivateRoute exact path="/dictcode"component={DictCodeSnippets} />{" "}
           <PrivateRoute exact path="/dictgame" component={DictGame} />{" "}
           <PrivateRoute exact path="/stack_game" component={StackGame} />{" "}
           <PrivateRoute exact path="/queue_game" component={QueueGame} />{" "}
           <PrivateRoute exact path="/listsgame" component={ListsGame} />{" "}
-          <PrivateRoute
-            exact
-            path="/ListsGameTutorial"
-            component={ListsGameTutorial}
-          />
-          <PrivateRoute
-            exact
-            path="/pythonlearn"
-            component={PythonLearningResources}
-          />
-          <PrivateRoute
-            exact
-            path="/PythonProblemRepository"
-            component={PythonProblemRepository}
-          />
+          <PrivateRoute exact path="/ListsGameTutorial" component={ListsGameTutorial} />
+          <PrivateRoute exact path="/pythonlearn" component={PythonLearningResources} />
+          <PrivateRoute exact path="/PythonProblemRepository" component={PythonProblemRepository} />
           <PrivateRoute exact path="/sort-page" component={SortGamepage} />
           <PrivateRoute exact path="/sort-code" component={SortCodeSnippets} />
           <Route exact path="/logout" component={Logout} />

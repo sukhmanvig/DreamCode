@@ -6,6 +6,7 @@ import ChangeFontSize from "./ChangeFontSize.js";
 
 const DictionaryCodeSnippets = () => {
     useEffect(() => {
+	document.title = "Dictionaries Tutorial";
         ChangeFontSize();
       }, []);
 
@@ -13,7 +14,7 @@ const DictionaryCodeSnippets = () => {
       return(<Fragment>
         <title>Learn If Statements</title>
         <body id="dictcode_body">
-            <div id="content">
+            <div id="dictCodeContent">
             <h1 className="dictcode_h1">Python Dictionaries</h1>
             <div className="dictNotes">
                 <div id="fontsizer">

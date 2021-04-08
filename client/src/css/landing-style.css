@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+:root {
+    --colscheme1: #050b1f;
+    --colscheme2: #6bcae2;
+    --colscheme3: #0d659d;
+    --colscheme4: #c7d8e7;
+    --colscheme5: #11f7ff;
+  }
+.landingContent * {
+    font-family: Arial;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+.landingContent {
+    background: white;
+}
+
+.landingContent h1, .landingContent h2, .landingContent h3, .landingContent h4, .landingContent h5, .landingContent h6 {
+    color: black;
+}
+.landingContent .rowSec{
+    display:flex;
+    min-height: 100vh;
+    
+}
+
+.landingContent .rightSide {
+    width: 600px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff90;
+}
+.landingContent #logoTitle {
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
+    background: linear-gradient(to bottom, #6bcae2, #0d659d);
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* 
+.landingContent .lineDiv {
+    border: 1px solid rgb(185, 185, 185);
+} */
+.landingContent .rowSec:nth-child(1) {
+/*			background: url("bgtexture.png"), linear-gradient(white, transparent);*/
+    /* background-image: linear-gradient(#ffffff10 90%, #fff), url("/images/landbg.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.landingContent .rowSec:nth-child(2) {
+    display: flex;
+/*			width: 100%;*/
+    height: 100vh;
+    flex-wrap: wrap;
+/*			flex-direction: column;*/
+    align-items:center;
+/*			align-content:space-around;*/
+    justify-content: center;
+    
+}
+.landingContent .rowSec:nth-child(3) {
+    
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rowSec:nth-child(3) h2 {
+    position: relative;
+    z-index: 20;
+    font-size: 50px;
+    top: -300px;
+    
+}
+.gamePrevs {
+    display: flex;
+    width: 80%;
+    max-width: 1300px;
+    height: 300px;
+/*			overflow-y: auto;*/
+    
+}
+.landingContent .gamePrevs div {
+    width: 100%;
+    margin: 5px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    flex: 0 1 auto;
+}
+.landingContent .gamePrevs img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    position: absolute;
+    transition: all 0.2s ease-in;
+    border-radius: 20px;
+    overflow: none;
+}
+
+.gamePrevs img:hover {
+    filter: blur(3px);
+}
+.landingContent .aboutDC {
+    width: 80%;
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.aboutDC h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    flex-basis: 100%;
+    
+}
+.aboutDC p {
+    max-width: 800px;
+
+    word-wrap: break-word;
+    flex-basis: 100%;
+    
+
+}
+#dcrep {
+    width: 1000px;
+    position: absolute;
+    right: 0;
+}
+.customCar {
+/*			background: blue;*/
+    height: 600px;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.customCar .customCard {
+    width: 600px;
+    height: 400px;
+    background: #F7F7F7;
+    position: absolute;
+    border-radius: 20px;
+/*			border: 1px solid #888888;*/
+    box-shadow: 0 3px 3px #6B6969;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+/*			display: none;*/
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    
+    
+}
+.customCard:nth-child(even) {
+    background:#F8F6FF;
+}		
+.customCard:nth-child(odd) {
+    background:#FFF8F6;
+}
+.customCar h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.devImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #CFCFCF;
+    overflow: hidden;
+    margin: 0 50px 0 0;
+}
+.cardInfo {
+    width: 300px;
+}
+
+.btnCarCtrl {
+    z-index: 30;
+    font-size: 30px;
+    color: white;
+    background: #5F5F5F;
+    border-radius: 50px;
+    padding: 2px;
+
+    text-align: center;
+    box-shadow: 0 3px 3px #6B6969;
+    position: relative;
+    top: 200px;
+    user-select: none;
+}
+.btnCarCtrl span{
+    color: white; 
+    background: #5F5F5F;
+    border-radius: 50px;
+    padding: 2px;
+    width: 50px;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 3px 3px #6B6969;
+}
+.btnCarCtrl span:hover {
+    background: #B5B5B5;
+}
+#btnPrev {
+    z-index: 10;
+    
+}
+
+#btnNext {
+    z-index: 10;
+    
+}
+.showing {
+    opacity: 1 !important;
+    z-index: 2;	
+}
+
+.carSelect {
+    width: 30px;
+    height: 20px;
+    background: #BDBDBD;
+    margin: 5px;
+    border: 2px solid transparent;
+    transition: all 0.1s ease-out;
+    box-shadow: 0 3px 3px #6B6969;
+}
+.carSelect:hover {
+    border: 2px solid white;
+    background: #878787;
+}
+.customRadio {
+    position: relative;
+    top: 200px;
+    display: flex;
+    z-index: 10;
+
+}
+.carSelected {
+    border: 2px solid white;
+    background: #5F5F5F;
+}
+
+#btnStartLearn {
+    /* background-image: linear-gradient(
+        to right,
+        #0d659d 50%,
+        #0d659d 50%,
+        #6bcae2
+      ); */
+    background: var(--colscheme3);
+    width: 200px;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    transition: background 0.1s ease-in;
+    user-select: none;
+    cursor: pointer;
+}
+
+#btnStartLearn:hover {
+    /* background-image: linear-gradient(
+        to right,
+        #6bcae2 50%,
+        #6bcae2 50%,
+        #0d659d); */
+        background: var(--colscheme2);
+}

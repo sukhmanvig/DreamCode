@@ -59,8 +59,13 @@ app.post("/users", async (req, res) => {
       const date_created = new Date().toISOString().slice(0, 10);
 
       const newUser = await pool.query(
-        "INSERT INTO users (username, email, password, bio, date_created) VALUES($1, $2, $3, $4, $5)",
+        "INSERT INTO users (username, email, password, bio, date_created) VALUES($1, $2, $3, $4, $5) RETURNING users_id",
         [username, email, password, bio, date_created]
+      );
+      
+      const addToLeaderboard = await pool.query(
+        "INSERT INTO leaderboard (uid, points) VALUES($1, 0)",
+	 [newUser.rows[0].users_id]
       );
 
       //authorized the user
@@ -119,6 +124,7 @@ app.post("/login", async (req, res) => {
           accessToken: accessToken,
           refreshToken: refreshToken,
           username: loginUser.rows[0].username,
+          users_id: loginUser.rows[0].users_id
         });
       } else {
         res.json({ message: "Password Incorrect!" });
@@ -132,7 +138,7 @@ app.post("/login", async (req, res) => {
 });
 
 //logout users and delete refresh token
-app.delete("/logout", (req, res) => {
+app.post("/logout", (req, res) => {
   refreshTokens = refreshTokens.filter((token) => token !== req.body.token);
   res.sendStatus(204);
 });
@@ -148,6 +154,25 @@ app.get("/leaderboard", async (req, res) => {
     console.error(err);
   }
 });
+
+//Post to leaderboard
+app.post("/leaderboard", async (req, res) => {
+  try {
+    const { uid } = req.body;
+    const { thisscore } = req.body;
+    console.log(uid, thisscore);
+    const leaderboard = await pool.query(
+      "UPDATE Leaderboard SET points = points + $2 WHERE uid = $1;",
+      [uid, thisscore]
+    );
+    res.status(204).json(leaderboard.rows);
+    return;
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({});
+    return;
+  }
+})
 
 //put bio
 app.post("/EditBio", authenticateToken, async (req, res) => {

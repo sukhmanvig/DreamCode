@@ -135,12 +135,6 @@
   padding-top: 50%;
 }
 
-@media only screen and (max-width: 768px) {
-  .acc-preview {
-    padding-top: 0%;
-  }
-}
-
 .contenttab {
   padding-bottom: 250px;
 }
@@ -178,14 +172,26 @@
 .setting-list {
   padding-left: 0%;
 }
-#defaultOpen {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
+
 .inline {
   display: inline;
 }
 
 .success {
   color: green !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .acc-preview {
+    padding-top: 0%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .acc-preview, #circle {
+  margin: 10px auto;
+  text-align: center;
+  }
+  #setting-tile,.s-category {
+    text-align: center;
+  }
 }

@@ -2,9 +2,11 @@ import React, { Fragment, useEffect } from "react";
 import "../css/ifgame-style.css";
 import "../css/nav.css";
 import IfGameJS from "./ifgamejs.js";
+import { Link } from 'react-router-dom';
 
 const IfGame = () => {
-  useEffect(() => {
+  useEffect(() => { 
+    document.title = "If Game";
     IfGameJS();
   }, []);
 
@@ -12,11 +14,11 @@ const IfGame = () => {
     <Fragment>
       <title>Learn If Statements</title>
       <body id="ifgame_body">
-        <div id="content">
+        <div id="ifGameContent">
           <h1 className="ifgame_h1"> Learn If Statements </h1>
           <div id="game-window">
             <div id="option-select">
-              <h2 className="ifgame_h2">Level 1</h2>
+              <h2 className="ifgame_h2">Instructions</h2>
               <p>
                 Rob the Robot has been tasked with retrieving the treasure on
                 the board.
@@ -59,16 +61,18 @@ const IfGame = () => {
               <button className="ifgame_button" id="robot-try-again">
                 Play Again
               </button>
-              <button className="ifgame_button" id="show-hide-code">
+              <button className="ifgame_button" id="show-hide-ifGameCode">
                 Show/Hide Code
               </button>
-              <button className="ifgame_button" id="next-level">
-                Next Level
-              </button>
+              <Link style={{textDecoration : 'none' }} to="/ifcode">
+                <button className="ifgame_button" id="toTutorial">
+                  Return To Tutorial
+                </button>
+              </Link>
             </div>
             <div id="game-grid">
               <div className="grid-position">
-                <img id="robot" alt="robot" src="images/robot.png" />
+                <img id="robot" alt="robot" src="images/robot.png" draggable='false' />
               </div>
               <div className="grid-position"></div>
               <div className="grid-position"></div>
@@ -78,14 +82,14 @@ const IfGame = () => {
               <div className="grid-position"></div>
               <div className="grid-position"></div>
               <div className="grid-position">
-                <img id="goal" alt="goal" src="images/treasure.png" />
+                <img id="goal" alt="goal" src="images/treasure.png" draggable='false' />
               </div>
             </div>
             <div id="ifCode">
               <h2 className="ifgame_h2">Code For Actions</h2>
-              <div id="code-output"></div>
+              <div id="ifGameCode-output"></div>
 
-              <div id="code-elements">
+              <div id="ifGameCode-elements">
                 <div>
                   The variable <p className="highlighted">is_front_wall</p> is a{" "}
                   <p className="highlighted">boolean</p> that is{" "}

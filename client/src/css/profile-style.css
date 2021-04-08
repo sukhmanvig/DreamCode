@@ -5,9 +5,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100%;
 }
 
+.profile p {
+  color: black !important;
+}
+
+.profile h3 {
+	color: #fbfaf5 !important;
+}
+
+.profile h5, .profile p, .profile p span {
+  color: black !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -192,8 +202,8 @@ html {
   max-height: 100%;
 }
 
-.profile .profile.ubadge h5 {
-  color: white !important;
+.profile .ubadge h5 {
+  color: black !important;
   position: relative;
   bottom: 55px;
 }
@@ -209,7 +219,7 @@ html {
 }
 
 .profile .game {
-  min-width: 200px;
+  width: 200px;
   flex-grow: 1;
 
   height: 100px;
@@ -256,22 +266,37 @@ html {
   width: 50px;
   height: 50px;
   margin: auto 5px;
+  overflow:hidden;
+}
+
+.profile .frn-img img {
+  width: 100%;
+  filter:saturate(20%);
 }
 
 .profile .frn h5 {
   margin: auto;
+  color: black !important;
+  font-family: "calibri" !important;
+  vertical-align: center;
+  
 }
 .profile .profile h4 {
   flex-basis: 100%;
   padding: 20px;
   font-size: 30px;
-  color: white !important;
+  color: black !important;
   background: linear-gradient(var(--colscheme2), var(--colscheme4), #ffffff);
 }
 
 .profile .bio {
   color: Blue !important;
-  border: 1px solid Blue;
+  /* border: 1px solid Blue; */
+}
+
+.profile span.setlvl {
+  font: inherit;
+  color: inherit;
 }
 
 @media (max-width: 1340px) {
@@ -306,6 +331,10 @@ html {
     flex-basis: 32%;
     margin: 5px;
   }
+}
+
+.profile .ubadge {
+  background-size: contain;
 }
 @media (max-width: 1000px) {
   .profile .frn {

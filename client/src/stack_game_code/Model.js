@@ -90,8 +90,6 @@ export default class Model {
 
   drawOnCanvas(ctx, ctxWidth, ctxHeight) {
     let marbleRadius = 20;
-    let stackWidth = 22;
-    let i;
 
     ctx.clearRect(0, 0, ctxWidth, ctxHeight);
     ctx.fillStyle = "white";
