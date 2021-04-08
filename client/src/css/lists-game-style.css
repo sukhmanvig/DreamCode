@@ -259,6 +259,9 @@
   margin: 10px 0;
 }
 
+#shopCartListDisplay h2 {
+  color: white!important;
+}
 #shopCartListDisplay pre {
   color: #fff !important;
   overflow-y: auto;
@@ -487,9 +490,12 @@
     font-size: initial;
     font-weight: initial;
   }
-  .listgamestyle #playBtn {
-    width: 100px;
+  .listgamestyle #instructions h1 {
+
+    font-family: arial, "calibri light", sans-serif;
+    color: white;
   }
+
 }
 @media (max-width: 1100px) {
   #gameWindow {
@@ -497,7 +503,13 @@
   }
   #shopCart {
     bottom: 0;
-  
+  }
+  .listgamestyle #instructions h1 {
+    font-size: 40px;
+    font-family: arial, "calibri light", sans-serif;
+  }
+  .listgamestyle #playBtn {
+    width: 100px;
   }
 }
 
@@ -506,7 +518,5 @@
  #gameWindow {
   width: 100%;
 }
- #gameTitle{
-   background: black;
- }
+
 }
