@@ -21,6 +21,7 @@ function LoginForm() {
         setError(response.data.message);
       } else {
         //set all the values in the local storage
+        localStorage.setItem("users_id", response.data.users_id);
         localStorage.setItem("username", response.data.username);
         localStorage.setItem("email", details.email);
         localStorage.setItem("isLogin", true);
@@ -30,6 +31,7 @@ function LoginForm() {
         setError("");
         history.push("/");
         window.location.reload(false);
+        console.log(localStorage.getItem("users_id") + " has signed on.");
       }
     });
   };
