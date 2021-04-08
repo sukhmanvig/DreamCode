@@ -97,7 +97,7 @@ const SortGameJS = () => {
 			gamestate.hintsteps += innersteps;
 
 			// Disable inputs, then highlight the buttons to swap
-			document.querySelector("#gamehint").innerHTML = `Swap element #${gamestate.autosolvehint[0]} with #${kmin}. ${gamestate.autosolvehint[2]} steps total. ${innersteps} steps for this outer loop.`;
+			document.querySelector("#gamehint").innerHTML = `Swap element #${gamestate.autosolvehint[0]} with #${kmin}. ${gamestate.autosolvehint[2]} steps total. ${innersteps} steps for this inner loop.`;
 			disableSwapInput();
 			for (k = 0; k < gamestate.autosolvehint[0]; k++) 
 				document.querySelector(`#swap_${k}`).className = "game_button partial";
