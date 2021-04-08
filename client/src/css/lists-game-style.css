@@ -23,10 +23,12 @@
   width: 80%;
   margin: 20px auto;
 }
-#gameTitle {
-  font-family: "Montserrat", sans-serif;
+.listgamestyle #gameTitle {
+  font-family: "Montserrat",arial, sans-serif;
   font-size: 50px;
-  margin: 0;
+  margin: 5px 0 20px 0;
+  font-weight: 600;
+  line-height: 1.5;
 }
 #gameWindow {
   width: 80%;
@@ -475,6 +477,21 @@
 }
 .endList h2 {
   text-align: center;
+}
+
+.listgamestyle .gpgBtn {
+	padding: 10px;
+	background: var(--colscheme3);
+	border-radius: 10px;
+	margin-right: 10px;
+	font-family: Arial, "Calibri Light", Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/*	font-weight: bold;*/
+	color: white !important;
+	transition: all 0.1s ease-out;
+	user-select: none;
+}
+.listgamestyle .gpgBtn:hover {
+	background: var(--colscheme2);
 }
 
 /* responsive */

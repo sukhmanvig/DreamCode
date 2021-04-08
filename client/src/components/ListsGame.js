@@ -14,9 +14,8 @@ const ListsGame = () => {
       <main className="listgamestyle">
         <div className="header">
           <h1 id="gameTitle">Python Lists</h1>
-          <Link id="tlink" to="/ListsGameTutorial">
-            Tutorial
-          </Link>
+          <Link style={{textDecoration : 'none'}} to="/dashboard"><span className="gpgBtn">Dashboard</span></Link>
+			    <Link style={{textDecoration : 'none'}} to="/ListsGameTutorial"><span className="gpgBtn">Python Lists Tutorial</span></Link>
         </div>
         <div id="gameWindow">
           {/* {`<!--game content window-->`} */}
