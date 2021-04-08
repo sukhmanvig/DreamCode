@@ -168,12 +168,11 @@ app.post("/leaderboard", async (req, res) => {
       "UPDATE Leaderboard SET points = points + $2 WHERE uid = $1;",
       [uid, thisscore]
     );
-    res.json(leaderboard.rows);
-    res.sendStatus(204);
+    res.status(204).json(leaderboard.rows);
     return;
   } catch (err) {
     console.error(err);
-    res.sendStatus(500);
+    res.status(500).json({});
     return;
   }
 })
