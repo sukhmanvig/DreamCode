@@ -10,6 +10,7 @@ const SortGameJS = () => {
 	// Input state is based on the swap inputs clicked.
 	var gamestate = {
 		won: false,
+		hintsteps: 0,
 		swapinputs: [null, null],
 		autosolve: null,
 		autosolvehint: [-1, null]
@@ -19,8 +20,8 @@ const SortGameJS = () => {
 	document.querySelector("#init-array").addEventListener('click', ()=>{
 		// If won reset
 		if (gamestate.won)
-			postToLeaderboard(array.length*array.length - moves);
-		gamestate.won = null;
+			postToLeaderboard(calculatescore());
+		gamestate.won = false;
 
 		// Perform array initialization
 		var entries = parseInt(document.querySelector("#init-array-entries").value);
@@ -30,7 +31,7 @@ const SortGameJS = () => {
 		if (isNaN(entries))
 			entries=12;
 		console.log("Created array of size " + entries + " with values from 0 to " + rangemax);
-		initRandom(entries,0,rangemax);
+		initRandom(entries,0,rangemax); // This function generates the array.
 
 		// Put array and array buttons to front end
 		document.querySelector("#gamestage").innerHTML = "";
@@ -68,6 +69,9 @@ const SortGameJS = () => {
 
 		// Default to swap mode
 		document.querySelector("#swapmode").click();
+
+		// Update display
+		update_statdisplay();
 	});
 
 	/* Sort Step features */
@@ -90,6 +94,7 @@ const SortGameJS = () => {
 				}
 			}
 			gamestate.autosolvehint[1] = kmin;
+			gamestate.hintsteps += innersteps;
 
 			// Disable inputs, then highlight the buttons to swap
 			document.querySelector("#gamehint").innerHTML = `Swap element #${gamestate.autosolvehint[0]} with #${kmin}. ${gamestate.autosolvehint[2]} steps total. ${innersteps} steps for this outer loop.`;
@@ -134,6 +139,7 @@ const SortGameJS = () => {
 				if (k <= gamestate.autosolvehint[0] && k >= gamestate.autosolvehint[0]-bubbles)
 					document.querySelector(`#swap_${k}`).className = "game_button hinted";
 			}
+			gamestate.hintsteps += bubbles;
 
 			// Disable inputs, then highlight the buttons to swap
 			document.querySelector("#gamehint").innerHTML = `${bubbles} bubbles required to move element to position ${gamestate.autosolvehint[0]-bubbles}.`;
@@ -218,6 +224,7 @@ const SortGameJS = () => {
 				}
 			}
 			gamestate.autosolvehint[3] = lowercount;
+			gamestate.hintsteps += count;
 
 			// Update display
 			document.querySelector("#gamehint").innerHTML = `Partition Phase: Performed partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
@@ -308,6 +315,7 @@ const SortGameJS = () => {
 			}
 			gamestate.autosolvehint[2] = nextarray;
 			gamestate.autosolvehint[3] = count;
+			gamestate.hintsteps += count;
 
 			document.querySelector("#gamehint").innerHTML = "The distribution of digits in the place value " + gamestate.autosolvehint[1] + " is: [";
 			for (var k = 0; k < bucketcount.length; k++) {
@@ -330,6 +338,7 @@ const SortGameJS = () => {
 		else {
 			console.log("OMG");
 		}
+		update_statdisplay()
 	});
 
 	document.querySelector("#fastforward").addEventListener('click', ()=>{
@@ -339,6 +348,7 @@ const SortGameJS = () => {
 		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
 			radixsort_N(array);
 		}
+		update_statdisplay()
 	});
 
 	document.querySelector("#swapmode").addEventListener('click', ()=>{
@@ -353,6 +363,7 @@ const SortGameJS = () => {
 			elems[k].className = "game_button sorthint";
 		}
 		document.querySelector("#swapmode").className = "game_button sorthint active";
+		update_statdisplay()
 	});
 
 	document.querySelector("#selectionsort").addEventListener('click', ()=>{
@@ -368,6 +379,7 @@ const SortGameJS = () => {
 			elems[k].className = "game_button sorthint";
 		}
 		document.querySelector("#selectionsort").className = "game_button sorthint active";
+		update_statdisplay()
 	});
 
 	document.querySelector("#insertionsort").addEventListener('click', ()=>{
@@ -383,6 +395,7 @@ const SortGameJS = () => {
 			elems[k].className = "game_button sorthint";
 		}
 		document.querySelector("#insertionsort").className = "game_button sorthint active";
+		update_statdisplay()
 	});
 
 	document.querySelector("#quicksort").addEventListener('click', ()=>{
@@ -398,6 +411,7 @@ const SortGameJS = () => {
 			elems[k].className = "game_button sorthint";
 		}
 		document.querySelector("#quicksort").className = "game_button sorthint active";
+		update_statdisplay()
 	});
 
 	document.querySelector("#radixsort").addEventListener('click', ()=>{
@@ -418,9 +432,10 @@ const SortGameJS = () => {
 			elems[k].className = "game_button sorthint";
 		}
 		document.querySelector("#radixsort").className = "game_button sorthint active";
+		update_statdisplay()
 	});
 
-	/**Initialize the game.
+	/**Initialize the game with a random array.
 	 * @param {*} entries 
 	 * @param {*} min 
 	 * @param {*} max 
@@ -434,6 +449,7 @@ const SortGameJS = () => {
 		// Reset moves
 		moves = 0;
 		gamestate.swapinputs = [null, null];
+		gamestate.hintsteps = 0;
 
 		// Reset view
 		document.querySelector("#gamestate").innerHTML = "Initialized game";
@@ -558,6 +574,8 @@ const SortGameJS = () => {
 			else {
 				document.querySelector("#gamestate").innerHTML = "Swaps: " + moves;
 			}
+			// Update display
+			update_statdisplay();
 		}
 	}
 
@@ -626,6 +644,7 @@ const SortGameJS = () => {
 			}
 		}
 		// Recursive call
+		gamestate.hintsteps += count;
 		clickSwapInput(ini+lowercount-1)();clickSwapInput(ini)();
 		return count + quicksort(array, ini, ini+lowercount-1) + quicksort(array, ini+lowercount, fin);
 	}
@@ -662,6 +681,8 @@ const SortGameJS = () => {
 				}
 			}
 
+			gamestate.hintsteps += count;
+
 			// Update array in place and view. The loop is required only as an artifact.
 			for (x in array)
 				array[x] = nextarray[x]; 
@@ -671,6 +692,21 @@ const SortGameJS = () => {
 			longestrep = Math.trunc(longestrep/10);
 			placevalue *= 10;
 		}
+	}
+
+	/**Determine score
+	 */
+	function calculatescore() {
+		return array.length*array.length - moves - gamestate.hintsteps;
+	}
+
+	/**Update the display
+	 */
+	function update_statdisplay() {
+		document.querySelector("#statswaps").innerHTML = moves;
+		document.querySelector("#stathintsteps").innerHTML = gamestate.hintsteps;
+		document.querySelector("#statscore").innerHTML = calculatescore();
+		document.querySelector("#statwinstate").innerHTML = gamestate.won;
 	}
 }
 
