@@ -33,7 +33,7 @@ function Profile() {
   getBio(details);
 
   useEffect(() => {
-    document.title = {details} + "'s Profile";
+    document.title = localStorage.getItem("username") + "'s Profile";
     ProfileSample();
     ProfileSetXP();
   }, []);

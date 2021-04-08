@@ -72,7 +72,7 @@
   line-height: 50px;
 }
 #fontsizer li:hover {
-  background: var(--colscheme4);
+  background: #fbfaf5 !important;
   cursor: pointer;
 }
 #fontsizer li:nth-child(2) {

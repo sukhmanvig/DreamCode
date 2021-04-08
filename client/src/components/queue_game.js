@@ -1,8 +1,7 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import '../css/queue_game.css';
 import '../css/nav.css';
 import '../css/dashboard-style.css';
-import Queue from "../queue_game_code/Queue.js";
 import Marble from "../queue_game_code/Marble.js";
 import ProblemGenerator from "../queue_game_code/ProblemGenerator.js";
 import Model from "../queue_game_code/Model.js";
@@ -11,9 +10,9 @@ import line from "../images/line.png";
 export default class QueueGame extends Component {
 
     componentDidMount() {
+	document.title = "Queue Game";
 
         let x = new Marble("red", "A");
-        let xx = new Marble("red", "A");
         let y = new Marble("green", "B");
         let z = new Marble("blue", "C");
         let w = new Marble("orange", "D");
@@ -22,7 +21,6 @@ export default class QueueGame extends Component {
         let marbs = [x,y,z,w,v];
 
         let pg = new ProblemGenerator(marbs)
-        let prob = pg.generateProblem(4);
 
         let canvasWidth = 800;
         let canvasHeight = 600;
@@ -200,7 +198,7 @@ export default class QueueGame extends Component {
             <p>
                 Queues can be used to store data, and <i>FIFO</i> refers to that the data in the queue can only be accessed in the order it was added in. A helpful way to think about queues is to compare them to a lineup for a coffee shop. In this example, people make a single file ordering to reach the counter. The first person in line is the first one to receive service, the second person is called only after the first is done ordering, and so on. Thus, the first in line is the <strong>"first one in"</strong> and must be the <strong>"first one out"</strong> of the line. The diagram below illustrates this.
             </p>
-            <img src={line}/> 
+            <img src={line} alt="Queue Diagram"/> 
             <p>
                 It can also be helpful to think of the items of a queue organized horizontally, with the right most item of the queue representing the first item added. There are 2 main methods to interact with queue.
             </p>

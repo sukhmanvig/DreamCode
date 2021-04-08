@@ -23,7 +23,7 @@ const LandingCarousel = () => {
 		radioBtns[currentSlide].className = 'carSelect'
 		// set the current slide as the previous one
 		currentSlide = (currentSlide - 1) % slides.length
-		if (currentSlide == -1) {
+		if (currentSlide === -1) {
 		  currentSlide = slides.length - 1
 		}
 	// add the class showing to the slide to make it visible

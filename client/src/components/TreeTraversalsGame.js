@@ -1,5 +1,5 @@
 import '../css/TreeTraversalsStyle.css'
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import TreeTraversalsGameLogic from './TreeTraversalsGameLogic'; 
 import { Link } from 'react-router-dom'
 

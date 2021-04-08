@@ -5,7 +5,8 @@ import IfGameJS from "./ifgamejs.js";
 import { Link } from 'react-router-dom';
 
 const IfGame = () => {
-  useEffect(() => {
+  useEffect(() => { 
+    document.title = "If Game";
     IfGameJS();
   }, []);
 

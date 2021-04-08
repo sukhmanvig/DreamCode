@@ -6,6 +6,7 @@ import ChangeFontSize from "./ChangeFontSize.js";
 
 const DictionaryCodeSnippets = () => {
     useEffect(() => {
+	document.title = "Dictionaries Tutorial";
         ChangeFontSize();
       }, []);
 

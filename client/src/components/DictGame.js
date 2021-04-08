@@ -9,6 +9,7 @@ var MIN_NODES = 1;
 
 const DictGame = () => {
 	useEffect(() => {
+		document.title = "Dictionary Game";
 		GameSetup();
 
 		var numNodes = Math.floor(Math.random()*(MAX_NODES-MIN_NODES)) + MIN_NODES;

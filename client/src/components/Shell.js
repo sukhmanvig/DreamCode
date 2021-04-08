@@ -1,7 +1,7 @@
 //import "../css/shell.css";
 import "../css/codemirror.css";
 import "../css/cobalt.css";
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 // require ("../js/codemirror-5.59.2/lib/codemirror.js");
 // require ("../js/codemirror-5.59.2/mode/javascript/javascript.js");
 import { Controlled as CodeMirror } from "react-codemirror2";

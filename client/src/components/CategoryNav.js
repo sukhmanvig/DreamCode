@@ -3,7 +3,6 @@ const CategoryNav = () => {
 	//Add onclick listeners
 	document.querySelector(".arrow.left").addEventListener('click', ()=>{arrow(0);});
 	document.querySelector(".arrow.right").addEventListener('click', ()=>{arrow(1);});
-	document.querySelector(".search-bar").addEventListener('keypress', e =>{if (e.key === 'Enter') { window.location.reload(false); } });
 
 	var categoryNumber = 1;
 	var maxCategory = 10; //When we have a database, we'll pull the number of categories from there

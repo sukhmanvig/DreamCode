@@ -8,6 +8,7 @@ import "../css/game-sort-style.css";
 const SortGamepage = () => {
 	// Use the effect. The object is SortGameJS.
 	useEffect(() => {
+		document.title = "Sorting Game";
 		SortGameJS();
 	}, []);
 

@@ -222,9 +222,8 @@ function Settings() {
         </Col>
         <Col
           md={{ span: 3, offset: 2 }}
-          xs={{ span: 4, offset: 3 }}
           sm={{ span: 4, offset: 6 }}
-	  xs={{ span: 12, offset:0 }}
+	        xs={{ span: 12, offset:0 }}
         >
           <div
             attribution="Peter Southwood, CC0, via Wikimedia Commons"

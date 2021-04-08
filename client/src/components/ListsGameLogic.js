@@ -130,10 +130,6 @@ const ListsGameLogic = () => {
     }
   }
 
-  function endScreen() {
-    document.querySelector("#gameWindowOverlay").style.display = "block";
-  }
-
   function startCd() {
     if (time >= 0) {
       if (time === 0) {
@@ -156,8 +152,6 @@ const ListsGameLogic = () => {
     }
   }
 
-  var startBtn = document.querySelector("#playBtn");
-
   playBtn.addEventListener("click", (e) => {
     time = 60;
     startCd();
@@ -166,10 +160,6 @@ const ListsGameLogic = () => {
     drawGame(gameContentWindow);
     //										tapBtn.style.visibility = "visible";
   });
-
-  function hideOverlay() {
-    document.querySelector("#gameWindowOverlay").style.display = "none";
-  }
 
   function clearOverlay() {
     let cont = document.querySelector("#gameWindowOverlay");

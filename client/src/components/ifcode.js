@@ -6,6 +6,7 @@ import ChangeFontSize from "./ChangeFontSize";
 
 const IfCodeSnippets = () => {
   useEffect(() => {
+    document.title = "If Statements Tutorial";
     ChangeFontSize();
   }, []);
 

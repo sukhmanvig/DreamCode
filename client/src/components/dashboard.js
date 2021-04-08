@@ -18,6 +18,7 @@ const Dashboard = () => {
     }
   };
   useEffect(() => {
+    document.title = "Dashboard";
     getLeaderboard();
     CategoryNav();
   }, []);

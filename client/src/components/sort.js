@@ -3,8 +3,6 @@ import Axios from "axios";
  */
 const SortGameJS = () => {
 	var moves = 0;
-	var id = null;
-	var level = -1;
 	var array = null;
 	
 	// Input state is based on the swap inputs clicked.
@@ -40,28 +38,29 @@ const SortGameJS = () => {
 		tablehtml += "<table>";
 		// Show numbers
 		tablehtml += "<tr>";
-		for (var k = 0; k < array.length; k++) {
+		var k;
+		for (k = 0; k < array.length; k++) {
 			tablehtml += `<td id=index_${k}>` + array[k] + "</td>";
 		}
 		tablehtml += "</tr>";
 		// Add buttons
 		tablehtml += "<tr>";
-		for (var k = 0; k < array.length; k++) {
-			tablehtml += "<td>" + `<button id=swap_${k} class="game_button">Swap #${k}</button>` + "</td>";
+		for (k = 0; k < array.length; k++) {
+			tablehtml += `<td><button id=swap_${k} class="game_button">Swap #${k}</button></td>`;
 			swaplisteners[k] = clickSwapInput(k);
 		}
 		tablehtml += "</tr>";
 		tablehtml += "</table>";
 		document.querySelector("#gamestage").innerHTML = tablehtml;
 		// Add button functionalities
-		for (var k = 0; k < array.length; k++) {
+		for (k = 0; k < array.length; k++) {
 			document.querySelector(`#swap_${k}`).addEventListener('click', 
 				swaplisteners[k]
 			);
 		}
 		// Enable hints
 		var elems = document.getElementsByClassName("sorthint");
-		for (var k = 0; k < elems.length; k++) {
+		for (k = 0; k < elems.length; k++) {
 			elems[k].removeAttribute("disabled");
 		}
 		document.querySelector("#sortstep").setAttribute("disabled", "true");
@@ -84,7 +83,8 @@ const SortGameJS = () => {
 			var recmin = array[gamestate.autosolvehint[0]];
 			var kmin = gamestate.autosolvehint[0];
 			var innersteps = 0;
-			for (var k = gamestate.autosolvehint[0] + 1; k < array.length; k++) {
+			var k;
+			for (k = gamestate.autosolvehint[0] + 1; k < array.length; k++) {
 				gamestate.autosolvehint[2]++;
 				innersteps++;
 				console.log(recmin, array[k]);
@@ -99,7 +99,7 @@ const SortGameJS = () => {
 			// Disable inputs, then highlight the buttons to swap
 			document.querySelector("#gamehint").innerHTML = `Swap element #${gamestate.autosolvehint[0]} with #${kmin}. ${gamestate.autosolvehint[2]} steps total. ${innersteps} steps for this outer loop.`;
 			disableSwapInput();
-			for (var k = 0; k < gamestate.autosolvehint[0]; k++) 
+			for (k = 0; k < gamestate.autosolvehint[0]; k++) 
 				document.querySelector(`#swap_${k}`).className = "game_button partial";
 			document.querySelector(`#swap_${gamestate.autosolvehint[0]}`).className = "game_button hinted";
 			document.querySelector(`#swap_${kmin}`).className = "game_button hinted";
@@ -109,7 +109,7 @@ const SortGameJS = () => {
 			// Perform updating swap
 			clickSwapInput(gamestate.autosolvehint[0])();
 			clickSwapInput(gamestate.autosolvehint[1])();
-			for (var k = 0; k < array.length; k++) {
+			for (k = 0; k < array.length; k++) {
 				if (k <= gamestate.autosolvehint[0])
 					document.querySelector(`#swap_${k}`).className = "game_button partial";
 				else
@@ -128,10 +128,10 @@ const SortGameJS = () => {
 			console.log(gamestate.autosolve);
 			var elem = array[gamestate.autosolvehint[0]];
 			var bubbles = 0;
-			for (var k = gamestate.autosolvehint[0]; k > 0 && elem > array[k-1]; k--) {
+			for (k = gamestate.autosolvehint[0]; k > 0 && elem > array[k-1]; k--) {
 				bubbles++;
 			}
-			for (var k = 0; k < array.length; k++) {
+			for (k = 0; k < array.length; k++) {
 				if (k <= gamestate.autosolvehint[0])
 					document.querySelector(`#swap_${k}`).className = "game_button partial";
 				else
@@ -146,7 +146,7 @@ const SortGameJS = () => {
 			gamestate.autosolve = "Insertion2"
 		}
 		else if (gamestate.autosolve === "Insertion2") {
-			for (var k = gamestate.autosolvehint[0]; k > 0 && array[k] > array[k-1]; k--) {
+			for (k = gamestate.autosolvehint[0]; k > 0 && array[k] > array[k-1]; k--) {
 				gamestate.autosolvehint[1]++;
 				// Perform updating swap
 				clickSwapInput(k-1)();
@@ -154,7 +154,7 @@ const SortGameJS = () => {
 			}
 			document.querySelector("#gamehint").innerHTML = `"Inserted" element #${gamestate.autosolvehint[0]} at position #${k}. ${gamestate.autosolvehint[1]} bubbles total.`;
 			gamestate.autosolvehint[0]++;
-			for (var k = 0; k < array.length; k++) {
+			for (k = 0; k < array.length; k++) {
 				if (k <= gamestate.autosolvehint[0])
 					document.querySelector(`#swap_${k}`).className = "game_button partial";
 				else
@@ -175,7 +175,7 @@ const SortGameJS = () => {
 						gamestate.autosolvehint[5].push(fin-1);
 					}
 				}
-				for (var k = 0; k < array.length; k++) {
+				for (k = 0; k < array.length; k++) {
 					if (k >= ini && k < fin)
 						document.querySelector(`#swap_${k}`).className = "game_button hinted";
 					else
@@ -196,7 +196,7 @@ const SortGameJS = () => {
 	
 				// Update display
 				document.querySelector("#gamehint").innerHTML = `Pivot phase: Perform Pivot on ${pivotvalue} from #${pivotindex}`;
-				for (var k = 0; k < array.length; k++) {
+				for (k = 0; k < array.length; k++) {
 					if (k >= ini && k < fin)
 						document.querySelector(`#swap_${k}`).className = "game_button";
 					else
@@ -206,17 +206,17 @@ const SortGameJS = () => {
 				document.querySelector(`#swap_${pivotindex}`).className = "game_button hinted";
 				gamestate.autosolve = "QuickPivot";
 			}
-			for (var k in gamestate.autosolvehint[5]) {
+			for (k in gamestate.autosolvehint[5]) {
 				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
 			}
 		}
 		else if (gamestate.autosolve === "QuickPivot") { /* Perform a Quicksort */
-			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
-			var pivotvalue = gamestate.autosolvehint[2];
-			var lowercount = gamestate.autosolvehint[3];
+			ini = gamestate.autosolvehint[0][0]; fin = gamestate.autosolvehint[0][1];
+			pivotvalue = gamestate.autosolvehint[2];
+			lowercount = gamestate.autosolvehint[3];
 			// Partition phase
 			var count = 0;
-			for (var k = ini+1; k < fin; k++) {
+			for (k = ini+1; k < fin; k++) {
 				count++;
 				if (array[k] <= pivotvalue) {
 					clickSwapInput(k)();clickSwapInput(ini+lowercount)();
@@ -229,7 +229,7 @@ const SortGameJS = () => {
 			// Update display
 			document.querySelector("#gamehint").innerHTML = `Partition Phase: Performed partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickPartition";
-			for (var k = 0; k < array.length; k++) {
+			for (k = 0; k < array.length; k++) {
 				console.log(ini + " " + k + " " + fin);
 				if (k >= ini && k < fin) {
 					if (array[k] <= pivotvalue)
@@ -240,14 +240,14 @@ const SortGameJS = () => {
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
 			}
-			for (var k in gamestate.autosolvehint[5]) {
+			for (k in gamestate.autosolvehint[5]) {
 				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
 			}
 		}
 		else if (gamestate.autosolve === "QuickPartition") { /* Perform a Quicksort */
-			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
-			var pivotvalue = gamestate.autosolvehint[2];
-			var lowercount = gamestate.autosolvehint[3];
+			ini = gamestate.autosolvehint[0][0]; fin = gamestate.autosolvehint[0][1];
+			pivotvalue = gamestate.autosolvehint[2];
+			lowercount = gamestate.autosolvehint[3];
 			// The pivot, now at position indexed one before ini+lowercount, is known to be in correct position.
 			clickSwapInput(ini+lowercount-1)();clickSwapInput(ini)();
 			gamestate.autosolvehint[5].push(ini+lowercount-1);
@@ -255,7 +255,7 @@ const SortGameJS = () => {
 			// Update display
 			document.querySelector("#gamehint").innerHTML = `Indexing Phase: Declared partitions. There are ${lowercount} within ${pivotvalue}, the pivot value.`;
 			gamestate.autosolve = "QuickRecursive"
-			for (var k = 0; k < array.length; k++) {
+			for (k = 0; k < array.length; k++) {
 				if (k >= ini && k < fin) {
 					if (k < ini+lowercount-1)
 						document.querySelector(`#swap_${k}`).className = "game_button hinted";
@@ -267,13 +267,13 @@ const SortGameJS = () => {
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
 			}
-			for (var k in gamestate.autosolvehint[5]) {
+			for (k in gamestate.autosolvehint[5]) {
 				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
 			}
 		}
 		else if (gamestate.autosolve === "QuickRecursive") { /* Perform a Quicksort */
-			var ini = gamestate.autosolvehint[0][0]; var fin = gamestate.autosolvehint[0][1];
-			var lowercount = gamestate.autosolvehint[3];
+			ini = gamestate.autosolvehint[0][0]; fin = gamestate.autosolvehint[0][1];
+			lowercount = gamestate.autosolvehint[3];
 			gamestate.autosolvehint[4].push([ini+lowercount, fin]);
 			gamestate.autosolvehint[4].push([ini, ini+lowercount-1]);
 			console.log(gamestate.autosolvehint[4]);
@@ -282,20 +282,20 @@ const SortGameJS = () => {
 			gamestate.autosolve = "Quick";
 			gamestate.autosolvehint[0] = gamestate.autosolvehint[4].pop();
 			document.querySelector("#gamehint").innerHTML = `Recursive Calls: ${gamestate.autosolvehint[4].length} calls remaining. Starting Quick Sort from [${gamestate.autosolvehint[0][0]},${gamestate.autosolvehint[0][1]}].`;
-			for (var k = 0; k < array.length; k++) {
+			for (k = 0; k < array.length; k++) {
 				if (k >= gamestate.autosolvehint[0][0] && k < gamestate.autosolvehint[0][1])
 					document.querySelector(`#swap_${k}`).className = "game_button hinted";
 				else
 					document.querySelector(`#swap_${k}`).className = "game_button offscope";
 			}
-			for (var k in gamestate.autosolvehint[5]) {
+			for (k in gamestate.autosolvehint[5]) {
 				document.querySelector(`#swap_${gamestate.autosolvehint[5][k]}`).className = "game_button partial";
 			}
 		}
 		else if (gamestate.autosolve === "Radix") { /* Perform a Radixsort */
-			var count = 0;
+			count = 0;
 			var bucketcount = [];
-			for (var k = 0; k < 10; k++) {
+			for (k = 0; k < 10; k++) {
 				bucketcount[k] = [];
 			}
 
@@ -306,8 +306,8 @@ const SortGameJS = () => {
 			}
 
 			var nextarray = [];
-			for (var k = 0; k < bucketcount.length; k++) {
-				for (var x in bucketcount[k]) {
+			for (k = 0; k < bucketcount.length; k++) {
+				for (x in bucketcount[k]) {
 					nextarray.push(bucketcount[k][x]);
 					count++;
 					moves++;
@@ -318,7 +318,7 @@ const SortGameJS = () => {
 			gamestate.hintsteps += count;
 
 			document.querySelector("#gamehint").innerHTML = "The distribution of digits in the place value " + gamestate.autosolvehint[1] + " is: [";
-			for (var k = 0; k < bucketcount.length; k++) {
+			for (k = 0; k < bucketcount.length; k++) {
 				document.querySelector("#gamehint").innerHTML += bucketcount[k].length + " ";
 			}
 			document.querySelector("#gamehint").innerHTML += "]";
@@ -467,10 +467,10 @@ const SortGameJS = () => {
 		else if (sc === 1)
 			falsecriteria = function(k){return (array[k] < array[k-1])}
 		else
-			throw 'Need to specify -1 for descending and +1 for ascending'
+			throw new Error('Need to specify -1 for descending and +1 for ascending');
 		// Input check
 		if (array === null)
-			throw 'Array is nonexistant, cannot sort';
+			throw new Error('Array is nonexistent, cannot sort');
 		// Perform linear search to see if array is sorted.
 		for (var k = 1; k < array.length; k++) {
 			if (falsecriteria(k))
@@ -540,7 +540,7 @@ const SortGameJS = () => {
 	function clickSwapInput(k1) {
 		return function(){
 			var k = k1;
-			console.log("State:" + gamestate.swapinputs + " ; " + "Key clicked: " + k);
+			console.log("State:" + gamestate.swapinputs + " ; Key clicked: " + k);
 			// Adjust the swap status
 			if (gamestate.swapinputs[0] === null) {
 				gamestate.swapinputs[0] = k;
@@ -585,7 +585,7 @@ const SortGameJS = () => {
 	 */
 	function swap(k1, k2) {
 		if (!inbounds(k1, array) || !inbounds(k2, array))
-			throw 'One of the indices are out of bounds';
+			throw new Error('One of the indices are out of bounds');
 		// Perform swap
 		var temp = array[k1];
 		array[k1] = array[k2];
@@ -659,22 +659,22 @@ const SortGameJS = () => {
 		}
 
 		var placevalue = 1;
-		while (longestrep != 0) {
+		while (longestrep !== 0) {
 			var count = 0;
 			var bucketcount = [];
 			for (var k = 0; k < 10; k++) {
 				bucketcount[k] = [];
 			}
 
-			for (var x in array) {
+			for (x in array) {
 				bucketcount[Math.trunc(array[x]/placevalue)%10].push(array[x]);
 				count++;
 				moves++;
 			}
 
 			var nextarray = [];
-			for (var k = 0; k < bucketcount.length; k++) {
-				for (var x in bucketcount[k]) {
+			for (k = 0; k < bucketcount.length; k++) {
+				for (x in bucketcount[k]) {
 					nextarray.push(bucketcount[k][x]);
 					count++;
 					moves++;
@@ -713,7 +713,7 @@ const SortGameJS = () => {
 /**Auxiliary function to determine if index is in bounds.
  */
 function inbounds(k, array) {
-  if (array === null) throw "Array is nonexistant, cannot sort";
+  if (array === null) throw new Error("Array is nonexistent, cannot sort");
   return k >= 0 && k < array.length;
 }
 

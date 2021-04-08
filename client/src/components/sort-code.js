@@ -10,6 +10,7 @@ import ChangeFontSize from "./ChangeFontSize.js";
 // Returns a SortGameJS object. 
 const SortCodeSnippets = () => {
 	useEffect(() => {
+		document.title = "Sorting Tutorial";
 		ChangeFontSize();
 	}, []);
 

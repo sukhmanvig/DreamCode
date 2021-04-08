@@ -1,10 +1,11 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../css/python-problem-repository-styles.css";
 import "../css/nav.css";
 import PythonProblemRepositoryJS from "./python-problem-repository-js.js";
 
 const PythonProblemRepository = () => {
   useEffect(() => {
+    document.title = "Python Problem Repository";
     PythonProblemRepositoryJS();
   });
 
