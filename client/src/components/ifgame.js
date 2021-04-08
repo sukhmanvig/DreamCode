@@ -63,7 +63,7 @@ const IfGame = () => {
               <button className="ifgame_button" id="show-hide-ifGameCode">
                 Show/Hide Code
               </button>
-              <Link style={{textDecoration : 'none' }} to="/dashboard">
+              <Link style={{textDecoration : 'none' }} to="/ifcode">
                 <button className="ifgame_button" id="toTutorial">
                   Return To Tutorial
                 </button>
