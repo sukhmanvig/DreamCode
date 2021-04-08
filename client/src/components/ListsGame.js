@@ -11,7 +11,7 @@ const ListsGame = () => {
 
   return (
     <Fragment>
-      <main className="listgamestlye">
+      <main className="listgamestyle">
         <div className="header">
           <h1 id="gameTitle">Python Lists</h1>
           <Link id="tlink" to="/ListsGameTutorial">

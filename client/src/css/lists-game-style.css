@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 
-.listgamestlye * {
+.listgamestyle * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   --colscheme4: #c7d8e7;
   --colscheme5: #11f7ff;
 }
-.listgamestlye main {
+.listgamestyle main {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@
 .shelfItem:hover {
   border: 2px solid white;
 }
-.listgamestlye ul.shelf-items-wrapper {
+.listgamestyle ul.shelf-items-wrapper {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -231,7 +231,7 @@
 #shopCart {
   width: 50%;
   position: absolute;
-  bottom: -40%;
+  bottom: -50%;
   z-index: 20;
   display: flex;
   margin-left: 20%;
@@ -393,7 +393,7 @@
   margin: 10px 0;
   height: auto;
 }
-.listgamestlye div#lstCtrls div {
+.listgamestyle div#lstCtrls div {
   background: var(--colscheme3);
   color: white !important;
   width: 45%;
@@ -405,12 +405,12 @@
   border: 2px solid transparent;
   transition: all 0.1s ease-out;
 }
-.listgamestlye div#lstCtrls div:last-child {
+.listgamestyle div#lstCtrls div:last-child {
   width: 100%;
   background: #d53336;
 }
 
-.listgamestlye div#lstCtrls div:hover {
+.listgamestyle div#lstCtrls div:hover {
   background: var(--colscheme2);
   border: 2px solid white;
 }
@@ -472,4 +472,41 @@
 }
 .endList h2 {
   text-align: center;
+}
+
+/* responsive */
+@media (max-width: 1300px) {
+  #gameWindow {
+    width: 100%;
+  }
+  #shopCart {
+    bottom: 0;
+  }
+  .listgamestyle #instructions p {
+    font-family: calibri, arial, sans-serif;
+    font-size: initial;
+    font-weight: initial;
+  }
+  .listgamestyle #playBtn {
+    width: 100px;
+  }
+}
+@media (max-width: 1100px) {
+  #gameWindow {
+    width: 100%;
+  }
+  #shopCart {
+    bottom: 0;
+  
+  }
+}
+
+@media (max-width: 650px) {
+
+ #gameWindow {
+  width: 100%;
+}
+ #gameTitle{
+   background: black;
+ }
 }
