@@ -78,7 +78,7 @@ function LandingPage() {
 					<div className="customCard">
 						<div className="devImg"><img alt="Sukhman Vig"/></div>
 						<div className="cardInfo">
-						<h3>Suhkman Vig</h3>
+						<h3>Sukhman Vig</h3>
 						<p>Computer Science Student, University of Toronto Mississauga.</p>
 						</div>
 					</div>
